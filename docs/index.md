@@ -10,7 +10,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 | | Woche | Themen (Vorlesung) | Übung | Aufgabe (Stand) | Abgabe Übung bis | 
 |-|-------|--------------------|-------|-----------------|------------------|
-| 1. | 11.-15.10.2021 | Einführung und Organisatorisches | Übung 0 | - | - | 
+| 1. | 11.-15.10.2021 | [Einführung](./einfuehrung/#webtechnologien-einfuhrung) und [Organisatorisches](./#organisatorisches) | [Übung 0](./uebungen/#ubung-0) | - | - | 
 | 2. | 18.-22.10.2021 | HTML | Übung 1 | Idee | 25.10.2021 | 
 | 3. | 25.-29.10.2021 | CSS (Eigenschaften und Selektoren) | Übung 2 | - | 01.11.2021 | 
 | 4. | 01.-05.11.2021 | RWD (Responsive Webdesign) | Übung 3 | Konzept | 08.11.2021 | 
