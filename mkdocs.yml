@@ -9,7 +9,7 @@ repo_name: webtech
 repo_url: https://github.com/jfreiheit/webtech
 
 # Copyright
-copyright: Copyright &copy; 2020 Jörn Freiheit
+copyright: Copyright &copy; 2021 Jörn Freiheit
 
 # Configuration
 theme:
@@ -33,6 +33,7 @@ extra_css:
 
 # Extensions
 markdown_extensions:
+  - attr_list
   - admonition
   - footnotes
   - pymdownx.arithmatex
@@ -61,19 +62,6 @@ markdown_extensions:
 #Navigation
 nav:
     - Home: index.md
+    - Einführung: einfuehrung.md
     - Übungen: uebungen.md
     - Werkzeuge: tools.md
-    - HTML: html.md
-    - CSS: css.md
-    - RWD: rwd.md
-    - JavaScript: javascript.md
-    - JSON: json.md
-    - Angular: angular.md
-    - Material: material.md
-    - REST-API: backend.md
-    - Frontend-Backend-Anbindung: backendanbindung.md
-    - JWT: jwt.md 
-    - Node.js: node.md
-    - MongoDB: mongodb.md
-    - Bücher-App: books.md
-    - Bücher-Backend: books-backend.md
