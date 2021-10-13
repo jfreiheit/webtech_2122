@@ -259,7 +259,56 @@ Einige Elemente dienen nur der besseren Strukturierung des HTML-Codes und der be
   * `<header>` - für die Kopfzeile (mit Logo, Navigation usw.)
   * `<nav>` - für das Navigationsmenü
 
-Container-Elemente sind nicht "sichtbar", jedoch Block-Elemente. Es ist empfehlenswert, die eigene Webseite mit solchen Container-Elementen zu strukturieren, um erstens einen besseren Überblick über die Seite zu bewahren und insbesondere gezielter die Formatierungseigenschaften von CSS verwenden zu können. Dies schließt das Layout ein. 
+Container-Elemente sind nicht "sichtbar", jedoch Block-Elemente. Es ist empfehlenswert, die eigene Webseite mit solchen Container-Elementen zu strukturieren, um erstens einen besseren Überblick über die Seite zu bewahren und insbesondere gezielter die Formatierungseigenschaften von CSS verwenden zu können. Dies schließt das Layout ein. Die folgende Abbildung zeigt, wofür solche Container-Elemente gedacht sind.
+
+![layout](./files/208_layout.gif)
+
+Die Elemente ordnen sich aber z.B. nicht von alleine nebeneinander an. Dafür verwenden wir später CSS. Mithilfe von Container strukturieren wir jedoch den HTML-Code (vergleichbar mit `JPanel` in Java). Beispiel (aus [W3School](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_float)):
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h2>CSS Layout Float</h2>
+<p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.</p>
+<p>Resize the browser window to see the responsive effect (you will learn more about this in our next chapter - HTML Responsive.)</p>
+
+<header>
+  <h2>Cities</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#">London</a></li>
+      <li><a href="#">Paris</a></li>
+      <li><a href="#">Tokyo</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>London</h1>
+    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+  </article>
+</section>
+
+<footer>
+  <p>Footer</p>
+</footer>
+
+</body>
+</html>
+```
+
+In dem Beispiel dienen die Container nur der Strukturierung. Alles, was in den *Header* gehört, ist im `<header>`-Element (nicht zu verwechseln mit `<head>`!) und alles, was zum *Footer* gehört, kommt in das `<footer>`-Element. Der Hauptteil ist im `<section>`-Element, welches noch in `<nav>` und `<article>` unterteilt ist. 
+ 
 
 
 #### Eingabe- bzw. Steuerelemente 
@@ -310,6 +359,179 @@ Darüber hinaus gibt es noch sogenannte *globale* Attribute, die für alle HTML-
 | `hidden`          | setzt das Element auf unsichtbar, es wird nicht angezeigt | 
 | `title`           | weist einem Element textuelle Informationen zu, die bei längerem Mouseover angezeigt werden (tooltip) |
 
+## Besondere Zeichen
+
+Für einige Sonderzeichen gibt es vordefinierte Entitäten. Die folgende Tabelle zeigt ein paar Sonderzeichen. Sie können Sie beispielsweise per ```<span>&euro;</span>``` ergibt <code><span>&euro;</span></code> aufrufen. Es beginnt also immer mit einem `&` und endet mit einem `;`.
+
+<table>
+    <thead>
+        <tr>
+            <th>Entität</th>
+            <th>Zeichen</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>&amp;euro;</td>
+        <td>&euro;</td>
+    </tr>
+    <tr>
+        <td>&amp;amp;</td>
+        <td>&amp;</td>
+    </tr>
+    <tr>
+        <td>&amp;lt;</td>
+        <td>&lt;</td>
+    </tr>
+        <tr>
+        <td>&amp;gt;</td>
+        <td>&gt;</td>
+    </tr>
+    <tr>
+        <td>&amp;quot;</td>
+        <td>&quot;</td>
+    </tr>
+    <tr>
+        <td>&amp;forall;</td>
+        <td>&forall;</td>
+    </tr>
+    <tr>
+        <td>&amp;exist;</td>
+        <td>&exist;</td>
+    </tr>
+    <tr>
+        <td>&amp;empty;</td>
+        <td>&empty;</td>
+    </tr>
+    <tr>
+        <td>&amp;isin;</td>
+        <td>&isin;</td>
+    </tr>
+    <tr>
+        <td>&amp;notin;</td>
+        <td>&notin;</td>
+    </tr>
+    <tr>
+        <td>&amp;ni;</td>
+        <td>&ni;</td>
+    </tr>
+    <tr>
+        <td>&amp;prod;</td>
+        <td>&prod;</td>
+    </tr>
+    <tr>
+        <td>&amp;sum;</td>
+        <td>&sum;</td>
+    </tr>
+    </tr>
+        <tr>
+        <td>&amp;copy;</td>
+        <td>&copy;</td>
+    </tr>
+    <tr>
+        <td>&amp;reg;</td>
+        <td>&reg;</td>
+    </tr>
+    <tr>
+        <td>&amp;trade;</td>
+        <td>&trade;</td>
+    </tr>
+    <tr>
+        <td>&amp;larr;</td>
+        <td>&larr;</td>
+    </tr>
+    <tr>
+        <td>&amp;uarr;</td>
+        <td>&uarr;</td>
+    </tr>
+    <tr>
+        <td>&amp;rarr;</td>
+        <td>&rarr;</td>
+    </tr>
+    <tr>
+        <td>&amp;darr;</td>
+        <td>&darr;</td>
+    </tr>
+    <tr>
+        <td>&amp;harr;</td>
+        <td>&harr;</td>
+    </tr>
+    <tr>
+        <td>&amp;crarr;</td>
+        <td>&crarr;</td>
+    </tr>
+    <tr>
+        <td>&amp;spades;</td>
+        <td>&spades;</td>
+    </tr>
+    <tr>
+        <td>&amp;clubs;</td>
+        <td>&clubs;</td>
+    </tr>
+    <tr>
+        <td>&amp;hearts;</td>
+        <td>&hearts;</td>
+    </tr>
+        <tr>
+        <td>&amp;diams;</td>
+        <td>&diams;</td>
+    </tr>
+    </tbody>
+</table>
+
+!!! question "Übung"
+    Erstellen Sie die obige Tabelle in HTML (die ersten paar Zeilen genügen). Die Herausforderung besteht darin, einerseits den Code darzustellen und andererseits das Zeichen. 
+
+In der UTF-8-Tabelle sind nicht nur Sonderzeichen enthalten, sondern auch Emojis. Diese werden über den Hexadezimalcode eingebunden, z.B. ```&#x1F600;``` ergibt &#x1F600;. Das Vorgehen ist das Folgende: Sie schauen z.B. [hier](https://unicode.org/emoji/charts/full-emoji-list.html) nach und suchen sich das passende Emoji in der Spalte `Browser`. Von dem links daneben stehenden Unicode (z.B. `U+1F600`) benötigen Sie nur den Hexadezimalwert (`1F600`). Diesen fügen Sie nach <code>&amp;#x</code> ein und hängen ein `;` an. Also bspw. ```&#x1F44D;``` ergibt &#x1F44D;.
+
+
+## Relative Pfade
+
+Wenn Sie z.B. Bilder in den HTML-Code einbinden oder Hyperlinks auf andere HTML-Dokumente angeben, dann müssen Sie angeben, wo diese jeweilige Ressource verfügbar ist. Beispiel:
+
+```html
+<img src="fiw.jpg" alt="FIW-Logo" />
+<a href="index.html">Home</a>
+``` 
+
+Beachten Sie, dass sowohl in dem `src`-Attribut als auch in dem `href`-Attribut Pfade zur Ressource angegeben werden. Das heißt, dass z.B. `fiw.jpg` entspricht `./fiw.jpg` bzw. `index.html` entspricht `./index.html`. Das wiederum bedeutet, dass beide Ressourcen in demselben Ordner leigen müssen, in dem auch das aufrufende Dokument liegt. Das ist natürlich nur (sehr) selten der Fall.
+
+Angenommen, wir haben eine Verzeichnisstruktur wie in der folgenden Abbildung gezeigt:
+
+![pfade](./files/209_pfade.png){ width="400" }
+
+- Angenommen, wir wollen aus der `index.html` heraus auf die `uebung1.html` verlinken, dann ist der Pfad `Uebung1/uebung1.html`, denn der Ordner `Uebung1` befindet sich direkt neben der `index.html`. 
+- Angenommen, wir wollen aus der `uebung1.html` heraus auf die `uebung2.html` verlinken, dann ist der Pfad `../Uebung2/uebung2.html`, denn der Ordner `Uebung2` befindet sich direkt neben dem Ordner `Uebung1` (aus dem wir zunächst heraus müssen) und darin die `uebung2.html`. 
+- Angenommen, wir wollen in der `uebung3.html` das Bild `fiw.jpg` einbinden, dann ist der Pfad `../Uebung1/images/fiw.jpg`, denn der Ordner `Uebung1` befindet sich direkt neben dem Ordner `Uebung3` (aus dem wir zunächst heraus müssen) und darin der Ordner `images` und darin das `fiw.jpg`. 
+
+Geben Sie innerhalb Ihrer Webanwendung alle Pfade stets relativ und nie absolut an! Solche Pfade, wie z.B. `C:\Documents\xampp\htdocs\WT\Uebung1\uebung1.html` dürfen keinesfalls verwendet werden, denn sobald Sie Ihre Anwendung auf einen anderen Server überführen, würden solche absoluten Pfade nicht mehr stimmen.
+
+
+## Clean Code HTML
+
+Es ist noch nicht so lange her, da gab es zwei unterschiedliche Strömungen in der Weiterentwicklung von HTML: einerseits sollte HTML als Standard weiterentwickelt werden und andererseits gab es Bestrebungen, HTML dichter an XML zu koppeln. So entstand zunächst XHTML. Zum Glück wurden diese beiden Entwicklungen jedoch wieder zusammengeführt. Übrig blieben *Konventionen*, die eingehalten werden sollten, damit HTML auch XHTML-konform ist. Wir wollen diese Konventionen unbedingt beachten:
+
+- alle HTML-Dokumente beginnen mit `<!DOCTYPE html>`
+- die Elemente `<html>`, `<head>`, `<title>` und `<body>` sind Pflicht, 
+- alle Elemente müssen korrekt verschachtelt sein (also innere Elemente erst schließen bevor das äußere Element geschlossen wird),
+- alle Elemente müssen geschlossen werden (*Stand-alone-Elemente* sollten dann z.B. so geschrieben werden: `<br/>`),
+- alle Elementnamen sollen vollständig kleingeschrieben werden,
+- jedes Attribut sollte einen Wert haben und die Werte sollten in Anführungsstrichen stehen.
+
+!!! question "Übung"
+    Was ist hier jeweils falsch?
+
+    - `<b><i>Some text</b></i>`
+    - `<p>This is a paragraph
+        <p>This is another paragraph`
+    - `A break: <br>
+        A horizontal rule: <hr>
+        An image: <img src="happy.gif" alt="Happy face">`
+    - `<P>This is a paragraph</P>`
+    - `<input type="checkbox" name="vehicle" value="car" checked />
+        <input type="text" name="lastname" disabled />`
+
+Sie können Ihre HTML-Seite validieren lassen. Dazu gibt es Online-Validatoren, z.B. [hier](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.w3schools.com%2Fhtml%2Fhtml_validate.html). 
 
 ## Weitere Informationen über HTML
 
@@ -416,7 +638,10 @@ Darüber hinaus gibt es noch sogenannte *globale* Attribute, die für alle HTML-
 </html>
 ```
 
-## HTTP
+---
+
+
+## HTTP (Vertiefung)
 
 HTTP steht für Hypertext Transfer Protocol. Es wurde von [**Tim Berners Lee**](https://de.wikipedia.org/wiki/Tim_Berners-Lee) zusammen mit HTML, dem [**ersten Webserver**](https://de.wikipedia.org/wiki/CERN_httpd) und dem [**ersten Browser**](https://de.wikipedia.org/wiki/WorldWideWeb) Anfang der 1990er Jahre am CERN entwickelt. Die Idee von HTTP ist einfach: der Nutzer stellt unter Eingabe einer URL (die Adresse des Webservers) eine Anfrage (*request*) an den Webserver. Der Webserver antwortet darauf mit einer *response*. Diese enthält einige Metadaten und die angefragte Webseite (im HTML-Format), wenn die Anfrage ordnungsgemäß beantwortet werden kann. 
 
@@ -433,16 +658,16 @@ Für die Anfrage des Browsers an den Webserver stellt HTTP verschiedene Anfragem
   </thead>
   <tbody>
 <tr>
-  <td> `GET` </td> 
+  <td> <code>GET</code> </td> 
   <td> ist die einfachste und meistverwendete Anfragemethode; dient dazu, eine Ressource (typischerweise eine HTML-Datei) vom Webserver anzufordern; z.B. `GET /index.html` fordert die `index.html` vom Webserver an. </td>
 </tr>
 <tr>
-  <td> `POST`    </td>      
-  <td> fordert ebenfalls eine Ressource vom Webserver an; der Unterschied zwischen `GET` und `POST` besteht beim Mitsenden von Daten, z.B. Suchanfragen oder Login-Daten. Während beim `GET` die übermittelten Daten in die URL geschrieben werden, werden diese bei einem `POST` in den HTTP-Header eingefügt. Das heißt, dass beim `GET` die an den Webserver übergebenen Daten sichtbar sind, beim `POST` nicht. Für die Übertragung sensibler Daten sollte also `POST` verwendet werden. </td> 
+  <td> <code>POST</code>    </td>      
+  <td> fordert ebenfalls eine Ressource vom Webserver an; der Unterschied zwischen <code>GET</code> und <code>POST</code> besteht beim Mitsenden von Daten, z.B. Suchanfragen oder Login-Daten. Während beim <code>GET</code> die übermittelten Daten in die URL geschrieben werden, werden diese bei einem <code>POST</code> in den HTTP-Header eingefügt. Das heißt, dass beim `GET` die an den Webserver übergebenen Daten sichtbar sind, beim <code>POST</code> nicht. Für die Übertragung sensibler Daten sollte also <code>POST</code> verwendet werden. </td> 
 </tr>
 <tr>
-  <td> `HEAD`   </td>       
-  <td> fragt nur den Response-Header ab, nicht die Daten selbst. So kann z.B. bei einem Download zunächst die Größe der Datei abgefragt werden, bevor man die Datei selbst (mit `GET` oder `POST`) herunterlädt. </td> 
+  <td> <code>HEAD</code>  </td>       
+  <td> fragt nur den Response-Header ab, nicht die Daten selbst. So kann z.B. bei einem Download zunächst die Größe der Datei abgefragt werden, bevor man die Datei selbst (mit <code>GET</code> oder <code>POST</code>) herunterlädt. </td> 
 </tr> 
   </tbody>
 </table>
@@ -458,19 +683,19 @@ Neben diesen "HTTP-Standardmethoden" gibt es noch spezielle Anfragemethoden, die
   </thead>
   <tbody>
     <tr>
-      <td> `GET` </td> 
+      <td> <code>GET</code> </td> 
       <td> lässt die angefragte Ressource unverändert und ruft sie nur ab  </td>
     </tr>
     <tr>                                                                                          
-      <td> `POST`   </td>       
-      <td> erstellt eine neue Ressource oder verändert sie; wir werden `POST`zum Erstellen verwenden    </td>  
+      <td> <code>POST</code>   </td>       
+      <td> erstellt eine neue Ressource oder verändert sie; wir werden <code>POST</code> zum Erstellen verwenden    </td>  
     </tr>
     <tr>
-      <td> `PUT`   </td>        
-      <td> sehr ähnlich zu `POST`, aber `POST` ist ein wenig genereller. Wird mit `PUT` eine neue Ressource angelegt, so wird der Name in der URL angegeben, während bei `POST` der Name durch den Server vergeben kann; wir werden `PUT`zum Ändern verwenden </td> 
+      <td> <code>PUT</code>   </td>        
+      <td> sehr ähnlich zu <code>POST</code>, aber <code>POST</code> ist ein wenig genereller. Wird mit <code>PUT</code> eine neue Ressource angelegt, so wird der Name in der URL angegeben, während bei <code>POST</code> der Name durch den Server vergeben kann; wir werden <code>PUT</code> zum Ändern verwenden </td> 
     </tr>
     <tr>
-      <td> `DELETE`  </td>
+      <td> <code>DELETE</code>  </td>
       <td> löscht die angegebene Ressource vom Server   </td> 
     </tr> 
   </tbody>
@@ -492,31 +717,31 @@ HTTP sieht verschiedene Meldungen des Servers an den Client vor. Diese werden im
   </thead>
   <tbody>
     <tr>
-      <td> `200 OK` </td>  
+      <td> <code>200 OK</code> </td>  
       <td> Request wurde vollständig und erfolgreich bearbeitet </td> 
     </tr>
     <tr>
-      <td> `201 Created` </td> 
+      <td> <code>201 Created</code> </td> 
       <td> Request wurde bearbeitet und die neue Ressource wurde erstellt </td> 
     </tr>
     <tr>
-      <td> `301 Moved Permanently` </td> 
+      <td> <code>301 Moved Permanently</code> </td> 
       <td> die angeforderte Ressource wurde an eine andere URL bewegt </td> 
     </tr>
     <tr>
-      <td> `400 Bad Request` </td> 
+      <td> <code>400 Bad Request</code> </td> 
       <td> Der Request kann nicht bearbeitet werden, da er (syntaktische) Fehler enthält. </td> 
     </tr>
     <tr>
-      <td> `401 Unauthorized` </td>  
+      <td> <code>401 Unauthorized</code> </td>  
       <td> Request ist ok, aber der Zugriff auf die Ressource ist nicht autorisiert </td> 
     </tr>
     <tr>
-      <td> `404 Not Found` </td>  
+      <td> <code>404 Not Found</code> </td>  
       <td> die angegebene Ressource existiert nicht </td> 
     </tr>
     <tr>
-      <td> `500 Internal Server Error` </td>  
+      <td> <code>500 Internal Server Error</code> </td>  
       <td> der Webserver ist down bzw. hat einen Fehler </td> 
     </tr> 
   </tbody>

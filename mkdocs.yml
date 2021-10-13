@@ -34,6 +34,7 @@ extra_css:
 # Extensions
 markdown_extensions:
   - attr_list
+  - md_in_html
   - admonition
   - footnotes
   - pymdownx.arithmatex
@@ -63,5 +64,6 @@ markdown_extensions:
 nav:
     - Home: index.md
     - Einführung: einfuehrung.md
+    - HTML: html.md
     - Übungen: uebungen.md
     - Werkzeuge: tools.md
