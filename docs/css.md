@@ -366,9 +366,106 @@ Schöner - und üblicher, weil später auch so beim Grid-Konzept - ist es, den E
 
 <iframe width="100%" height="300" src="//jsfiddle.net/jfreiheit/sfdztn0c/12/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
-#### flexbox
+#### Flexbox
 
 Wir werden sehen, dass das Grid-Konzept, das wir zukünftig verwenden werden, auf der `float`-Eigenschaft (zusammen mit `width`) basiert. Ein Konzept, welches von der Komplexität "zwischen" `float` und dem Grid-Konzept liegt, ist `flexbox`. Mit `flexbox` ist das Nebeneinanderpositionieren von Containern recht einfach - insbesondere lassen sich auch recht leicht unterschiedliche Spaltenbreiten definieren- Wir gehen hier nicht weiter auf `flexbox` ein, sondern verweisen auf z.B. [**A Guide to Flexbox**](https://css-tricks.com/snippets/css/a-guide-to-flexbox). 
+
+### Grid
+
+`flexbox` verwendet `float` und `CSS Grid` (oder nur `Grid`) verwendet `flexbox`. Während `flexbox` nur in ein Dimension das Layout gestaltet (nämlich horizontal), kann `Grid` für einen vollständigen Layout-Entwurf verwendet werden (nämlich horizontal und vertikal). Dazu wird unsere Webseite als eine Matrix verstanden, bestehend aus *Zellen*, die in *Zeilen* und *Spalten* angeordnet sind. Am besten, wir betrachten ein [Beispiel](https://developer.mozilla.org/de/docs/Web/CSS/CSS_Grid_Layout):
+
+=== "HTML"
+	```html linenums="1"
+    <div class="wrapper">
+        <div class="one orange">One</div>
+        <div class="two orange">Two</div>
+        <div class="three orange">Three</div>
+        <div class="four orange">Four</div>
+        <div class="five orange">Five</div>
+        <div class="six orange">Six</div>
+    </div>
+	```
+=== "CSS"
+	```css
+	.wrapper {
+	  display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	  grid-gap: 10px;
+	  grid-auto-rows: minmax(100px, auto);
+	}
+	.one {
+	  grid-column: 1 / 3;
+	  grid-row: 1;
+	}
+	.two {
+	  grid-column: 2 / 4;
+	  grid-row: 1 / 3;
+	}
+	.three {
+	  grid-column: 1;
+	  grid-row: 2 / 5;
+	}
+	.four {
+	  grid-column: 3;
+	  grid-row: 3;
+	}
+	.five {
+	  grid-column: 2;
+	  grid-row: 4;
+	}
+	.six {
+	  grid-column: 3;
+	  grid-row: 4;
+	}
+
+    .orange {
+        background-color: orange;
+        opacity: 0.5;
+        border: 2px solid gray;
+        border-radius: 5px;
+        padding: 30px;
+    }
+	```
+
+Die Webseite sieht dann so aus:
+
+![grid](./files/210_grid.png)
+
+Hier nochmal in JSFiddle:
+
+<iframe width="100%" height="300" src="//jsfiddle.net/jfreiheit/4bcgpw5n/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+#### Erläuterung des Codes
+
+Wir erkennen, dass sechs Zellen in einer Matrix angeordnet werden. Umschlossen sind diese Zellen durch ein `div` der CSS-Klasse `wrapper`. Für diese Klasse `wrapper` wird CSS-Grid wie folgt definiert:
+
+```css
+	.wrapper {
+	  display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	  grid-gap: 10px;
+	  grid-auto-rows: minmax(100px, auto);
+	}
+```
+
+- Der umschließende Container wird mithilfe von `display: grid;` als Grid-Container definiert. 
+- Mit `grid-template-columns: repeat(3, 1fr);` werden die Spalten definiert. Hier werden 3 Spalten festgelegt und jede dieser Spalten hat die gleiche Breite. Wir hätten auch schreiben können `grid-template-columns: 33% 33% 33%;`. Allerdings ergibt sich dann ein kleines Problem: 
+- Da wir in der folgenden Zeile `grid-gap: 10px;` angeben, dass zwischen den Spalten ein Abstand von `10px` eingehalten werden soll, würde die Breite insgesamt die `100%` übersteigen (`3 x 33% + 2 * 10px`). Deshalb wird die Einheit `fr` (*fraction*) verwendet. Zur Einheit `fr` finden Sie nähere Informationen [hier](https://css-tricks.com/introduction-fr-css-unit/).
+
+Die Eigenschaft `grid-auto-rows: minmax(100px, auto);` beschreibt, dass die Zeilenhöhe automatisch berechnet wird (aus dem Inhalt), aber mindestens `100px` hoch ist.  
+
+Für die einzelnen Zellen wird nun mithilfe von `grid-column: <start-line> / <end-line>` und `grid-row: <start-line> / <end-line>` jeweils angegeben, wo die jeweilige Zelle beginnt und wo sie aufhört. Wird keine `<end-line>` angegeben, dann geht die Zelle über genau eine Spalte bzw. genau eine Zeile. 
+
+Wenn wir uns also das Grid wie folgt vergegenwärtigen:
+
+![grid](./files/211_grid.png)
+
+- dann geht `One` von Spaltenlinie `1` bis Spaltenlinie `3` und von Zeilenlinie `1` (bis Zeilenlinie `2`), 
+- dann geht `Two` von Spaltenlinie `2` bis ans Ende (Speltenlinie `4`) und von Zeilenlinie `1` bis Zeilenlinie `3`,
+- dann geht `Three` von Spaltenlinie `1` (bis Spaltenlinie `2`) und von Zeilenlinie `2` bis ans Ende Zeilenlinie `5` usw. 
+
+CSS-Grid ist sehr mächtig. Eine detaillierte Beschreibung finden Sie z.B. [hier](https://css-tricks.com/snippets/css/complete-guide-grid/) und auch [hier](https://kulturbanause.de/blog/css-grid-layout-module/).
+
 
 ### Wertangaben in CSS
 
