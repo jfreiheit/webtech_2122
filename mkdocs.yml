@@ -66,5 +66,6 @@ nav:
     - Einführung: einfuehrung.md
     - HTML: html.md
     - CSS: css.md
+    - RWD: rwd.md 
     - Übungen: uebungen.md
     - Werkzeuge: tools.md

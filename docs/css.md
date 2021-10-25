@@ -559,4 +559,8 @@ dann wäre dieser Link orange.
 ## Weitere Informationen über CSS
 
 - [Folien CSS](./files/02_WT_CSS.pdf)
+- [W3Schools - CSS](https://www.w3schools.com/css)
+- [Mozilla Developer - CSS](https://developer.mozilla.org/de/docs/Learn/Getting_started_with_the_web/CSS_basics)
+- [Selfhtml - CSS](https://wiki.selfhtml.org/wiki/CSS)
+- [W3C - CSS](https://www.w3.org/Style/CSS/Overview.de.html)
 
