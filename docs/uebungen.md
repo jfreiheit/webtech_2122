@@ -718,9 +718,9 @@
     - Binden Sie in Ihre `uebung4.html` Bootstrap ein (entweder per CDN oder als lokalen Zugriff – siehe [**Bootstrap**](../rwd/#bootstrap))
     - **Header**:
         - der `<header>` enthält das FIW-Logo und die Überschrift `<h1>Teilnehmerinnen WebTech</h1>`
-        - weisen Sie dem `<header>` die Bootstrap-Klasse [**jumbotron**](https://getbootstrap.com/docs/4.5/components/jumbotron/) zu
+        - verwenden Sie für den `<header>` verschiedene Utilities, so dass Sie ungefähr das Aussehen wie auf dem Bild erreiche [**siehe auch hier**](https://getbootstrap.com/docs/5.0/examples/jumbotron/) zu
         - definieren Sie eine CSS-Eigenschaft so, dass eine `h1`-Überschrift in einem `header` ein Inline-Element ist
-        - definieren Sie eine `padding-left`-Eigenschaft für eine solche Überschrift so, dass die Überschrift ungefähr mittig ist (relative Größenangabe)
+        - setzen Sie die Überschrift ungefähr mittig ist (relative Größenangabe - siehe z.B. [**hier**](https://getbootstrap.com/docs/5.0/utilities/spacing/#horizontal-centering))
         - der header soll ungefähr so aussehen (Navigation und Anfang des Hauptteils sind auch schon zu sehen): ![header](./files/66_uebung3_1.png)
     - **Navigation**: 
         - *interne Links* (Links innerhalb der Seite) funktionieren wie folgt: Sie weisen einem Element eine `id` zu, z.B. der Tabellenzeile, die den ersten Nachnamen enthält, der mit "H" beginnt: 
@@ -739,7 +739,7 @@
         - Vergeben Sie entsprechend IDs für die entsprechenden Tabellenzeilen (A, H, M, S) und passen Sie Ihre Hyperlinks im Navigationsmenü entsprechend an
         - Weisen Sie Ihrem `<nav>`-Element einen lightgrey-Hintergrund zu
         - Erstellen Sie für die einzelnen Links eine `<ul>`, deren `<li>` jeweils ein `<a>`-Element mit den Referenzen auf die oben beschriebenen IDs enthalten
-        - Informieren Sie sich unter [**Navs**](https://getbootstrap.com/docs/4.5/components/navs/) (oder wo Sie möchten) über „Navs“ und erstellen Sie Ihr Navigationsmenü so, wie oben in der Abbildung (siehe **Header**) gezeigt
+        - Informieren Sie sich unter [**Navs**](https://getbootstrap.com/docs/5.0/components/navs-tabs/) (oder wo Sie möchten) über „Navs“ und erstellen Sie Ihr Navigationsmenü so, wie oben in der Abbildung (siehe **Header**) gezeigt
         - Ändern Sie aber die Farbe der Links so, dass sie im HTW-Orange (`#FF5F00`) erscheinen und wenn man mit der Maus darüber fährt im HTW-Blau (`#0082D1`) (Definieren Sie sich gerne [**Custom Properties**](../css/#custom-properties) und wenden Sie diese an)
     - **Hauptteil**:
         - der Hauptteil (ein Container) soll aus drei Containern bestehen: einer, der nur das Wort (Überschrift) "links" enthält, einer, der die Tabelle enthält und ein dritter, der nur das Wort (Überschrift) "rechts" enthält
@@ -754,7 +754,7 @@
             - einen orangenen Hintergrund und eine Höhe von `100px` haben, wenn der Viewport kleiner als `992px` ist und 
             - einen hellgrauen (`lightgrey`) Hintergrund und eine automatische Höhe (`height: auto;`), wenn der Viewport größer ist
         -   Tabelle: 
-            - Erkundigen Sie sich unter [**Tables**](https://getbootstrap.com/docs/4.5/content/tables/) und gestalten Sie die Tabelle so, dass sie ungefähr so aussieht: ![uebung4](./files/69_uebung3_4.png)
+            - Erkundigen Sie sich unter [**Tables**](https://getbootstrap.com/docs/5.0/content/tables/) und gestalten Sie die Tabelle so, dass sie ungefähr so aussieht: ![uebung4](./files/69_uebung3_4.png)
             - Sie müssen mit einer eigenen CSS-Definition dafür sorgen, dass die Zeile, in der Sie mit der Maus sind, nicht mehr dunkelgrau, sondern in HTW-Grün erscheint
 
     

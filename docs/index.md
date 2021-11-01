@@ -14,7 +14,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 2. | 18.-22.10.2021 | [HTML](./html/#html) | [Übung 1](./uebungen/#ubung-1) | Idee | 25.10.2021 | 
 | 3. | 25.-29.10.2021 | [CSS (Eigenschaften und Selektoren)](./css/#css) | [Übung 2](./uebungen/#ubung-2) | - | 01.11.2021 | 
 | 4. | 01.-05.11.2021 | [CSS (Layout)](./css/#css) | [Übung 3](./uebungen/#ubung-3) | Konzept | 08.11.2021 | 
-| 5. | 08.-12.11.2021 | RWD (responsive Webdesign) | Übung 4 | - | 15.11.2021 | 
+| 5. | 08.-12.11.2021 | [RWD (responsive Webdesign)](./rwd/#responsive-web-design) | [Übung 4](./uebungen/#ubung-4) | - | 15.11.2021 | 
 | 6. | 15.-19.11.2021 | JavaScript (JSON, AJAX) | Übung 5 | Datenmodell | 22.11.2021 | 
 | 7. | 22.-26.11.2021 | Angular (Einführung und Komponenten) | Übung 6 | Schnittstelle | 29.11.2021 | 
 | 8. | 29.-03.12.2021 | Angular (Material und Routen) | Übung 7 | Frontend (c+r)| 06.12.2021 | 
