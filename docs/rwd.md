@@ -286,14 +286,14 @@ Wenn Sie ein **CDN** verwenden, dann werden die Quellen in dem Moment geladen, i
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Title</title>
 </head>
 ```
 
-Den entsprechenden Link zum CDN finden Sie [**auf der Bootstrap-Webseite**](https://getbootstrap.com/docs/4.5/getting-started/introduction/). 
+Den entsprechenden Link zum CDN finden Sie [**auf der Bootstrap-Webseite**](https://getbootstrap.com/docs/5.1/getting-started/introduction/). 
 
-Sie können die CSS-Dateien aber auch herunterladen. Auf der [**Download Bootstrap-Webseite**](https://getbootstrap.com/docs/4.5/getting-started/download/) klicken Sie unter "Compiled CSS and JS" auf den "Download"-Button. Sie erhalten eine Datei `bootstrap-4.5.3-dist.zip`. Entpacken Sie diese Datei. Der entstehende Ordner enthält 2 Unterordner `css` und `js`. Letzterer enthält JavaScript-Dateien des Frameworks. Diese benötigen wir für unsere Zwecke hier (noch) nicht. Verschieben Sie den css-Ordner in Ihren Projekt-Ordner (z.B. `Webtech20`). Dann können Sie diese externen Dateien mit dem `<link>`-Tag wie bekannt einbinden. Der `<head>` sieht dann so aus:
+Sie können die CSS-Dateien aber auch herunterladen. Auf der [**Download Bootstrap-Webseite**](https://getbootstrap.com/docs/5.1/getting-started/download/) klicken Sie unter "Compiled CSS and JS" auf den "Download"-Button. Sie erhalten eine Datei `bootstrap-5.1.3-dist.zip`. Entpacken Sie diese Datei. Der entstehende Ordner enthält 2 Unterordner `css` und `js`. Letzterer enthält JavaScript-Dateien des Frameworks. Diese benötigen wir für unsere Zwecke hier (noch) nicht. Verschieben Sie den css-Ordner in Ihren Projekt-Ordner (z.B. `Webtech20`). Dann können Sie diese externen Dateien mit dem `<link>`-Tag wie bekannt einbinden. Der `<head>` sieht dann so aus:
 
 ```html
 <head>
@@ -318,14 +318,13 @@ Wir erstellen mal eine erste Seite:
     <title>Bootstrap</title>
 </head>
 <body>
-<div class="jumbotron">
-    <div class="container">
-        <h1 class="display-3">Jetzt mit Bootstrap!</h1>
-        <p>Wir verwenden jetzt Bootstrap und schauen uns mal die Anwendung ein wenig genauer an. Das Grundprinzip besteht darin, 
-            HTML-Elementen Klassen zuzuordnen. Dieser große graue Kasten hier nennt sich z.B. Jumbotron.</p>
-        <p><a class="btn btn-primary btn-lg" href="https://getbootstrap.com/docs/4.5/examples/" role="button">Bootstrap Beispiele &raquo;</a></p>
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Jetzt mit Bootstrap!</h1>
+            <p class="col-md-8 fs-4">Wir verwenden jetzt Bootstrap und schauen uns mal die Anwendung ein wenig genauer an. Das Grundprinzip besteht darin, HTML-Elementen Klassen zuzuordnen. </p>
+            <p><a class="btn btn-primary btn-lg" href="https://getbootstrap.com/docs/5.1/examples/" role="button">Bootstrap Beispiele &raquo;</a></p>
+        </div>
     </div>
-</div>
 </body>
 </html>
 ```
@@ -334,7 +333,7 @@ Wenn Sie Bootstrap richtig eingebunden haben, dann sieht die Seite so aus:
 
 ![Bootstrap](./files/60_bootstrap_1.png)
 
-In dem obigen Beispiel habe ich einen Link auf [**Beispiele**](https://getbootstrap.com/docs/4.5/examples/) hinterlegt, in denen Bootstrap verwendet wird. Es lohnt sich, diese Beispiel genauer unter die Lupe zu nehmen, um ein Gefühl dafür zu bekommen, wie die Klassen wirken und was alles so mit Bootstrap geht. Man muss keine dieser Klassen kennen, sondern sucht immer in bereits existierenden Beispielen, wie man ein Problem mithilfe von Bootstrap lösen kann. Neben der Bootstrap-Webseite selbst bietet auch [**w3schools**](https://www.w3schools.com/bootstrap4/bootstrap_forms.asp) eine gute Übersicht. 
+In dem obigen Beispiel habe ich einen Link auf [**Beispiele**](https://getbootstrap.com/docs/5.1/examples/) hinterlegt, in denen Bootstrap verwendet wird. Es lohnt sich, diese Beispiel genauer unter die Lupe zu nehmen, um ein Gefühl dafür zu bekommen, wie die Klassen wirken und was alles so mit Bootstrap geht. Man muss keine dieser Klassen kennen, sondern sucht immer in bereits existierenden Beispielen, wie man ein Problem mithilfe von Bootstrap lösen kann. Neben der Bootstrap-Webseite selbst bietet auch [**w3schools**](https://www.w3schools.com/bootstrap4/bootstrap_forms.asp) eine gute Übersicht. 
 
 Daraus auch noch eine weitere Ergänzung, nämlich ein Formular, bei dem überprüft wird, ob eine Eingabe überhaupt erfolgte. Der hinzugefügte Code ist gelb unterlegt.  
 
@@ -349,42 +348,42 @@ Daraus auch noch eine weitere Ergänzung, nämlich ein Formular, bei dem überpr
 	    <title>Bootstrap</title>
 	</head>
 	<body>
-	<main role="main">
-	    <div class="jumbotron">
-	        <div class="container">
-	            <h1 class="display-3">Jetzt mit Bootstrap!</h1>
-	            <p>Wir verwenden jetzt Bootstrap und schauen uns mal die Anwendung ein wenig genauer an. Das Grundprinzip besteht darin,
-	                HTML-Elementen Klassen zuzuordnen. Dieser große graue Kasten hier nennt sich z.B. <code>Jumbotron</code>.</p>
-	            <p><a class="btn btn-primary btn-lg" href="https://getbootstrap.com/docs/4.5/examples/" role="button">Bootstrap Beispiele &raquo;</a></p>
-	        </div>
-	    </div>
-	    <div class="container">
-	        <h2>Formular mit Validierung, ob Eingabe erfolgte (nur mit CSS - kein JavaScript!)</h2>
-	        <p>Hier wird z.B. die Klasse <code>.was-validated</code> verwendet, um zu überprüfen, ob in den Textfeldern und der Checkbox eine Eingabe erfolgt ist.</p>
-	        <form class="was-validated">
-	            <div class="form-group">
-	                <label for="uname">Username:</label>
-	                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-	                <div class="valid-feedback">Korrekt</div>
-	                <div class="invalid-feedback">Feld bitte ausfüllen!</div>
-	            </div>
-	            <div class="form-group">
-	                <label for="pwd">Password:</label>
-	                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
-	                <div class="valid-feedback">Korrekt</div>
-	                <div class="invalid-feedback">Feld bitte ausfüllen!</div>
-	            </div>
-	            <div class="form-group form-check">
-	                <label class="form-check-label">
-	                    <input class="form-check-input" type="checkbox" name="remember" required> Ich habe die Datenschutzerklärung gelesen und stimme ihr zu.
-	                    <div class="valid-feedback">Korrekt</div>
-	                    <div class="invalid-feedback">Hier bitte bestätigen!</div>
-	                </label>
-	            </div>
-	            <button type="submit" class="btn btn-primary">Login</button>
-	        </form>
-	    </div>
-	</main>
+    <main role="main">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Jetzt mit Bootstrap!</h1>
+                <p class="col-md-8 fs-4">Wir verwenden jetzt Bootstrap und schauen uns mal die Anwendung ein wenig genauer an. Das Grundprinzip besteht darin, HTML-Elementen Klassen zuzuordnen. </p>
+                <p><a class="btn btn-primary btn-lg" href="https://getbootstrap.com/docs/5.1/examples/" role="button">Bootstrap Beispiele &raquo;</a></p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Formular mit Validierung, ob Eingabe erfolgte (nur mit CSS - kein JavaScript!)</h2>
+            <p>Hier wird z.B. die Klasse <code>.was-validated</code> verwendet, um zu überprüfen, ob in den Textfeldern und der Checkbox eine Eingabe erfolgt ist.</p>
+            <form class="was-validated">
+                <div class="form-group">
+                    <label for="uname">Username:</label>
+                    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+                    <div class="valid-feedback">Korrekt</div>
+                    <div class="invalid-feedback">Feld bitte ausfüllen!</div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                    <div class="valid-feedback">Korrekt</div>
+                    <div class="invalid-feedback">Feld bitte ausfüllen!</div>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" required> Ich habe die Datenschutzerklärung gelesen und stimme ihr zu.
+                    <div class="valid-feedback">Korrekt</div>
+                    <div class="invalid-feedback">Hier bitte bestätigen!</div>
+                </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </main>
 	</body>
 	</html>
 	```

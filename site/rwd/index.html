@@ -428,6 +428,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../angular/" class="md-nav__link">
+        Angular
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../uebungen/" class="md-nav__link">
         Übungen
       </a>
@@ -822,12 +837,12 @@
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>Den entsprechenden Link zum CDN finden Sie <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/"><strong>auf der Bootstrap-Webseite</strong></a>. </p>
-<p>Sie können die CSS-Dateien aber auch herunterladen. Auf der <a href="https://getbootstrap.com/docs/4.5/getting-started/download/"><strong>Download Bootstrap-Webseite</strong></a> klicken Sie unter "Compiled CSS and JS" auf den "Download"-Button. Sie erhalten eine Datei <code>bootstrap-4.5.3-dist.zip</code>. Entpacken Sie diese Datei. Der entstehende Ordner enthält 2 Unterordner <code>css</code> und <code>js</code>. Letzterer enthält JavaScript-Dateien des Frameworks. Diese benötigen wir für unsere Zwecke hier (noch) nicht. Verschieben Sie den css-Ordner in Ihren Projekt-Ordner (z.B. <code>Webtech20</code>). Dann können Sie diese externen Dateien mit dem <code>&lt;link&gt;</code>-Tag wie bekannt einbinden. Der <code>&lt;head&gt;</code> sieht dann so aus:</p>
+<p>Den entsprechenden Link zum CDN finden Sie <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/"><strong>auf der Bootstrap-Webseite</strong></a>. </p>
+<p>Sie können die CSS-Dateien aber auch herunterladen. Auf der <a href="https://getbootstrap.com/docs/5.1/getting-started/download/"><strong>Download Bootstrap-Webseite</strong></a> klicken Sie unter "Compiled CSS and JS" auf den "Download"-Button. Sie erhalten eine Datei <code>bootstrap-5.1.3-dist.zip</code>. Entpacken Sie diese Datei. Der entstehende Ordner enthält 2 Unterordner <code>css</code> und <code>js</code>. Letzterer enthält JavaScript-Dateien des Frameworks. Diese benötigen wir für unsere Zwecke hier (noch) nicht. Verschieben Sie den css-Ordner in Ihren Projekt-Ordner (z.B. <code>Webtech20</code>). Dann können Sie diese externen Dateien mit dem <code>&lt;link&gt;</code>-Tag wie bekannt einbinden. Der <code>&lt;head&gt;</code> sieht dann so aus:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;</span><span class="p">&gt;</span>
@@ -846,20 +861,19 @@
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Bootstrap<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;jumbotron&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;display-3&quot;</span><span class="p">&gt;</span>Jetzt mit Bootstrap!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Wir verwenden jetzt Bootstrap und schauen uns mal die Anwendung ein wenig genauer an. Das Grundprinzip besteht darin, 
-            HTML-Elementen Klassen zuzuordnen. Dieser große graue Kasten hier nennt sich z.B. Jumbotron.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary btn-lg&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://getbootstrap.com/docs/4.5/examples/&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>Bootstrap Beispiele <span class="ni">&amp;raquo;</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-5 mb-4 bg-light rounded-3&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container-fluid py-5&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;display-5 fw-bold&quot;</span><span class="p">&gt;</span>Jetzt mit Bootstrap!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-8 fs-4&quot;</span><span class="p">&gt;</span>Wir verwenden jetzt Bootstrap und schauen uns mal die Anwendung ein wenig genauer an. Das Grundprinzip besteht darin, HTML-Elementen Klassen zuzuordnen. <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary btn-lg&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://getbootstrap.com/docs/5.1/examples/&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>Bootstrap Beispiele <span class="ni">&amp;raquo;</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>Wenn Sie Bootstrap richtig eingebunden haben, dann sieht die Seite so aus: </p>
 <p><img alt="Bootstrap" src="../files/60_bootstrap_1.png" /></p>
-<p>In dem obigen Beispiel habe ich einen Link auf <a href="https://getbootstrap.com/docs/4.5/examples/"><strong>Beispiele</strong></a> hinterlegt, in denen Bootstrap verwendet wird. Es lohnt sich, diese Beispiel genauer unter die Lupe zu nehmen, um ein Gefühl dafür zu bekommen, wie die Klassen wirken und was alles so mit Bootstrap geht. Man muss keine dieser Klassen kennen, sondern sucht immer in bereits existierenden Beispielen, wie man ein Problem mithilfe von Bootstrap lösen kann. Neben der Bootstrap-Webseite selbst bietet auch <a href="https://www.w3schools.com/bootstrap4/bootstrap_forms.asp"><strong>w3schools</strong></a> eine gute Übersicht. </p>
+<p>In dem obigen Beispiel habe ich einen Link auf <a href="https://getbootstrap.com/docs/5.1/examples/"><strong>Beispiele</strong></a> hinterlegt, in denen Bootstrap verwendet wird. Es lohnt sich, diese Beispiel genauer unter die Lupe zu nehmen, um ein Gefühl dafür zu bekommen, wie die Klassen wirken und was alles so mit Bootstrap geht. Man muss keine dieser Klassen kennen, sondern sucht immer in bereits existierenden Beispielen, wie man ein Problem mithilfe von Bootstrap lösen kann. Neben der Bootstrap-Webseite selbst bietet auch <a href="https://www.w3schools.com/bootstrap4/bootstrap_forms.asp"><strong>w3schools</strong></a> eine gute Übersicht. </p>
 <p>Daraus auch noch eine weitere Ergänzung, nämlich ein Formular, bei dem überprüft wird, ob eine Eingabe überhaupt erfolgte. Der hinzugefügte Code ist gelb unterlegt.  </p>
 <details><summary>Erweiterung des Beispiels um ein Formular</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -917,14 +931,14 @@
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">main</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;jumbotron&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;display-3&quot;</span><span class="p">&gt;</span>Jetzt mit Bootstrap!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Wir verwenden jetzt Bootstrap und schauen uns mal die Anwendung ein wenig genauer an. Das Grundprinzip besteht darin,
-                HTML-Elementen Klassen zuzuordnen. Dieser große graue Kasten hier nennt sich z.B. <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>Jumbotron<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary btn-lg&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://getbootstrap.com/docs/4.5/examples/&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>Bootstrap Beispiele <span class="ni">&amp;raquo;</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-5 mb-4 bg-light rounded-3&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container-fluid py-5&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;display-5 fw-bold&quot;</span><span class="p">&gt;</span>Jetzt mit Bootstrap!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-8 fs-4&quot;</span><span class="p">&gt;</span>Wir verwenden jetzt Bootstrap und schauen uns mal die Anwendung ein wenig genauer an. Das Grundprinzip besteht darin, HTML-Elementen Klassen zuzuordnen. <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary btn-lg&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://getbootstrap.com/docs/5.1/examples/&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>Bootstrap Beispiele <span class="ni">&amp;raquo;</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
 <span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
 </span><span class="hll">        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Formular mit Validierung, ob Eingabe erfolgte (nur mit CSS - kein JavaScript!)<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 </span><span class="hll">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hier wird z.B. die Klasse <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>.was-validated<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span> verwendet, um zu überprüfen, ob in den Textfeldern und der Checkbox eine Eingabe erfolgt ist.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -943,10 +957,10 @@
 </span><span class="hll">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span><span class="hll">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group form-check&quot;</span><span class="p">&gt;</span>
 </span><span class="hll">                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-check-label&quot;</span><span class="p">&gt;</span>
-</span><span class="hll">                    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-check-input&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;remember&quot;</span> <span class="na">required</span><span class="p">&gt;</span> Ich habe die Datenschutzerklärung gelesen und stimme ihr zu.
-</span><span class="hll">                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;valid-feedback&quot;</span><span class="p">&gt;</span>Korrekt<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span class="hll">                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;invalid-feedback&quot;</span><span class="p">&gt;</span>Hier bitte bestätigen!<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span><span class="hll">                <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span><span class="hll">                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-check-input&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;remember&quot;</span> <span class="na">required</span><span class="p">&gt;</span> Ich habe die Datenschutzerklärung gelesen und stimme ihr zu.
+</span><span class="hll">                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;valid-feedback&quot;</span><span class="p">&gt;</span>Korrekt<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span class="hll">                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;invalid-feedback&quot;</span><span class="p">&gt;</span>Hier bitte bestätigen!<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span class="hll">            <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 </span><span class="hll">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span><span class="hll">            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>Login<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </span><span class="hll">        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>

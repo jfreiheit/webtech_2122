@@ -299,6 +299,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../angular/" class="md-nav__link">
+        Angular
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -364,6 +379,13 @@
         <li class="md-nav__item">
   <a href="#ubung-4" class="md-nav__link">
     Übung 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubung-5" class="md-nav__link">
+    Übung 5
   </a>
   
 </li>
@@ -447,6 +469,13 @@
         <li class="md-nav__item">
   <a href="#ubung-4" class="md-nav__link">
     Übung 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubung-5" class="md-nav__link">
+    Übung 5
   </a>
   
 </li>
@@ -1233,6 +1262,34 @@
 </li>
 </ul>
 </details>
+<h4 id="ubung-5">Übung 5<a class="headerlink" href="#ubung-5" title="Permanent link">&para;</a></h4>
+<details class="question"><summary>Übungsaufgabe 5 (JavaScript, DOM)</summary><ul>
+<li>Kopieren Sie den <code>Uebung4</code>-Ordner in einen <code>Uebung5</code>-Ordner und benennen Sie die <code>uebung4.html</code> in <code>uebung5.html</code> um</li>
+<li>Fügen Sie Ihrer Tabelle eine fünfte Spalte hinzu mit leerer Überschrift, also einfach ein weiteres <code>&lt;th&gt;&lt;/th&gt;</code>. Fügen Sie im Table-Body <code>&lt;tbody&gt;</code> auch in allen Zeilen ein fünftes <code>&lt;td&gt;&lt;/td&gt;</code> hinzu (nicht händisch! - <em>Find and Replace</em> der IDE nutzen!) </li>
+<li>Fügen Sie Ihrer Tablle nun in HTML eine weitere Zeile hinzu, die wie folgt aussehen soll:
+  <img alt="uebun5" src="../files/72_uebung4_1.png" /></li>
+<li>Verwenden Sie für den Button das Attribut <code>onclick</code> und rufen Sie eine JavaScript-Funktion <code>checkAndAdd()</code> auf, die Sie selbst schreiben</li>
+<li>in der <code>checkAndAdd()</code>-Funktion soll folgendes geschehen:<ul>
+<li>sie prüfen, ob in jedem der vier <code>&lt;input&gt;</code>-Felder (Vorname, Nachname, E-Mail-Adresse, IP-Adresse) etwas eingegeben wurde</li>
+<li>wenn ja, dann werden diese Werte für eine neue Tabellenzeile (über der Eingabezeile) verwendet (in der folgenden Abbildung wurde <code>test1</code>, <code>test2</code>, <code>test3</code>, <code>test4</code> eingegeben):
+<img alt="uebun4" src="../files/73_uebung4_2.png" /></li>
+<li>wenn nicht, dann werden die Felder, in denen nichts eingegeben wurde, durch Bootstrap rot umrandet (<code>is-invalid</code> - siehe Tipps):
+<img alt="uebun4" src="../files/74_uebung4_3.png" /></li>
+</ul>
+</li>
+<li><strong>Tipps:</strong><ul>
+<li>am einfachsten ist es sicherlich, wenn Sie für den <code>&lt;tbody&gt;</code>, die vier neuen <code>&lt;input&gt;</code>-Elemente und auch die Tabellenzeile <code>&lt;tr&gt;</code>, in der die <code>&lt;input&gt;</code>-Elemente sind, eine <code>id</code> vergeben, damit Sie in Ihrer Funktion <code>checkAndAdd()</code> jeweils mit <code>document.getElementById()</code> direkt darauf zugreifen können (siehe <a href="../javascript/#dom-funktionen-lokalisation-von-elementen"><strong>lokalisieren</strong></a>)</li>
+<li>benutzen Sie für Ihre <code>&lt;input&gt;</code>-Elemente die Bootstrap-Klasse <code>form-control</code>, also z.B. <code>&lt;input id="i1" type="text" class="form-control" placeholder="Vorname" /&gt;</code> (siehe <a href="https://getbootstrap.com/docs/4.5/components/forms/"><strong>Bootstrap Forms</strong></a>)</li>
+<li>haben Sie ein <code>input</code>-Objekt lokalisiert, z.B. durch <code>let i1 = document.getElementById('i1')</code>, dann können Sie über <code>i1.value</code> auf den eingegeben Wert zugreifen (siehe Beispiele in <a href="../javascript/#html-ereignisse"><strong>HTML-Ereignisse</strong></a> und <a href="../javascript/#create"><strong>create</strong></a>)</li>
+<li>Angenommen, Sie haben den <code>value</code> von <code>i1</code> in der Variablen <code>value_i1</code> gespeichert, dann können Sie mithilfe von <code>value_i1 === ""</code> prüfen, ob der eingegebene String leer ist, ob also nichts eingegeben wurde (<code>===</code> steht für identisch, d.h. Inhalt und Typ sind gleich - <code>==</code> würde auch gehen, dann muss der Typ nicht unbedingt gleich sein, der Inhalt aber schon - siehe z.B. <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Vergleichsoperatoren"><strong>Vergleichsoperatoren</strong></a>)</li>
+<li>einem solchen <code>i1</code>-Objekt können Sie die CSS-Klasse <code>is-invalid</code> mit <code>i1.classList.add('is-invalid')</code> hinzufügen und mit <code>i1.classList.remove('is-invalid')</code> wieder entfernen (selbst, wenn dem Element die Klasse gar nicht zuegordnet ist, gibt es keinen Fehler - siehe z.B. <a href="../javascript/#beispiel-vollstandig-mit-javascript-erzeugt"><strong>hier</strong></a>)</li>
+<li>für die neu entstehende Tabellenzeile müssen Sie fünf neue <code>td</code>-Obejkte kreieren und diese an ein neu kreiertes <code>tr</code>-Objekt anhängen. Die ersten vier <code>td</code>-Obejkte bekommen für ihr <code>innerHTML</code> den entsprechenden <code>value</code> des <code>input</code>-Objektes (siehe <a href="../javascript/#create"><strong>create</strong></a>)</li>
+<li>fügen Sie das neue <code>tr</code>-Objekt in den <code>tbody</code> vor der Tabellenzeile mit den <code>input</code>-Feldern ein (siehe <a href="../javascript/#create"><strong>create</strong></a>)</li>
+</ul>
+</li>
+<li><strong>Zusatz:</strong> sehr beeindruckend wäre es, wenn Sie die neue Zeile nicht immer direkt vor die Eingabezeile einfügen, sondern alphabetisch korrekt nach dem Wert des Nachnamens. Sollte das jemand von Ihnen schaffen, schicken Sie mir bitte einen <em>Pull-Request</em>. Das wäre sehr cool!</li>
+</ul>
+</details>
                 
               
               
@@ -1252,7 +1309,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../javascript/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: JavaScript" rel="prev">
+        <a href="../angular/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Angular" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1261,7 +1318,7 @@
               <span class="md-footer__direction">
                 Zurück
               </span>
-              JavaScript
+              Angular
             </div>
           </div>
         </a>
