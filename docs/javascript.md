@@ -14,6 +14,102 @@ Client-seitig haben HTML, CSS und JavaScript folgende Bedeutung (und wir sollten
 
 unserer Webseite.
 
+
+## Vorlesung (Video und Code)
+
+??? question "Woche 5 - JavaScript (DOM)"
+    - siehe [**JavaScript**](./javascript/#javascript)
+    - siehe **Übungsaufgabe 4 (JavaScript, DOM)**
+    - <iframe src="https://mediathek.htw-berlin.de/media/embed?key=0ae493c2d44631540aae98380fce7e58&width=720&height=529&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="529" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
+
+??? "javascript.html aus JavaScript (DOM)-Vorlesung"
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <title>HTML ändern</title>
+    </head>
+    <body class="container-fluid">
+        <input id="input1" type="text" class="form-control" placeholder="neues Item" onchange="doSomething()"/>
+        <ul id = "ul1" class="list-group">
+            <li class="list-group-item active">erster</li>
+            <li class="list-group-item">zweiter</li>
+            <li class="list-group-item">dritter</li>
+        </ul>
+        <button type="button" class="btn btn-primary" onclick="createHeadline()">Klick mich</button>
+        <script>
+            var idnr = 1;
+            function doSomething()
+            {
+                let input1 = document.getElementById('input1');
+                let input1_value = input1.value;
+                let ul1 = document.getElementById('ul1');
+                let new_item = document.createElement('li');
+                new_item.classList.add("list-group-item");
+                new_item.id = "li" + idnr++;
+                /*
+                let new_text = document.createTextNode(input1_value);
+                new_item.appendChild(new_text);     // li --> value
+                 */
+                new_item.innerHTML = input1_value + "<span style='color: red;'> test </span>";
+                let listitems = document.getElementsByTagName('li');
+
+                console.log("--------- drei ---------" + listitems.length);
+                for(let i=0; i<listitems.length; i++)
+                {
+                    console.log(listitems[i]);
+                }
+                ul1.insertBefore(new_item, listitems[0]);
+                let new_item2 = document.createElement('li');
+                new_item2.classList.add("list-group-item");
+                new_item2.id = "li" + idnr++;
+                new_item2.innerHTML = "fuenftes";
+                ul1.appendChild(new_item2);
+
+                console.log("--------- nach 2 neuen ---------" + listitems.length);
+                for(let i=0; i<listitems.length; i++)
+                {
+                    console.log(listitems[i]);
+                }
+                listitems[1].classList.remove("active");
+                listitems[3].classList.add("active");
+            }
+
+            function createHeadline()
+            {
+                let body = document.body;
+                let input = document.getElementById('input1');
+                let h1 = document.createElement('h1');
+                h1.innerHTML = "HTML ändern";
+                h1.addEventListener('mouseover', doSomethingElse);
+                h1.addEventListener('mouseout', doSomethingElse);
+                body.insertBefore(h1, input);
+            }
+
+            function doSomethingElse(event)
+            {
+                let h1 = event.target;
+                if(h1.style.color === "red")
+                {
+                    h1.style.color = "green";
+                    h1.style.fontSize = "xx-large";
+                    h1.innerHTML = "... und weg";
+                }
+                else {
+                    h1.style.color = "red";
+                    h1.style.fontSize = "400%";
+                    h1.innerHTML = "... und wieder da";
+                }
+            }
+        </script>
+    </body>
+    </html>
+    ```
+
+
 ## JavaScript in unseren Webseiten
 
 Zunächst überlegen wir uns, wie wir das auch schon für CSS getan hatten, wo wir den JavaScript-Code in unseren Webseiten einfügen können. Prinzipiell wird JavaScript-Code in einem HTML-Dokument innerhalb eines `<script></script>`-Elementes eingefügt. Im Gegensatz zu CSS (wo wir die Definitionen innerhalb des `<style></style>`-Elementes angegeben haben, welches immer im `<head>` positioniert wird), ist es egal, ob das `<script>`-Element im `<head>`oder `<body>` angelegt wird. Sie können innerhalb eines HTML-Dokumentes auch mehrere `<script>`-Elemente haben und Sie können dann auch sowohl im `<head>` als auch im `<body>` positioniert sein. Wie bei CSS, ist es auch für JavaScript üblich, den Code in externe (.`js`)-Dateien auszulagern und diese dann in das HTML-Dokument einzubinden. Dies geschieht aber nicht über ein `<link>`-Element, sondern ebenfalls über das `<script>`-Element. Das folgende Beispiel zeigt die Verwendung des `<script>`-Eelementes zum Einbinden von JavaScript:
