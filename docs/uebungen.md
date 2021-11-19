@@ -1312,11 +1312,10 @@
     - Kopieren Sie `uebung2.html` aus Übung 2 in einen neuen `Uebung4`-Ordner und benennen Sie die Datei in `uebung4.html` um (der `NN`-Ordner muss nicht mehr mitkopiert werden). Achten Sie aber darauf, dass das FIW-Logo noch angezeigt wird
     - Binden Sie in Ihre `uebung4.html` Bootstrap ein (entweder per CDN oder als lokalen Zugriff – siehe [**Bootstrap**](../rwd/#bootstrap))
     - **Header**:
-        - der `<header>` enthält das FIW-Logo und die Überschrift `<h1>Teilnehmerinnen WebTech</h1>`
-        - verwenden Sie für den `<header>` verschiedene Utilities, so dass Sie ungefähr das Aussehen wie auf dem Bild erreiche [**siehe auch hier**](https://getbootstrap.com/docs/5.0/examples/jumbotron/) zu
-        - definieren Sie eine CSS-Eigenschaft so, dass eine `h1`-Überschrift in einem `header` ein Inline-Element ist
-        - setzen Sie die Überschrift ungefähr mittig ist (relative Größenangabe - siehe z.B. [**hier**](https://getbootstrap.com/docs/5.0/utilities/spacing/#horizontal-centering))
-        - der header soll ungefähr so aussehen (Navigation und Anfang des Hauptteils sind auch schon zu sehen): ![header](./files/66_uebung3_1.png)
+        - Der `<header>` enthält das FIW-Logo und die Überschrift `<h1>Teilnehmerinnen WebTech</h1>`
+        - Verwenden Sie für den `<header>` verschiedene Utilities, so dass Sie ungefähr das Aussehen wie auf dem Bild erreichen [**siehe auch hier**](https://getbootstrap.com/docs/5.0/examples/jumbotron/).
+        - Verwenden Sie für den `<header>` das Grid-Konzept von Bootstrap, so dass das Bild und die Überschrift nebeneinander sind.
+        - Der header soll ungefähr so aussehen (Navigation und Anfang des Hauptteils sind auch schon zu sehen): ![header](./files/66_uebung3_1.png)
     - **Navigation**: 
         - *interne Links* (Links innerhalb der Seite) funktionieren wie folgt: Sie weisen einem Element eine `id` zu, z.B. der Tabellenzeile, die den ersten Nachnamen enthält, der mit "H" beginnt: 
         ```html
@@ -1353,9 +1352,432 @@
             - Sie müssen mit einer eigenen CSS-Definition dafür sorgen, dass die Zeile, in der Sie mit der Maus sind, nicht mehr dunkelgrau, sondern in HTW-Grün erscheint
 
 
+??? note "Eine mögliche Lösung für Übung 4"
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Uebung 4</title>
+        <link href="../rwd/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            * {
+                --htw-green: #76B900;
+                --htw-orange: #FF5F00;
+                --htw-blue: #0082D1;
+            }
+            
+            .table tbody tr:hover {
+                background-color: var(--htw-green);
+            }
+            
+            nav {
+                background-color: lightgrey;
+            }
+            
+            #links,
+            #rechts {
+                background-color: #FF5F00;
+                height: 100px;
+            }
+            
+            main {
+                margin: 1%;
+            }
+            
+            ul li.nav-item a.nav-link {
+                color: #FF5F00;
+            }
+            
+            ul li.nav-item a:hover {
+                color: #0082D1;
+            }
+            
+            footer {
+                background-color: grey;
+                color: white;
+                text-align: center;
+                padding: 10px;
+            }
+            
+            @media screen and (min-width: 992px) {
+                #links,
+                #rechts {
+                    background-color: lightgrey;
+                    height: auto;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="p-5 mb-4 bg-light rounded-3 row">
+
+            <div class="col-3">
+                <img src=" ../images/fiw.jpg " alt="FIW Logo " style="width:53px; height: 48px; ">
+            </div>
+            <div class="col-9">
+
+                <h1>Teilnehmerinnen Webtech</h1>
+
+            </div>
+
+        </header>
+        <nav class="m-1 ">
+            <ul class="nav nav-pills nav-fills ">
+                <li class="nav-item active ">
+                    <a class="nav-link " href="# ">ALLE</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="#A ">A-G</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="#H ">H-L</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="#M ">M-R</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="#S ">S-Z</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="row mx-1 ">
+            <aside id="links" class="col-12 col-lg-2 ">
+                <h5 class="pt-3 ">links</h5>
+            </aside>
+            <section class="col-12 col-lg-8 ">
+                <table class="table table-striped table-responsive-md table-hover ">
+                    <thead>
+                        <tr>
+                            <th>Vorname</th>
+                            <th>Nachname</th>
+                            <th>E-Mail-Adresse</th>
+                            <th>IP-Adresse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="A ">
+                            <td>Adam</td>
+                            <td>Anderson</td>
+                            <td>aanderson8@google.fr</td>
+                            <td>118.93.83.157</td>
+                        </tr>
+                        <tr>
+                            <td>Susan</td>
+                            <td>Andrews</td>
+                            <td>sandrewsn@google.co.jp</td>
+                            <td>228.214.9.251</td>
+                        </tr>
+                        <tr>
+                            <td>Catherine</td>
+                            <td>Andrews</td>
+                            <td>candrewsp@noaa.gov</td>
+                            <td>112.111.87.178</td>
+                        </tr>
+                        <tr>
+                            <td>Alan</td>
+                            <td>Bradley</td>
+                            <td>abradley1c@globo.com</td>
+                            <td>229.152.117.127</td>
+                        </tr>
+                        <tr>
+                            <td>Anne</td>
+                            <td>Brooks</td>
+                            <td>abrooks16@bravesites.com</td>
+                            <td>243.159.39.234</td>
+                        </tr>
+                        <tr>
+                            <td>Russell</td>
+                            <td>Brown</td>
+                            <td>rbrownq@nifty.com</td>
+                            <td>215.38.120.242</td>
+                        </tr>
+                        <tr>
+                            <td>Ryan</td>
+                            <td>Burton</td>
+                            <td>rburton18@foxnews.com</td>
+                            <td>159.60.107.14</td>
+                        </tr>
+                        <tr>
+                            <td>Roy</td>
+                            <td>Campbell</td>
+                            <td>rcampbell1@geocities.com</td>
+                            <td>237.232.34.20</td>
+                        </tr>
+                        <tr>
+                            <td>Russell</td>
+                            <td>Campbell</td>
+                            <td>rcampbell17@eventbrite.com</td>
+                            <td>251.2.92.63</td>
+                        </tr>
+                        <tr>
+                            <td>Bonnie</td>
+                            <td>Coleman</td>
+                            <td>bcoleman11@fc2.com</td>
+                            <td>109.150.122.102</td>
+                        </tr>
+                        <tr>
+                            <td>Ernest</td>
+                            <td>Coleman</td>
+                            <td>ecoleman15@businessweek.com</td>
+                            <td>213.173.4.7</td>
+                        </tr>
+                        <tr>
+                            <td>Richard</td>
+                            <td>Cruz</td>
+                            <td>rcruz7@unc.edu</td>
+                            <td>235.124.23.221</td>
+                        </tr>
+                        <tr>
+                            <td>Sean</td>
+                            <td>Cruz</td>
+                            <td>scruz10@answers.com</td>
+                            <td>92.255.49.227</td>
+                        </tr>
+                        <tr>
+                            <td>Rebecca</td>
+                            <td>Cunningham</td>
+                            <td>rcunninghamd@mac.com</td>
+                            <td>65.79.191.52</td>
+                        </tr>
+                        <tr>
+                            <td>Margaret</td>
+                            <td>Evans</td>
+                            <td>mevansh@pcworld.com</td>
+                            <td>162.10.86.196</td>
+                        </tr>
+                        <tr>
+                            <td>Jeffrey</td>
+                            <td>Ford</td>
+                            <td>jford14@cnet.com</td>
+                            <td>210.216.54.14</td>
+                        </tr>
+                        <tr>
+                            <td>Andrea</td>
+                            <td>Gardner</td>
+                            <td>agardnerv@woothemes.com</td>
+                            <td>179.91.0.30</td>
+                        </tr>
+                        <tr>
+                            <td>Deborah</td>
+                            <td>George</td>
+                            <td>dgeorge6@furl.net</td>
+                            <td>201.76.47.162</td>
+                        </tr>
+                        <tr>
+                            <td>Sean</td>
+                            <td>Gibson</td>
+                            <td>sgibsony@alexa.com</td>
+                            <td>48.114.103.55</td>
+                        </tr>
+                        <tr>
+                            <td>Virginia</td>
+                            <td>Graham</td>
+                            <td>vgrahamk@aol.com</td>
+                            <td>165.219.171.1</td>
+                        </tr>
+                        <tr id="H ">
+                            <td>Steven</td>
+                            <td>Hamilton</td>
+                            <td>shamiltonu@state.tx.us</td>
+                            <td>38.194.91.201</td>
+                        </tr>
+                        <tr>
+                            <td>Virginia</td>
+                            <td>Hawkins</td>
+                            <td>vhawkinsf@ehow.com</td>
+                            <td>93.120.46.203</td>
+                        </tr>
+                        <tr>
+                            <td>Edward</td>
+                            <td>Hicks</td>
+                            <td>ehicksc@pcworld.com</td>
+                            <td>199.153.27.1</td>
+                        </tr>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Johnson</td>
+                            <td>mjohnsonj@hostgator.com</td>
+                            <td>73.87.135.206</td>
+                        </tr>
+                        <tr>
+                            <td>Ruth</td>
+                            <td>Jordan</td>
+                            <td>rjordan1a@smugmug.com</td>
+                            <td>193.140.80.64</td>
+                        </tr>
+                        <tr>
+                            <td>Antonio</td>
+                            <td>Kim</td>
+                            <td>akim4@odnoklassniki.ru</td>
+                            <td>168.244.191.78</td>
+                        </tr>
+                        <tr id="M ">
+                            <td>Jennifer</td>
+                            <td>Marshall</td>
+                            <td>jmarshallt@gnu.org</td>
+                            <td>104.191.49.94</td>
+                        </tr>
+                        <tr>
+                            <td>Eric</td>
+                            <td>Matthews</td>
+                            <td>ematthews5@independent.co.uk</td>
+                            <td>138.194.30.1</td>
+                        </tr>
+                        <tr>
+                            <td>Raymond</td>
+                            <td>Mcdonald</td>
+                            <td>rmcdonald2@ihg.com</td>
+                            <td>161.24.42.24</td>
+                        </tr>
+                        <tr>
+                            <td>Eric</td>
+                            <td>Miller</td>
+                            <td>emillere@creativecommons.org</td>
+                            <td>122.159.17.218</td>
+                        </tr>
+                        <tr>
+                            <td>Jonathan</td>
+                            <td>Morales</td>
+                            <td>jmoralesa@ovh.net</td>
+                            <td>97.65.110.105</td>
+                        </tr>
+                        <tr>
+                            <td>Marie</td>
+                            <td>Morgan</td>
+                            <td>mmorganb@cloudflare.com</td>
+                            <td>226.79.152.112</td>
+                        </tr>
+                        <tr>
+                            <td>Amanda</td>
+                            <td>Nelson</td>
+                            <td>anelson13@indiatimes.com</td>
+                            <td>161.185.121.245</td>
+                        </tr>
+                        <tr>
+                            <td>Lisa</td>
+                            <td>Olson</td>
+                            <td>lolsonr@telegraph.co.uk</td>
+                            <td>77.245.172.100</td>
+                        </tr>
+                        <tr>
+                            <td>Alice</td>
+                            <td>Ortiz</td>
+                            <td>aortizw@histats.com</td>
+                            <td>179.52.222.21</td>
+                        </tr>
+                        <tr>
+                            <td>Peter</td>
+                            <td>Phillips</td>
+                            <td>pphillipss@1688.com</td>
+                            <td>11.158.255.76</td>
+                        </tr>
+                        <tr>
+                            <td>Matthew</td>
+                            <td>Porter</td>
+                            <td>mporter9@europa.eu</td>
+                            <td>174.81.178.88</td>
+                        </tr>
+                        <tr>
+                            <td>Tammy</td>
+                            <td>Ray</td>
+                            <td>trayx@weather.com</td>
+                            <td>192.243.38.190</td>
+                        </tr>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Richardson</td>
+                            <td>mrichardson1d@ihg.com</td>
+                            <td>209.217.14.154</td>
+                        </tr>
+                        <tr>
+                            <td>Joan</td>
+                            <td>Roberts</td>
+                            <td>jroberts12@alibaba.com</td>
+                            <td>4.91.143.62</td>
+                        </tr>
+                        <tr>
+                            <td>Kathleen</td>
+                            <td>Rose</td>
+                            <td>kroseg@pinterest.com</td>
+                            <td>222.172.140.56</td>
+                        </tr>
+                        <tr id="S ">
+                            <td>Steve</td>
+                            <td>Sanders</td>
+                            <td>ssanders1b@wikispaces.com</td>
+                            <td>91.61.109.245</td>
+                        </tr>
+                        <tr>
+                            <td>Shirley</td>
+                            <td>Scott</td>
+                            <td>sscottm@macromedia.com</td>
+                            <td>219.237.108.82</td>
+                        </tr>
+                        <tr>
+                            <td>Lillian</td>
+                            <td>Stephens</td>
+                            <td>lstephens19@hugedomains.com</td>
+                            <td>89.85.137.204</td>
+                        </tr>
+                        <tr>
+                            <td>Nicole</td>
+                            <td>Thompson</td>
+                            <td>nthompson3@admin.ch</td>
+                            <td>13.183.208.155</td>
+                        </tr>
+                        <tr>
+                            <td>Marie</td>
+                            <td>Thompson</td>
+                            <td>mthompsonz@yelp.com</td>
+                            <td>162.164.5.231</td>
+                        </tr>
+                        <tr>
+                            <td>Alan</td>
+                            <td>Vasquez</td>
+                            <td>avasquezo@miibeian.gov.cn</td>
+                            <td>178.109.86.172</td>
+                        </tr>
+                        <tr>
+                            <td>Mildred</td>
+                            <td>Watkins</td>
+                            <td>mwatkins0@miibeian.gov.cn</td>
+                            <td>150.67.132.64</td>
+                        </tr>
+                        <tr>
+                            <td>Eugene</td>
+                            <td>Williams</td>
+                            <td>ewilliamsi@deliciousdays.com</td>
+                            <td>67.208.26.182</td>
+                        </tr>
+                        <tr>
+                            <td>Catherine</td>
+                            <td>Williams</td>
+                            <td>cwilliamsl@360.cn</td>
+                            <td>154.87.204.51</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="rechts" class="col-12 col-lg-2 ">
+                <h5 class="pt-3 ">rechts</h5>
+            </section>
+        </main>
+        <footer>
+            Jörn Freiheit - Übung 4
+        </footer>
+    </body>
+
+    </html>
+    ```
+
+
 #### Übung 5
     
-
 ??? question "Übungsaufgabe 5 (JavaScript, DOM)"
     - Kopieren Sie den `Uebung4`-Ordner in einen `Uebung5`-Ordner und benennen Sie die `uebung4.html` in `uebung5.html` um
     - Fügen Sie Ihrer Tabelle eine fünfte Spalte hinzu mit leerer Überschrift, also einfach ein weiteres `<th></th>`. Fügen Sie im Table-Body `<tbody>` auch in allen Zeilen ein fünftes `<td></td>` hinzu (nicht händisch! - *Find and Replace* der IDE nutzen!) 
@@ -1379,3 +1801,14 @@
     - **Zusatz:** sehr beeindruckend wäre es, wenn Sie die neue Zeile nicht immer direkt vor die Eingabezeile einfügen, sondern alphabetisch korrekt nach dem Wert des Nachnamens. Sollte das jemand von Ihnen schaffen, schicken Sie mir bitte einen *Pull-Request*. Das wäre sehr cool!
 
 
+
+#### Übung 6
+    
+??? question "Übungsaufgabe 6 (Angular, Komponenten)"
+    - Erstellen Sie einen Ordner `Uebung6`. Erstellen Sie in diesem Ordner ein neues Angular-Projekt `uebung6`. 
+    - Erstellen Sie die folgenden vier Komponenten: `header`, `nav`, `main`, `footer`. 
+    - Bilden Sie das Ergebnis von [Übung2](./webtech/uebungen/#ubung-2) nach, d.h. am Ende soll die Seite *ungefähr* so aussehen:
+        ![uebung6](./files/214_uebung6.png)
+    - Beachten Sie: 
+        - Um Bilder einzubinden, sollten Sie diese Bilder in einen `images`-Ordner im `assets`-Ordner ablegen, also z.B. `src/assets/images/fiw.jpg`. Das Einbinden dieses Bildes erfolgt dann mit dem Pfad `/assets/images/fiw.jpg` (der Ausgangspfad ist also immer `src`).
+        - Die Hyperlinks müssen nicht funktionieren (tragen Sie z.B. jeweils `href="#"` ein).

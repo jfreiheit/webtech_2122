@@ -389,25 +389,25 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#direktiven" class="md-nav__link">
-    Direktiven
-  </a>
-  
-    <nav class="md-nav" aria-label="Direktiven">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#strukturdirektiven" class="md-nav__link">
-    Strukturdirektiven
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-des-projektes" class="md-nav__link">
+    Deployment des Projektes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bindings-und-direktiven" class="md-nav__link">
+    Bindings und Direktiven
+  </a>
+  
+    <nav class="md-nav" aria-label="Bindings und Direktiven">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#interpolation" class="md-nav__link">
@@ -454,6 +454,26 @@
   <a href="#two-way-bindings" class="md-nav__link">
     [(Two-Way-Bindings)]
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direktiven" class="md-nav__link">
+    Direktiven
+  </a>
+  
+    <nav class="md-nav" aria-label="Direktiven">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strukturdirektiven" class="md-nav__link">
+    Strukturdirektiven
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -650,25 +670,25 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#direktiven" class="md-nav__link">
-    Direktiven
-  </a>
-  
-    <nav class="md-nav" aria-label="Direktiven">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#strukturdirektiven" class="md-nav__link">
-    Strukturdirektiven
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-des-projektes" class="md-nav__link">
+    Deployment des Projektes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bindings-und-direktiven" class="md-nav__link">
+    Bindings und Direktiven
+  </a>
+  
+    <nav class="md-nav" aria-label="Bindings und Direktiven">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#interpolation" class="md-nav__link">
@@ -715,6 +735,26 @@
   <a href="#two-way-bindings" class="md-nav__link">
     [(Two-Way-Bindings)]
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direktiven" class="md-nav__link">
+    Direktiven
+  </a>
+  
+    <nav class="md-nav" aria-label="Direktiven">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strukturdirektiven" class="md-nav__link">
+    Strukturdirektiven
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -844,45 +884,28 @@ in dieses Verzeichnis:</p>
 </code></pre></div>
 <p>aus. Damit werden alle Abhängigkeiten, die in der Datei <strong>package.json</strong>
 definiert sind, geladen und das <strong>node_modules</strong>-Verzeichnis erstellt.
-Siehe z.B. <a href="https://www.stackchief.com/tutorials/npm%20install%20%7C%20how%20it%20works">hier</a>.
-Danach geben Sie</p>
+Siehe z.B. <a href="https://www.stackchief.com/tutorials/npm%20install%20%7C%20how%20it%20works">hier</a>.</p>
+<p>Wenn Sie Ihr Projekt mit <code>git</code> verwalten, dann ist es ratsam, das <code>node_modules</code>-Verzeichnis von der <code>git</code>-Verwaltung auszuschließen. Es wird ja immer durch <code>npm install</code> erstellt. Fügen Sie dazu in Ihre <code>.gitignore</code> die Zeile <code>node_modules/**</code> ein. Dann werden alle Inhalte aller <code>node_modules</code>-Verzeichnisse in Ihrem Repository ignoriert. </p>
+<p>Danach geben Sie</p>
 <div class="highlight"><pre><span></span><code>ng serve
 </code></pre></div>
 <p>ein. Es werden die entsprechenden TypeScript-Dateien compiliert und es
 erscheint am Ende eine Ausgabe, wie z.B.</p>
-<div class="highlight"><pre><span></span><code>⠋ Generating browser application bundles...
-****************************************************************************************
-This is a simple server <span class="k">for</span> use <span class="k">in</span> testing or debugging Angular applications locally.
-It hasn<span class="s1">&#39;t been reviewed for security issues.</span>
+<div class="highlight"><pre><span></span><code>✔ Browser application bundle generation complete.
 
-<span class="s1">DON&#39;</span>T USE IT FOR PRODUCTION!
-****************************************************************************************
-Compiling @angular/core : es2015 as esm2015
-Compiling @angular/common : es2015 as esm2015
-Compiling @angular/platform-browser : es2015 as esm2015
-Compiling @angular/router : es2015 as esm2015
-Compiling @angular/platform-browser-dynamic : es2015 as esm2015
-✔ Browser application bundle generation complete.
+Initial Chunk Files   <span class="p">|</span> Names         <span class="p">|</span>      Size
+vendor.js             <span class="p">|</span> vendor        <span class="p">|</span>   <span class="m">2</span>.10 MB
+polyfills.js          <span class="p">|</span> polyfills     <span class="p">|</span> <span class="m">339</span>.54 kB
+styles.css, styles.js <span class="p">|</span> styles        <span class="p">|</span> <span class="m">212</span>.38 kB
+main.js               <span class="p">|</span> main          <span class="p">|</span>  <span class="m">55</span>.22 kB
+runtime.js            <span class="p">|</span> runtime       <span class="p">|</span>   <span class="m">6</span>.85 kB
 
-Initial Chunk Files <span class="p">|</span> Names         <span class="p">|</span>      Size
-main.js             <span class="p">|</span> main          <span class="p">|</span> <span class="m">362</span>.07 kB
-polyfills.js        <span class="p">|</span> polyfills     <span class="p">|</span>  <span class="m">44</span>.15 kB
-runtime.js          <span class="p">|</span> runtime       <span class="p">|</span>   <span class="m">1</span>.09 kB
-styles.css          <span class="p">|</span> styles        <span class="p">|</span>   <span class="m">0</span> bytes
+                      <span class="p">|</span> Initial Total <span class="p">|</span>   <span class="m">2</span>.70 MB
 
-                    <span class="p">|</span> Initial Total <span class="p">|</span> <span class="m">407</span>.31 kB
-
-Build at: <span class="m">2021</span>-05-28T12:19:12.354Z - Hash: b1611690e9f20b1506e4 - Time: 28973ms
+Build at: <span class="m">2021</span>-11-15T09:35:55.434Z - Hash: 05483fb355731569 - Time: 10730ms
 
 ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
 
-
-✔ Compiled successfully.
-✔ Browser application bundle generation complete.
-
-<span class="m">4</span> unchanged chunks
-
-Build at: <span class="m">2021</span>-05-28T12:19:13.393Z - Hash: 52a9999d2b3b3c4923f4 - Time: 643ms
 
 ✔ Compiled successfully.
 </code></pre></div>
@@ -1010,62 +1033,8 @@ Inhalt der dargestellten Seite anzupassen und die
             <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="s2">&quot;src/index.html&quot;</span><span class="p">,</span>
 </code></pre></div>
 </td></tr></table>
-<p>Ändern Sie den Prefix in der hell markierten Zeile auf z.B. "htw" (oder Ihre Initialen vielleicht). Außerdem muss auch noch die <code>tslint.json</code> angepasst werden:</p>
-<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">tslint.json</label><div class="tabbed-content"></div>
-</div>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;extends&quot;</span><span class="p">:</span> <span class="s2">&quot;tslint:recommended&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;array-type&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;arrow-parens&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;deprecation&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;severity&quot;</span><span class="p">:</span> <span class="s2">&quot;warning&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;component-class-suffix&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;contextual-lifecycle&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;directive-class-suffix&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;directive-selector&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">&quot;attribute&quot;</span><span class="p">,</span>
-<span class="hll">      <span class="s2">&quot;htw&quot;</span><span class="p">,</span>
-</span>      <span class="s2">&quot;camelCase&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;component-selector&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">&quot;element&quot;</span><span class="p">,</span>
-<span class="hll">      <span class="s2">&quot;htw&quot;</span><span class="p">,</span>
-</span>      <span class="s2">&quot;kebab-case&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;import-blacklist&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="kc">true</span><span class="p">,</span>
-</code></pre></div>
-</td></tr></table>
-<p>Dort wo in den hervorgehobenen Zeilen nun das neue Prefix "htw" steht, stand vorher "app". In der <code>index.html</code> und in der <code>app.component.ts</code> auch noch ändern. Ab dann ist die Verwendung von "htw" als Prefix einegrichtet. Sie können es aber auch bei "app" belassen. Es soll an dieser Stelle einem besseren Verständnis des Prinzips dienen.</p>
-<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">index.html</label><div class="tabbed-content"></div>
+<p>Ändern Sie den Prefix in der hell markierten Zeile auf z.B. "htw" (oder Ihre Initialen vielleicht). In der <code>index.html</code> und in der <code>app.component.ts</code> auch noch ändern. Ab dann ist die Verwendung von "htw" als Prefix einegrichtet. Sie können es aber auch bei "app" belassen. Es soll an dieser Stelle einem besseren Verständnis des Prinzips dienen.</p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">index.html</label><div class="tabbed-content"></div>
 </div>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -1094,7 +1063,7 @@ Inhalt der dargestellten Seite anzupassen und die
   <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
-<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">app/app.component.ts</label><div class="tabbed-content"></div>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">app/app.component.ts</label><div class="tabbed-content"></div>
 </div>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -1122,32 +1091,34 @@ Inhalt der dargestellten Seite anzupassen und die
 <p>Eine Komponente besteht aus einer <em>View</em> (<em>Template</em>) und einer TypeScript-Klasse. Die AppComponent besteht z.B. aus der <strong>app.component.html</strong> (der View) und der <strong>app.component.ts</strong> (der TypeScript-Klasse). Die TypeScript-Klasse kümmert sich um die Verwaltung der Daten, die in der View dargestellt und/oder durch Eingaben erzeugt werden. Die TypeScript-Klasse beschreibt die <em>Logik</em> der Komponente. Die View ist der dargestellte Bereich der Komponente, also das, was man im Browser von der Komponente sieht.</p>
 <p>Neben der <strong>*.html</strong>- und der <strong>*.ts</strong>-Datei einer Komponente gibt es auch noch die <strong>*.css</strong>-Datei (also z.B. <strong>app.component.css</strong>). Diese enthält CSS-Eigenschaften, die speziell für die Komponente gelten sollen.</p>
 <p>Um eine Komponente der gesamten Anwendung als Komponente bekannt zu machen, wird der <em>Decorator</em> <code>@Component</code>verwendet. Decoratoren erkennt man am führenden <code>@</code>-Zeichen. Sie werden verwendet, um Metadaten der Anwendung zu verwalten. Der typische Aufbau einer Komponente (hier <code>AppComponent</code> - <code>app.component.ts</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;htw-root&#39;</span><span class="p">,</span>
   <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
   <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
-  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;book-app&#39;</span><span class="p">;</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;first&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Der Selektor gibt an, dass überall dort, wo <code>app-root</code> als Elementselektor <code>&lt;app-root&gt; &lt;/app-root&gt;</code> verwendet wird, das in <code>app.component.html</code> definerte Template eingesetzt wird. Angenommen, in <code>app.component.html</code> ist der HTML-Code:</p>
+<p>Der Selektor gibt an, dass überall dort, wo <code>htw-root</code> als Elementselektor <code>&lt;htw-root&gt; &lt;/htw-root&gt;</code> verwendet wird, das in <code>app.component.html</code> definerte Template eingesetzt wird. Angenommen, in <code>app.component.html</code> ist der HTML-Code:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>This is app<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>definiert. Dann wird dieser Code als Inhalt in das HTML-Element <code>&lt;app-root&gt; &lt;/app-root&gt;</code> eingesetzt:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">app-root</span><span class="p">&gt;</span>
+<p>definiert. Dann wird dieser Code als Inhalt in das HTML-Element <code>&lt;htw-root&gt; &lt;/htw-root&gt;</code> eingesetzt:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">htw-root</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>This is app<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">app-root</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">htw-root</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>Wir schauen uns ein ausführlicheres Beispiel im Folgenden an, in dem wir eine neue Komponente erzeugen.</p>
 <h3 id="eine-neue-komponente-erzeugen">Eine neue Komponente erzeugen<a class="headerlink" href="#eine-neue-komponente-erzeugen" title="Permanent link">&para;</a></h3>
-<p>Mithilfe von <a href="https://cli.angular.io/">Angular-CLI</a> erzeugen wir in unserer App <code>first</code> eine neue Komponente. Wir wechseln dazu im Terminal in den Ordner von <code>first</code> und geben dann</p>
-<div class="highlight"><pre><span></span><code>ng generate component mycomponent
+<p>Mithilfe von <a href="https://cli.angular.io/">Angular-CLI</a> erzeugen wir in unserer App <code>first</code> eine neue Komponente <code>header</code>. Wir wechseln dazu im Terminal in den Ordner von <code>first</code> und geben dann</p>
+<div class="highlight"><pre><span></span><code>ng generate component header
 </code></pre></div>
 <p>ein. Später kürzen wir solche Eingaben ab. Anstelle von <code>generate</code> brauchen wir auch nur <code>g</code> zu schreiben. Und anstelle von <code>component</code> genügt <code>c</code>. Das heißt, wir hätten stattdessen auch </p>
-<div class="highlight"><pre><span></span><code>ng g c mycomponent
+<div class="highlight"><pre><span></span><code>ng g c header
 </code></pre></div>
-<p>schreiben können. In unserer <code>first</code> App gibt es nun die Komponente <code>mycomponent</code>:</p>
+<p>schreiben können. In unserer <code>first</code> App gibt es nun die Komponente <code>header</code>:</p>
 <p><img alt="MyComponent" src="../files/08_mycomponent.png" /> </p>
 <p>Jede Angular-Komponente besteht aus vier Teilen:</p>
 <ul>
@@ -1157,17 +1128,17 @@ Inhalt der dargestellten Seite anzupassen und die
 <li>einer Testspezifikation (die <code>*.component.spec.ts</code>-Datei)</li>
 </ul>
 <p>Jede Komponente wird in der <code>app.module.ts</code> der gesamten Anwendung bekannt gemacht. Das erfolgt mithilfe der Eigenschaft <code>declarations</code> im Decorator <code>@NgModule()</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
 
 <span class="k">import</span> <span class="p">{</span> <span class="nx">AppRoutingModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app-routing.module&#39;</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">MycomponentComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./mycomponent/mycomponent.component&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">HeaderComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./header/header.component&#39;</span><span class="p">;</span>
 
 <span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
   <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span>
     <span class="nx">AppComponent</span><span class="p">,</span>
-    <span class="nx">MycomponentComponent</span>
+    <span class="nx">HeaderComponent</span>
   <span class="p">],</span>
   <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
     <span class="nx">BrowserModule</span><span class="p">,</span>
@@ -1178,16 +1149,16 @@ Inhalt der dargestellten Seite anzupassen und die
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
 </code></pre></div>
-<p>Das obige Listing zeigt, dass die neue Komponente <code>Mycomponent</code> registriert wurde. Um dieses Eintragen in die <code>app.module.ts</code> müssen wir uns aber nicht kümmern, das erledigt die <code>Angular-CLI</code> mit der Anweisung zur Erstellung einer neuen Komponente <code>ng generate component newComponent</code>. </p>
-<p>Doppelklicken Sie im Projektexplorer Ihrer IDE auf die Datei <code>mycomponent.component.ts</code>, um sie zu öffnen. Sie enthält den folgenden Quelltext:</p>
+<p>Das obige Listing zeigt, dass die neue Komponente <code>header</code> registriert wurde. Um dieses Eintragen in die <code>app.module.ts</code> müssen wir uns aber nicht kümmern, das erledigt die <code>Angular-CLI</code> mit der Anweisung zur Erstellung einer neuen Komponente <code>ng generate component newComponent</code>. </p>
+<p>Doppelklicken Sie im Projektexplorer Ihrer IDE auf die Datei <code>header.component.ts</code>, um sie zu öffnen. Sie enthält den folgenden Quelltext:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
 
 <span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-mycomponent&#39;</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./mycomponent.component.html&#39;</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./mycomponent.component.css&#39;</span><span class="p">]</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;htw-header&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./header.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./header.component.css&#39;</span><span class="p">]</span>
 <span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">MycomponentComponent</span> <span class="nx">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">HeaderComponent</span> <span class="nx">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
 
   <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
 
@@ -1196,32 +1167,645 @@ Inhalt der dargestellten Seite anzupassen und die
 
 <span class="p">}</span>
 </code></pre></div>
-<p>Wir ändern diese Datei zunächst nicht und öffnen auch noch die <code>mycomponent.component.html</code>. Diese enthält nur ein HTML-Element, einen Absatz:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>mycomponent works!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<p>Wir ändern diese Datei zunächst nicht und öffnen auch noch die <code>header.component.html</code>. Diese enthält nur ein HTML-Element, einen Absatz:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>header works!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>Wir ändern auch diese Datei zunächst nicht und öffnen die <code>app.component.html</code> - die HTML-Datei unserer Root-Komponente. Diese sieht derzeit so aus:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>This is app<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>Wir fügen in die Datei den Selektor <code>app-mycomponent</code> unserer neuen <code>Mycomponent</code>-Komponente als HTML-Element ein:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>This is app<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">app-mycomponent</span><span class="p">&gt;&lt;/</span><span class="nt">app-mycomponent</span><span class="p">&gt;</span> <span class="c">&lt;!-- eingefuegt --&gt;</span>
+<p>Wir fügen in die Datei den Selektor <code>htw-header</code> unserer neuen <code>header</code>-Komponente als HTML-Element ein:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">htw-header</span><span class="p">&gt;&lt;/</span><span class="nt">htw-header</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>This is app<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>Dieses Element dient als "Platzhalter" für das Template unserer neuen Komponente. Das bedeutet, dass in dieses Element der HTML-Code aus <code>mycomponent.component.html</code> eingefügt wird. Wechseln Sie in den Browser auf den Tab mit Ihrer Anwendung (<a href="http://localhost:4200/">http://localhost:4200/</a>). Sie sehen folgendes Bild:</p>
+<p>Dieses Element dient als "Platzhalter" für das Template unserer neuen Komponente. Das bedeutet, dass in dieses Element der HTML-Code aus <code>header.component.html</code> eingefügt wird. Wechseln Sie in den Browser auf den Tab mit Ihrer Anwendung (<a href="http://localhost:4200/">http://localhost:4200/</a>). Sie sehen folgendes Bild:</p>
 <p><img alt="mycomponent" src="../files/09_mycomponent1.png" /></p>
-<p>Unterhalb der Überschrift (<code>&lt;h1&gt;This is app&lt;/h1&gt;</code>) wurde also der Absatz <code>&lt;p&gt;mycomponent works!&lt;/p&gt;</code> eingefügt. Wenn Sie sich den Quelltext Ihrer Seite anschauen, z.B. über die Entwicklertools Ihres Browsers (<a href="https://blog.kulturbanause.de/2018/03/die-chrome-entwicklertools-devtools-fuer-designer-und-einsteiger/">z.B. für Chrome</a>), dann wird folgender Code sichtbar:</p>
+<p>Oberhalb der Überschrift (<code>&lt;h1&gt;This is app&lt;/h1&gt;</code>) wurde also der Absatz <code>&lt;p&gt;header works!&lt;/p&gt;</code> eingefügt. Wenn Sie sich den Quelltext Ihrer Seite anschauen, z.B. über die Entwicklertools Ihres Browsers (<a href="https://blog.kulturbanause.de/2018/03/die-chrome-entwicklertools-devtools-fuer-designer-und-einsteiger/">z.B. für Chrome</a>), dann wird folgender Code sichtbar:</p>
 <p><img alt="quelltext" src="../files/10_entwicklertools.png" /></p>
-<p>Wir können hier die Attribute der HTML-Elemente vernachlässigen (also z.B. <code>_nghost-menu-c19</code> oder <code>ng-version="9.0.7"</code>). Aber es wird folgende HTML-Struktur sichtbar:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">app-root</span><span class="p">&gt;</span>
+<p>Wir können hier die Attribute der HTML-Elemente vernachlässigen (also z.B. <code>_nghost-aiq-c17</code> oder <code>ng-version="13.0.1"</code>). Aber es wird folgende HTML-Struktur sichtbar:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">htw-root</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">htw-header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>header works!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">htw-header</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>This is app<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">app-mycomponent</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>mycomponent works!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">app-mycomponent</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">app-root</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">htw-root</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>Das Element <code>&lt;app-root&gt;</code> fungiert als Platzhalter für die gesamte App. In dieses Element wird der gesamte Inhalt der Anwendung eingebunden (siehe <code>app.component.html</code>). Dies ist hier zunächst eine Überschrift <code>&lt;h1&gt;</code>, die von dem Element für die <code>Mycomponent</code>-Komponente gefolgt wird. Das bedeutet, dass in das Element <code>&lt;app-mycomponent&gt;</code> der Inhalt der Komponente <code>Mycomponent</code> eingebunden wird. Das ist hier nur ein Absatz <code>&lt;p&gt;</code> (siehe dazu <code>mycomponent.component.html</code>). Das Element <code>router-outlet&gt;</code> soll uns an dieser Stelle noch nicht interessieren. Das wird erst interessant, wenn wir über das <em>Routing</em> in einer Angular-Anwendung sprechen.  </p>
+<p>Das Element <code>&lt;htw-root&gt;</code> fungiert als Platzhalter für die gesamte App. In dieses Element wird der gesamte Inhalt der Anwendung eingebunden (siehe <code>app.component.html</code>). Dies ist hier zunächst eine Überschrift <code>&lt;h1&gt;</code>, die von dem Element für die <code>header</code>-Komponente gefolgt wird. Das bedeutet, dass in das Element <code>&lt;htw-header&gt;</code> der Inhalt der Komponente <code>header</code> eingebunden wird. Das ist hier nur ein Absatz <code>&lt;p&gt;</code> (siehe dazu <code>header.component.html</code>). Das Element <code>&lt;router-outlet&gt;</code> soll uns an dieser Stelle noch nicht interessieren. Das wird erst interessant, wenn wir über das <em>Routing</em> in einer Angular-Anwendung sprechen.  </p>
+<p>Zur weiteren Übung erzeugen wir uns noch weitere Komponenten. Zunächst eine Komponenten zur Navigation <code>nav</code>:</p>
+<div class="highlight"><pre><span></span><code>ng g c nav
+</code></pre></div>
+<p>UM deutlich zu machen, dass sich die CSS-Definitionen für eine Komponente stets nur auf die Komponente beziehen, ändern wir die <code>nav.component.css</code>:</p>
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">nav.component.css</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nt">p</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">grey</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mi">1</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">padding-left</span><span class="p">:</span> <span class="mi">2</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<p>Wir binden die <code>nav</code>-Komponente in die <code>app.component.html</code> ein:</p>
+<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">app.component.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">htw-header</span><span class="p">&gt;&lt;/</span><span class="nt">htw-header</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">htw-nav</span><span class="p">&gt;&lt;/</span><span class="nt">htw-nav</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>This is app<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+</div>
+<p>und erhalten folgende Seite: </p>
+<p><img alt="nav" src="../files/213_first.png" /></p>
+<p>Durch das Einbinden von Komponenten in andere Komponenten ensteht eine Hierarchie der Komponenten, z.B. ist die <code>app</code>-Komponent in unserem bisherigen Beispiel die <em>Elternkomponente</em> der <code>header</code>- und <code>nav</code>-Komponenten. Das heißt, <code>header</code> und <code>nav</code> sind <em>Kindkomponenten</em> von <code>app</code>.  Um dies zu verdeutlichen, erstellen wir noch eine weitere Komponente <code>main</code> und dafür explizit zwei Kindkomponenten <code>left</code> und <code>right</code>:</p>
+<div class="highlight"><pre><span></span><code>ng g c main
+ng g c main/left
+ng g c main/right
+</code></pre></div>
+<p>Beachten Sie, dass die <code>left</code>- und die <code>right</code>-Komponente hier explizit als Kindkomponenten von <code>main</code> erstellt werden. </p>
+<p><img alt="first" src="../files/215_first.png" /></p>
+<p>Wir binden die <code>main</code>-Komponente in die <code>app</code>-Komponente ein und die Komponenten <code>left</code> und <code>right</code> in die <code>main</code>-Komponente:</p>
+<div class="tabbed-set" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">app.component.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">htw-header</span><span class="p">&gt;&lt;/</span><span class="nt">htw-header</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">htw-nav</span><span class="p">&gt;&lt;/</span><span class="nt">htw-nav</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>This is app<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">htw-main</span><span class="p">&gt;&lt;/</span><span class="nt">htw-main</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">main.component.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>
+        main works!
+    <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;left&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">htw-left</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">htw-left</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;right&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">htw-right</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">htw-right</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><label for="__tabbed_7_3">main.component.css</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">main</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">226</span><span class="p">,</span> <span class="mi">243</span><span class="p">,</span> <span class="mi">188</span><span class="p">);</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mi">1</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">#</span><span class="nn">row</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">#</span><span class="nn">left</span> <span class="p">{</span>
+    <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">235</span><span class="p">,</span> <span class="mi">235</span><span class="p">,</span> <span class="mi">240</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">#</span><span class="nn">right</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">191</span><span class="p">,</span> <span class="mi">191</span><span class="p">,</span> <span class="mi">243</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<p><img alt="first" src="../files/216_first.png" /></p>
+<h2 id="deployment-des-projektes">Deployment des Projektes<a class="headerlink" href="#deployment-des-projektes" title="Permanent link">&para;</a></h2>
+<p>Wir werden uns im weiteren Verlauf immer wieder anschauen, was zu beachten ist, damit ein Angular-Projekt <em>deployed</em>, d.h. ausgeliefert werden kann. Derzeit müssen wir ein Projekt stets mit <code>ng serve</code> starten und schauen uns dabei jeweils den gegenwärtigen Entwicklungsstatus des Projektes an. Irgendwann ist das Projekt aber "fertig" und soll ausgeliefert werden. Das prinzipielle Vorgehen dafür besteht aus zwei Schritten. Der erste Schritt wird als Vorbereitung des Deployments ausgeführt. Er besteht darin, das Projekt zu <em>deployen</em>, dabei auf eventuelle Fehler zu achten und gleichzeitig das <em>deployed</em> Projekt auszuführen und zu "beobachten". Dazu werden zwei Terminals verwendet. Im ersten Terminal geben Sie im Projektordner (hier <code>first</code>)</p>
+<div class="highlight"><pre><span></span><code>ng build --watch
+</code></pre></div>
+<p>ein. Damit wird das Projekt deployed, wird aber gleichzeitig überwacht, d.h. alle Aktionen auf der Webanwendung werden angezeigt und auch eventuell auftretende Fehler. Dieses Terminal muss während der Anwendung der Webanwendung also gut überwacht werden. Im zeiten Terminal starten Sie die Anwendung, indem Sie einen Webserver aufrufen, z.B. <code>lite-server</code>:</p>
+<div class="highlight"><pre><span></span><code>lite-server --baseDir=&quot;dist/first&quot;
+</code></pre></div>
+<p>Es öffnet sich die Webenawendung (oder Sie müssen Sie auf <code>localhost:3000</code> öffnen) und Sie können die Webanwendung ausprobieren. Eventuelle Fehler werden im ersten Terminal angezeigt. </p>
+<p>Grundsätzlich ist es so, dass die Webanwendung durch das Deployment in einen <code>dist</code>-Ordner ausgeliefert wird. Der <code>dist</code>-Ordner des <code>first</code>-Projektes sieht nach dem Deployment ungefähr so aus:</p>
+<p><img alt="first" src="../files/217_first.png" /></p>
+<p>Die Nummern in den Dateinamen werden bei Ihnen anders sein. Dieser Ordner kann auf Ihren Webserver kopiert werden und dann ist die Webanwendung dort ausführbar. Wenn Sie alle Fehler behoben haben und sich die Webanwendung korrekt verhält, dann können Sie den zweiten Schritt ausführen:</p>
+<div class="highlight"><pre><span></span><code>ng build
+</code></pre></div>
+<p>Diese Anwendung erzeugt (genau wie <code>ng build --watch</code>) den <code>dist</code>-Ordner. Den darin befindlichen Ordner (hier: <code>first</code>) können Sie z.B. auf den Webserver kopieren und von dort die <code>first/index.html</code> aufrufen (bzw. Sie benennen den <code>first</code>-Ordner dort um). Beachten Sie, dass Sie in der <code>index.html</code> die Basis-Refereferenz-URL anpassen müssen, also den Eintrag <code>&lt;base href="/"&gt;</code> anpassen. </p>
+<p>In meinem Fall ist es z.B. so, dass in meinem <em>DocumentRoot</em> folgende Ordnerstruktur existiert: <code>/WT21/Angular/first/dist/first/</code>. Das heißt, mein Eintrag in der <code>index.html</code> muss dann lauten:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>First<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">base</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/WT21/Angular/first/dist/first/&quot;</span><span class="p">&gt;</span>
+</span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;icon&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/x-icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;favicon.ico&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;styles.ef46db3751d8e999.css&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">htw-root</span><span class="p">&gt;&lt;/</span><span class="nt">htw-root</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;runtime.efa9df03510e8bc1.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;polyfills.e477a8328a76bdd4.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;main.22d2c12b99bb6467.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Um die Basis-Refereferenz-URL nicht nachträglich anpassen zu müssen, können Sie auch gleich</p>
+<div class="highlight"><pre><span></span><code>ng build --base-href=/WT21/Angular/first/dist/first/
+</code></pre></div>
+<p>angeben. </p>
+<h2 id="bindings-und-direktiven">Bindings und Direktiven<a class="headerlink" href="#bindings-und-direktiven" title="Permanent link">&para;</a></h2>
+<h3 id="interpolation">{{ Interpolation }}<a class="headerlink" href="#interpolation" title="Permanent link">&para;</a></h3>
+<p><em>Interpolation</em> ist die einfachste Form des <em>data binding</em>. Syntaktisch erkennt man Interpolation an den doppelten geschweiften Klammern <code>{{ Interpolation }}</code>. </p>
+<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Beispiel</label><div class="tabbed-content"></div>
+</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-lesson&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;h1&gt;{{ headline }}&lt;/h1&gt;</span>
+<span class="sb">    &lt;p&gt;Hier steht {{name}}&lt;/p&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./lesson.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">LessonComponent</span> <span class="p">{</span>
+  <span class="nx">headline</span> <span class="o">=</span> <span class="s1">&#39;Mein Titel&#39;</span><span class="p">;</span>
+  <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;mein Name&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Im obigen Beispiel hat die Komponente <code>LessonComponent</code> zwei Eigenschaften: <code>headline</code> und <code>name</code>. In obiger Komponente wird (zur Anschauung) sogenanntes <em>inline templating</em> verwendet, d.h. es gibt keine eigene <code>lesson.component.html</code>-Datei, in der der HTML-Code steht, sondern der HTML-Code wird direkt in die <code>template</code>-Eigenschaft der Typescript-Datei <code>lesson.component.ts</code>eingefügt (siehe Zeilen 5-8 im obigen Beispiel). Der HTML-Code wird in <em>backticks</em> eingefasst (<code>``</code>), nicht zu verwechseln mit den einfachen Anführungsstrichen (<code>''</code>).</p>
+<p>Damit inline templating möglich ist, wird die Komponente mit dem Flag <code>-t</code> erzeugt (<code>inlineTemplate=true</code>), d.h. unsere Lesson-Komponente wurde mithilfe der CLI wie folgt erzeugt:</p>
+<div class="highlight"><pre><span></span><code>ng g c lesson -t
+</code></pre></div>
+<p>Eine Interpolation kann auch Ausdrücke enthalten, die aufgelöst werden, z.B.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>1 + 2 = {{1 + 2}}.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Man kann mithilfe einer <a href="./#direktiven">Direktive</a> durch ein Array laufen und jedes einzelne Element mithilfe von Interpolation ausgeben:</p>
+<div class="highlight"><pre><span></span><code><span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-lesson&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;ol&gt;</span>
+<span class="sb">      &lt;li *ngFor=&quot;let day of weekdays&quot;&gt;{{ day }}&lt;/li&gt;</span>
+<span class="sb">    &lt;/ol&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./lesson.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">LessonComponent</span> <span class="p">{</span>
+  <span class="nx">weekdays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">,</span> <span class="s1">&#39;Saturday&#39;</span><span class="p">,</span> <span class="s1">&#39;Sunday&#39;</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Oder es ist möglich, Attributen von HTML-Elementen mithilfe von Interpolation Werte zuzuordnen:</p>
+<div class="highlight"><pre><span></span><code><span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-lesson&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;img src=&quot;{{ imgUrl }}&quot; /&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./lesson.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">LessonComponent</span> <span class="p">{</span>
+  <span class="nx">imgUrl</span> <span class="o">=</span> <span class="s1">&#39;https://www.dpunkt.de/common/images/cover_masterid/800/12400.jpg&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Für unser <code>first</code>-Beispiel ist ein ganz einfaches Beispiel für die <code>main</code>-Komponente gezeigt:</p>
+<div class="tabbed-set" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">main.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;htw-main&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./main.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./main.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">MainComponent</span> <span class="nx">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+<span class="hll">  <span class="nx">headline</span> <span class="o">=</span> <span class="s1">&#39;This is main&#39;</span><span class="p">;</span>
+</span>
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">main.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="hll">      {{ headline }}
+</span>  <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;left&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">htw-left</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">htw-left</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;right&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">htw-right</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">htw-right</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h3 id="property-bindings">[Property Bindings]<a class="headerlink" href="#property-bindings" title="Permanent link">&para;</a></h3>
+<p>Insbesondere, wenn Attributen von HTML-Elementen Werte zugeordnet werden sollen (so wie beim <code>imgUrl</code>-Beispiel des Abschnitts <a href="./#interpolation"><strong>{{Interpolation}}</strong></a>), spricht man von <em>property binding</em>. Property binding spielt eine große Rolle beim Datenfluss von Eltern-Komponenten auf Kind-Komponenten. Die generelle Idee dabei ist, dass mithilfe von <em>property binding</em> Werte (Daten) an Attribute von HTML-Elementen bindet. Diese HTML-Elemente können auch Komponenten sein.</p>
+<p>Wir betrachten zunächst die unterschiedlichen Arten (Notationen) von property binding:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">element</span> <span class="err">[</span><span class="na">property</span><span class="err">]=&quot;</span><span class="na">ausdruck</span><span class="err">&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">element</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>D.h. ein <em>ausdruck</em> wird übergeben, der zu einem Wert aufgelöst wird und dieser Wert wird dem Attribut <code>property</code> übergeben. Betrachten wir nochmals das letzte Beispiel aus dem Abschnitt <a href="./#interpolation"><strong>{{Interpolation}}</strong></a>). Bei diesem Beispiel haben wir Interpolation verwendet, um dem Attribut <code>src</code> des HTML-Elementes <code>img</code> einen Wert zuzuweisen. Das exakt gleiche Verhalten lässt sich auch mittels <em>property bindings</em> erzeugen:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="err">[</span><span class="na">src</span><span class="err">]=&quot;</span><span class="na">imgUrl</span><span class="err">&quot;</span> <span class="p">/&gt;</span>
+
+<span class="c">&lt;!-- imgUrl = &#39;https://www.dpunkt.de/common/images/cover_masterid/800/12400.jpg&#39;; --&gt;</span>
+</code></pre></div>
+<p>Das bedeutet für unser <code>first</code>-Beispiel, dass die beiden <code>&lt;img&gt;</code>-Definitionen gleich sind:</p>
+<div class="tabbed-set" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">header.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>header works!
+<span class="hll">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ imgUrl }}&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;{{ description }}&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;53px;&quot;</span> <span class="p">/&gt;</span>
+</span><span class="hll">    <span class="p">&lt;</span><span class="nt">img</span> <span class="err">[</span><span class="na">src</span><span class="err">]=&quot;</span><span class="na">imgUrl</span><span class="err">&quot;</span> <span class="err">[</span><span class="na">alt</span><span class="err">]=&quot;</span><span class="na">description</span><span class="err">&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;53px;&quot;</span> <span class="p">/&gt;</span>
+</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">header.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;htw-header&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./header.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./header.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">HeaderComponent</span> <span class="nx">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+<span class="hll">  <span class="nx">imgUrl</span> <span class="o">=</span> <span class="s1">&#39;/assets/images/fiw.jpg&#39;</span><span class="p">;</span>
+</span><span class="hll">  <span class="nx">description</span> <span class="o">=</span> <span class="s1">&#39;FIW Logo&#39;</span><span class="p">;</span>
+</span>
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Neben diesen "allgemeinen" property bindings gibt es auch noch "spezielle" property bindings, nämlich <em>class bindings</em> und <em>style bindings</em>. Bei <em>class bindings</em> wird das Präfix <code>class</code> vor die property (die entsprechende CSS-Klasse) gesetzt:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">element</span> <span class="err">[</span><span class="na">class</span><span class="err">.</span><span class="na">class1</span><span class="err">]=&quot;</span><span class="na">class1enabled</span><span class="err">&quot;</span>
+         <span class="err">[</span><span class="na">class</span><span class="err">.</span><span class="na">class2</span><span class="err">]=&quot;</span><span class="na">class2enabled</span><span class="err">&quot;</span> <span class="err">...</span> <span class="p">&gt;&lt;/</span><span class="nt">element</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>D.h. die CSS-Klasse <code>class1</code>ist genau dann wirksam, wenn der Ausdruck <code>class1enabled</code> true ist und <code>class2</code>ist genau dann wirksam, wenn der Ausdruck <code>class2enabled</code> true ist usw.</p>
+<p>Bei den <em>style bindings</em> werden jedoch gar keine Ausdrücke, sondern Werte übergeben:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">element</span> <span class="err">[</span><span class="na">style</span><span class="err">.</span><span class="na">color</span><span class="err">]</span>
+</code></pre></div>
+<h3 id="event-bindings">(Event Bindings)<a class="headerlink" href="#event-bindings" title="Permanent link">&para;</a></h3>
+<p>In den <em>property bindings</em> haben wir gesehen, wie Werte Attributen (Eigenschaften) von Elementen zugeordnet werden können. Aus JavaScript ist auch bekannt, dass Ereignisse Attribute von Elementen sein können, z.B. <code>onClick</code>, <code>onKeyup</code>, <code>onChange</code> usw. Dabei handelt es sich um sogenannte <em>native DOM-Ereignisse</em>. Neben der Möglichkeit, solche nativen DOM-Ereigniss zu behandeln, bietet Angular auch die Möglichkeit, eigene Ereignisse zu definieren und diese zu behandeln. Wir betrachten beide Möglichkeiten und beginnen mit den nativen Ereignissen.</p>
+<h4 id="native-dom-ereignisse">Native DOM-Ereignisse<a class="headerlink" href="#native-dom-ereignisse" title="Permanent link">&para;</a></h4>
+<p>In HTML sieht das unter Aufruf einer JavaScript-Funktion für die Ereignisbahandlung dann typischerweise (hier das Click-Ereignis für einen Button) wie folgt aus:</p>
+<div class="tabbed-set" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">HTML</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="s">&quot;doSomething()&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">JavaScript</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">doSomething</span><span class="p">()</span> 
+<span class="p">{</span>
+  <span class="c1">// something to do</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<p>In Angular ist das Prinzip das gleiche, nur dass das Ereignis in runden Klammern genannt und an dieses Ereignis die Ereignisbehandlung gebunden wird (<em>event binding</em>). Das bedeutet, das Angular-Template für das obige Beispiel sieht wie folgt aus:</p>
+<div class="tabbed-set" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">Angular-Template</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">doSomething</span><span class="err">()&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">Angular-Typescript</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
+
+   <span class="nx">doSomething</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// something to do</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<p>Dieses Prinzip gilt für alle nativen DOM-Ereignisse. Hier ein kurzer Überblick über die wichtigsten (für eine umfangreichere Liste siehe <a href="https://developer.mozilla.org/en-US/docs/Web/Events#Standard_Events">hier</a> oder <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">hier</a>):</p>
+<table>
+<thead>
+<tr>
+<th>Ereignis</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>click</code></td>
+<td>Mausklick auf das Element</td>
+</tr>
+<tr>
+<td><code>change</code></td>
+<td>Der Inhalt/Wert eines Elementes hat sich geändert</td>
+</tr>
+<tr>
+<td><code>mouseover</code></td>
+<td>die Maus wird über das Element bewegt</td>
+</tr>
+<tr>
+<td><code>mouseout</code></td>
+<td>die Maus wird vom Element wegbewegt</td>
+</tr>
+<tr>
+<td><code>keydown</code></td>
+<td>eine Taste der Tastatur wird gedrückt</td>
+</tr>
+<tr>
+<td><code>keyup</code></td>
+<td>Loslassen einer Taste</td>
+</tr>
+<tr>
+<td><code>load</code></td>
+<td>der Browser hat die Seite vollständig geladen</td>
+</tr>
+<tr>
+<td><code>focus</code></td>
+<td>Fokussieren des Elements (z.B. Anklicken)</td>
+</tr>
+<tr>
+<td><code>blur</code></td>
+<td>Verlieren des Fokus (z.B. Klick außerhalb)</td>
+</tr>
+<tr>
+<td><code>submit</code></td>
+<td>Abschicken eines Formulars</td>
+</tr>
+<tr>
+<td><code>copy</code>, <code>paste</code></td>
+<td>Kopieren, Einfügen von Text</td>
+</tr>
+</tbody>
+</table>
+<p>Einen kleinen Unterschied gibt es noch bei der Übergabe des Ereignisses an die das Ereignis behandelnde Funktion zu beachten. Während in plain JavaScript das Ereignis mit <code>event</code> der Funktion übergeben wird, erfolgt die Übergabe des Ereignisses in Angular mit <code>$event</code>. Beispiel:</p>
+<div class="tabbed-set" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Angular-Template</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="err">(</span><span class="na">change</span><span class="err">)=&quot;</span><span class="na">showPayload</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">Angular-Typescript</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
+
+  <span class="nx">showPayload</span><span class="p">(</span><span class="nx">e</span><span class="o">:</span> <span class="nx">Event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<p>Alle Events (in TypeScript/Angular) sind vom Typ <code>Event</code>. Es gibt noch speziellere Eventtypen, die aber alle auf dem Interface <code>Event</code> basieren, z.B. <code>MouseEvent</code>, <code>InputEvent</code>, <code>KeyboardEvent</code>, <code>UIEvent</code>, <code>ClipboardEvent</code>. Weitere Details siehe <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">hier</a>.</p>
+<p>Die einfache JavaScript-Attributschreibweise kann in Angular nicht verwendet werden, sondern immer nur die <em>event binding</em>-Schreibweise von Angular (mit den runden Klammern)!</p>
+<h4 id="eigene-ereignisse">Eigene Ereignisse<a class="headerlink" href="#eigene-ereignisse" title="Permanent link">&para;</a></h4>
+<p>Für eine Komponente kann ein eigenes - nicht natives - Ereignis definiert werden. Dies geschieht, indem für eine Komponente eine neue Eigenschaft (z.B. <code>myEvent</code>) definiert wird und diese vom Typ <code>EventEmitter</code> deklariert wird. Mithilfe von Generics kann der Typ des Events angegeben werden, der ausgelöst werden soll - wenn Sie den Typ nicht genau kennen, verwenden Sie <code>any</code>. Soll das Ereignis an die Elternkomponente weitergeleitet werden, was meistens der Fall ist, wird der Decorator <code>@Output()</code>verwendet. 
+Das Auslösen des Events geschieht dann durch die <code>emit()</code>-Methode von <code>EventEmitter</code>. Hier ein typisches Beispiel (zunächst die Kindkomponente <code>EventsComponent</code> - also <code>events.component.html</code> und <code>events.component.ts</code>):</p>
+<div class="tabbed-set" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">emitMyEvent</span><span class="err">()&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">,</span> <span class="nx">Output</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-events&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./events.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./events.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">myEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">();</span>
+
+  <span class="nx">emitMyEvent</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">myEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">();</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Die <code>.html</code>-Datei definiert einen Button mit dem nativen Ereignis <code>click</code>. Dieses wird durch die Methode <code>emitMyEvent()</code> behandelt. </p>
+<p>In der <code>.ts</code>-Datei ist diese Methode definiert (Zeilen 11-13). Darin wird das eigene Event <code>myEvent</code> ausgelöst. Dieses Event ist ein Objekt vom Typ <code>EventEmitter</code>, typisiert als <code>any</code> (beliebiger Typ). Das Auslösen dieses Events wird an die aufrufende Komponente (die Elternkomponente) ausgegeben (Decorator <code>@Output()</code>). Deklaration der Eigenschaft und Dekorieren mit <code>@Output()</code> in Zeile 9. Das Auslösen des eigenen Events erfolgt durch den Aufruf der Methode <code>emit()</code> aus <code>EventEmitter</code> (Zeile 12).</p>
+<p>In der Elternkomponente kann dieses Ereignis nun empfangen werden (Beispiel einer Elternkomponente <code>AppComponent</code> - also <code>app.component.html</code> und <code>app.component.ts</code>):</p>
+<div class="tabbed-set" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">app-events</span> <span class="err">(</span><span class="na">myEvent</span><span class="err">)=&quot;</span><span class="na">handleEventFromEventsComponent</span><span class="err">()&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">app-events</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+
+  <span class="nx">handleEventFromEventsComponent</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;myEvent in der Kindkomponente ausgelöst&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>In der <code>AppComponent</code> (das kann natürlich eine beliebige Komponente sein), wird die <code>EventsComponent</code> eingebunden (siehe <code>&lt;app-events&gt;</code> im Template der <code>AppComponent</code>). Dadurch entsteht die Hierarchie Elternkomponente <code>AppComponent</code> &rarr; Kindkomponente <code>EventsComponent</code> im DOM. </p>
+<p>Mithilfe von <em>event binding</em> wird die Behandlung des Ereignisses <code>myEvent</code> an die Methode <code>handleEventFromEventsComponent()</code> gebunden. In dieser Methode erfolgt hier einfach nur eine Ausgabe auf die Konsole. </p>
+<p>Interessant ist, dass wir dadurch die Möglichkeit haben, Daten von der Kindkomponente zur Elternkomponente fließen zu lassen. Dazu übergeben wir diese Daten als <code>payload</code> des Ereignisses. Dafür typisieren wir <code>EventEmitter</code> mit dem Typ, von dem wir Daten übergeben wollen (z.B. <code>Book</code> - siehe <a href="./books/#event-binding">Bücher-App</a>). Die beiden obigen Beispiele sehen dann wie folgt aus (zuerst wieder <code>EventsComponent</code>): </p>
+<div class="tabbed-set" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">emitMyEvent</span><span class="err">(</span><span class="na">book</span><span class="err">)&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><label for="__tabbed_16_2">.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">,</span> <span class="nx">Output</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-events&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./events.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./events.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">myEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span><span class="p">();</span>
+
+  <span class="nx">emitMyEvent</span><span class="p">(</span><span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">myEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="nx">book</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Im Template (HTML) werden die Daten der Ereignisbehandlung übergeben. Das <code>EventEmitter</code>-Objekt ist mit dem konkreten Datentyp typisiert. Bei Aufruf der Methode <code>emit()</code> werden die Daten an die Elternkomponente übergeben. </p>
+<p>Die Elternkomponente (hier wieder <code>AppComponent</code> kann diese Daten, die von der Kindkomponente an die Elternkomponente via Ereignis geflossen sind, nun weiterverarbeiten bzw. darstellen):</p>
+<div class="tabbed-set" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">app-events</span> <span class="err">(</span><span class="na">myEvent</span><span class="err">)=&quot;</span><span class="na">handleEventFromEventsComponent</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">app-events</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><label for="__tabbed_17_2">.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+
+  <span class="nx">handleEventFromEventsComponent</span><span class="p">(</span><span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wichtig beim <em>event binding</em> der Elternkomponente ist, dass der <em>payload</em> des Ereignisses mit <code>$event</code> übergeben wird (siehe auch <a href="./#native-dom-ereignisse">Native DOM-Ereignisse</a>). </p>
+<div class="admonition success">
+<p class="admonition-title">Zusammenfassung</p>
+<p>In den letzten drei Abschnitten Interpolation, Property Binding und Event Binding haben wir uns mit Datenfluss beschäftigt. Interpolation wird verwendet, um innerhalb einer Komponente die in der TypeScript-Klasse definierten Daten im Template darzustellen. Mithilfe von Property Binding kann die aufrufende Komponente (Elternkomponente) der aufgerufenen Kopmponente (Kindkomponente) Daten übergeben. Mithilfe von Event Binding kann die Kindkomponente der Elternkomponente mithilfe eines eigenen Ereignisses Daten übergeben.
+Für die Anwendung dieser Konzepte schauen Sie sich <a href="./books/#datenfluss-zwischen-komponenten"><strong>Bücher-App&rarr;Datenfluss zwischen Komponenten</strong></a> an. </p>
+</div>
+<h3 id="two-way-bindings">[(Two-Way-Bindings)]<a class="headerlink" href="#two-way-bindings" title="Permanent link">&para;</a></h3>
 <h3 id="direktiven">Direktiven<a class="headerlink" href="#direktiven" title="Permanent link">&para;</a></h3>
 <p>In Angular gibt es 3 Arten sogenannter <em>Direktiven</em> (engl. <em>Directives</em>):</p>
 <ul>
@@ -1319,359 +1903,6 @@ gespeichert, der Wert von <code>first</code> in der Variablen <code>f</code>(Zei
 <p class="admonition-title">Aufgabe</p>
 <p>Informieren Sie sich auch über die <code>*ngSwitch</code>-Direktive. Implementieren Sie ein Beispiel, in dem Sie die 3 Direktiven <code>*ngIf</code>, <code>*ngFor</code> und <code>*ngSwitch</code> anwenden. </p>
 </div>
-<h3 id="interpolation">{{ Interpolation }}<a class="headerlink" href="#interpolation" title="Permanent link">&para;</a></h3>
-<p><em>Interpolation</em> ist die einfachste Form des <em>data binding</em>. Syntaktisch erkennt man Interpolation an den doppelten geschweiften Klammern <code>{{ Interpolation }}</code>. </p>
-<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Beispiel</label><div class="tabbed-content"></div>
-</div>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-lesson&#39;</span><span class="p">,</span>
-  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
-<span class="sb">    &lt;h1&gt;{{ headline }}&lt;/h1&gt;</span>
-<span class="sb">    &lt;p&gt;Hier steht {{name}}&lt;/p&gt;</span>
-<span class="sb">  `</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./lesson.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">LessonComponent</span> <span class="p">{</span>
-  <span class="nx">headline</span> <span class="o">=</span> <span class="s1">&#39;Mein Titel&#39;</span><span class="p">;</span>
-  <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;mein Name&#39;</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-<p>Im obigen Beispiel hat die Komponente <code>LessonComponent</code> zwei Eigenschaften: <code>headline</code> und <code>name</code>. In obiger Komponente wird (zur Anschauung) sogenanntes <em>inline templating</em> verwendet, d.h. es gibt keine eigene <code>lesson.component.html</code>-Datei, in der der HTML-Code steht, sondern der HTML-Code wird direkt in die <code>template</code>-Eigenschaft der Typescript-Datei <code>lesson.component.ts</code>eingefügt (siehe Zeilen 5-8 im obigen Beispiel). Der HTML-Code wird in <em>backticks</em> eingefasst (<code>``</code>), nicht zu verwechseln mit den einfachen Anführungsstrichen (<code>''</code>).</p>
-<p>Damit inline templating möglich ist, wird die Komponente mit dem Flag <code>-t</code> erzeugt (<code>inlineTemplate=true</code>), d.h. unsere Lesson-Komponente wurde mithilfe der CLI wie folgt erzeugt:</p>
-<div class="highlight"><pre><span></span><code>ng g c lesson -t
-</code></pre></div>
-<p>Eine Interpolation kann auch Ausdrücke enthalten, die aufgelöst werden, z.B.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>1 + 2 = {{1 + 2}}.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Man kann mithilfe einer Direktive durch ein Array laufen und jedes einzelne Element mithilfe von Interpolation ausgeben:</p>
-<div class="highlight"><pre><span></span><code><span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-lesson&#39;</span><span class="p">,</span>
-  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
-<span class="sb">    &lt;ol&gt;</span>
-<span class="sb">      &lt;li *ngFor=&quot;let day of weekdays&quot;&gt;{{ day }}&lt;/li&gt;</span>
-<span class="sb">    &lt;/ol&gt;</span>
-<span class="sb">  `</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./lesson.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">LessonComponent</span> <span class="p">{</span>
-  <span class="nx">weekdays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">,</span> <span class="s1">&#39;Saturday&#39;</span><span class="p">,</span> <span class="s1">&#39;Sunday&#39;</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Oder es ist möglich, Attributen von HTML-Elementen mithilfe von Interpolation Werte zuzuordnen:</p>
-<div class="highlight"><pre><span></span><code><span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-lesson&#39;</span><span class="p">,</span>
-  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
-<span class="sb">    &lt;img src=&quot;{{ imgUrl }}&quot; /&gt;</span>
-<span class="sb">  `</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./lesson.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">LessonComponent</span> <span class="p">{</span>
-  <span class="nx">imgUrl</span> <span class="o">=</span> <span class="s1">&#39;https://www.dpunkt.de/common/images/cover_masterid/800/12400.jpg&#39;</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="property-bindings">[Property Bindings]<a class="headerlink" href="#property-bindings" title="Permanent link">&para;</a></h3>
-<p>Insbesondere, wenn Attributen von HTML-Elementen Werte zugeordnet werden sollen (so wie im letzten Beispiel des Abschnitts <a href="./#interpolation"><strong>{{Interpolation}}</strong></a>), spricht man von <em>property binding</em>. Property binding spielt eine große Rolle beim Datenfluss von Eltern-Komponenten auf Kind-Komponenten. Die generelle Idee dabei ist, dass mithilfe von property binding Werte (Daten) an Attribute von HTML-Elementen bindet. Diese HTML-Elemente können auch Komponenten sein.</p>
-<p>Wir betrachten zunächst die unterschiedlichen Arten (Notationen) von property binding:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">element</span> <span class="err">[</span><span class="na">property</span><span class="err">]=&quot;</span><span class="na">ausdruck</span><span class="err">&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">element</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>D.h. ein <em>ausdruck</em> wird übergeben, der zu einem Wert aufgelöst wird und dieser Wert wird dem Attribut <code>property</code> übergeben. Betrachten wir nochmals das letzte Beispiel aus dem Abschnitt <a href="./#interpolation"><strong>{{Interpolation}}</strong></a>). Bei diesem Beispiel haben wir Interpolation verwendet, um dem Attribut <code>src</code> des HTML-Elementes <code>img</code> einen Wert zuzuweisen. Das exakt gleiche Verhalten lässt sich auch mittels <em>property bindings</em> erzeugen:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="err">[</span><span class="na">src</span><span class="err">]=&quot;</span><span class="na">imgUrl</span><span class="err">&quot;</span> <span class="p">/&gt;</span>
-
-<span class="c">&lt;!-- imgUrl = &#39;https://www.dpunkt.de/common/images/cover_masterid/800/12400.jpg&#39;; --&gt;</span>
-</code></pre></div>
-<p>Neben diesen "allgemeinen" property bindings gibt es auch noch "spezielle" property bindings, nämlich <em>class bindings</em> und <em>style bindings</em>. Bei <em>class bindings</em> wird das Präfix <code>class</code> vor die property (die entsprechende CSS-Klasse) gesetzt:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">element</span> <span class="err">[</span><span class="na">class</span><span class="err">.</span><span class="na">class1</span><span class="err">]=&quot;</span><span class="na">class1enabled</span><span class="err">&quot;</span>
-         <span class="err">[</span><span class="na">class</span><span class="err">.</span><span class="na">class2</span><span class="err">]=&quot;</span><span class="na">class2enabled</span><span class="err">&quot;</span> <span class="err">...</span> <span class="p">&gt;&lt;/</span><span class="nt">element</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>D.h. die CSS-Klasse <code>class1</code>ist genau dann wirksam, wenn der Ausdruck <code>class1enabled</code> true ist und <code>class2</code>ist genau dann wirksam, wenn der Ausdruck <code>class2enabled</code> true ist usw.</p>
-<p>Bei den <em>style bindings</em> werden jedoch gar keine Ausdrücke, sondern Werte übergeben:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">element</span> <span class="err">[</span><span class="na">style</span><span class="err">.</span><span class="na">color</span><span class="err">]</span>
-</code></pre></div>
-<h3 id="event-bindings">(Event Bindings)<a class="headerlink" href="#event-bindings" title="Permanent link">&para;</a></h3>
-<p>In den <em>property bindings</em> haben wir gesehen, wie Werte Attributen (Eigenschaften) von Elementen zugeordnet werden können. Aus JavaScript ist auch bekannt, dass Ereignisse Attribute von Elementen sein können, z.B. <code>onClick</code>, <code>onKeyup</code>, <code>onChange</code> usw. Dabei handelt es sich um sogenannte <em>native DOM-Ereignisse</em>. Neben der Möglichkeit, solche nativen DOM-Ereigniss zu behandeln, bietet Angular auch die Möglichkeit, eigene Ereignisse zu definieren und diese zu behandeln. Wir betrachten beide Möglichkeiten und beginnen mit den nativen Ereignissen.</p>
-<h4 id="native-dom-ereignisse">Native DOM-Ereignisse<a class="headerlink" href="#native-dom-ereignisse" title="Permanent link">&para;</a></h4>
-<p>In HTML sieht das unter Aufruf einer JavaScript-Funktion für die Ereignisbahandlung dann typischerweise (hier das Click-Ereignis für einen Button) wie folgt aus:</p>
-<div class="tabbed-set" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">HTML</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="s">&quot;doSomething()&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">JavaScript</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">doSomething</span><span class="p">()</span> 
-<span class="p">{</span>
-  <span class="c1">// something to do</span>
-<span class="p">}</span>
-</code></pre></div>
-</div>
-</div>
-<p>In Angular ist das Prinzip das gleiche, nur dass das Ereignis in runden Klammern genannt und an dieses Ereignis die Ereignisbehandlung gebunden wird (<em>event binding</em>). Das bedeutet, das Angular-Template für das obige Beispiel sieht wie folgt aus:</p>
-<div class="tabbed-set" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Angular-Template</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">doSomething</span><span class="err">()&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">Angular-Typescript</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
-
-   <span class="nx">doSomething</span><span class="p">()</span> <span class="p">{</span>
-      <span class="c1">// something to do</span>
-   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</div>
-</div>
-<p>Dieses Prinzip gilt für alle nativen DOM-Ereignisse. Hier ein kurzer Überblick über die wichtigsten (für eine umfangreichere Liste siehe <a href="https://developer.mozilla.org/en-US/docs/Web/Events#Standard_Events">hier</a> oder <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">hier</a>):</p>
-<table>
-<thead>
-<tr>
-<th>Ereignis</th>
-<th>Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>click</code></td>
-<td>Mausklick auf das Element</td>
-</tr>
-<tr>
-<td><code>change</code></td>
-<td>Der Inhalt/Wert eines Elementes hat sich geändert</td>
-</tr>
-<tr>
-<td><code>mouseover</code></td>
-<td>die Maus wird über das Element bewegt</td>
-</tr>
-<tr>
-<td><code>mouseout</code></td>
-<td>die Maus wird vom Element wegbewegt</td>
-</tr>
-<tr>
-<td><code>keydown</code></td>
-<td>eine Taste der Tastatur wird gedrückt</td>
-</tr>
-<tr>
-<td><code>keyup</code></td>
-<td>Loslassen einer Taste</td>
-</tr>
-<tr>
-<td><code>load</code></td>
-<td>der Browser hat die Seite vollständig geladen</td>
-</tr>
-<tr>
-<td><code>focus</code></td>
-<td>Fokussieren des Elements (z.B. Anklicken)</td>
-</tr>
-<tr>
-<td><code>blur</code></td>
-<td>Verlieren des Fokus (z.B. Klick außerhalb)</td>
-</tr>
-<tr>
-<td><code>submit</code></td>
-<td>Abschicken eines Formulars</td>
-</tr>
-<tr>
-<td><code>copy</code>, <code>paste</code></td>
-<td>Kopieren, Einfügen von Text</td>
-</tr>
-</tbody>
-</table>
-<p>Einen kleinen Unterschied gibt es noch bei der Übergabe des Ereignisses an die das Ereignis behandelnde Funktion zu beachten. Während in plain JavaScript das Ereignis mit <code>event</code> der Funktion übergeben wird, erfolgt die Übergabe des Ereignisses in Angular mit <code>$event</code>. Beispiel:</p>
-<div class="tabbed-set" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Angular-Template</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="err">(</span><span class="na">change</span><span class="err">)=&quot;</span><span class="na">showPayload</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="p">/&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">Angular-Typescript</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
-
-  <span class="nx">showPayload</span><span class="p">(</span><span class="nx">e</span><span class="o">:</span> <span class="nx">Event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</div>
-</div>
-<p>Alle Events (in TypeScript/Angular) sind vom Typ <code>Event</code>. Es gibt noch speziellere Eventtypen, die aber alle auf dem Interface <code>Event</code> basieren, z.B. <code>MouseEvent</code>, <code>InputEvent</code>, <code>KeyboardEvent</code>, <code>UIEvent</code>, <code>ClipboardEvent</code>. Weitere Details siehe <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">hier</a>.</p>
-<p>Die einfache JavaScript-Attributschreibweise kann in Angular nicht verwendet werden, sondern immer nur die <em>event binding</em>-Schreibweise von Angular (mit den runden Klammern)!</p>
-<h4 id="eigene-ereignisse">Eigene Ereignisse<a class="headerlink" href="#eigene-ereignisse" title="Permanent link">&para;</a></h4>
-<p>Für eine Komponente kann ein eigenes - nicht natives - Ereignis definiert werden. Dies geschieht, indem für eine Komponente eine neue Eigenschaft (z.B. <code>myEvent</code>) definiert wird und diese vom Typ <code>EventEmitter</code> deklariert wird. Mithilfe von Generics kann der Typ des Events angegeben werden, der ausgelöst werden soll - wenn Sie den Typ nicht genau kennen, verwenden Sie <code>any</code>. Soll das Ereignis an die Elternkomponente weitergeleitet werden, was meistens der Fall ist, wird der Decorator <code>@Output()</code>verwendet. 
-Das Auslösen des Events geschieht dann durch die <code>emit()</code>-Methode von <code>EventEmitter</code>. Hier ein typisches Beispiel (zunächst die Kindkomponente <code>EventsComponent</code> - also <code>events.component.html</code> und <code>events.component.ts</code>):</p>
-<div class="tabbed-set" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">.html</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">emitMyEvent</span><span class="err">()&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">.ts</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">,</span> <span class="nx">Output</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-events&#39;</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./events.component.html&#39;</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./events.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
-  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">myEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">();</span>
-
-  <span class="nx">emitMyEvent</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">myEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">();</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-</div>
-<p>Die <code>.html</code>-Datei definiert einen Button mit dem nativen Ereignis <code>click</code>. Dieses wird durch die Methode <code>emitMyEvent()</code> behandelt. </p>
-<p>In der <code>.ts</code>-Datei ist diese Methode definiert (Zeilen 11-13). Darin wird das eigene Event <code>myEvent</code> ausgelöst. Dieses Event ist ein Objekt vom Typ <code>EventEmitter</code>, typisiert als <code>any</code> (beliebiger Typ). Das Auslösen dieses Events wird an die aufrufende Komponente (die Elternkomponente) ausgegeben (Decorator <code>@Output()</code>). Deklaration der Eigenschaft und Dekorieren mit <code>@Output()</code> in Zeile 9. Das Auslösen des eigenen Events erfolgt durch den Aufruf der Methode <code>emit()</code> aus <code>EventEmitter</code> (Zeile 12).</p>
-<p>In der Elternkomponente kann dieses Ereignis nun empfangen werden (Beispiel einer Elternkomponente <code>AppComponent</code> - also <code>app.component.html</code> und <code>app.component.ts</code>):</p>
-<div class="tabbed-set" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">.html</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">app-events</span> <span class="err">(</span><span class="na">myEvent</span><span class="err">)=&quot;</span><span class="na">handleEventFromEventsComponent</span><span class="err">()&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">app-events</span><span class="p">&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">.ts</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
-
-  <span class="nx">handleEventFromEventsComponent</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;myEvent in der Kindkomponente ausgelöst&#39;</span><span class="p">);</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-</div>
-<p>In der <code>AppComponent</code> (das kann natürlich eine beliebige Komponente sein), wird die <code>EventsComponent</code> eingebunden (siehe <code>&lt;app-events&gt;</code> im Template der <code>AppComponent</code>). Dadurch entsteht die Hierarchie Elternkomponente <code>AppComponent</code> &rarr; Kindkomponente <code>EventsComponent</code> im DOM. </p>
-<p>Mithilfe von <em>event binding</em> wird die Behandlung des Ereignisses <code>myEvent</code> an die Methode <code>handleEventFromEventsComponent()</code> gebunden. In dieser Methode erfolgt hier einfach nur eine Ausgabe auf die Konsole. </p>
-<p>Interessant ist, dass wir dadurch die Möglichkeit haben, Daten von der Kindkomponente zur Elternkomponente fließen zu lassen. Dazu übergeben wir diese Daten als <code>payload</code> des Ereignisses. Dafür typisieren wir <code>EventEmitter</code> mit dem Typ, von dem wir Daten übergeben wollen (z.B. <code>Book</code> - siehe <a href="./books/#event-binding">Bücher-App</a>). Die beiden obigen Beispiele sehen dann wie folgt aus (zuerst wieder <code>EventsComponent</code>): </p>
-<div class="tabbed-set" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">.html</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">emitMyEvent</span><span class="err">(</span><span class="na">book</span><span class="err">)&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">.ts</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">,</span> <span class="nx">Output</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-events&#39;</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./events.component.html&#39;</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./events.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
-  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">myEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span><span class="p">();</span>
-
-  <span class="nx">emitMyEvent</span><span class="p">(</span><span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">myEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="nx">book</span><span class="p">);</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-</div>
-<p>Im Template (HTML) werden die Daten der Ereignisbehandlung übergeben. Das <code>EventEmitter</code>-Objekt ist mit dem konkreten Datentyp typisiert. Bei Aufruf der Methode <code>emit()</code> werden die Daten an die Elternkomponente übergeben. </p>
-<p>Die Elternkomponente (hier wieder <code>AppComponent</code> kann diese Daten, die von der Kindkomponente an die Elternkomponente via Ereignis geflossen sind, nun weiterverarbeiten bzw. darstellen):</p>
-<div class="tabbed-set" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">.html</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">app-events</span> <span class="err">(</span><span class="na">myEvent</span><span class="err">)=&quot;</span><span class="na">handleEventFromEventsComponent</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">app-events</span><span class="p">&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">.ts</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
-
-  <span class="nx">handleEventFromEventsComponent</span><span class="p">(</span><span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-</div>
-<p>Wichtig beim <em>event binding</em> der Elternkomponente ist, dass der <em>payload</em> des Ereignisses mit <code>$event</code> übergeben wird (siehe auch <a href="./#native-dom-ereignisse">Native DOM-Ereignisse</a>). </p>
-<div class="admonition success">
-<p class="admonition-title">Zusammenfassung</p>
-<p>In den letzten drei Abschnitten Interpolation, Property Binding und Event Binding haben wir uns mit Datenfluss beschäftigt. Interpolation wird verwendet, um innerhalb einer Komponente die in der TypeScript-Klasse definierten Daten im Template darzustellen. Mithilfe von Property Binding kann die aufrufende Komponente (Elternkomponente) der aufgerufenen Kopmponente (Kindkomponente) Daten übergeben. Mithilfe von Event Binding kann die Kindkomponente der Elternkomponente mithilfe eines eigenen Ereignisses Daten übergeben.
-Für die Anwendung dieser Konzepte schauen Sie sich <a href="./books/#datenfluss-zwischen-komponenten"><strong>Bücher-App&rarr;Datenfluss zwischen Komponenten</strong></a> an. </p>
-</div>
-<h3 id="two-way-bindings">[(Two-Way-Bindings)]<a class="headerlink" href="#two-way-bindings" title="Permanent link">&para;</a></h3>
 <h2 id="lifecycle-hooks">Lifecycle-Hooks<a class="headerlink" href="#lifecycle-hooks" title="Permanent link">&para;</a></h2>
 <p>Komponenten durchlaufen einen festen Lebenszyklus (<em>lifecycle</em>). Die verschiedenen Status rufen dabei jeweils eine Methode auf, die wir jeweils implementieren können, um in den jeweiligen Status des Lebenszyklus eingreifen zu können. Man spricht dabei von sogenannten <em>Lifecycle-Hooks</em>. </p>
 <p>Der wohl bekannteste Lifecycle-Hook ist <code>ngOnInit()</code>. Damit greift man in die Initialisierung der Komponente ein. Typischerweise werden z.B. Eingabewerte initialisiert, die im Template dargestellt werden.</p>
@@ -1698,7 +1929,7 @@ Für die Anwendung dieser Konzepte schauen Sie sich <a href="./books/#datenfluss
 </code></pre></div>
 <p>Es entsteht im <code>src/app/shared</code>-Ordner eine Datei <code>my.service.ts</code>. Services sollten am besten in dem <code>shared</code>-Ordner erstellt werden, da ein Service von allen Komponenten genutzt werden kann (eine andere Möglichkeit wäre, einen eigenen Ordner <code>services</code> zu erstellen).</p>
 <p>In dem Decorator <code>@Injectable()</code> wird mittels <code>providedIn: root</code> angegeben, dass der Service von allen Komponenten innerhalb des Root-Moduls genutzt werden kann. Ist der Service von anderen Services oder Komponenten abhängig, können diese Services oder Komponenten mittels <em>dependency injection</em> als Parameter des Service-Konstruktor eingebunden werden. Hier ein allgemeines Beispiel eines Services <code>MyService</code>:</p>
-<div class="tabbed-set" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">my.service.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="18:1"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><label for="__tabbed_18_1">my.service.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1723,7 +1954,7 @@ Für die Anwendung dieser Konzepte schauen Sie sich <a href="./books/#datenfluss
 </div>
 </div>
 <p>Der Service kann dann mittels <em>dependency injection</em> von einer Komponente verwendet werden. Beispiel:</p>
-<div class="tabbed-set" data-tabs="15:1"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">example.component.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="19:1"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><label for="__tabbed_19_1">example.component.ts</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
 
 <span class="k">import</span> <span class="p">{</span><span class="nx">MyService</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./shared/my.service&#39;</span><span class="p">;</span>
@@ -1764,7 +1995,7 @@ ng g c first
 ng g c second
 </code></pre></div>
 <p>Wird ein Angular-Projekt <strong>mit</strong> Routing erstellt, so existiert die Datei <code>app-routing.module.ts</code> im <code>src/app/</code>-Ordner. Diese Datei sieht ursprünglich so aus:</p>
-<div class="tabbed-set" data-tabs="16:1"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">app-routing.module.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="20:1"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><label for="__tabbed_20_1">app-routing.module.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1789,7 +2020,7 @@ ng g c second
 </div>
 </div>
 <p>Bei dieser Klasse handelt es sich um ein eigenes Angular-Modul (als <code>@NgModule</code> dekoriert). Es wird deshalb auch in die <code>app.module.ts</code> integriert (dies geschieht automatisch, wenn wir <em>Routing</em> ausgewählt haben) - siehe Zeilen 4 und 17 im folgenden Listing:</p>
-<div class="tabbed-set" data-tabs="17:1"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">app.module.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="21:1"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><label for="__tabbed_21_1">app.module.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1841,7 +2072,7 @@ ng g c second
 <div class="highlight"><pre><span></span><code><span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;mypath&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">MyComponent</span> <span class="p">}</span>
 </code></pre></div>
 <p>Diese Angabe bewirkt, dass unter der URL <code>http://www.mydomain.de/mypath</code> die Komponente <code>MyComponent</code> aufgerufen wird. Angenommen, wir wollen, dass unsere Komponente <code>FirstComponent</code> unter dem Pfad <code>/first</code> aufgerufen wird und <code>SecondComponent</code> unter dem Pfad <code>/second</code>, dann sieht unsere Datei <code>app-routing.module.ts</code> wie folgt aus:</p>
-<div class="tabbed-set" data-tabs="18:1"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><label for="__tabbed_18_1">app-routing.module.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="22:1"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><label for="__tabbed_22_1">app-routing.module.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1878,7 +2109,7 @@ ng g c second
 </div>
 </div>
 <p>In den Zeilen 8 und 9 sind die beiden Routen definiert. Beachten Sie, dass die Pfadangaben ohne vorangestelltes Slash <code>/</code> erfolgen! Unter Verwendung der Selektoren <code>&lt;app-first&gt;</code> bzw. <code>&lt;app-second&gt;</code> könnten wir unsere Komponenten nun (statisch) in unsere Anwendung einbinden. Wollen wir das jedoch dem <em>Routing</em> überlassen, die Komponenten also dynamisch - abhängig von dem jeweils gewählten Pfad - einbinden lassen, verwenden wir stattdessen den Selektor <code>&lt;router-outlet&gt;</code>. Auch dieser ist bei gewähltem <em>Routing</em> bereits Teil des <code>AppComponent</code>-Templates:</p>
-<div class="tabbed-set" data-tabs="19:1"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><label for="__tabbed_19_1">app.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="23:1"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><label for="__tabbed_23_1">app.component.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="c">&lt;!-- hier wurde viel vom ursprünglichen --&gt;</span>
 <span class="c">&lt;!-- Template gelöscht                  --&gt;</span>
 
@@ -1888,11 +2119,11 @@ ng g c second
 </div>
 </div>
 <p>Obiges Listing zeigt, dass das Template von <code>AppComponent</code> zunächst eine <code>&lt;h1&gt;</code>-Überschrift vorsieht und dann folgt das <code>&lt;router-outlet&gt;</code>, welches als Platzhalter für die durch das Routing ausgewählten Komponenten agiert. Angenommen, wir definieren die Templates f+r <code>FirstComponent</code> und <code>SecondComponent</code> wie folgt:</p>
-<div class="tabbed-set" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><label for="__tabbed_20_1">first.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><label for="__tabbed_24_1">first.component.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hier ist FirstComponent<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><label for="__tabbed_20_2">second.component.html</label><div class="tabbed-content">
+<input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><label for="__tabbed_24_2">second.component.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hier ist SecondComponent<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
@@ -1902,7 +2133,7 @@ ng g c second
 <p>Wir haben nun Pfade erzeugt, mit denen man Komponenten direkt ansprechen kann. Im folgenden Abschnitt wird gezeigt, wie man diese Pfade in Hyperlinks nutzt.</p>
 <h3 id="routen-verlinken">Routen verlinken<a class="headerlink" href="#routen-verlinken" title="Permanent link">&para;</a></h3>
 <p>Wir kennen nun die möglichen Pfade unserer Anwendung <code>http://localhost:4200/</code>, <code>http://localhost:4200/first</code> und <code>http://localhost:4200/second</code> und würden diese Adressen z.B. gerne in Hyperlinks verwenden, um direkt zu den Views der jeweiligen Komponente zu springen, z.B. so:</p>
-<div class="tabbed-set" data-tabs="21:1"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><label for="__tabbed_21_1">app.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="25:1"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><label for="__tabbed_25_1">app.component.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hier ist AppComponent<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -1921,7 +2152,7 @@ ng g c second
 </div>
 <p>Das funktioniert auch, hat aber einen von uns nicht gewollten Effekt: Die Seite wird durch jeden Klick auf einen Hyperlink neu geladen. Das ist ja auch das gewünschte Verhalten eines Hyperlinks. Die Idee einer <em>Single-Page-Applikation</em> ist aber jedoch die, dass die Seite nur genau einmal geladen wird und dann dynamisch alle weiteren Inhalte. </p>
 <p>Das Nachladen wird vermieden, wenn wir als Attribut für unsere Pfade nicht <code>href</code> verwenden, sondern die Angular-Direktive <code>routerLink</code>. Dies gilt nur für interne Links! Aber es verhindert bei internen Links ein Neuladen der Seite.</p>
-<div class="tabbed-set" data-tabs="22:1"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><label for="__tabbed_22_1">app.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="26:1"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><label for="__tabbed_26_1">app.component.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hier ist AppComponent<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -1939,7 +2170,7 @@ ng g c second
 </div>
 </div>
 <p>Die obige Attributschreibweise kann auch durch <em>property binding</em> ersetzt werden. Dann übergeben Sie als Wert aber keinen String sondern ein 1-elementiges Array:</p>
-<div class="tabbed-set" data-tabs="23:1"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><label for="__tabbed_23_1">app.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="27:1"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><label for="__tabbed_27_1">app.component.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hier ist AppComponent<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -1971,7 +2202,7 @@ ng g c second
 </td></tr></table>
 <p>Wir haben jetzt eine parametrisierten Pfad konfiguriert und wir haben auch betrachtet, wie der Aufruf einer solch parametrisierten Route erfolgen kann. Nun betrachten wir, wie der Wert eines Parameters in einer Komponentenklasse ausgelesen und verarbeitet werden kann. </p>
 <p>Wir führen dazu zunächst kleinere Änderungen an unserem obigen Beispiel der <code>routing-lesson</code>-App durch: </p>
-<div class="tabbed-set" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><label for="__tabbed_24_1">app-routing.module.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="28:2"><input checked="checked" id="__tabbed_28_1" name="__tabbed_28" type="radio" /><label for="__tabbed_28_1">app-routing.module.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2006,7 +2237,7 @@ ng g c second
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><label for="__tabbed_24_2">first.component.html</label><div class="tabbed-content">
+<input id="__tabbed_28_2" name="__tabbed_28" type="radio" /><label for="__tabbed_28_2">first.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hier ist FirstComponent<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">p</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;id&quot;</span><span class="p">&gt;</span>{{ id }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -2016,7 +2247,7 @@ ng g c second
 </div>
 <p>In <code>app-routing.module.ts</code> haben wir einen weiteren Pfad hinzugefügt (Zeilennummer 8). Beachten Sie, dass ohne die Pfadkonfiguration in Zeilennummer 7 die Route <code>http://localhost:4200/first</code> (also ohne Parameterwert) nicht mehr existieren würde. Wenn ein Parameter erforderlich ist, dann muss er auch angegeben werden. Nur in Kombination der beiden Pfadkonfigurationen aus Zeilennummern 7 und 8 ist der Pfad sowohl mit als auch ohne Parameterwert möglich. </p>
 <p>Im Template der <code>FirstComponent</code> haben wir einen Absatz eingefügt, der als Inhalt den Wert der Eigenschaft <code>id</code> mittels Interpolation anzeigt. Der Absatz erscheint nur, wenn <code>id</code> auch einen Wert hat. Die Eigenschaft <code>id</code> muss allerdings noch in der <code>first.component.ts</code> angelegt werden:</p>
-<div class="tabbed-set" data-tabs="25:1"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><label for="__tabbed_25_1">first.component.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="29:1"><input checked="checked" id="__tabbed_29_1" name="__tabbed_29" type="radio" /><label for="__tabbed_29_1">first.component.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2064,7 +2295,7 @@ ng g c second
 <p>Die aktuelle Implementierung von <code>first.component.ts</code> liest also während der Initialisierung der Komponente die Routenparameter aus. Finden jedoch am Parameterwert Änderungen statt, ohne dass die Komponente neu initialisiert wird, bekommt die Komponente von den Änderungen nichts mit. Die oben gezeigte Form der Implementierung ist deshalb nicht für alle Fälle geeignet. Vielmehr ist es besser auszunutzen, dass es sich bei <code>this.route.paramMap</code> (ohne <code>snapshot</code>) um ein <a href="https://angular.io/guide/observables-in-angular"><em>Observable</em></a> handelt.  </p>
 <p>Ein <em>Observable</em> kann so verstanden werden, dass er permanent eine bestimmte Sache beobachtet (z.B. ist der <code>EventEmitter</code> ein <em>Observable</em> und beobachtet permanent, ob das Ereignis ausgelöst wird; wenn ja, dann ruft <code>EventEmitter</code> die Funktion <code>emit()</code> auf &rarr; siehe <a href="./#eigene-ereignisse">Eigene Ereignisse</a>). Wenn sich etwas an dem beobachteten Objekt geändert hat, dann reagiert <em>Observable</em> sofort und ruft eine bestimmte Funktion auf. Das <em>Observable</em> <code>paramMap</code> beobachtet permanent die aktuelle Route und sobald sich etwas an dieser Route ändert, wird eine Funktion aufgerufen.</p>
 <p>Damit das <em>Observable</em> aber überhaupt den aktuellen Router permanent beobachtet, muss er an den Router angemeldet werden &rarr; das <em>Observable</em> "abboniert" den Router. Dies geschieht mithilfe der Funktion <code>subscribe()</code>. Dieser Funktion kann als Parameter eine Funktion übergeben werden. Diese Funktion wird aufgerufen, sobald sich am aktuellen Router etwas ändert. Wir ändern die Implementierung von <code>ngOnInit()</code> in der Klasse <code>first.component.ts</code> deshalb wie folgt:</p>
-<div class="tabbed-set" data-tabs="26:1"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><label for="__tabbed_26_1">first.component.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="30:1"><input checked="checked" id="__tabbed_30_1" name="__tabbed_30" type="radio" /><label for="__tabbed_30_1">first.component.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2120,7 +2351,7 @@ ng g c second
 <li>in <code>app-routing.module.ts</code> kann im <code>routes</code>-Array auch noch die Eigenschaft <code>children</code> hinzugefügt werden, welche Pfadkonfigurationen zu den Kindkomponenten enthält</li>
 <li>in der <code>*.component.html</code> der Elternkomponente wird ein weiteres <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code> hinzugefügt</li>
 </ul>
-<div class="tabbed-set" data-tabs="27:3"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><label for="__tabbed_27_1">app-routing.module.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="31:3"><input checked="checked" id="__tabbed_31_1" name="__tabbed_31" type="radio" /><label for="__tabbed_31_1">app-routing.module.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2163,7 +2394,7 @@ ng g c second
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><label for="__tabbed_27_2">first.component.html</label><div class="tabbed-content">
+<input id="__tabbed_31_2" name="__tabbed_31" type="radio" /><label for="__tabbed_31_2">first.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2180,7 +2411,7 @@ ng g c second
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_27_3" name="__tabbed_27" type="radio" /><label for="__tabbed_27_3">app.component.html</label><div class="tabbed-content">
+<input id="__tabbed_31_3" name="__tabbed_31" type="radio" /><label for="__tabbed_31_3">app.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2240,14 +2471,14 @@ ng g c second
 <li><code>navigateByUrl()</code></li>
 </ul>
 <p>Angenommen, wir erweitern unsere Komponente <code>SecondComponent</code> um einen Button. Durch den Klick auf den Button soll von der <code>SecondComponent</code> auf die <code>OneComponent</code> über die Route <code>/first/one</code> gewechselt werden:</p>
-<div class="tabbed-set" data-tabs="28:2"><input checked="checked" id="__tabbed_28_1" name="__tabbed_28" type="radio" /><label for="__tabbed_28_1">second.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="32:2"><input checked="checked" id="__tabbed_32_1" name="__tabbed_32" type="radio" /><label for="__tabbed_32_1">second.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hier ist SecondComponent<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">changeRoute</span><span class="err">()&quot;</span><span class="p">&gt;</span>/first/one<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_28_2" name="__tabbed_28" type="radio" /><label for="__tabbed_28_2">second.component.ts</label><div class="tabbed-content">
+<input id="__tabbed_32_2" name="__tabbed_32" type="radio" /><label for="__tabbed_32_2">second.component.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3

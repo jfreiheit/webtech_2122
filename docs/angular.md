@@ -51,6 +51,9 @@ npm install
 aus. Damit werden alle Abhängigkeiten, die in der Datei **package.json**
 definiert sind, geladen und das **node_modules**-Verzeichnis erstellt.
 Siehe z.B. [hier](https://www.stackchief.com/tutorials/npm%20install%20%7C%20how%20it%20works).
+
+Wenn Sie Ihr Projekt mit `git` verwalten, dann ist es ratsam, das `node_modules`-Verzeichnis von der `git`-Verwaltung auszuschließen. Es wird ja immer durch `npm install` erstellt. Fügen Sie dazu in Ihre `.gitignore` die Zeile `node_modules/**` ein. Dann werden alle Inhalte aller `node_modules`-Verzeichnisse in Ihrem Repository ignoriert. 
+
 Danach geben Sie
 
 ```
@@ -61,41 +64,24 @@ ein. Es werden die entsprechenden TypeScript-Dateien compiliert und es
 erscheint am Ende eine Ausgabe, wie z.B.
 
 ```bash
-⠋ Generating browser application bundles...
-****************************************************************************************
-This is a simple server for use in testing or debugging Angular applications locally.
-It hasn't been reviewed for security issues.
-
-DON'T USE IT FOR PRODUCTION!
-****************************************************************************************
-Compiling @angular/core : es2015 as esm2015
-Compiling @angular/common : es2015 as esm2015
-Compiling @angular/platform-browser : es2015 as esm2015
-Compiling @angular/router : es2015 as esm2015
-Compiling @angular/platform-browser-dynamic : es2015 as esm2015
 ✔ Browser application bundle generation complete.
 
-Initial Chunk Files | Names         |      Size
-main.js             | main          | 362.07 kB
-polyfills.js        | polyfills     |  44.15 kB
-runtime.js          | runtime       |   1.09 kB
-styles.css          | styles        |   0 bytes
+Initial Chunk Files   | Names         |      Size
+vendor.js             | vendor        |   2.10 MB
+polyfills.js          | polyfills     | 339.54 kB
+styles.css, styles.js | styles        | 212.38 kB
+main.js               | main          |  55.22 kB
+runtime.js            | runtime       |   6.85 kB
 
-                    | Initial Total | 407.31 kB
+                      | Initial Total |   2.70 MB
 
-Build at: 2021-05-28T12:19:12.354Z - Hash: b1611690e9f20b1506e4 - Time: 28973ms
+Build at: 2021-11-15T09:35:55.434Z - Hash: 05483fb355731569 - Time: 10730ms
 
 ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
 
 
 ✔ Compiled successfully.
-✔ Browser application bundle generation complete.
 
-4 unchanged chunks
-
-Build at: 2021-05-28T12:19:13.393Z - Hash: 52a9999d2b3b3c4923f4 - Time: 643ms
-
-✔ Compiled successfully.
 
 ```
 
@@ -230,38 +216,7 @@ Das Element `<app-root>` ist dabei ein sogenannter *Tag-Selektor* (auch *Element
               "index": "src/index.html",
   ```
 
-Ändern Sie den Prefix in der hell markierten Zeile auf z.B. "htw" (oder Ihre Initialen vielleicht). Außerdem muss auch noch die `tslint.json` angepasst werden:
-
-=== "tslint.json" 
-  ```json linenums="1" hl_lines="15 21"
-  {
-    "extends": "tslint:recommended",
-    "rules": {
-      "array-type": false,
-      "arrow-parens": false,
-      "deprecation": {
-        "severity": "warning"
-      },
-      "component-class-suffix": true,
-      "contextual-lifecycle": true,
-      "directive-class-suffix": true,
-      "directive-selector": [
-        true,
-        "attribute",
-        "htw",
-        "camelCase"
-      ],
-      "component-selector": [
-        true,
-        "element",
-        "htw",
-        "kebab-case"
-      ],
-      "import-blacklist": [
-        true,
-  ```
-
-Dort wo in den hervorgehobenen Zeilen nun das neue Prefix "htw" steht, stand vorher "app". In der `index.html` und in der `app.component.ts` auch noch ändern. Ab dann ist die Verwendung von "htw" als Prefix einegrichtet. Sie können es aber auch bei "app" belassen. Es soll an dieser Stelle einem besseren Verständnis des Prinzips dienen.
+Ändern Sie den Prefix in der hell markierten Zeile auf z.B. "htw" (oder Ihre Initialen vielleicht). In der `index.html` und in der `app.component.ts` auch noch ändern. Ab dann ist die Verwendung von "htw" als Prefix einegrichtet. Sie können es aber auch bei "app" belassen. Es soll an dieser Stelle einem besseren Verständnis des Prinzips dienen.
 
 === "index.html" 
   ```html linenums="1" hl_lines="11"
@@ -308,28 +263,30 @@ Neben der <strong>\*.html</strong>- und der <strong>\*.ts</strong>-Datei einer K
 Um eine Komponente der gesamten Anwendung als Komponente bekannt zu machen, wird der *Decorator* `@Component`verwendet. Decoratoren erkennt man am führenden `@`-Zeichen. Sie werden verwendet, um Metadaten der Anwendung zu verwalten. Der typische Aufbau einer Komponente (hier `AppComponent` - `app.component.ts`):
 
 ```javascript
+import { Component } from '@angular/core';
+
 @Component({
-  selector: 'app-root',
+  selector: 'htw-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'book-app';
+  title = 'first';
 }
 ```
 
-Der Selektor gibt an, dass überall dort, wo `app-root` als Elementselektor `<app-root> </app-root>` verwendet wird, das in `app.component.html` definerte Template eingesetzt wird. Angenommen, in `app.component.html` ist der HTML-Code:
+Der Selektor gibt an, dass überall dort, wo `htw-root` als Elementselektor `<htw-root> </htw-root>` verwendet wird, das in `app.component.html` definerte Template eingesetzt wird. Angenommen, in `app.component.html` ist der HTML-Code:
 
 ```html
 <h1>This is app</h1>
 ```
 
-definiert. Dann wird dieser Code als Inhalt in das HTML-Element `<app-root> </app-root>` eingesetzt:
+definiert. Dann wird dieser Code als Inhalt in das HTML-Element `<htw-root> </htw-root>` eingesetzt:
 
 ```html
-<app-root>
+<htw-root>
   <h1>This is app</h1>
-</app-root>
+</htw-root>
 ```
 
 Wir schauen uns ein ausführlicheres Beispiel im Folgenden an, in dem wir eine neue Komponente erzeugen.
@@ -337,19 +294,19 @@ Wir schauen uns ein ausführlicheres Beispiel im Folgenden an, in dem wir eine n
 
 ### Eine neue Komponente erzeugen 
 
-Mithilfe von [Angular-CLI](https://cli.angular.io/) erzeugen wir in unserer App `first` eine neue Komponente. Wir wechseln dazu im Terminal in den Ordner von `first` und geben dann
+Mithilfe von [Angular-CLI](https://cli.angular.io/) erzeugen wir in unserer App `first` eine neue Komponente `header`. Wir wechseln dazu im Terminal in den Ordner von `first` und geben dann
 
 ```
-ng generate component mycomponent
+ng generate component header
 ```
 
 ein. Später kürzen wir solche Eingaben ab. Anstelle von `generate` brauchen wir auch nur `g` zu schreiben. Und anstelle von `component` genügt `c`. Das heißt, wir hätten stattdessen auch 
 
 ```
-ng g c mycomponent
+ng g c header
 ```
 
-schreiben können. In unserer `first` App gibt es nun die Komponente `mycomponent`:
+schreiben können. In unserer `first` App gibt es nun die Komponente `header`:
 
 ![MyComponent](./files/08_mycomponent.png) 
 
@@ -363,17 +320,17 @@ Jede Angular-Komponente besteht aus vier Teilen:
 Jede Komponente wird in der `app.module.ts` der gesamten Anwendung bekannt gemacht. Das erfolgt mithilfe der Eigenschaft `declarations` im Decorator `@NgModule()`:
 
 ```javascript
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MycomponentComponent } from './mycomponent/mycomponent.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MycomponentComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -383,21 +340,22 @@ import { MycomponentComponent } from './mycomponent/mycomponent.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 ```
 
-Das obige Listing zeigt, dass die neue Komponente `Mycomponent` registriert wurde. Um dieses Eintragen in die `app.module.ts` müssen wir uns aber nicht kümmern, das erledigt die `Angular-CLI` mit der Anweisung zur Erstellung einer neuen Komponente `ng generate component newComponent`. 
+Das obige Listing zeigt, dass die neue Komponente `header` registriert wurde. Um dieses Eintragen in die `app.module.ts` müssen wir uns aber nicht kümmern, das erledigt die `Angular-CLI` mit der Anweisung zur Erstellung einer neuen Komponente `ng generate component newComponent`. 
 
-Doppelklicken Sie im Projektexplorer Ihrer IDE auf die Datei `mycomponent.component.ts`, um sie zu öffnen. Sie enthält den folgenden Quelltext:
+Doppelklicken Sie im Projektexplorer Ihrer IDE auf die Datei `header.component.ts`, um sie zu öffnen. Sie enthält den folgenden Quelltext:
 
 ```javascript
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-mycomponent',
-  templateUrl: './mycomponent.component.html',
-  styleUrls: ['./mycomponent.component.css']
+  selector: 'htw-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class MycomponentComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
   constructor() { }
 
@@ -405,12 +363,13 @@ export class MycomponentComponent implements OnInit {
   }
 
 }
+
 ```
 
-Wir ändern diese Datei zunächst nicht und öffnen auch noch die `mycomponent.component.html`. Diese enthält nur ein HTML-Element, einen Absatz:
+Wir ändern diese Datei zunächst nicht und öffnen auch noch die `header.component.html`. Diese enthält nur ein HTML-Element, einen Absatz:
 
 ```html
-<p>mycomponent works!</p>
+<p>header works!</p>
 ```
 
 Wir ändern auch diese Datei zunächst nicht und öffnen die `app.component.html` - die HTML-Datei unserer Root-Komponente. Diese sieht derzeit so aus:
@@ -420,137 +379,199 @@ Wir ändern auch diese Datei zunächst nicht und öffnen die `app.component.html
 <router-outlet></router-outlet>
 ```
 
-Wir fügen in die Datei den Selektor `app-mycomponent` unserer neuen `Mycomponent`-Komponente als HTML-Element ein:
+Wir fügen in die Datei den Selektor `htw-header` unserer neuen `header`-Komponente als HTML-Element ein:
 
 ```html
+<htw-header></htw-header>
 <h1>This is app</h1>
-<app-mycomponent></app-mycomponent> <!-- eingefuegt -->
 <router-outlet></router-outlet>
 ```
 
-Dieses Element dient als "Platzhalter" für das Template unserer neuen Komponente. Das bedeutet, dass in dieses Element der HTML-Code aus `mycomponent.component.html` eingefügt wird. Wechseln Sie in den Browser auf den Tab mit Ihrer Anwendung (http://localhost:4200/). Sie sehen folgendes Bild:
+Dieses Element dient als "Platzhalter" für das Template unserer neuen Komponente. Das bedeutet, dass in dieses Element der HTML-Code aus `header.component.html` eingefügt wird. Wechseln Sie in den Browser auf den Tab mit Ihrer Anwendung (http://localhost:4200/). Sie sehen folgendes Bild:
 
 ![mycomponent](./files/09_mycomponent1.png)
 
-Unterhalb der Überschrift (`<h1>This is app</h1>`) wurde also der Absatz `<p>mycomponent works!</p>` eingefügt. Wenn Sie sich den Quelltext Ihrer Seite anschauen, z.B. über die Entwicklertools Ihres Browsers ([z.B. für Chrome](https://blog.kulturbanause.de/2018/03/die-chrome-entwicklertools-devtools-fuer-designer-und-einsteiger/)), dann wird folgender Code sichtbar:
+Oberhalb der Überschrift (`<h1>This is app</h1>`) wurde also der Absatz `<p>header works!</p>` eingefügt. Wenn Sie sich den Quelltext Ihrer Seite anschauen, z.B. über die Entwicklertools Ihres Browsers ([z.B. für Chrome](https://blog.kulturbanause.de/2018/03/die-chrome-entwicklertools-devtools-fuer-designer-und-einsteiger/)), dann wird folgender Code sichtbar:
 
 ![quelltext](./files/10_entwicklertools.png)
 
-Wir können hier die Attribute der HTML-Elemente vernachlässigen (also z.B. `_nghost-menu-c19` oder `ng-version="9.0.7"`). Aber es wird folgende HTML-Struktur sichtbar:
+Wir können hier die Attribute der HTML-Elemente vernachlässigen (also z.B. `_nghost-aiq-c17` oder `ng-version="13.0.1"`). Aber es wird folgende HTML-Struktur sichtbar:
 
 ```html
-<app-root>
+<htw-root>
+  <htw-header>
+    <p>header works!</p>
+  </htw-header>
   <h1>This is app</h1>
-  <app-mycomponent>
-    <p>mycomponent works!</p>
-  </app-mycomponent>
   <router-outlet></router-outlet>
-</app-root>
+</htw-root>
 ```
 
-Das Element `<app-root>` fungiert als Platzhalter für die gesamte App. In dieses Element wird der gesamte Inhalt der Anwendung eingebunden (siehe `app.component.html`). Dies ist hier zunächst eine Überschrift `<h1>`, die von dem Element für die `Mycomponent`-Komponente gefolgt wird. Das bedeutet, dass in das Element `<app-mycomponent>` der Inhalt der Komponente `Mycomponent` eingebunden wird. Das ist hier nur ein Absatz `<p>` (siehe dazu `mycomponent.component.html`). Das Element `router-outlet>` soll uns an dieser Stelle noch nicht interessieren. Das wird erst interessant, wenn wir über das *Routing* in einer Angular-Anwendung sprechen.  
+Das Element `<htw-root>` fungiert als Platzhalter für die gesamte App. In dieses Element wird der gesamte Inhalt der Anwendung eingebunden (siehe `app.component.html`). Dies ist hier zunächst eine Überschrift `<h1>`, die von dem Element für die `header`-Komponente gefolgt wird. Das bedeutet, dass in das Element `<htw-header>` der Inhalt der Komponente `header` eingebunden wird. Das ist hier nur ein Absatz `<p>` (siehe dazu `header.component.html`). Das Element `<router-outlet>` soll uns an dieser Stelle noch nicht interessieren. Das wird erst interessant, wenn wir über das *Routing* in einer Angular-Anwendung sprechen.  
 
-### Direktiven
+Zur weiteren Übung erzeugen wir uns noch weitere Komponenten. Zunächst eine Komponenten zur Navigation `nav`:
 
-In Angular gibt es 3 Arten sogenannter *Direktiven* (engl. *Directives*):
-
-- Komponentendirektiven (Components—directives) 
-- Attributdirektiven (Attribute Directives)
-- Strukturdirektiven (Structural-Direktives)
-
-Komponentendirektiven sind die meistverwendete Art und bereits in [**Angular --> Kompnenten**](./#komponenten) betrachtet. Attribut- und Strukturdirektiven können als HTML-Attribute verstanden werden, die dem HTML-Element ein zusätzliches Verhalten hinzufügt. Attributdirektiven wirken sich das innere Verhalten eines HTML-Elementes aus (z.B. können damit CSS-Eigenschaften geändert, hinzugefügt oder gelöscht werden). Mit Strukturdirektiven kann die Struktur des DOMs geändert werden (z.B. können ganze HTML-Elemente dem DOM-Baum hinzugefügt werden).
-
-#### Strukturdirektiven
-
-Strukturdirektiven beginnen immer mit einem Stern `*`. Die bekanntesten Vertreter sind 
-
-- `*ngFor` 
-- `*ngIf`
-- `*ngSwitch`
-
-Diese sind auch in [angular.io](https://angular.io/guide/structural-directives) erläutert. Wir erläutern die darin aufgeführten Beispiele und beginnen mit `*ngIf`:
-
-```html linenums="1"
-<p *ngIf="true">
-  Expression is true and ngIf is true.
-  This paragraph is in the DOM.
-</p>
-<p *ngIf="false">
-  Expression is false and ngIf is false.
-  This paragraph is not in the DOM.
-</p>
+```
+ng g c nav
 ```
 
-Die Direktive `*ngIf` wird also wie ein Attribut des `<p>`-Elementes behandelt. Das Attribut `*ngIf` hat entweder den Wert `"true"` oder den Wert `"false"`. Ja nach Wert des Attributes wird das jeweilige `<p>`-Element in den DOM-Baum eingebunden. Also entweder das `<p>`-Element aus den Codezeilen `1`-`4` (bei Wert `"true"`) oder das `<p>`-Element aus den Codezeilen `5`-`8` (bei Wert `"false"`). In einer echten Anwendung ergibt sich der Wert des Attributes/der Direktive meistens aus dem Wert einer boole'schen Variablen oder einem anderen boole'schen Ausdruck.
+UM deutlich zu machen, dass sich die CSS-Definitionen für eine Komponente stets nur auf die Komponente beziehen, ändern wir die `nav.component.css`:
 
-Das nicht dargestellte Element ist auch nicht Teil des DOMs! Es ist also nicht einfach nur auf `hide` gesetzt, sondern es ist gar nicht im DOM vorhanden. 
+=== "nav.component.css"
+    ```css
+    p {
+        background-color: grey;
+        color: white;
+        padding: 1%;
+        padding-left: 2%;
+    }
+    ```
 
-Intern wird aus der `*ngIf`-Direktive übrigens ein sogenanntes [*Property-Binding*](./#property-bindings):
+Wir binden die `nav`-Komponente in die `app.component.html` ein:
 
-```html
-<ng-template [ngIf]="true">
-  <p>
-    Expression is true and ngIf is true.
-    This paragraph is in the DOM.
-  </p>
-</ng-template>
-<ng-template [ngIf]="false">
-  <p>
-    Expression is false and ngIf is false.
-    This paragraph is not in the DOM.
-  </p>
-</ng-template>
+
+=== "app.component.html"
+    ```html
+    <htw-header></htw-header>
+    <htw-nav></htw-nav>
+    <h1>This is app</h1>
+    <router-outlet>
+    </router-outlet>
+    ```
+
+und erhalten folgende Seite: 
+
+![nav](./files/213_first.png)
+
+Durch das Einbinden von Komponenten in andere Komponenten ensteht eine Hierarchie der Komponenten, z.B. ist die `app`-Komponent in unserem bisherigen Beispiel die *Elternkomponente* der `header`- und `nav`-Komponenten. Das heißt, `header` und `nav` sind *Kindkomponenten* von `app`.  Um dies zu verdeutlichen, erstellen wir noch eine weitere Komponente `main` und dafür explizit zwei Kindkomponenten `left` und `right`:
+
+```
+ng g c main
+ng g c main/left
+ng g c main/right
 ```
 
-Die `*ngFor`-Direktive ist etwas komplexer als `*ngIf`. Für `*ngFor` benötigen wir mindestens eine Liste (oder ein Array) und eine Laufvariable, die die Werte aus der Liste annehmen kann. Im folgenden Beispiel ist `i` unsere laufvariable und `[1, 2, 3, 4, 5, 6]` unser Array.
+Beachten Sie, dass die `left`- und die `right`-Komponente hier explizit als Kindkomponenten von `main` erstellt werden. 
 
-``` html
-<div *ngFor="let i of [1, 2, 3, 4, 5, 6]">
-  {{ i }}
-</div>
-``` 
+![first](./files/215_first.png)
 
-Für jeden Wert aus der Liste wird ein eigenes `<div>`- Element erzeugt. Der DOM-Baum sieht für obiges Beispiel also wie folgt aus (Angular-Attribute weggelassen):
+Wir binden die `main`-Komponente in die `app`-Komponente ein und die Komponenten `left` und `right` in die `main`-Komponente:
 
-``` html
-<div> 1 </div>
-<div> 2 </div>
-<div> 3 </div>
-<div> 4 </div>
-<div> 5 </div>
-<div> 6 </div>
+=== "app.component.html"
+    ```html
+    <htw-header></htw-header>
+    <htw-nav></htw-nav>
+    <h1>This is app</h1>
+    <htw-main></htw-main>
+    <router-outlet></router-outlet>
+    ```
+
+=== "main.component.html"
+    ```html
+    <div id="main">
+        <h3>
+            main works!
+        </h3>
+        <div id="row">
+            <div id="left">
+                <htw-left>
+                </htw-left>
+            </div>
+            <div id="right">
+                <htw-right>
+                </htw-right>
+            </div>
+        </div>
+    </div>
+    ```
+
+=== "main.component.css"
+    ```css
+    #main {
+        background-color: rgb(226, 243, 188);
+        height: 200px;
+        padding: 1%;
+    }
+
+    #row {
+        display: flex;
+    }
+
+    #left {
+        float: left;
+        background-color: rgb(235, 235, 240);
+    }
+
+    #right {
+        background-color: rgb(191, 191, 243);
+    }
+    ```
+
+
+![first](./files/216_first.png)
+
+
+## Deployment des Projektes
+
+Wir werden uns im weiteren Verlauf immer wieder anschauen, was zu beachten ist, damit ein Angular-Projekt *deployed*, d.h. ausgeliefert werden kann. Derzeit müssen wir ein Projekt stets mit `ng serve` starten und schauen uns dabei jeweils den gegenwärtigen Entwicklungsstatus des Projektes an. Irgendwann ist das Projekt aber "fertig" und soll ausgeliefert werden. Das prinzipielle Vorgehen dafür besteht aus zwei Schritten. Der erste Schritt wird als Vorbereitung des Deployments ausgeführt. Er besteht darin, das Projekt zu *deployen*, dabei auf eventuelle Fehler zu achten und gleichzeitig das *deployed* Projekt auszuführen und zu "beobachten". Dazu werden zwei Terminals verwendet. Im ersten Terminal geben Sie im Projektordner (hier `first`)
+
+```
+ng build --watch
 ```
 
-Außerdem stellt `*ngFor` noch einige Hilfsvariablen zur Verfügung, die ebenfalls genutzt werden können:
+ein. Damit wird das Projekt deployed, wird aber gleichzeitig überwacht, d.h. alle Aktionen auf der Webanwendung werden angezeigt und auch eventuell auftretende Fehler. Dieses Terminal muss während der Anwendung der Webanwendung also gut überwacht werden. Im zeiten Terminal starten Sie die Anwendung, indem Sie einen Webserver aufrufen, z.B. `lite-server`:
 
-- `index` (Index des aktuellen Elementes `0, 1, 2, ... `)
-- `first` (ist `true`, wenn *erstes* Element, sonst `false`)
-- `last` (ist `true`, wenn *letztes* Element, sonst `false`)
-- `even` (ist `true`, wenn *Index gerade*, sonst `false`)
-- `odd` (ist `true`, wenn *Index ungerade*, sonst `false`)
-
-Folgend ein komplexeres Beispiel unter Verwendung einiger Hilfsvariablen:
-
-``` html linenums="1"
-<div *ngFor="let value of [1, 2, 3, 4, 5, 6];
-                 index as i;
-                 first as f;
-                 last as l;
-                 odd as o;">
-  <div *ngIf="f">Start</div>
-  <div [style.color]="o ? 'red' : 'blue'">{{ i }} : {{ value }}</div>
-  <div *ngIf="l">Ende</div>
-</div>
+```
+lite-server --baseDir="dist/first"
 ```
 
-In Zeile `1` ist unsere Laufvariable durch das Array nun `value`. Außerdem wird der jeweilige Wert von `index` in der Variablen `i` (Zeilennummer `2`)
-gespeichert, der Wert von `first` in der Variablen `f`(Zeilennummer `3`), der Wert von `last` in der Variablen `l`(Zeilennummer `4`) und der Wert von `odd` in der Variablen `o`(Zeilennummer `5`) - die Hilfsvariable `even` betrachten wir hier nicht, da deren Wert genau der Negation von `odd` entspricht. In Zeile `6` wenden wir die `*ngIf`-Direktive an: ein `<div>` mit dem Inhalt `Start` wird vor dem ersten Element aus dem Array ausgegeben. Für jedes weitere Element nicht mehr. In Zeile `7` erfolgt ein *Property Binding*: die `color`-Eigenschaft bekommt einen Wert zugewiesen. Der Wert ist jedoch abhängig davon, ob `o` wahr ist (dann Wert `red`) oder falsch (dann Wert `blue`).   Zeile `7` zeigt außerdem wie mithilfe von *Interpolation* der Wert von `i` und der Wert von `value`, getrennt mit ` : ` ausgegeben werden. Die Ausgabe ist also:
+Es öffnet sich die Webenawendung (oder Sie müssen Sie auf `localhost:3000` öffnen) und Sie können die Webanwendung ausprobieren. Eventuelle Fehler werden im ersten Terminal angezeigt. 
 
-![ngfor](./files/12_ngfor.png)
+Grundsätzlich ist es so, dass die Webanwendung durch das Deployment in einen `dist`-Ordner ausgeliefert wird. Der `dist`-Ordner des `first`-Projektes sieht nach dem Deployment ungefähr so aus:
 
-!!! question "Aufgabe"
-    Informieren Sie sich auch über die `*ngSwitch`-Direktive. Implementieren Sie ein Beispiel, in dem Sie die 3 Direktiven `*ngIf`, `*ngFor` und `*ngSwitch` anwenden. 
 
+![first](./files/217_first.png)
+
+Die Nummern in den Dateinamen werden bei Ihnen anders sein. Dieser Ordner kann auf Ihren Webserver kopiert werden und dann ist die Webanwendung dort ausführbar. Wenn Sie alle Fehler behoben haben und sich die Webanwendung korrekt verhält, dann können Sie den zweiten Schritt ausführen:
+
+```
+ng build
+```
+
+Diese Anwendung erzeugt (genau wie `ng build --watch`) den `dist`-Ordner. Den darin befindlichen Ordner (hier: `first`) können Sie z.B. auf den Webserver kopieren und von dort die `first/index.html` aufrufen (bzw. Sie benennen den `first`-Ordner dort um). Beachten Sie, dass Sie in der `index.html` die Basis-Refereferenz-URL anpassen müssen, also den Eintrag `<base href="/">` anpassen. 
+
+In meinem Fall ist es z.B. so, dass in meinem *DocumentRoot* folgende Ordnerstruktur existiert: `/WT21/Angular/first/dist/first/`. Das heißt, mein Eintrag in der `index.html` muss dann lauten:
+
+```html linenums="1" hl_lines="6"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>First</title>
+    <base href="/WT21/Angular/first/dist/first/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.ef46db3751d8e999.css">
+  </head>
+
+  <body>
+    <htw-root></htw-root>
+    <script src="runtime.efa9df03510e8bc1.js" type="module"></script>
+    <script src="polyfills.e477a8328a76bdd4.js" type="module"></script>
+    <script src="main.22d2c12b99bb6467.js" type="module"></script>
+  </body>
+</html>
+```
+
+Um die Basis-Refereferenz-URL nicht nachträglich anpassen zu müssen, können Sie auch gleich
+
+```
+ng build --base-href=/WT21/Angular/first/dist/first/
+```
+
+angeben. 
+
+## Bindings und Direktiven
 
 ### {{ Interpolation }}
 
@@ -588,7 +609,7 @@ Eine Interpolation kann auch Ausdrücke enthalten, die aufgelöst werden, z.B.
 <p>1 + 2 = {{1 + 2}}.</p>
 ```
 
-Man kann mithilfe einer Direktive durch ein Array laufen und jedes einzelne Element mithilfe von Interpolation ausgeben:
+Man kann mithilfe einer [Direktive](./#direktiven) durch ein Array laufen und jedes einzelne Element mithilfe von Interpolation ausgeben:
 
 ``` javascript
 @Component({
@@ -620,9 +641,50 @@ export class LessonComponent {
 }
 ```
 
+Für unser `first`-Beispiel ist ein ganz einfaches Beispiel für die `main`-Komponente gezeigt:
+
+=== "main.component.ts"
+    ```js linenums="1" hl_lines="9"
+    import { Component, OnInit } from '@angular/core';
+
+    @Component({
+      selector: 'htw-main',
+      templateUrl: './main.component.html',
+      styleUrls: ['./main.component.css']
+    })
+    export class MainComponent implements OnInit {
+      headline = 'This is main';
+
+      constructor() { }
+
+      ngOnInit(): void {
+      }
+
+    }
+    ```
+
+=== "main.component.html"
+    ```html linenums="1" hl_lines="3"
+    <div id="main">
+      <h3>
+          {{ headline }}
+      </h3>
+      <div id="row">
+          <div id="left">
+              <htw-left>
+              </htw-left>
+          </div>
+          <div id="right">
+              <htw-right>
+              </htw-right>
+          </div>
+      </div>
+    </div>
+    ```
+     
 ### [Property Bindings]
 
-Insbesondere, wenn Attributen von HTML-Elementen Werte zugeordnet werden sollen (so wie im letzten Beispiel des Abschnitts [**{{Interpolation}}**](./#interpolation)), spricht man von *property binding*. Property binding spielt eine große Rolle beim Datenfluss von Eltern-Komponenten auf Kind-Komponenten. Die generelle Idee dabei ist, dass mithilfe von property binding Werte (Daten) an Attribute von HTML-Elementen bindet. Diese HTML-Elemente können auch Komponenten sein.
+Insbesondere, wenn Attributen von HTML-Elementen Werte zugeordnet werden sollen (so wie beim `imgUrl`-Beispiel des Abschnitts [**{{Interpolation}}**](./#interpolation)), spricht man von *property binding*. Property binding spielt eine große Rolle beim Datenfluss von Eltern-Komponenten auf Kind-Komponenten. Die generelle Idee dabei ist, dass mithilfe von *property binding* Werte (Daten) an Attribute von HTML-Elementen bindet. Diese HTML-Elemente können auch Komponenten sein.
 
 Wir betrachten zunächst die unterschiedlichen Arten (Notationen) von property binding:
 
@@ -637,6 +699,40 @@ D.h. ein *ausdruck* wird übergeben, der zu einem Wert aufgelöst wird und diese
 
 <!-- imgUrl = 'https://www.dpunkt.de/common/images/cover_masterid/800/12400.jpg'; -->
 ```
+
+Das bedeutet für unser `first`-Beispiel, dass die beiden `<img>`-Definitionen gleich sind:
+
+
+=== "header.component.html"
+    ```html linenums="1" hl_lines="2-3"
+    <p>header works!
+        <img src="{{ imgUrl }}" alt="{{ description }}" width="53px;" />
+        <img [src]="imgUrl" [alt]="description" width="53px;" />
+    </p>
+    ```
+ 
+=== "header.component.ts"
+    ```js linenums="1" hl_lines="9-10"
+    import { Component, OnInit } from '@angular/core';
+
+    @Component({
+      selector: 'htw-header',
+      templateUrl: './header.component.html',
+      styleUrls: ['./header.component.css']
+    })
+    export class HeaderComponent implements OnInit {
+      imgUrl = '/assets/images/fiw.jpg';
+      description = 'FIW Logo';
+
+      constructor() { }
+
+      ngOnInit(): void {
+      }
+
+    }
+    ```
+
+
 
 Neben diesen "allgemeinen" property bindings gibt es auch noch "spezielle" property bindings, nämlich *class bindings* und *style bindings*. Bei *class bindings* wird das Präfix `class` vor die property (die entsprechende CSS-Klasse) gesetzt:
 
@@ -847,6 +943,108 @@ Wichtig beim *event binding* der Elternkomponente ist, dass der *payload* des Er
 
 
 ### [(Two-Way-Bindings)]
+
+### Direktiven
+
+In Angular gibt es 3 Arten sogenannter *Direktiven* (engl. *Directives*):
+
+- Komponentendirektiven (Components—directives) 
+- Attributdirektiven (Attribute Directives)
+- Strukturdirektiven (Structural-Direktives)
+
+Komponentendirektiven sind die meistverwendete Art und bereits in [**Angular --> Kompnenten**](./#komponenten) betrachtet. Attribut- und Strukturdirektiven können als HTML-Attribute verstanden werden, die dem HTML-Element ein zusätzliches Verhalten hinzufügt. Attributdirektiven wirken sich das innere Verhalten eines HTML-Elementes aus (z.B. können damit CSS-Eigenschaften geändert, hinzugefügt oder gelöscht werden). Mit Strukturdirektiven kann die Struktur des DOMs geändert werden (z.B. können ganze HTML-Elemente dem DOM-Baum hinzugefügt werden).
+
+#### Strukturdirektiven
+
+Strukturdirektiven beginnen immer mit einem Stern `*`. Die bekanntesten Vertreter sind 
+
+- `*ngFor` 
+- `*ngIf`
+- `*ngSwitch`
+
+Diese sind auch in [angular.io](https://angular.io/guide/structural-directives) erläutert. Wir erläutern die darin aufgeführten Beispiele und beginnen mit `*ngIf`:
+
+```html linenums="1"
+<p *ngIf="true">
+  Expression is true and ngIf is true.
+  This paragraph is in the DOM.
+</p>
+<p *ngIf="false">
+  Expression is false and ngIf is false.
+  This paragraph is not in the DOM.
+</p>
+```
+
+Die Direktive `*ngIf` wird also wie ein Attribut des `<p>`-Elementes behandelt. Das Attribut `*ngIf` hat entweder den Wert `"true"` oder den Wert `"false"`. Ja nach Wert des Attributes wird das jeweilige `<p>`-Element in den DOM-Baum eingebunden. Also entweder das `<p>`-Element aus den Codezeilen `1`-`4` (bei Wert `"true"`) oder das `<p>`-Element aus den Codezeilen `5`-`8` (bei Wert `"false"`). In einer echten Anwendung ergibt sich der Wert des Attributes/der Direktive meistens aus dem Wert einer boole'schen Variablen oder einem anderen boole'schen Ausdruck.
+
+Das nicht dargestellte Element ist auch nicht Teil des DOMs! Es ist also nicht einfach nur auf `hide` gesetzt, sondern es ist gar nicht im DOM vorhanden. 
+
+Intern wird aus der `*ngIf`-Direktive übrigens ein sogenanntes [*Property-Binding*](./#property-bindings):
+
+```html
+<ng-template [ngIf]="true">
+  <p>
+    Expression is true and ngIf is true.
+    This paragraph is in the DOM.
+  </p>
+</ng-template>
+<ng-template [ngIf]="false">
+  <p>
+    Expression is false and ngIf is false.
+    This paragraph is not in the DOM.
+  </p>
+</ng-template>
+```
+
+Die `*ngFor`-Direktive ist etwas komplexer als `*ngIf`. Für `*ngFor` benötigen wir mindestens eine Liste (oder ein Array) und eine Laufvariable, die die Werte aus der Liste annehmen kann. Im folgenden Beispiel ist `i` unsere laufvariable und `[1, 2, 3, 4, 5, 6]` unser Array.
+
+``` html
+<div *ngFor="let i of [1, 2, 3, 4, 5, 6]">
+  {{ i }}
+</div>
+``` 
+
+Für jeden Wert aus der Liste wird ein eigenes `<div>`- Element erzeugt. Der DOM-Baum sieht für obiges Beispiel also wie folgt aus (Angular-Attribute weggelassen):
+
+``` html
+<div> 1 </div>
+<div> 2 </div>
+<div> 3 </div>
+<div> 4 </div>
+<div> 5 </div>
+<div> 6 </div>
+```
+
+Außerdem stellt `*ngFor` noch einige Hilfsvariablen zur Verfügung, die ebenfalls genutzt werden können:
+
+- `index` (Index des aktuellen Elementes `0, 1, 2, ... `)
+- `first` (ist `true`, wenn *erstes* Element, sonst `false`)
+- `last` (ist `true`, wenn *letztes* Element, sonst `false`)
+- `even` (ist `true`, wenn *Index gerade*, sonst `false`)
+- `odd` (ist `true`, wenn *Index ungerade*, sonst `false`)
+
+Folgend ein komplexeres Beispiel unter Verwendung einiger Hilfsvariablen:
+
+``` html linenums="1"
+<div *ngFor="let value of [1, 2, 3, 4, 5, 6];
+                 index as i;
+                 first as f;
+                 last as l;
+                 odd as o;">
+  <div *ngIf="f">Start</div>
+  <div [style.color]="o ? 'red' : 'blue'">{{ i }} : {{ value }}</div>
+  <div *ngIf="l">Ende</div>
+</div>
+```
+
+In Zeile `1` ist unsere Laufvariable durch das Array nun `value`. Außerdem wird der jeweilige Wert von `index` in der Variablen `i` (Zeilennummer `2`)
+gespeichert, der Wert von `first` in der Variablen `f`(Zeilennummer `3`), der Wert von `last` in der Variablen `l`(Zeilennummer `4`) und der Wert von `odd` in der Variablen `o`(Zeilennummer `5`) - die Hilfsvariable `even` betrachten wir hier nicht, da deren Wert genau der Negation von `odd` entspricht. In Zeile `6` wenden wir die `*ngIf`-Direktive an: ein `<div>` mit dem Inhalt `Start` wird vor dem ersten Element aus dem Array ausgegeben. Für jedes weitere Element nicht mehr. In Zeile `7` erfolgt ein *Property Binding*: die `color`-Eigenschaft bekommt einen Wert zugewiesen. Der Wert ist jedoch abhängig davon, ob `o` wahr ist (dann Wert `red`) oder falsch (dann Wert `blue`).   Zeile `7` zeigt außerdem wie mithilfe von *Interpolation* der Wert von `i` und der Wert von `value`, getrennt mit ` : ` ausgegeben werden. Die Ausgabe ist also:
+
+![ngfor](./files/12_ngfor.png)
+
+!!! question "Aufgabe"
+    Informieren Sie sich auch über die `*ngSwitch`-Direktive. Implementieren Sie ein Beispiel, in dem Sie die 3 Direktiven `*ngIf`, `*ngFor` und `*ngSwitch` anwenden. 
+
 
 ## Lifecycle-Hooks
 
