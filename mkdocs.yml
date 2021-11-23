@@ -69,5 +69,6 @@ nav:
     - RWD: rwd.md 
     - JavaScript: javascript.md 
     - Angular: angular.md 
+    - JSON und Direktiven: angular2.md
     - Übungen: uebungen.md
     - Werkzeuge: tools.md

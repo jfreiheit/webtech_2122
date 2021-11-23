@@ -402,87 +402,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bindings-und-direktiven" class="md-nav__link">
-    Bindings und Direktiven
-  </a>
-  
-    <nav class="md-nav" aria-label="Bindings und Direktiven">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#interpolation" class="md-nav__link">
-    {{ Interpolation }}
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#property-bindings" class="md-nav__link">
-    [Property Bindings]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#event-bindings" class="md-nav__link">
-    (Event Bindings)
-  </a>
-  
-    <nav class="md-nav" aria-label="(Event Bindings)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#native-dom-ereignisse" class="md-nav__link">
-    Native DOM-Ereignisse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#eigene-ereignisse" class="md-nav__link">
-    Eigene Ereignisse
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#two-way-bindings" class="md-nav__link">
-    [(Two-Way-Bindings)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#direktiven" class="md-nav__link">
-    Direktiven
-  </a>
-  
-    <nav class="md-nav" aria-label="Direktiven">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#strukturdirektiven" class="md-nav__link">
-    Strukturdirektiven
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#lifecycle-hooks" class="md-nav__link">
     Lifecycle-Hooks
   </a>
@@ -555,6 +474,21 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../angular2/" class="md-nav__link">
+        JSON und Direktiven
+      </a>
     </li>
   
 
@@ -679,87 +613,6 @@
   <a href="#deployment-des-projektes" class="md-nav__link">
     Deployment des Projektes
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bindings-und-direktiven" class="md-nav__link">
-    Bindings und Direktiven
-  </a>
-  
-    <nav class="md-nav" aria-label="Bindings und Direktiven">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#interpolation" class="md-nav__link">
-    {{ Interpolation }}
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#property-bindings" class="md-nav__link">
-    [Property Bindings]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#event-bindings" class="md-nav__link">
-    (Event Bindings)
-  </a>
-  
-    <nav class="md-nav" aria-label="(Event Bindings)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#native-dom-ereignisse" class="md-nav__link">
-    Native DOM-Ereignisse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#eigene-ereignisse" class="md-nav__link">
-    Eigene Ereignisse
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#two-way-bindings" class="md-nav__link">
-    [(Two-Way-Bindings)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#direktiven" class="md-nav__link">
-    Direktiven
-  </a>
-  
-    <nav class="md-nav" aria-label="Direktiven">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#strukturdirektiven" class="md-nav__link">
-    Strukturdirektiven
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1332,577 +1185,6 @@ ng g c main/right
 <div class="highlight"><pre><span></span><code>ng build --base-href=/WT21/Angular/first/dist/first/
 </code></pre></div>
 <p>angeben. </p>
-<h2 id="bindings-und-direktiven">Bindings und Direktiven<a class="headerlink" href="#bindings-und-direktiven" title="Permanent link">&para;</a></h2>
-<h3 id="interpolation">{{ Interpolation }}<a class="headerlink" href="#interpolation" title="Permanent link">&para;</a></h3>
-<p><em>Interpolation</em> ist die einfachste Form des <em>data binding</em>. Syntaktisch erkennt man Interpolation an den doppelten geschweiften Klammern <code>{{ Interpolation }}</code>. </p>
-<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Beispiel</label><div class="tabbed-content"></div>
-</div>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-lesson&#39;</span><span class="p">,</span>
-  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
-<span class="sb">    &lt;h1&gt;{{ headline }}&lt;/h1&gt;</span>
-<span class="sb">    &lt;p&gt;Hier steht {{name}}&lt;/p&gt;</span>
-<span class="sb">  `</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./lesson.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">LessonComponent</span> <span class="p">{</span>
-  <span class="nx">headline</span> <span class="o">=</span> <span class="s1">&#39;Mein Titel&#39;</span><span class="p">;</span>
-  <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;mein Name&#39;</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-<p>Im obigen Beispiel hat die Komponente <code>LessonComponent</code> zwei Eigenschaften: <code>headline</code> und <code>name</code>. In obiger Komponente wird (zur Anschauung) sogenanntes <em>inline templating</em> verwendet, d.h. es gibt keine eigene <code>lesson.component.html</code>-Datei, in der der HTML-Code steht, sondern der HTML-Code wird direkt in die <code>template</code>-Eigenschaft der Typescript-Datei <code>lesson.component.ts</code>eingefügt (siehe Zeilen 5-8 im obigen Beispiel). Der HTML-Code wird in <em>backticks</em> eingefasst (<code>``</code>), nicht zu verwechseln mit den einfachen Anführungsstrichen (<code>''</code>).</p>
-<p>Damit inline templating möglich ist, wird die Komponente mit dem Flag <code>-t</code> erzeugt (<code>inlineTemplate=true</code>), d.h. unsere Lesson-Komponente wurde mithilfe der CLI wie folgt erzeugt:</p>
-<div class="highlight"><pre><span></span><code>ng g c lesson -t
-</code></pre></div>
-<p>Eine Interpolation kann auch Ausdrücke enthalten, die aufgelöst werden, z.B.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>1 + 2 = {{1 + 2}}.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Man kann mithilfe einer <a href="./#direktiven">Direktive</a> durch ein Array laufen und jedes einzelne Element mithilfe von Interpolation ausgeben:</p>
-<div class="highlight"><pre><span></span><code><span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-lesson&#39;</span><span class="p">,</span>
-  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
-<span class="sb">    &lt;ol&gt;</span>
-<span class="sb">      &lt;li *ngFor=&quot;let day of weekdays&quot;&gt;{{ day }}&lt;/li&gt;</span>
-<span class="sb">    &lt;/ol&gt;</span>
-<span class="sb">  `</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./lesson.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">LessonComponent</span> <span class="p">{</span>
-  <span class="nx">weekdays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">,</span> <span class="s1">&#39;Saturday&#39;</span><span class="p">,</span> <span class="s1">&#39;Sunday&#39;</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Oder es ist möglich, Attributen von HTML-Elementen mithilfe von Interpolation Werte zuzuordnen:</p>
-<div class="highlight"><pre><span></span><code><span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-lesson&#39;</span><span class="p">,</span>
-  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
-<span class="sb">    &lt;img src=&quot;{{ imgUrl }}&quot; /&gt;</span>
-<span class="sb">  `</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./lesson.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">LessonComponent</span> <span class="p">{</span>
-  <span class="nx">imgUrl</span> <span class="o">=</span> <span class="s1">&#39;https://www.dpunkt.de/common/images/cover_masterid/800/12400.jpg&#39;</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Für unser <code>first</code>-Beispiel ist ein ganz einfaches Beispiel für die <code>main</code>-Komponente gezeigt:</p>
-<div class="tabbed-set" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">main.component.ts</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;htw-main&#39;</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./main.component.html&#39;</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./main.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">MainComponent</span> <span class="nx">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
-<span class="hll">  <span class="nx">headline</span> <span class="o">=</span> <span class="s1">&#39;This is main&#39;</span><span class="p">;</span>
-</span>
-  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
-
-  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">main.component.html</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>
-<span class="hll">      {{ headline }}
-</span>  <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;left&quot;</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">htw-left</span><span class="p">&gt;</span>
-          <span class="p">&lt;/</span><span class="nt">htw-left</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;right&quot;</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">htw-right</span><span class="p">&gt;</span>
-          <span class="p">&lt;/</span><span class="nt">htw-right</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-</div>
-<h3 id="property-bindings">[Property Bindings]<a class="headerlink" href="#property-bindings" title="Permanent link">&para;</a></h3>
-<p>Insbesondere, wenn Attributen von HTML-Elementen Werte zugeordnet werden sollen (so wie beim <code>imgUrl</code>-Beispiel des Abschnitts <a href="./#interpolation"><strong>{{Interpolation}}</strong></a>), spricht man von <em>property binding</em>. Property binding spielt eine große Rolle beim Datenfluss von Eltern-Komponenten auf Kind-Komponenten. Die generelle Idee dabei ist, dass mithilfe von <em>property binding</em> Werte (Daten) an Attribute von HTML-Elementen bindet. Diese HTML-Elemente können auch Komponenten sein.</p>
-<p>Wir betrachten zunächst die unterschiedlichen Arten (Notationen) von property binding:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">element</span> <span class="err">[</span><span class="na">property</span><span class="err">]=&quot;</span><span class="na">ausdruck</span><span class="err">&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">element</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>D.h. ein <em>ausdruck</em> wird übergeben, der zu einem Wert aufgelöst wird und dieser Wert wird dem Attribut <code>property</code> übergeben. Betrachten wir nochmals das letzte Beispiel aus dem Abschnitt <a href="./#interpolation"><strong>{{Interpolation}}</strong></a>). Bei diesem Beispiel haben wir Interpolation verwendet, um dem Attribut <code>src</code> des HTML-Elementes <code>img</code> einen Wert zuzuweisen. Das exakt gleiche Verhalten lässt sich auch mittels <em>property bindings</em> erzeugen:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="err">[</span><span class="na">src</span><span class="err">]=&quot;</span><span class="na">imgUrl</span><span class="err">&quot;</span> <span class="p">/&gt;</span>
-
-<span class="c">&lt;!-- imgUrl = &#39;https://www.dpunkt.de/common/images/cover_masterid/800/12400.jpg&#39;; --&gt;</span>
-</code></pre></div>
-<p>Das bedeutet für unser <code>first</code>-Beispiel, dass die beiden <code>&lt;img&gt;</code>-Definitionen gleich sind:</p>
-<div class="tabbed-set" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">header.component.html</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>header works!
-<span class="hll">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ imgUrl }}&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;{{ description }}&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;53px;&quot;</span> <span class="p">/&gt;</span>
-</span><span class="hll">    <span class="p">&lt;</span><span class="nt">img</span> <span class="err">[</span><span class="na">src</span><span class="err">]=&quot;</span><span class="na">imgUrl</span><span class="err">&quot;</span> <span class="err">[</span><span class="na">alt</span><span class="err">]=&quot;</span><span class="na">description</span><span class="err">&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;53px;&quot;</span> <span class="p">/&gt;</span>
-</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">header.component.ts</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;htw-header&#39;</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./header.component.html&#39;</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./header.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">HeaderComponent</span> <span class="nx">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
-<span class="hll">  <span class="nx">imgUrl</span> <span class="o">=</span> <span class="s1">&#39;/assets/images/fiw.jpg&#39;</span><span class="p">;</span>
-</span><span class="hll">  <span class="nx">description</span> <span class="o">=</span> <span class="s1">&#39;FIW Logo&#39;</span><span class="p">;</span>
-</span>
-  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
-
-  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-</div>
-<p>Neben diesen "allgemeinen" property bindings gibt es auch noch "spezielle" property bindings, nämlich <em>class bindings</em> und <em>style bindings</em>. Bei <em>class bindings</em> wird das Präfix <code>class</code> vor die property (die entsprechende CSS-Klasse) gesetzt:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">element</span> <span class="err">[</span><span class="na">class</span><span class="err">.</span><span class="na">class1</span><span class="err">]=&quot;</span><span class="na">class1enabled</span><span class="err">&quot;</span>
-         <span class="err">[</span><span class="na">class</span><span class="err">.</span><span class="na">class2</span><span class="err">]=&quot;</span><span class="na">class2enabled</span><span class="err">&quot;</span> <span class="err">...</span> <span class="p">&gt;&lt;/</span><span class="nt">element</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>D.h. die CSS-Klasse <code>class1</code>ist genau dann wirksam, wenn der Ausdruck <code>class1enabled</code> true ist und <code>class2</code>ist genau dann wirksam, wenn der Ausdruck <code>class2enabled</code> true ist usw.</p>
-<p>Bei den <em>style bindings</em> werden jedoch gar keine Ausdrücke, sondern Werte übergeben:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">element</span> <span class="err">[</span><span class="na">style</span><span class="err">.</span><span class="na">color</span><span class="err">]</span>
-</code></pre></div>
-<h3 id="event-bindings">(Event Bindings)<a class="headerlink" href="#event-bindings" title="Permanent link">&para;</a></h3>
-<p>In den <em>property bindings</em> haben wir gesehen, wie Werte Attributen (Eigenschaften) von Elementen zugeordnet werden können. Aus JavaScript ist auch bekannt, dass Ereignisse Attribute von Elementen sein können, z.B. <code>onClick</code>, <code>onKeyup</code>, <code>onChange</code> usw. Dabei handelt es sich um sogenannte <em>native DOM-Ereignisse</em>. Neben der Möglichkeit, solche nativen DOM-Ereigniss zu behandeln, bietet Angular auch die Möglichkeit, eigene Ereignisse zu definieren und diese zu behandeln. Wir betrachten beide Möglichkeiten und beginnen mit den nativen Ereignissen.</p>
-<h4 id="native-dom-ereignisse">Native DOM-Ereignisse<a class="headerlink" href="#native-dom-ereignisse" title="Permanent link">&para;</a></h4>
-<p>In HTML sieht das unter Aufruf einer JavaScript-Funktion für die Ereignisbahandlung dann typischerweise (hier das Click-Ereignis für einen Button) wie folgt aus:</p>
-<div class="tabbed-set" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">HTML</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="s">&quot;doSomething()&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">JavaScript</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">doSomething</span><span class="p">()</span> 
-<span class="p">{</span>
-  <span class="c1">// something to do</span>
-<span class="p">}</span>
-</code></pre></div>
-</div>
-</div>
-<p>In Angular ist das Prinzip das gleiche, nur dass das Ereignis in runden Klammern genannt und an dieses Ereignis die Ereignisbehandlung gebunden wird (<em>event binding</em>). Das bedeutet, das Angular-Template für das obige Beispiel sieht wie folgt aus:</p>
-<div class="tabbed-set" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">Angular-Template</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">doSomething</span><span class="err">()&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">Angular-Typescript</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
-
-   <span class="nx">doSomething</span><span class="p">()</span> <span class="p">{</span>
-      <span class="c1">// something to do</span>
-   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</div>
-</div>
-<p>Dieses Prinzip gilt für alle nativen DOM-Ereignisse. Hier ein kurzer Überblick über die wichtigsten (für eine umfangreichere Liste siehe <a href="https://developer.mozilla.org/en-US/docs/Web/Events#Standard_Events">hier</a> oder <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">hier</a>):</p>
-<table>
-<thead>
-<tr>
-<th>Ereignis</th>
-<th>Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>click</code></td>
-<td>Mausklick auf das Element</td>
-</tr>
-<tr>
-<td><code>change</code></td>
-<td>Der Inhalt/Wert eines Elementes hat sich geändert</td>
-</tr>
-<tr>
-<td><code>mouseover</code></td>
-<td>die Maus wird über das Element bewegt</td>
-</tr>
-<tr>
-<td><code>mouseout</code></td>
-<td>die Maus wird vom Element wegbewegt</td>
-</tr>
-<tr>
-<td><code>keydown</code></td>
-<td>eine Taste der Tastatur wird gedrückt</td>
-</tr>
-<tr>
-<td><code>keyup</code></td>
-<td>Loslassen einer Taste</td>
-</tr>
-<tr>
-<td><code>load</code></td>
-<td>der Browser hat die Seite vollständig geladen</td>
-</tr>
-<tr>
-<td><code>focus</code></td>
-<td>Fokussieren des Elements (z.B. Anklicken)</td>
-</tr>
-<tr>
-<td><code>blur</code></td>
-<td>Verlieren des Fokus (z.B. Klick außerhalb)</td>
-</tr>
-<tr>
-<td><code>submit</code></td>
-<td>Abschicken eines Formulars</td>
-</tr>
-<tr>
-<td><code>copy</code>, <code>paste</code></td>
-<td>Kopieren, Einfügen von Text</td>
-</tr>
-</tbody>
-</table>
-<p>Einen kleinen Unterschied gibt es noch bei der Übergabe des Ereignisses an die das Ereignis behandelnde Funktion zu beachten. Während in plain JavaScript das Ereignis mit <code>event</code> der Funktion übergeben wird, erfolgt die Übergabe des Ereignisses in Angular mit <code>$event</code>. Beispiel:</p>
-<div class="tabbed-set" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Angular-Template</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="err">(</span><span class="na">change</span><span class="err">)=&quot;</span><span class="na">showPayload</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="p">/&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">Angular-Typescript</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
-
-  <span class="nx">showPayload</span><span class="p">(</span><span class="nx">e</span><span class="o">:</span> <span class="nx">Event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</div>
-</div>
-<p>Alle Events (in TypeScript/Angular) sind vom Typ <code>Event</code>. Es gibt noch speziellere Eventtypen, die aber alle auf dem Interface <code>Event</code> basieren, z.B. <code>MouseEvent</code>, <code>InputEvent</code>, <code>KeyboardEvent</code>, <code>UIEvent</code>, <code>ClipboardEvent</code>. Weitere Details siehe <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">hier</a>.</p>
-<p>Die einfache JavaScript-Attributschreibweise kann in Angular nicht verwendet werden, sondern immer nur die <em>event binding</em>-Schreibweise von Angular (mit den runden Klammern)!</p>
-<h4 id="eigene-ereignisse">Eigene Ereignisse<a class="headerlink" href="#eigene-ereignisse" title="Permanent link">&para;</a></h4>
-<p>Für eine Komponente kann ein eigenes - nicht natives - Ereignis definiert werden. Dies geschieht, indem für eine Komponente eine neue Eigenschaft (z.B. <code>myEvent</code>) definiert wird und diese vom Typ <code>EventEmitter</code> deklariert wird. Mithilfe von Generics kann der Typ des Events angegeben werden, der ausgelöst werden soll - wenn Sie den Typ nicht genau kennen, verwenden Sie <code>any</code>. Soll das Ereignis an die Elternkomponente weitergeleitet werden, was meistens der Fall ist, wird der Decorator <code>@Output()</code>verwendet. 
-Das Auslösen des Events geschieht dann durch die <code>emit()</code>-Methode von <code>EventEmitter</code>. Hier ein typisches Beispiel (zunächst die Kindkomponente <code>EventsComponent</code> - also <code>events.component.html</code> und <code>events.component.ts</code>):</p>
-<div class="tabbed-set" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">.html</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">emitMyEvent</span><span class="err">()&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">.ts</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">,</span> <span class="nx">Output</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-events&#39;</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./events.component.html&#39;</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./events.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
-  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">myEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">();</span>
-
-  <span class="nx">emitMyEvent</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">myEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">();</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-</div>
-<p>Die <code>.html</code>-Datei definiert einen Button mit dem nativen Ereignis <code>click</code>. Dieses wird durch die Methode <code>emitMyEvent()</code> behandelt. </p>
-<p>In der <code>.ts</code>-Datei ist diese Methode definiert (Zeilen 11-13). Darin wird das eigene Event <code>myEvent</code> ausgelöst. Dieses Event ist ein Objekt vom Typ <code>EventEmitter</code>, typisiert als <code>any</code> (beliebiger Typ). Das Auslösen dieses Events wird an die aufrufende Komponente (die Elternkomponente) ausgegeben (Decorator <code>@Output()</code>). Deklaration der Eigenschaft und Dekorieren mit <code>@Output()</code> in Zeile 9. Das Auslösen des eigenen Events erfolgt durch den Aufruf der Methode <code>emit()</code> aus <code>EventEmitter</code> (Zeile 12).</p>
-<p>In der Elternkomponente kann dieses Ereignis nun empfangen werden (Beispiel einer Elternkomponente <code>AppComponent</code> - also <code>app.component.html</code> und <code>app.component.ts</code>):</p>
-<div class="tabbed-set" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">.html</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">app-events</span> <span class="err">(</span><span class="na">myEvent</span><span class="err">)=&quot;</span><span class="na">handleEventFromEventsComponent</span><span class="err">()&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">app-events</span><span class="p">&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">.ts</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
-
-  <span class="nx">handleEventFromEventsComponent</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;myEvent in der Kindkomponente ausgelöst&#39;</span><span class="p">);</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-</div>
-<p>In der <code>AppComponent</code> (das kann natürlich eine beliebige Komponente sein), wird die <code>EventsComponent</code> eingebunden (siehe <code>&lt;app-events&gt;</code> im Template der <code>AppComponent</code>). Dadurch entsteht die Hierarchie Elternkomponente <code>AppComponent</code> &rarr; Kindkomponente <code>EventsComponent</code> im DOM. </p>
-<p>Mithilfe von <em>event binding</em> wird die Behandlung des Ereignisses <code>myEvent</code> an die Methode <code>handleEventFromEventsComponent()</code> gebunden. In dieser Methode erfolgt hier einfach nur eine Ausgabe auf die Konsole. </p>
-<p>Interessant ist, dass wir dadurch die Möglichkeit haben, Daten von der Kindkomponente zur Elternkomponente fließen zu lassen. Dazu übergeben wir diese Daten als <code>payload</code> des Ereignisses. Dafür typisieren wir <code>EventEmitter</code> mit dem Typ, von dem wir Daten übergeben wollen (z.B. <code>Book</code> - siehe <a href="./books/#event-binding">Bücher-App</a>). Die beiden obigen Beispiele sehen dann wie folgt aus (zuerst wieder <code>EventsComponent</code>): </p>
-<div class="tabbed-set" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">.html</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">emitMyEvent</span><span class="err">(</span><span class="na">book</span><span class="err">)&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><label for="__tabbed_16_2">.ts</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">,</span> <span class="nx">Output</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-events&#39;</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./events.component.html&#39;</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./events.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
-  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">myEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span><span class="p">();</span>
-
-  <span class="nx">emitMyEvent</span><span class="p">(</span><span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">myEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="nx">book</span><span class="p">);</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-</div>
-<p>Im Template (HTML) werden die Daten der Ereignisbehandlung übergeben. Das <code>EventEmitter</code>-Objekt ist mit dem konkreten Datentyp typisiert. Bei Aufruf der Methode <code>emit()</code> werden die Daten an die Elternkomponente übergeben. </p>
-<p>Die Elternkomponente (hier wieder <code>AppComponent</code> kann diese Daten, die von der Kindkomponente an die Elternkomponente via Ereignis geflossen sind, nun weiterverarbeiten bzw. darstellen):</p>
-<div class="tabbed-set" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">.html</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">app-events</span> <span class="err">(</span><span class="na">myEvent</span><span class="err">)=&quot;</span><span class="na">handleEventFromEventsComponent</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">app-events</span><span class="p">&gt;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><label for="__tabbed_17_2">.ts</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
-
-  <span class="nx">handleEventFromEventsComponent</span><span class="p">(</span><span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-</div>
-<p>Wichtig beim <em>event binding</em> der Elternkomponente ist, dass der <em>payload</em> des Ereignisses mit <code>$event</code> übergeben wird (siehe auch <a href="./#native-dom-ereignisse">Native DOM-Ereignisse</a>). </p>
-<div class="admonition success">
-<p class="admonition-title">Zusammenfassung</p>
-<p>In den letzten drei Abschnitten Interpolation, Property Binding und Event Binding haben wir uns mit Datenfluss beschäftigt. Interpolation wird verwendet, um innerhalb einer Komponente die in der TypeScript-Klasse definierten Daten im Template darzustellen. Mithilfe von Property Binding kann die aufrufende Komponente (Elternkomponente) der aufgerufenen Kopmponente (Kindkomponente) Daten übergeben. Mithilfe von Event Binding kann die Kindkomponente der Elternkomponente mithilfe eines eigenen Ereignisses Daten übergeben.
-Für die Anwendung dieser Konzepte schauen Sie sich <a href="./books/#datenfluss-zwischen-komponenten"><strong>Bücher-App&rarr;Datenfluss zwischen Komponenten</strong></a> an. </p>
-</div>
-<h3 id="two-way-bindings">[(Two-Way-Bindings)]<a class="headerlink" href="#two-way-bindings" title="Permanent link">&para;</a></h3>
-<h3 id="direktiven">Direktiven<a class="headerlink" href="#direktiven" title="Permanent link">&para;</a></h3>
-<p>In Angular gibt es 3 Arten sogenannter <em>Direktiven</em> (engl. <em>Directives</em>):</p>
-<ul>
-<li>Komponentendirektiven (Components—directives) </li>
-<li>Attributdirektiven (Attribute Directives)</li>
-<li>Strukturdirektiven (Structural-Direktives)</li>
-</ul>
-<p>Komponentendirektiven sind die meistverwendete Art und bereits in <a href="./#komponenten"><strong>Angular &rarr; Kompnenten</strong></a> betrachtet. Attribut- und Strukturdirektiven können als HTML-Attribute verstanden werden, die dem HTML-Element ein zusätzliches Verhalten hinzufügt. Attributdirektiven wirken sich das innere Verhalten eines HTML-Elementes aus (z.B. können damit CSS-Eigenschaften geändert, hinzugefügt oder gelöscht werden). Mit Strukturdirektiven kann die Struktur des DOMs geändert werden (z.B. können ganze HTML-Elemente dem DOM-Baum hinzugefügt werden).</p>
-<h4 id="strukturdirektiven">Strukturdirektiven<a class="headerlink" href="#strukturdirektiven" title="Permanent link">&para;</a></h4>
-<p>Strukturdirektiven beginnen immer mit einem Stern <code>*</code>. Die bekanntesten Vertreter sind </p>
-<ul>
-<li><code>*ngFor</code> </li>
-<li><code>*ngIf</code></li>
-<li><code>*ngSwitch</code></li>
-</ul>
-<p>Diese sind auch in <a href="https://angular.io/guide/structural-directives">angular.io</a> erläutert. Wir erläutern die darin aufgeführten Beispiele und beginnen mit <code>*ngIf</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>
-  Expression is true and ngIf is true.
-  This paragraph is in the DOM.
-<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">p</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;false&quot;</span><span class="p">&gt;</span>
-  Expression is false and ngIf is false.
-  This paragraph is not in the DOM.
-<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div>
-</td></tr></table>
-<p>Die Direktive <code>*ngIf</code> wird also wie ein Attribut des <code>&lt;p&gt;</code>-Elementes behandelt. Das Attribut <code>*ngIf</code> hat entweder den Wert <code>"true"</code> oder den Wert <code>"false"</code>. Ja nach Wert des Attributes wird das jeweilige <code>&lt;p&gt;</code>-Element in den DOM-Baum eingebunden. Also entweder das <code>&lt;p&gt;</code>-Element aus den Codezeilen <code>1</code>-<code>4</code> (bei Wert <code>"true"</code>) oder das <code>&lt;p&gt;</code>-Element aus den Codezeilen <code>5</code>-<code>8</code> (bei Wert <code>"false"</code>). In einer echten Anwendung ergibt sich der Wert des Attributes/der Direktive meistens aus dem Wert einer boole'schen Variablen oder einem anderen boole'schen Ausdruck.</p>
-<p>Das nicht dargestellte Element ist auch nicht Teil des DOMs! Es ist also nicht einfach nur auf <code>hide</code> gesetzt, sondern es ist gar nicht im DOM vorhanden. </p>
-<p>Intern wird aus der <code>*ngIf</code>-Direktive übrigens ein sogenanntes <a href="./#property-bindings"><em>Property-Binding</em></a>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ng-template</span> <span class="err">[</span><span class="na">ngIf</span><span class="err">]=&quot;</span><span class="na">true</span><span class="err">&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-    Expression is true and ngIf is true.
-    This paragraph is in the DOM.
-  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">ng-template</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">ng-template</span> <span class="err">[</span><span class="na">ngIf</span><span class="err">]=&quot;</span><span class="na">false</span><span class="err">&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-    Expression is false and ngIf is false.
-    This paragraph is not in the DOM.
-  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">ng-template</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Die <code>*ngFor</code>-Direktive ist etwas komplexer als <code>*ngIf</code>. Für <code>*ngFor</code> benötigen wir mindestens eine Liste (oder ein Array) und eine Laufvariable, die die Werte aus der Liste annehmen kann. Im folgenden Beispiel ist <code>i</code> unsere laufvariable und <code>[1, 2, 3, 4, 5, 6]</code> unser Array.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let i of [1, 2, 3, 4, 5, 6]&quot;</span><span class="p">&gt;</span>
-  {{ i }}
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Für jeden Wert aus der Liste wird ein eigenes <code>&lt;div&gt;</code>- Element erzeugt. Der DOM-Baum sieht für obiges Beispiel also wie folgt aus (Angular-Attribute weggelassen):</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> 1 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> 2 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> 3 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> 4 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> 5 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> 6 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Außerdem stellt <code>*ngFor</code> noch einige Hilfsvariablen zur Verfügung, die ebenfalls genutzt werden können:</p>
-<ul>
-<li><code>index</code> (Index des aktuellen Elementes <code>0, 1, 2, ...</code>)</li>
-<li><code>first</code> (ist <code>true</code>, wenn <em>erstes</em> Element, sonst <code>false</code>)</li>
-<li><code>last</code> (ist <code>true</code>, wenn <em>letztes</em> Element, sonst <code>false</code>)</li>
-<li><code>even</code> (ist <code>true</code>, wenn <em>Index gerade</em>, sonst <code>false</code>)</li>
-<li><code>odd</code> (ist <code>true</code>, wenn <em>Index ungerade</em>, sonst <code>false</code>)</li>
-</ul>
-<p>Folgend ein komplexeres Beispiel unter Verwendung einiger Hilfsvariablen:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let value of [1, 2, 3, 4, 5, 6];</span>
-<span class="s">                 index as i;</span>
-<span class="s">                 first as f;</span>
-<span class="s">                 last as l;</span>
-<span class="s">                 odd as o;&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;f&quot;</span><span class="p">&gt;</span>Start<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">div</span> <span class="err">[</span><span class="na">style</span><span class="err">.</span><span class="na">color</span><span class="err">]=&quot;</span><span class="na">o</span> <span class="err">?</span> <span class="err">&#39;</span><span class="na">red</span><span class="err">&#39;</span> <span class="na">:</span> <span class="err">&#39;</span><span class="na">blue</span><span class="err">&#39;&quot;</span><span class="p">&gt;</span>{{ i }} : {{ value }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">&gt;</span>Ende<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div>
-</td></tr></table>
-<p>In Zeile <code>1</code> ist unsere Laufvariable durch das Array nun <code>value</code>. Außerdem wird der jeweilige Wert von <code>index</code> in der Variablen <code>i</code> (Zeilennummer <code>2</code>)
-gespeichert, der Wert von <code>first</code> in der Variablen <code>f</code>(Zeilennummer <code>3</code>), der Wert von <code>last</code> in der Variablen <code>l</code>(Zeilennummer <code>4</code>) und der Wert von <code>odd</code> in der Variablen <code>o</code>(Zeilennummer <code>5</code>) - die Hilfsvariable <code>even</code> betrachten wir hier nicht, da deren Wert genau der Negation von <code>odd</code> entspricht. In Zeile <code>6</code> wenden wir die <code>*ngIf</code>-Direktive an: ein <code>&lt;div&gt;</code> mit dem Inhalt <code>Start</code> wird vor dem ersten Element aus dem Array ausgegeben. Für jedes weitere Element nicht mehr. In Zeile <code>7</code> erfolgt ein <em>Property Binding</em>: die <code>color</code>-Eigenschaft bekommt einen Wert zugewiesen. Der Wert ist jedoch abhängig davon, ob <code>o</code> wahr ist (dann Wert <code>red</code>) oder falsch (dann Wert <code>blue</code>).   Zeile <code>7</code> zeigt außerdem wie mithilfe von <em>Interpolation</em> der Wert von <code>i</code> und der Wert von <code>value</code>, getrennt mit <code>:</code> ausgegeben werden. Die Ausgabe ist also:</p>
-<p><img alt="ngfor" src="../files/12_ngfor.png" /></p>
-<div class="admonition question">
-<p class="admonition-title">Aufgabe</p>
-<p>Informieren Sie sich auch über die <code>*ngSwitch</code>-Direktive. Implementieren Sie ein Beispiel, in dem Sie die 3 Direktiven <code>*ngIf</code>, <code>*ngFor</code> und <code>*ngSwitch</code> anwenden. </p>
-</div>
 <h2 id="lifecycle-hooks">Lifecycle-Hooks<a class="headerlink" href="#lifecycle-hooks" title="Permanent link">&para;</a></h2>
 <p>Komponenten durchlaufen einen festen Lebenszyklus (<em>lifecycle</em>). Die verschiedenen Status rufen dabei jeweils eine Methode auf, die wir jeweils implementieren können, um in den jeweiligen Status des Lebenszyklus eingreifen zu können. Man spricht dabei von sogenannten <em>Lifecycle-Hooks</em>. </p>
 <p>Der wohl bekannteste Lifecycle-Hook ist <code>ngOnInit()</code>. Damit greift man in die Initialisierung der Komponente ein. Typischerweise werden z.B. Eingabewerte initialisiert, die im Template dargestellt werden.</p>
@@ -1929,7 +1211,7 @@ gespeichert, der Wert von <code>first</code> in der Variablen <code>f</code>(Zei
 </code></pre></div>
 <p>Es entsteht im <code>src/app/shared</code>-Ordner eine Datei <code>my.service.ts</code>. Services sollten am besten in dem <code>shared</code>-Ordner erstellt werden, da ein Service von allen Komponenten genutzt werden kann (eine andere Möglichkeit wäre, einen eigenen Ordner <code>services</code> zu erstellen).</p>
 <p>In dem Decorator <code>@Injectable()</code> wird mittels <code>providedIn: root</code> angegeben, dass der Service von allen Komponenten innerhalb des Root-Moduls genutzt werden kann. Ist der Service von anderen Services oder Komponenten abhängig, können diese Services oder Komponenten mittels <em>dependency injection</em> als Parameter des Service-Konstruktor eingebunden werden. Hier ein allgemeines Beispiel eines Services <code>MyService</code>:</p>
-<div class="tabbed-set" data-tabs="18:1"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><label for="__tabbed_18_1">my.service.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">my.service.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1954,7 +1236,7 @@ gespeichert, der Wert von <code>first</code> in der Variablen <code>f</code>(Zei
 </div>
 </div>
 <p>Der Service kann dann mittels <em>dependency injection</em> von einer Komponente verwendet werden. Beispiel:</p>
-<div class="tabbed-set" data-tabs="19:1"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><label for="__tabbed_19_1">example.component.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">example.component.ts</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
 
 <span class="k">import</span> <span class="p">{</span><span class="nx">MyService</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./shared/my.service&#39;</span><span class="p">;</span>
@@ -1995,7 +1277,7 @@ ng g c first
 ng g c second
 </code></pre></div>
 <p>Wird ein Angular-Projekt <strong>mit</strong> Routing erstellt, so existiert die Datei <code>app-routing.module.ts</code> im <code>src/app/</code>-Ordner. Diese Datei sieht ursprünglich so aus:</p>
-<div class="tabbed-set" data-tabs="20:1"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><label for="__tabbed_20_1">app-routing.module.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">app-routing.module.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2020,7 +1302,7 @@ ng g c second
 </div>
 </div>
 <p>Bei dieser Klasse handelt es sich um ein eigenes Angular-Modul (als <code>@NgModule</code> dekoriert). Es wird deshalb auch in die <code>app.module.ts</code> integriert (dies geschieht automatisch, wenn wir <em>Routing</em> ausgewählt haben) - siehe Zeilen 4 und 17 im folgenden Listing:</p>
-<div class="tabbed-set" data-tabs="21:1"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><label for="__tabbed_21_1">app.module.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">app.module.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2072,7 +1354,7 @@ ng g c second
 <div class="highlight"><pre><span></span><code><span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;mypath&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">MyComponent</span> <span class="p">}</span>
 </code></pre></div>
 <p>Diese Angabe bewirkt, dass unter der URL <code>http://www.mydomain.de/mypath</code> die Komponente <code>MyComponent</code> aufgerufen wird. Angenommen, wir wollen, dass unsere Komponente <code>FirstComponent</code> unter dem Pfad <code>/first</code> aufgerufen wird und <code>SecondComponent</code> unter dem Pfad <code>/second</code>, dann sieht unsere Datei <code>app-routing.module.ts</code> wie folgt aus:</p>
-<div class="tabbed-set" data-tabs="22:1"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><label for="__tabbed_22_1">app-routing.module.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="12:1"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">app-routing.module.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2109,7 +1391,7 @@ ng g c second
 </div>
 </div>
 <p>In den Zeilen 8 und 9 sind die beiden Routen definiert. Beachten Sie, dass die Pfadangaben ohne vorangestelltes Slash <code>/</code> erfolgen! Unter Verwendung der Selektoren <code>&lt;app-first&gt;</code> bzw. <code>&lt;app-second&gt;</code> könnten wir unsere Komponenten nun (statisch) in unsere Anwendung einbinden. Wollen wir das jedoch dem <em>Routing</em> überlassen, die Komponenten also dynamisch - abhängig von dem jeweils gewählten Pfad - einbinden lassen, verwenden wir stattdessen den Selektor <code>&lt;router-outlet&gt;</code>. Auch dieser ist bei gewähltem <em>Routing</em> bereits Teil des <code>AppComponent</code>-Templates:</p>
-<div class="tabbed-set" data-tabs="23:1"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><label for="__tabbed_23_1">app.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">app.component.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="c">&lt;!-- hier wurde viel vom ursprünglichen --&gt;</span>
 <span class="c">&lt;!-- Template gelöscht                  --&gt;</span>
 
@@ -2119,11 +1401,11 @@ ng g c second
 </div>
 </div>
 <p>Obiges Listing zeigt, dass das Template von <code>AppComponent</code> zunächst eine <code>&lt;h1&gt;</code>-Überschrift vorsieht und dann folgt das <code>&lt;router-outlet&gt;</code>, welches als Platzhalter für die durch das Routing ausgewählten Komponenten agiert. Angenommen, wir definieren die Templates f+r <code>FirstComponent</code> und <code>SecondComponent</code> wie folgt:</p>
-<div class="tabbed-set" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><label for="__tabbed_24_1">first.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">first.component.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hier ist FirstComponent<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><label for="__tabbed_24_2">second.component.html</label><div class="tabbed-content">
+<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">second.component.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hier ist SecondComponent<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
@@ -2133,7 +1415,7 @@ ng g c second
 <p>Wir haben nun Pfade erzeugt, mit denen man Komponenten direkt ansprechen kann. Im folgenden Abschnitt wird gezeigt, wie man diese Pfade in Hyperlinks nutzt.</p>
 <h3 id="routen-verlinken">Routen verlinken<a class="headerlink" href="#routen-verlinken" title="Permanent link">&para;</a></h3>
 <p>Wir kennen nun die möglichen Pfade unserer Anwendung <code>http://localhost:4200/</code>, <code>http://localhost:4200/first</code> und <code>http://localhost:4200/second</code> und würden diese Adressen z.B. gerne in Hyperlinks verwenden, um direkt zu den Views der jeweiligen Komponente zu springen, z.B. so:</p>
-<div class="tabbed-set" data-tabs="25:1"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><label for="__tabbed_25_1">app.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="15:1"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">app.component.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hier ist AppComponent<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -2152,7 +1434,7 @@ ng g c second
 </div>
 <p>Das funktioniert auch, hat aber einen von uns nicht gewollten Effekt: Die Seite wird durch jeden Klick auf einen Hyperlink neu geladen. Das ist ja auch das gewünschte Verhalten eines Hyperlinks. Die Idee einer <em>Single-Page-Applikation</em> ist aber jedoch die, dass die Seite nur genau einmal geladen wird und dann dynamisch alle weiteren Inhalte. </p>
 <p>Das Nachladen wird vermieden, wenn wir als Attribut für unsere Pfade nicht <code>href</code> verwenden, sondern die Angular-Direktive <code>routerLink</code>. Dies gilt nur für interne Links! Aber es verhindert bei internen Links ein Neuladen der Seite.</p>
-<div class="tabbed-set" data-tabs="26:1"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><label for="__tabbed_26_1">app.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="16:1"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">app.component.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hier ist AppComponent<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -2170,7 +1452,7 @@ ng g c second
 </div>
 </div>
 <p>Die obige Attributschreibweise kann auch durch <em>property binding</em> ersetzt werden. Dann übergeben Sie als Wert aber keinen String sondern ein 1-elementiges Array:</p>
-<div class="tabbed-set" data-tabs="27:1"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><label for="__tabbed_27_1">app.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="17:1"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">app.component.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hier ist AppComponent<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -2202,7 +1484,7 @@ ng g c second
 </td></tr></table>
 <p>Wir haben jetzt eine parametrisierten Pfad konfiguriert und wir haben auch betrachtet, wie der Aufruf einer solch parametrisierten Route erfolgen kann. Nun betrachten wir, wie der Wert eines Parameters in einer Komponentenklasse ausgelesen und verarbeitet werden kann. </p>
 <p>Wir führen dazu zunächst kleinere Änderungen an unserem obigen Beispiel der <code>routing-lesson</code>-App durch: </p>
-<div class="tabbed-set" data-tabs="28:2"><input checked="checked" id="__tabbed_28_1" name="__tabbed_28" type="radio" /><label for="__tabbed_28_1">app-routing.module.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><label for="__tabbed_18_1">app-routing.module.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2237,7 +1519,7 @@ ng g c second
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_28_2" name="__tabbed_28" type="radio" /><label for="__tabbed_28_2">first.component.html</label><div class="tabbed-content">
+<input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><label for="__tabbed_18_2">first.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hier ist FirstComponent<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">p</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;id&quot;</span><span class="p">&gt;</span>{{ id }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -2247,7 +1529,7 @@ ng g c second
 </div>
 <p>In <code>app-routing.module.ts</code> haben wir einen weiteren Pfad hinzugefügt (Zeilennummer 8). Beachten Sie, dass ohne die Pfadkonfiguration in Zeilennummer 7 die Route <code>http://localhost:4200/first</code> (also ohne Parameterwert) nicht mehr existieren würde. Wenn ein Parameter erforderlich ist, dann muss er auch angegeben werden. Nur in Kombination der beiden Pfadkonfigurationen aus Zeilennummern 7 und 8 ist der Pfad sowohl mit als auch ohne Parameterwert möglich. </p>
 <p>Im Template der <code>FirstComponent</code> haben wir einen Absatz eingefügt, der als Inhalt den Wert der Eigenschaft <code>id</code> mittels Interpolation anzeigt. Der Absatz erscheint nur, wenn <code>id</code> auch einen Wert hat. Die Eigenschaft <code>id</code> muss allerdings noch in der <code>first.component.ts</code> angelegt werden:</p>
-<div class="tabbed-set" data-tabs="29:1"><input checked="checked" id="__tabbed_29_1" name="__tabbed_29" type="radio" /><label for="__tabbed_29_1">first.component.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="19:1"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><label for="__tabbed_19_1">first.component.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2295,7 +1577,7 @@ ng g c second
 <p>Die aktuelle Implementierung von <code>first.component.ts</code> liest also während der Initialisierung der Komponente die Routenparameter aus. Finden jedoch am Parameterwert Änderungen statt, ohne dass die Komponente neu initialisiert wird, bekommt die Komponente von den Änderungen nichts mit. Die oben gezeigte Form der Implementierung ist deshalb nicht für alle Fälle geeignet. Vielmehr ist es besser auszunutzen, dass es sich bei <code>this.route.paramMap</code> (ohne <code>snapshot</code>) um ein <a href="https://angular.io/guide/observables-in-angular"><em>Observable</em></a> handelt.  </p>
 <p>Ein <em>Observable</em> kann so verstanden werden, dass er permanent eine bestimmte Sache beobachtet (z.B. ist der <code>EventEmitter</code> ein <em>Observable</em> und beobachtet permanent, ob das Ereignis ausgelöst wird; wenn ja, dann ruft <code>EventEmitter</code> die Funktion <code>emit()</code> auf &rarr; siehe <a href="./#eigene-ereignisse">Eigene Ereignisse</a>). Wenn sich etwas an dem beobachteten Objekt geändert hat, dann reagiert <em>Observable</em> sofort und ruft eine bestimmte Funktion auf. Das <em>Observable</em> <code>paramMap</code> beobachtet permanent die aktuelle Route und sobald sich etwas an dieser Route ändert, wird eine Funktion aufgerufen.</p>
 <p>Damit das <em>Observable</em> aber überhaupt den aktuellen Router permanent beobachtet, muss er an den Router angemeldet werden &rarr; das <em>Observable</em> "abboniert" den Router. Dies geschieht mithilfe der Funktion <code>subscribe()</code>. Dieser Funktion kann als Parameter eine Funktion übergeben werden. Diese Funktion wird aufgerufen, sobald sich am aktuellen Router etwas ändert. Wir ändern die Implementierung von <code>ngOnInit()</code> in der Klasse <code>first.component.ts</code> deshalb wie folgt:</p>
-<div class="tabbed-set" data-tabs="30:1"><input checked="checked" id="__tabbed_30_1" name="__tabbed_30" type="radio" /><label for="__tabbed_30_1">first.component.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="20:1"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><label for="__tabbed_20_1">first.component.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2351,7 +1633,7 @@ ng g c second
 <li>in <code>app-routing.module.ts</code> kann im <code>routes</code>-Array auch noch die Eigenschaft <code>children</code> hinzugefügt werden, welche Pfadkonfigurationen zu den Kindkomponenten enthält</li>
 <li>in der <code>*.component.html</code> der Elternkomponente wird ein weiteres <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code> hinzugefügt</li>
 </ul>
-<div class="tabbed-set" data-tabs="31:3"><input checked="checked" id="__tabbed_31_1" name="__tabbed_31" type="radio" /><label for="__tabbed_31_1">app-routing.module.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="21:3"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><label for="__tabbed_21_1">app-routing.module.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2394,7 +1676,7 @@ ng g c second
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_31_2" name="__tabbed_31" type="radio" /><label for="__tabbed_31_2">first.component.html</label><div class="tabbed-content">
+<input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><label for="__tabbed_21_2">first.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2411,7 +1693,7 @@ ng g c second
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_31_3" name="__tabbed_31" type="radio" /><label for="__tabbed_31_3">app.component.html</label><div class="tabbed-content">
+<input id="__tabbed_21_3" name="__tabbed_21" type="radio" /><label for="__tabbed_21_3">app.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2471,14 +1753,14 @@ ng g c second
 <li><code>navigateByUrl()</code></li>
 </ul>
 <p>Angenommen, wir erweitern unsere Komponente <code>SecondComponent</code> um einen Button. Durch den Klick auf den Button soll von der <code>SecondComponent</code> auf die <code>OneComponent</code> über die Route <code>/first/one</code> gewechselt werden:</p>
-<div class="tabbed-set" data-tabs="32:2"><input checked="checked" id="__tabbed_32_1" name="__tabbed_32" type="radio" /><label for="__tabbed_32_1">second.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><label for="__tabbed_22_1">second.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hier ist SecondComponent<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">changeRoute</span><span class="err">()&quot;</span><span class="p">&gt;</span>/first/one<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_32_2" name="__tabbed_32" type="radio" /><label for="__tabbed_32_2">second.component.ts</label><div class="tabbed-content">
+<input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><label for="__tabbed_22_2">second.component.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2571,13 +1853,13 @@ ng g c second
       
       
         
-        <a href="../uebungen/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Übungen" rel="next">
+        <a href="../angular2/" class="md-footer__link md-footer__link--next" aria-label="Weiter: JSON und Direktiven" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Weiter
               </span>
-              Übungen
+              JSON und Direktiven
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -291,6 +291,16 @@ npm install -g @angular/cli
 ```
 ein. Den Paketmanager `npm` können Sie sich mit `node.js` installieren. Mithilfe des Angular CLI haben Sie dann die Möglichkeit, ein neues Projekt anzulegen (`ng new projektName`), eine neue Componente (`ng generate component componentenName`) usw. und das Projekt auszuführen (`ng serve`). 
 
+Sollten Sie bei der Installation der Angular-CLI `EACCES errors` erhalten (`permission denied`), dann arbeiten Sie an einem Mac ;-). Geben Sie dann im Terminal ein: 
+
+```bash
+sudo chown -R `whoami` ~/.npm
+sudo chown -R `whoami` /usr/local/lib/node_modules
+```
+
+Danach sollte `npm install -g @angular/cli` funktionieren. 
+
+
 ### Installationen
 
 Um den Paketmanager `npm` zu installieren, laden sie sich `node.js` [**hier**](https://nodejs.org/en/download/) herunter und installieren Sie es. Nach erfolgreicher Installation sollte sowohl 

@@ -316,6 +316,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../angular2/" class="md-nav__link">
+        JSON und Direktiven
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../uebungen/" class="md-nav__link">
         Übungen
       </a>
@@ -974,6 +989,11 @@ Content-Type: text/html
 <div class="highlight"><pre><span></span><code>npm install -g @angular/cli
 </code></pre></div>
 ein. Den Paketmanager <code>npm</code> können Sie sich mit <code>node.js</code> installieren. Mithilfe des Angular CLI haben Sie dann die Möglichkeit, ein neues Projekt anzulegen (<code>ng new projektName</code>), eine neue Componente (<code>ng generate component componentenName</code>) usw. und das Projekt auszuführen (<code>ng serve</code>). </p>
+<p>Sollten Sie bei der Installation der Angular-CLI <code>EACCES errors</code> erhalten (<code>permission denied</code>), dann arbeiten Sie an einem Mac ;-). Geben Sie dann im Terminal ein: </p>
+<div class="highlight"><pre><span></span><code>sudo chown -R <span class="sb">`</span>whoami<span class="sb">`</span> ~/.npm
+sudo chown -R <span class="sb">`</span>whoami<span class="sb">`</span> /usr/local/lib/node_modules
+</code></pre></div>
+<p>Danach sollte <code>npm install -g @angular/cli</code> funktionieren. </p>
 <h3 id="installationen">Installationen<a class="headerlink" href="#installationen" title="Permanent link">&para;</a></h3>
 <p>Um den Paketmanager <code>npm</code> zu installieren, laden sie sich <code>node.js</code> <a href="https://nodejs.org/en/download/"><strong>hier</strong></a> herunter und installieren Sie es. Nach erfolgreicher Installation sollte sowohl </p>
 <div class="highlight"><pre><span></span><code>node -v
