@@ -2367,11 +2367,11 @@
 #### Übung 6
     
 ??? question "Übungsaufgabe 6 (Angular, Komponenten)"
-    - Erstellen Sie einen Ordner `Uebung6`. Erstellen Sie in diesem Ordner ein neues Angular-Projekt `uebung6` (siehe  [hier](./angular/#erstes-projekt-erstellen)). 
-    - Erstellen Sie die folgenden vier Komponenten: `header`, `nav`, `main`, `footer` (siehe  [hier](./angular/#eine-neue-komponente-erzeugen)). 
-    - Bilden Sie das Ergebnis von [Übung2](./webtech/uebungen/#ubung-2) nach, d.h. am Ende soll die Seite *ungefähr* so aussehen:
+    - Erstellen Sie einen Ordner `Uebung6`. Erstellen Sie in diesem Ordner ein neues Angular-Projekt `uebung6` (siehe  [hier](../angular/#erstes-projekt-erstellen)). 
+    - Erstellen Sie die folgenden vier Komponenten: `header`, `nav`, `main`, `footer` (siehe  [hier](../angular/#eine-neue-komponente-erzeugen)). 
+    - Bilden Sie das Ergebnis von [Übung2](./#ubung-2) nach, d.h. am Ende soll die Seite *ungefähr* so aussehen:
         ![uebung6](./files/214_uebung6.png)
-    - Deployen Sie Ihre Lösung (siehe [hier](./angular/#deployment-des-projektes)). 
+    - Deployen Sie Ihre Lösung (siehe [hier](../angular/#deployment-des-projektes)). 
     - Beachten Sie: 
         - Um Bilder einzubinden, sollten Sie diese Bilder in einen `images`-Ordner im `assets`-Ordner ablegen, also z.B. `src/assets/images/fiw.jpg`. Das Einbinden dieses Bildes erfolgt dann mit dem Pfad `assets/images/fiw.jpg` (der Ausgangspfad ist also immer `src`).
         - Die Hyperlinks müssen nicht funktionieren (tragen Sie z.B. jeweils `href="#"` ein).
@@ -2380,7 +2380,7 @@
 #### Übung 7
     
 ??? question "Übungsaufgabe 7 (JSON, Direktiven, Bindings)"
-    - Erstellen Sie einen Ordner `Uebung7`. Erstellen Sie in diesem Ordner ein neues Angular-Projekt `uebung7` (siehe  [hier](./angular/#erstes-projekt-erstellen)). 
+    - Erstellen Sie einen Ordner `Uebung7`. Erstellen Sie in diesem Ordner ein neues Angular-Projekt `uebung7` (siehe  [hier](../angular/#erstes-projekt-erstellen)). 
     - Erstellen Sie mindestens eine `main`-Komponente (gerne auch noch `header` und `footer` - so wie auf den Bildern). 
     - Erstellen Sie im `assets`-Ordner eine Datei `members.json` mit folgendem Inhalt:
 
@@ -2725,4 +2725,4 @@
         Achten Sie auch auf die Änderung der Inschrift des Buttons:
         ![uebung7](./files/219_uebung7.png) 
 
-    - Deployen Sie Ihre Lösung (siehe [hier](./angular/#deployment-des-projektes)). 
+    - Deployen Sie Ihre Lösung (siehe [hier](../angular/#deployment-des-projektes)). 
