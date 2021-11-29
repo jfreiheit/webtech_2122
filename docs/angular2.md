@@ -1,6 +1,82 @@
 # JSON und Direktiven
 
-In diesem Kapitel geht es darum, wie wir innerhalb einer Komponente mit TypeScript Daten verwalten und diese Daten im HTML verwenden, um sie entweder anzuzeigen oder die Struktur des HTML-Codes mit diesen Daten zu ändern. Außerdem betrachten wir, wie in TypeScript auf Ereignisse reagieren können, die die Nutzerinnen beim Verwenden der Anwendung auslösen. Um die Verwaltung von Daten zu diskutieren, betrachtn wir zunächst, wie Daten in TypeScript/JavaScript notiert werden. 
+In diesem Kapitel geht es darum, wie wir innerhalb einer Komponente mit TypeScript Daten verwalten und diese Daten im HTML verwenden, um sie entweder anzuzeigen oder die Struktur des HTML-Codes mit diesen Daten zu ändern. Außerdem betrachten wir, wie in TypeScript auf Ereignisse reagieren können, die die Nutzerinnen beim Verwenden der Anwendung auslösen. Um die Verwaltung von Daten zu diskutieren, betrachten wir zunächst, wie Daten in TypeScript/JavaScript notiert werden. 
+
+Für das Beispiel in der Vorlesung wird der Ordner `images` verwendet ([hier zum Download als zip-Datei](./files/images_staedte.zip)) und `stadte.json`.
+
+??? "staedte.json"
+    ```json
+    {
+      "staedte": [
+        {
+          "jahr": 1237,
+          "stadt": "Berlin",
+          "link": "http://de.wikipedia.org/wiki/Berlin",
+          "bild": "assets/images/berlin.png"
+        },
+        {
+          "jahr": 1624,
+          "stadt": "New York",
+          "link": "http://de.wikipedia.org/wiki/New_York_City",
+          "bild": "assets/images/newyork.png"
+        },
+        {
+          "jahr": 1252,
+          "stadt": "Stockholm",
+          "link": "http://de.wikipedia.org/wiki/Stockholm",
+          "bild": "assets/images/stockholm.png"
+        },
+        {
+          "jahr": 1827,
+          "stadt": "Bremerhaven",
+          "link": "http://de.wikipedia.org/wiki/Bremerhaven",
+          "bild": "assets/images/bremerhaven.png"
+        },
+        {
+          "jahr": 150,
+          "stadt": "Bremen",
+          "link": "http://de.wikipedia.org/wiki/Bremen",
+          "bild": "assets/images/bremen.png"
+        },
+        {
+          "jahr": 1202,
+          "stadt": "Bernau",
+          "link": "http://de.wikipedia.org/wiki/Bernau_bei_Berlin",
+          "bild": "assets/images/bernau.png"
+        },
+        {
+          "jahr": 929,
+          "stadt": "Brandenburg",
+          "link": "http://de.wikipedia.org/wiki/Brandenburg_an_der_Havel",
+          "bild": "assets/images/brandenburg.png"
+        },
+        {
+          "jahr": 805,
+          "stadt": "Magdeburg",
+          "link": "http://de.wikipedia.org/wiki/Magdeburg",
+          "bild": "assets/images/magdeburg.png"
+        },
+        {
+          "jahr": 1222,
+          "stadt": "Marburg",
+          "link": "http://de.wikipedia.org/wiki/Marburg",
+          "bild": "assets/images/marburg.png"
+        },
+        {
+          "jahr": 766,
+          "stadt": "Mannheim",
+          "link": "http://de.wikipedia.org/wiki/Mannheim",
+          "bild": "assets/images/mannheim.png"
+        },
+        {
+          "jahr": 782,
+          "stadt": "Mainz",
+          "link": "http://de.wikipedia.org/wiki/Mainz",
+          "bild": "assets/images/mainz.png"
+        }
+      ]
+    }
+    ``` 
 
 ## JavaScript Object Notation (JSON)
 

@@ -645,7 +645,80 @@
                 
                 
                 <h1 id="json-und-direktiven">JSON und Direktiven<a class="headerlink" href="#json-und-direktiven" title="Permanent link">&para;</a></h1>
-<p>In diesem Kapitel geht es darum, wie wir innerhalb einer Komponente mit TypeScript Daten verwalten und diese Daten im HTML verwenden, um sie entweder anzuzeigen oder die Struktur des HTML-Codes mit diesen Daten zu ändern. Außerdem betrachten wir, wie in TypeScript auf Ereignisse reagieren können, die die Nutzerinnen beim Verwenden der Anwendung auslösen. Um die Verwaltung von Daten zu diskutieren, betrachtn wir zunächst, wie Daten in TypeScript/JavaScript notiert werden. </p>
+<p>In diesem Kapitel geht es darum, wie wir innerhalb einer Komponente mit TypeScript Daten verwalten und diese Daten im HTML verwenden, um sie entweder anzuzeigen oder die Struktur des HTML-Codes mit diesen Daten zu ändern. Außerdem betrachten wir, wie in TypeScript auf Ereignisse reagieren können, die die Nutzerinnen beim Verwenden der Anwendung auslösen. Um die Verwaltung von Daten zu diskutieren, betrachten wir zunächst, wie Daten in TypeScript/JavaScript notiert werden. </p>
+<p>Für das Beispiel in der Vorlesung wird der Ordner <code>images</code> verwendet (<a href="../files/images_staedte.zip">hier zum Download als zip-Datei</a>) und <code>stadte.json</code>.</p>
+<details><summary>staedte.json</summary><div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;staedte&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">1237</span><span class="p">,</span>
+      <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Berlin&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;assets/images/berlin.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">1624</span><span class="p">,</span>
+      <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/New_York_City&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;assets/images/newyork.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">1252</span><span class="p">,</span>
+      <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;Stockholm&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Stockholm&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;assets/images/stockholm.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">1827</span><span class="p">,</span>
+      <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;Bremerhaven&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bremerhaven&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;assets/images/bremerhaven.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+      <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;Bremen&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bremen&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;assets/images/bremen.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">1202</span><span class="p">,</span>
+      <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;Bernau&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bernau_bei_Berlin&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;assets/images/bernau.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">929</span><span class="p">,</span>
+      <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;Brandenburg&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Brandenburg_an_der_Havel&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;assets/images/brandenburg.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">805</span><span class="p">,</span>
+      <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;Magdeburg&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Magdeburg&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;assets/images/magdeburg.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">1222</span><span class="p">,</span>
+      <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;Marburg&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Marburg&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;assets/images/marburg.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">766</span><span class="p">,</span>
+      <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;Mannheim&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Mannheim&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;assets/images/mannheim.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">782</span><span class="p">,</span>
+      <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;Mainz&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Mainz&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;assets/images/mainz.png&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
 <h2 id="javascript-object-notation-json">JavaScript Object Notation (JSON)<a class="headerlink" href="#javascript-object-notation-json" title="Permanent link">&para;</a></h2>
 <p>Eine kurze Einführung zu Objekten in JavaScript haben wir bereits im <a href="../javascript/#objekte"><strong>JavaScript-Kapitel</strong></a> gegeben. Dort haben wir auch gesagt, dass wir auf die Notation solcher Objekte in JavaScript nochmal genauer eingehen wollen. Dies geschieht hier. <em>JavaScript Object Notation (JSON)</em> ist ein Datenaustauschformat, das einerseits einfach für Menschen zu lesen und zu schreiben ist und andererseits gut von Maschinen <em>geparst</em> (analysiert) und erzeugt werden kann. Ein Objekt in JSON beginnt mit einer geschweiften Klammer <code>{</code> und endet mit <code>}</code>. JSON besteht im wesentlichen aus Schlüssel-Werte-Paaren, die durch Komma getrennt sind. </p>
 <div class="highlight"><pre><span></span><code><span class="o">{</span>
