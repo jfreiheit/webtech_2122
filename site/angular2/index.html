@@ -425,13 +425,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#two-way-bindings" class="md-nav__link">
-    [(Two-Way-Bindings)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#direktiven" class="md-nav__link">
     Direktiven
   </a>
@@ -596,13 +589,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#two-way-bindings" class="md-nav__link">
-    [(Two-Way-Bindings)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#direktiven" class="md-nav__link">
     Direktiven
   </a>
@@ -718,6 +704,168 @@
   <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
+</details>
+<details><summary>Code aus der Vorlesung am 29.11.2021</summary><div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">app.component.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>This is app<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">app-main</span><span class="p">&gt;&lt;/</span><span class="nt">app-main</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span> <span class="c">&lt;!-- diese Zeile kann auch geloescht werden --&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">main.component.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>{{ title }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">changeStatus</span><span class="err">()&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot; button &quot;</span><span class="p">&gt;</span>
+{{ btn_text }}
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">&lt;p&gt;Stadt: {{ staedte_json.staedte[0].stadt }}&lt;/p&gt;</span>
+<span class="c">&lt;p *ngFor=&quot;let stadt of staedte &quot;&gt;{{ stadt.jahr }}&lt;/p&gt;</span>
+<span class="c">--&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;!show&quot;</span><span class="p">&gt;</span>Tabelle nicht zu sehen<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">table</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;show&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-striped&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Nr<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Jahr<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Stadt<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Bild<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let s of staedte; let i=index &quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ i+1 }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ s.jahr }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ s.stadt }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="err">[</span><span class="na">href</span><span class="err">]=&quot;</span><span class="na">s</span><span class="err">.</span><span class="na">link</span> <span class="err">&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">img</span> <span class="err">[</span><span class="na">src</span><span class="err">]=&quot;</span><span class="na">s</span><span class="err">.</span><span class="na">bild</span> <span class="err">&quot;</span> <span class="err">[</span><span class="na">alt</span><span class="err">]=&quot;</span><span class="na">s</span><span class="err">.</span><span class="na">stadt</span> <span class="err">&quot;</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">main.component.ts</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-main&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./main.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./main.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">MainComponent</span> <span class="nx">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;Alle Städte&#39;</span><span class="p">;</span>
+  <span class="nx">staedte_json</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;staedte&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;jahr&quot;</span><span class="o">:</span> <span class="mf">1237</span><span class="p">,</span>
+      <span class="s2">&quot;stadt&quot;</span><span class="o">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Berlin&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;bild&quot;</span><span class="o">:</span> <span class="s2">&quot;assets/images/berlin.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;jahr&quot;</span><span class="o">:</span> <span class="mf">1624</span><span class="p">,</span>
+      <span class="s2">&quot;stadt&quot;</span><span class="o">:</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/New_York_City&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;bild&quot;</span><span class="o">:</span> <span class="s2">&quot;assets/images/newyork.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;jahr&quot;</span><span class="o">:</span> <span class="mf">1252</span><span class="p">,</span>
+      <span class="s2">&quot;stadt&quot;</span><span class="o">:</span> <span class="s2">&quot;Stockholm&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Stockholm&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;bild&quot;</span><span class="o">:</span> <span class="s2">&quot;assets/images/stockholm.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;jahr&quot;</span><span class="o">:</span> <span class="mf">1827</span><span class="p">,</span>
+      <span class="s2">&quot;stadt&quot;</span><span class="o">:</span> <span class="s2">&quot;Bremerhaven&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bremerhaven&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;bild&quot;</span><span class="o">:</span> <span class="s2">&quot;assets/images/bremerhaven.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;jahr&quot;</span><span class="o">:</span> <span class="mf">150</span><span class="p">,</span>
+      <span class="s2">&quot;stadt&quot;</span><span class="o">:</span> <span class="s2">&quot;Bremen&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bremen&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;bild&quot;</span><span class="o">:</span> <span class="s2">&quot;assets/images/bremen.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;jahr&quot;</span><span class="o">:</span> <span class="mf">1202</span><span class="p">,</span>
+      <span class="s2">&quot;stadt&quot;</span><span class="o">:</span> <span class="s2">&quot;Bernau&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bernau_bei_Berlin&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;bild&quot;</span><span class="o">:</span> <span class="s2">&quot;assets/images/bernau.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;jahr&quot;</span><span class="o">:</span> <span class="mf">929</span><span class="p">,</span>
+      <span class="s2">&quot;stadt&quot;</span><span class="o">:</span> <span class="s2">&quot;Brandenburg&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Brandenburg_an_der_Havel&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;bild&quot;</span><span class="o">:</span> <span class="s2">&quot;assets/images/brandenburg.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;jahr&quot;</span><span class="o">:</span> <span class="mf">805</span><span class="p">,</span>
+      <span class="s2">&quot;stadt&quot;</span><span class="o">:</span> <span class="s2">&quot;Magdeburg&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Magdeburg&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;bild&quot;</span><span class="o">:</span> <span class="s2">&quot;assets/images/magdeburg.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;jahr&quot;</span><span class="o">:</span> <span class="mf">1222</span><span class="p">,</span>
+      <span class="s2">&quot;stadt&quot;</span><span class="o">:</span> <span class="s2">&quot;Marburg&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Marburg&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;bild&quot;</span><span class="o">:</span> <span class="s2">&quot;assets/images/marburg.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;jahr&quot;</span><span class="o">:</span> <span class="mf">766</span><span class="p">,</span>
+      <span class="s2">&quot;stadt&quot;</span><span class="o">:</span> <span class="s2">&quot;Mannheim&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Mannheim&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;bild&quot;</span><span class="o">:</span> <span class="s2">&quot;assets/images/mannheim.png&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;jahr&quot;</span><span class="o">:</span> <span class="mf">782</span><span class="p">,</span>
+      <span class="s2">&quot;stadt&quot;</span><span class="o">:</span> <span class="s2">&quot;Mainz&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;link&quot;</span><span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Mainz&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;bild&quot;</span><span class="o">:</span> <span class="s2">&quot;assets/images/mainz.png&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">};</span>
+<span class="nx">staedte</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">staedte_json</span><span class="p">.</span><span class="nx">staedte</span><span class="p">;</span>
+<span class="nx">btn_text</span> <span class="o">=</span> <span class="s1">&#39;Klick mich!&#39;</span><span class="p">;</span>
+<span class="nx">show</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">staedte_json</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">staedte_json</span><span class="p">[</span><span class="s2">&quot;staedte&quot;</span><span class="p">]);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">staedte_json</span><span class="p">.</span><span class="nx">staedte</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">staedte_json</span><span class="p">.</span><span class="nx">staedte</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">staedte_json</span><span class="p">.</span><span class="nx">staedte</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">stadt</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">changeStatus</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">btn_text</span> <span class="o">===</span> <span class="s1">&#39;Klick mich!&#39;</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">btn_text</span> <span class="o">=</span> <span class="s1">&#39;Nochmal&#39;</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">show</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span><span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">btn_text</span> <span class="o">=</span> <span class="s1">&#39;Klick mich!&#39;</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">show</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">main.component.css</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nt">td</span> <span class="nt">img</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">11</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>       
+</code></pre></div>
+</div>
+</div>
+</details>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Falls <code>ng add @ng-bootstrap/ng-bootstrap</code> einen <code>compatible</code>-Fehler erzeugt, dann <code>npm install @ng-bootstrap/ng-bootstrap@bootstrap5</code> ausprobieren. Stest danach nochmal <code>npm install</code> ausführen, damit das Bootstrap-Modul installiert wird. Nach <code>ng serve</code> sollten die Änderungen dann wirksam sein.</p>
+</div>
+<details><summary>Video aus der Vorlesung am 29.11.2021</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=9eefbac7716eb7f0f78853946aaab23e&width=720&height=540&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="540" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
 </details>
 <h2 id="javascript-object-notation-json">JavaScript Object Notation (JSON)<a class="headerlink" href="#javascript-object-notation-json" title="Permanent link">&para;</a></h2>
 <p>Eine kurze Einführung zu Objekten in JavaScript haben wir bereits im <a href="../javascript/#objekte"><strong>JavaScript-Kapitel</strong></a> gegeben. Dort haben wir auch gesagt, dass wir auf die Notation solcher Objekte in JavaScript nochmal genauer eingehen wollen. Dies geschieht hier. <em>JavaScript Object Notation (JSON)</em> ist ein Datenaustauschformat, das einerseits einfach für Menschen zu lesen und zu schreiben ist und andererseits gut von Maschinen <em>geparst</em> (analysiert) und erzeugt werden kann. Ein Objekt in JSON beginnt mit einer geschweiften Klammer <code>{</code> und endet mit <code>}</code>. JSON besteht im wesentlichen aus Schlüssel-Werte-Paaren, die durch Komma getrennt sind. </p>
@@ -1155,7 +1303,7 @@
 <h2 id="bindings-und-direktiven">Bindings und Direktiven<a class="headerlink" href="#bindings-und-direktiven" title="Permanent link">&para;</a></h2>
 <h3 id="interpolation">{{ Interpolation }}<a class="headerlink" href="#interpolation" title="Permanent link">&para;</a></h3>
 <p><em>Interpolation</em> ist die einfachste Form des <em>data binding</em>. Syntaktisch erkennt man Interpolation an den doppelten geschweiften Klammern <code>{{ Interpolation }}</code>. </p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Beispiel</label><div class="tabbed-content"></div>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Beispiel</label><div class="tabbed-content"></div>
 </div>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -1220,7 +1368,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Für unser <code>first</code>-Beispiel ist ein ganz einfaches Beispiel für die <code>main</code>-Komponente gezeigt:</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">main.component.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">main.component.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1255,7 +1403,7 @@
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">main.component.html</label><div class="tabbed-content">
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">main.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1300,7 +1448,7 @@
 <span class="c">&lt;!-- imgUrl = &#39;https://www.dpunkt.de/common/images/cover_masterid/800/12400.jpg&#39;; --&gt;</span>
 </code></pre></div>
 <p>Das bedeutet für unser <code>first</code>-Beispiel, dass die beiden <code>&lt;img&gt;</code>-Definitionen gleich sind:</p>
-<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">header.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">header.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1311,7 +1459,7 @@
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">header.component.ts</label><div class="tabbed-content">
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">header.component.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1361,11 +1509,11 @@
 <p>In den <em>property bindings</em> haben wir gesehen, wie Werte Attributen (Eigenschaften) von Elementen zugeordnet werden können. Aus JavaScript ist auch bekannt, dass Ereignisse Attribute von Elementen sein können, z.B. <code>onClick</code>, <code>onKeyup</code>, <code>onChange</code> usw. Dabei handelt es sich um sogenannte <em>native DOM-Ereignisse</em>. Neben der Möglichkeit, solche nativen DOM-Ereigniss zu behandeln, bietet Angular auch die Möglichkeit, eigene Ereignisse zu definieren und diese zu behandeln. Wir betrachten beide Möglichkeiten und beginnen mit den nativen Ereignissen.</p>
 <h4 id="native-dom-ereignisse">Native DOM-Ereignisse<a class="headerlink" href="#native-dom-ereignisse" title="Permanent link">&para;</a></h4>
 <p>In HTML sieht das unter Aufruf einer JavaScript-Funktion für die Ereignisbahandlung dann typischerweise (hier das Click-Ereignis für einen Button) wie folgt aus:</p>
-<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">HTML</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">HTML</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="s">&quot;doSomething()&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">JavaScript</label><div class="tabbed-content">
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">JavaScript</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">doSomething</span><span class="p">()</span> 
 <span class="p">{</span>
   <span class="c1">// something to do</span>
@@ -1374,11 +1522,11 @@
 </div>
 </div>
 <p>In Angular ist das Prinzip das gleiche, nur dass das Ereignis in runden Klammern genannt und an dieses Ereignis die Ereignisbehandlung gebunden wird (<em>event binding</em>). Das bedeutet, das Angular-Template für das obige Beispiel sieht wie folgt aus:</p>
-<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Angular-Template</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Angular-Template</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">doSomething</span><span class="err">()&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Angular-Typescript</label><div class="tabbed-content">
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">Angular-Typescript</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
 
    <span class="nx">doSomething</span><span class="p">()</span> <span class="p">{</span>
@@ -1444,11 +1592,11 @@
 </tbody>
 </table>
 <p>Einen kleinen Unterschied gibt es noch bei der Übergabe des Ereignisses an die das Ereignis behandelnde Funktion zu beachten. Während in plain JavaScript das Ereignis mit <code>event</code> der Funktion übergeben wird, erfolgt die Übergabe des Ereignisses in Angular mit <code>$event</code>. Beispiel:</p>
-<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Angular-Template</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Angular-Template</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="err">(</span><span class="na">change</span><span class="err">)=&quot;</span><span class="na">showPayload</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="p">/&gt;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">Angular-Typescript</label><div class="tabbed-content">
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">Angular-Typescript</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsComponent</span> <span class="p">{</span>
 
   <span class="nx">showPayload</span><span class="p">(</span><span class="nx">e</span><span class="o">:</span> <span class="nx">Event</span><span class="p">)</span> <span class="p">{</span>
@@ -1463,11 +1611,11 @@
 <h4 id="eigene-ereignisse">Eigene Ereignisse<a class="headerlink" href="#eigene-ereignisse" title="Permanent link">&para;</a></h4>
 <p>Für eine Komponente kann ein eigenes - nicht natives - Ereignis definiert werden. Dies geschieht, indem für eine Komponente eine neue Eigenschaft (z.B. <code>myEvent</code>) definiert wird und diese vom Typ <code>EventEmitter</code> deklariert wird. Mithilfe von Generics kann der Typ des Events angegeben werden, der ausgelöst werden soll - wenn Sie den Typ nicht genau kennen, verwenden Sie <code>any</code>. Soll das Ereignis an die Elternkomponente weitergeleitet werden, was meistens der Fall ist, wird der Decorator <code>@Output()</code>verwendet. 
 Das Auslösen des Events geschieht dann durch die <code>emit()</code>-Methode von <code>EventEmitter</code>. Hier ein typisches Beispiel (zunächst die Kindkomponente <code>EventsComponent</code> - also <code>events.component.html</code> und <code>events.component.ts</code>):</p>
-<div class="tabbed-set" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">emitMyEvent</span><span class="err">()&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">.ts</label><div class="tabbed-content">
+<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1504,11 +1652,11 @@ Das Auslösen des Events geschieht dann durch die <code>emit()</code>-Methode vo
 <p>Die <code>.html</code>-Datei definiert einen Button mit dem nativen Ereignis <code>click</code>. Dieses wird durch die Methode <code>emitMyEvent()</code> behandelt. </p>
 <p>In der <code>.ts</code>-Datei ist diese Methode definiert (Zeilen 11-13). Darin wird das eigene Event <code>myEvent</code> ausgelöst. Dieses Event ist ein Objekt vom Typ <code>EventEmitter</code>, typisiert als <code>any</code> (beliebiger Typ). Das Auslösen dieses Events wird an die aufrufende Komponente (die Elternkomponente) ausgegeben (Decorator <code>@Output()</code>). Deklaration der Eigenschaft und Dekorieren mit <code>@Output()</code> in Zeile 9. Das Auslösen des eigenen Events erfolgt durch den Aufruf der Methode <code>emit()</code> aus <code>EventEmitter</code> (Zeile 12).</p>
 <p>In der Elternkomponente kann dieses Ereignis nun empfangen werden (Beispiel einer Elternkomponente <code>AppComponent</code> - also <code>app.component.html</code> und <code>app.component.ts</code>):</p>
-<div class="tabbed-set" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">app-events</span> <span class="err">(</span><span class="na">myEvent</span><span class="err">)=&quot;</span><span class="na">handleEventFromEventsComponent</span><span class="err">()&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">app-events</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">.ts</label><div class="tabbed-content">
+<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1543,11 +1691,11 @@ Das Auslösen des Events geschieht dann durch die <code>emit()</code>-Methode vo
 <p>In der <code>AppComponent</code> (das kann natürlich eine beliebige Komponente sein), wird die <code>EventsComponent</code> eingebunden (siehe <code>&lt;app-events&gt;</code> im Template der <code>AppComponent</code>). Dadurch entsteht die Hierarchie Elternkomponente <code>AppComponent</code> &rarr; Kindkomponente <code>EventsComponent</code> im DOM. </p>
 <p>Mithilfe von <em>event binding</em> wird die Behandlung des Ereignisses <code>myEvent</code> an die Methode <code>handleEventFromEventsComponent()</code> gebunden. In dieser Methode erfolgt hier einfach nur eine Ausgabe auf die Konsole. </p>
 <p>Interessant ist, dass wir dadurch die Möglichkeit haben, Daten von der Kindkomponente zur Elternkomponente fließen zu lassen. Dazu übergeben wir diese Daten als <code>payload</code> des Ereignisses. Dafür typisieren wir <code>EventEmitter</code> mit dem Typ, von dem wir Daten übergeben wollen (z.B. <code>Book</code> - siehe <a href="./books/#event-binding">Bücher-App</a>). Die beiden obigen Beispiele sehen dann wie folgt aus (zuerst wieder <code>EventsComponent</code>): </p>
-<div class="tabbed-set" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">emitMyEvent</span><span class="err">(</span><span class="na">book</span><span class="err">)&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">.ts</label><div class="tabbed-content">
+<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1583,11 +1731,11 @@ Das Auslösen des Events geschieht dann durch die <code>emit()</code>-Methode vo
 </div>
 <p>Im Template (HTML) werden die Daten der Ereignisbehandlung übergeben. Das <code>EventEmitter</code>-Objekt ist mit dem konkreten Datentyp typisiert. Bei Aufruf der Methode <code>emit()</code> werden die Daten an die Elternkomponente übergeben. </p>
 <p>Die Elternkomponente (hier wieder <code>AppComponent</code> kann diese Daten, die von der Kindkomponente an die Elternkomponente via Ereignis geflossen sind, nun weiterverarbeiten bzw. darstellen):</p>
-<div class="tabbed-set" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">app-events</span> <span class="err">(</span><span class="na">myEvent</span><span class="err">)=&quot;</span><span class="na">handleEventFromEventsComponent</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">app-events</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">.ts</label><div class="tabbed-content">
+<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1625,7 +1773,6 @@ Das Auslösen des Events geschieht dann durch die <code>emit()</code>-Methode vo
 <p>In den letzten drei Abschnitten Interpolation, Property Binding und Event Binding haben wir uns mit Datenfluss beschäftigt. Interpolation wird verwendet, um innerhalb einer Komponente die in der TypeScript-Klasse definierten Daten im Template darzustellen. Mithilfe von Property Binding kann die aufrufende Komponente (Elternkomponente) der aufgerufenen Kopmponente (Kindkomponente) Daten übergeben. Mithilfe von Event Binding kann die Kindkomponente der Elternkomponente mithilfe eines eigenen Ereignisses Daten übergeben.
 Für die Anwendung dieser Konzepte schauen Sie sich <a href="./books/#datenfluss-zwischen-komponenten"><strong>Bücher-App&rarr;Datenfluss zwischen Komponenten</strong></a> an. </p>
 </div>
-<h3 id="two-way-bindings">[(Two-Way-Bindings)]<a class="headerlink" href="#two-way-bindings" title="Permanent link">&para;</a></h3>
 <h3 id="direktiven">Direktiven<a class="headerlink" href="#direktiven" title="Permanent link">&para;</a></h3>
 <p>In Angular gibt es 3 Arten sogenannter <em>Direktiven</em> (engl. <em>Directives</em>):</p>
 <ul>

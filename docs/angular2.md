@@ -78,6 +78,168 @@ Für das Beispiel in der Vorlesung wird der Ordner `images` verwendet ([hier zum
     }
     ``` 
 
+??? "Code aus der Vorlesung am 29.11.2021"
+    === "app.component.html"
+        ```html
+        <h1>This is app</h1>
+        <app-main></app-main>
+        <router-outlet></router-outlet> <!-- diese Zeile kann auch geloescht werden -->
+        ```
+    === "main.component.html"
+        ```html
+        <h3>{{ title }}</h3>
+        <button (click)="changeStatus()" type=" button ">
+        {{ btn_text }}
+        </button>
+        <!--
+        <p>Stadt: {{ staedte_json.staedte[0].stadt }}</p>
+        <p *ngFor="let stadt of staedte ">{{ stadt.jahr }}</p>
+        -->
+        <div *ngIf="!show">Tabelle nicht zu sehen</div>
+        <table *ngIf="show" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nr</th>
+                    <th>Jahr</th>
+                    <th>Stadt</th>
+                    <th>Bild</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of staedte; let i=index ">
+                    <td>{{ i+1 }}</td>
+                    <td>{{ s.jahr }}</td>
+                    <td>{{ s.stadt }}</td>
+                    <td>
+                        <a [href]="s.link ">
+                            <img [src]="s.bild " [alt]="s.stadt " />
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        ```
+    === "main.component.ts"
+        ```js
+        import { Component, OnInit } from '@angular/core';
+
+        @Component({
+          selector: 'app-main',
+          templateUrl: './main.component.html',
+          styleUrls: ['./main.component.css']
+        })
+        export class MainComponent implements OnInit {
+          title = 'Alle Städte';
+          staedte_json = {
+          "staedte": [
+            {
+              "jahr": 1237,
+              "stadt": "Berlin",
+              "link": "http://de.wikipedia.org/wiki/Berlin",
+              "bild": "assets/images/berlin.png"
+            },
+            {
+              "jahr": 1624,
+              "stadt": "New York",
+              "link": "http://de.wikipedia.org/wiki/New_York_City",
+              "bild": "assets/images/newyork.png"
+            },
+            {
+              "jahr": 1252,
+              "stadt": "Stockholm",
+              "link": "http://de.wikipedia.org/wiki/Stockholm",
+              "bild": "assets/images/stockholm.png"
+            },
+            {
+              "jahr": 1827,
+              "stadt": "Bremerhaven",
+              "link": "http://de.wikipedia.org/wiki/Bremerhaven",
+              "bild": "assets/images/bremerhaven.png"
+            },
+            {
+              "jahr": 150,
+              "stadt": "Bremen",
+              "link": "http://de.wikipedia.org/wiki/Bremen",
+              "bild": "assets/images/bremen.png"
+            },
+            {
+              "jahr": 1202,
+              "stadt": "Bernau",
+              "link": "http://de.wikipedia.org/wiki/Bernau_bei_Berlin",
+              "bild": "assets/images/bernau.png"
+            },
+            {
+              "jahr": 929,
+              "stadt": "Brandenburg",
+              "link": "http://de.wikipedia.org/wiki/Brandenburg_an_der_Havel",
+              "bild": "assets/images/brandenburg.png"
+            },
+            {
+              "jahr": 805,
+              "stadt": "Magdeburg",
+              "link": "http://de.wikipedia.org/wiki/Magdeburg",
+              "bild": "assets/images/magdeburg.png"
+            },
+            {
+              "jahr": 1222,
+              "stadt": "Marburg",
+              "link": "http://de.wikipedia.org/wiki/Marburg",
+              "bild": "assets/images/marburg.png"
+            },
+            {
+              "jahr": 766,
+              "stadt": "Mannheim",
+              "link": "http://de.wikipedia.org/wiki/Mannheim",
+              "bild": "assets/images/mannheim.png"
+            },
+            {
+              "jahr": 782,
+              "stadt": "Mainz",
+              "link": "http://de.wikipedia.org/wiki/Mainz",
+              "bild": "assets/images/mainz.png"
+            }
+          ]
+        };
+        staedte = this.staedte_json.staedte;
+        btn_text = 'Klick mich!';
+        show = true;
+
+          constructor() { }
+
+          ngOnInit(): void {
+            console.log(this.staedte_json);
+            console.log(this.staedte_json["staedte"]);
+            console.log(this.staedte_json.staedte);
+            console.log(this.staedte_json.staedte[0]);
+            console.log(this.staedte_json.staedte[0].stadt);
+          }
+
+          changeStatus(): void {
+            if(this.btn_text === 'Klick mich!'){
+              this.btn_text = 'Nochmal';
+              this.show = false;
+            }
+            else{
+              this.btn_text = 'Klick mich!';
+              this.show = true;
+            }
+          }
+
+        }
+        ```
+    === "main.component.css"
+        ```css
+        td img {
+            width: 11%;
+        }       
+        ```
+
+!!! warning
+    Falls `ng add @ng-bootstrap/ng-bootstrap` einen `compatible`-Fehler erzeugt, dann `npm install @ng-bootstrap/ng-bootstrap@bootstrap5` ausprobieren. Stest danach nochmal `npm install` ausführen, damit das Bootstrap-Modul installiert wird. Nach `ng serve` sollten die Änderungen dann wirksam sein.
+
+??? "Video aus der Vorlesung am 29.11.2021"
+    <iframe src="https://mediathek.htw-berlin.de/media/embed?key=9eefbac7716eb7f0f78853946aaab23e&width=720&height=540&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="540" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
 ## JavaScript Object Notation (JSON)
 
 Eine kurze Einführung zu Objekten in JavaScript haben wir bereits im [**JavaScript-Kapitel**](../javascript/#objekte) gegeben. Dort haben wir auch gesagt, dass wir auf die Notation solcher Objekte in JavaScript nochmal genauer eingehen wollen. Dies geschieht hier. *JavaScript Object Notation (JSON)* ist ein Datenaustauschformat, das einerseits einfach für Menschen zu lesen und zu schreiben ist und andererseits gut von Maschinen *geparst* (analysiert) und erzeugt werden kann. Ein Objekt in JSON beginnt mit einer geschweiften Klammer `{` und endet mit `}`. JSON besteht im wesentlichen aus Schlüssel-Werte-Paaren, die durch Komma getrennt sind. 
@@ -838,8 +1000,6 @@ Wichtig beim *event binding* der Elternkomponente ist, dass der *payload* des Er
     In den letzten drei Abschnitten Interpolation, Property Binding und Event Binding haben wir uns mit Datenfluss beschäftigt. Interpolation wird verwendet, um innerhalb einer Komponente die in der TypeScript-Klasse definierten Daten im Template darzustellen. Mithilfe von Property Binding kann die aufrufende Komponente (Elternkomponente) der aufgerufenen Kopmponente (Kindkomponente) Daten übergeben. Mithilfe von Event Binding kann die Kindkomponente der Elternkomponente mithilfe eines eigenen Ereignisses Daten übergeben.
     Für die Anwendung dieser Konzepte schauen Sie sich [**Bücher-App-->Datenfluss zwischen Komponenten**](./books/#datenfluss-zwischen-komponenten) an. 
 
-
-### [(Two-Way-Bindings)]
 
 ### Direktiven
 
