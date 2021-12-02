@@ -391,6 +391,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#elementreferenzen" class="md-nav__link">
+    #Elementreferenzen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#property-bindings" class="md-nav__link">
     [Property Bindings]
   </a>
@@ -466,7 +473,7 @@
   
     <li class="md-nav__item">
       <a href="../routing/" class="md-nav__link">
-        Routing
+        Routing und Services
       </a>
     </li>
   
@@ -565,6 +572,13 @@
           <li class="md-nav__item">
   <a href="#interpolation" class="md-nav__link">
     {{ Interpolation }}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elementreferenzen" class="md-nav__link">
+    #Elementreferenzen
   </a>
   
 </li>
@@ -1452,6 +1466,12 @@
 </td></tr></table>
 </div>
 </div>
+<h3 id="elementreferenzen">#Elementreferenzen<a class="headerlink" href="#elementreferenzen" title="Permanent link">&para;</a></h3>
+<p>Über eine <em>Elementreferenz</em>, die man im HTML-Code mittels des Rautensymbols definiert, kann in Angular sehr einfach auf das Element zugegriffen werden. Das folgende Beispiel zeigt eine solche <em>Elementreferenz</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="err">#</span><span class="na">id</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Elementreferenz&quot;</span> <span class="p">/&gt;</span>
+{{ id.value }}
+</code></pre></div>
+<p>In dem Beispiel wurde einem Textfeld die Elementreferenz <code>id</code> zugewiesen (kann jeder Name sein), erkennbar an <code>#id</code>. Über diese Elementreferenz (den Namen) lässt sich nun direkt auf dieses Element zugreifen. Im obigen Beispiel wird die <code>value</code>-Eigenschaft ausgelesen, also der Wert, der in das Textfeld eingegeben wird (oder, wie oben, vordefiniert ist). Beachten Sie jedoch, dass der Wert nicht automatisch angepasst wird, sobald eine Eingabe erfolgt. Dies muss durch ein Ereignis (z.B. <code>change</code> oder <code>input</code>) getriggert werden. </p>
 <h3 id="property-bindings">[Property Bindings]<a class="headerlink" href="#property-bindings" title="Permanent link">&para;</a></h3>
 <p>Insbesondere, wenn Attributen von HTML-Elementen Werte zugeordnet werden sollen (so wie beim <code>imgUrl</code>-Beispiel des Abschnitts <a href="./#interpolation"><strong>{{Interpolation}}</strong></a>), spricht man von <em>property binding</em>. Property binding spielt eine große Rolle beim Datenfluss von Eltern-Komponenten auf Kind-Komponenten. Die generelle Idee dabei ist, dass mithilfe von <em>property binding</em> Werte (Daten) an Attribute von HTML-Elementen bindet. Diese HTML-Elemente können auch Komponenten sein.</p>
 <p>Wir betrachten zunächst die unterschiedlichen Arten (Notationen) von property binding:</p>
@@ -1920,13 +1940,13 @@ gespeichert, der Wert von <code>first</code> in der Variablen <code>f</code>(Zei
       
       
         
-        <a href="../routing/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Routing" rel="next">
+        <a href="../routing/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Routing und Services" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Weiter
               </span>
-              Routing
+              Routing und Services
             </div>
           </div>
           <div class="md-footer__button md-icon">

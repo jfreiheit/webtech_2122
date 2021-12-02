@@ -70,6 +70,6 @@ nav:
     - JavaScript: javascript.md 
     - Angular: angular.md 
     - JSON und Direktiven: angular2.md
-    - Routing: routing.md
+    - Routing und Services: routing.md
     - Übungen: uebungen.md
     - Werkzeuge: tools.md

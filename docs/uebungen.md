@@ -2726,3 +2726,11 @@
         ![uebung7](./files/219_uebung7.png) 
 
     - Deployen Sie Ihre Lösung (siehe [hier](../angular/#deployment-des-projektes)). 
+
+
+#### Übung 8
+    
+??? question "Übungsaufgabe 8 (Routing und Services)"
+    - Erstellen Sie einen Ordner `Uebung8`. Erstellen Sie in diesem Ordner ein neues Angular-Projekt `uebung8` (siehe  [hier](../angular/#erstes-projekt-erstellen)). 
+    - Das Thema diese Woche ist [Routing und Services](../routing/#routing-und-services). Dieses Thema ist etwas umfangreicher, aber sehr wichtig und nützlich. Deshalb besteht die Übungsaufgabe diese Woche "nur" darin, das in dem Skript verwendete Beispiel nachzubauen. Die Idee dahinter ist die, dass Sie die Themen Routing und Services für Ihre eigene Anwendung (Semesteraufgabe) anwenden können. 
+    - Fragen und Probelem klären wir in den Übungen. Viel Spaß und Erfolg! 
