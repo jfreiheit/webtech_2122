@@ -20,7 +20,7 @@
     
     
       
-        <title>REST-API - WebTech</title>
+        <title>Backend - WebTech</title>
       
     
     
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              REST-API
+              Backend
             
           </span>
         </div>
@@ -344,6 +344,158 @@
 
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Backend
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Backend
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starten-des-projektes-und-installation-von-nodemon" class="md-nav__link">
+    Starten des Projektes und Installation von nodemon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datenbank-erstellen" class="md-nav__link">
+    Datenbank erstellen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mongosh-mongodb-in-der-shell" class="md-nav__link">
+    Mongosh - MongoDB in der Shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datenbank-im-backend-anbinden" class="md-nav__link">
+    Datenbank im Backend anbinden
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ein-model-erstellen" class="md-nav__link">
+    Ein Model erstellen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#die-routen-definieren" class="md-nav__link">
+    Die Routen definieren
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#einen-controller-erstellen" class="md-nav__link">
+    Einen Controller erstellen
+  </a>
+  
+    <nav class="md-nav" aria-label="Einen Controller erstellen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r-read-all" class="md-nav__link">
+    R - read all
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-create" class="md-nav__link">
+    C - create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-read-one" class="md-nav__link">
+    R - read one
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u-update" class="md-nav__link">
+    U - update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-delete-one" class="md-nav__link">
+    D - delete one
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-delete-all" class="md-nav__link">
+    D - delete all
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-origin-resource-sharing-cors" class="md-nav__link">
+    Cross-Origin Resource Sharing (CORS)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
   
     <li class="md-nav__item">
       <a href="../uebungen/" class="md-nav__link">
@@ -394,8 +546,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#starten-des-projektes-und-installation-von-nodemon" class="md-nav__link">
+    Starten des Projektes und Installation von nodemon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#datenbank-erstellen" class="md-nav__link">
     Datenbank erstellen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mongosh-mongodb-in-der-shell" class="md-nav__link">
+    Mongosh - MongoDB in der Shell
   </a>
   
 </li>
@@ -501,7 +667,50 @@
                 
                 
                 <h1 id="rest-api">REST-API<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h1>
-<p>Ehe wir uns weiter mit dem Frontend beschäftigen, erstellen wir einen Server, der uns die Daten liefert. Derzeit haben wir unsere Mockup-Daten noch clientseitig vom <code>DataService</code> verwalten lassen und sie auch dort gespeichert. Das wollen wir nun ändern. </p>
+<p>Die wesentlichsten Konzepte, wie Komponenten, Services und Routing für Angular-Projekte haben wir bereits kennengelernt. Ehe wir uns weiter mit dem Frontend beschäftigen, erstellen wir einen Server, der uns die Daten liefert. Derzeit haben wir unsere Mockup-Daten noch clientseitig vom <code>DataService</code> verwalten lassen und sie auch dort gespeichert. Das wollen wir nun ändern. Die Daten speichern wir in einer Datenbank. </p>
+<p>Für diese Datenbank stellen wir die Implementierung einer Schnittstelle bereit, so dass wir die wesentlichen Datenbankanfragen darüber ausführen können. Diese wesentlichen Datenbankfragen werden mit <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> abgekürzt, für <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate und <strong>D</strong>elete. Das bedeutet, wir implementieren Funktionalitäten, mit denen wir einen neuen Datensatz in die Datenbank einfügen (<em>create</em>), aus der Datenbank auslesen (<em>read</em>), in der Datenbank aktualisieren (<em>update</em>) und aus der Datenbank löschen (<em>delete</em>) können. </p>
+<p>Die Schnittstelle, die wir implementieren, ist eine sogenannte <a href="https://www.redhat.com/de/topics/api/what-is-a-rest-api">REST-API</a>. <em>REST</em> steht für <a href="https://de.wikipedia.org/wiki/Representational_State_Transfer"><em>Representational State Transfer</em></a> und basiert auf einigen wenigen Prinzipien:</p>
+<ol>
+<li>Alles wird als eine <em>Ressource</em> betrachtet, z.B. <code>book</code>.</li>
+<li>Jede Ressource ist durch <em>URIs</em> (<em>Uniform Resource Identifiers</em>) eindeutig identifizierbar, z.B. <code>http://localhost/books</code>.</li>
+<li>Es werden die <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP-Anfragemethoden">Standard-HTTP-Methoden</a> verwendet, also <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>UPDATE</code>.  </li>
+<li>Ressourcen können in verschiedenen Formaten vorliegen, z.B. in <a href="https://html.spec.whatwg.org/multipage/">HTML</a>, <a href="https://www.w3.org/TR/xml/">XML</a>, <a href="https://jsonapi.org/format/">JSON</a>, ...</li>
+<li>Die Kommunikation ist <em>zustandslos</em>. Jede einzelne HTTP-Anfrage wird komplett isoliert bearbeitet. Es gibt keinerlei Anfragehistorie. </li>
+</ol>
+<p>Das bedeutet, wir erstellen ein Backend (einen REST-Server), an den HTTP-Anfragen mit der eindeutig identifizierbaren Ressource gestellt werden. Das Backend erstellt daraus die entsprechende SQL-Query. Das Resultat der Datenbankanfrage wird im <code>JSON</code>- oder <code>HTML</code>- oder <code>XML</code>- oder in einem anderen Format bereitsgestellt.</p>
+<p><img alt="restapi" src="../files/61_restapi.png" /></p>
+<p>Prinzipiell gibt es also ein <em>Mapping</em>  von HTTP-Anfragen auf SQL-Anfragen:</p>
+<table>
+<thead>
+<tr>
+<th>CRUD</th>
+<th>SQL</th>
+<th>HTTP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create</td>
+<td>INSERT</td>
+<td>POST</td>
+</tr>
+<tr>
+<td>read</td>
+<td>SELECT</td>
+<td>GET</td>
+</tr>
+<tr>
+<td>update</td>
+<td>UPDATE</td>
+<td>PUT</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>DELETE</td>
+<td>DELETE</td>
+</tr>
+</tbody>
+</table>
 <p>Wir wollen uns ein Backend erstellen, über das wir unsere Daten verwalten. Dazu überlegen wir uns zunächst ein paar <em>Endpunkte</em> und die Zugriffsmethoden, mit denen wir auf unsere Daten zugreifen wollen.</p>
 <table>
 <thead>
@@ -551,49 +760,203 @@
 npm init
 </code></pre></div>
 <p>Sie werden ein paar Sachen gefragt. Im Prinzip können Sie immer <code>Enter</code> drücken:</p>
-<div class="highlight"><pre><span></span><code>package name: <span class="o">(</span>backend<span class="o">)</span> 
+<div class="highlight"><pre><span></span><code>This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See <span class="sb">`</span>npm <span class="nb">help</span> init<span class="sb">`</span> <span class="k">for</span> definitive documentation on these fields
+and exactly what they <span class="k">do</span>.
+
+Use <span class="sb">`</span>npm install &lt;pkg&gt;<span class="sb">`</span> afterwards to install a package and
+save it as a dependency <span class="k">in</span> the package.json file.
+
+Press ^C at any <span class="nb">time</span> to quit.
+package name: <span class="o">(</span>backend<span class="o">)</span> 
 version: <span class="o">(</span><span class="m">1</span>.0.0<span class="o">)</span> 
-description: Backend REST-API MySQL
+description: Backend REST-API
 entry point: <span class="o">(</span>index.js<span class="o">)</span> 
 <span class="nb">test</span> command: 
 git repository: 
-keywords: restapi, express, mysql
-author: J.Freiheit
+keywords: restapi, backend
+author: J. Freiheit
 license: <span class="o">(</span>ISC<span class="o">)</span> 
-About to write to /Users/jornfreiheit/Sites/WT20/backend/package.json:
+About to write to /Users/jornfreiheit/Sites/WT21/backend/package.json:
 
 <span class="o">{</span>
   <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;backend&quot;</span>,
   <span class="s2">&quot;version&quot;</span>: <span class="s2">&quot;1.0.0&quot;</span>,
-  <span class="s2">&quot;description&quot;</span>: <span class="s2">&quot;Backend REST-API MySQL&quot;</span>,
+  <span class="s2">&quot;description&quot;</span>: <span class="s2">&quot;Backend REST-API&quot;</span>,
   <span class="s2">&quot;main&quot;</span>: <span class="s2">&quot;index.js&quot;</span>,
   <span class="s2">&quot;scripts&quot;</span>: <span class="o">{</span>
     <span class="s2">&quot;test&quot;</span>: <span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
   <span class="o">}</span>,
   <span class="s2">&quot;keywords&quot;</span>: <span class="o">[</span>
     <span class="s2">&quot;restapi&quot;</span>,
-    <span class="s2">&quot;express&quot;</span>,
-    <span class="s2">&quot;mysql&quot;</span>
+    <span class="s2">&quot;backend&quot;</span>
   <span class="o">]</span>,
-  <span class="s2">&quot;author&quot;</span>: <span class="s2">&quot;J.Freiheit&quot;</span>,
+  <span class="s2">&quot;author&quot;</span>: <span class="s2">&quot;J. Freiheit&quot;</span>,
   <span class="s2">&quot;license&quot;</span>: <span class="s2">&quot;ISC&quot;</span>
 <span class="o">}</span>
 
 
 Is this OK? <span class="o">(</span>yes<span class="o">)</span> 
 </code></pre></div>
-<p>Die <code>package.json</code> wurde erstellt. Nun benötigen wir noch ein paar nützliche Module, nämlich <code>express</code>, <code>mysql</code> und den <code>body-parser</code>:</p>
-<div class="highlight"><pre><span></span><code>npm install express mysql body-parser --save
+<p>Die <code>package.json</code> wurde erstellt. Nun benötigen wir noch das Modul <a href="https://expressjs.com/de/">Express</a>. Express bietet uns eine unkomplizierte <em>Middleware</em> für die Weiterverwaltung von <code>http</code>-Anfragen an die Datenbank und zurück. </p>
+<div class="highlight"><pre><span></span><code>npm install express --save
 </code></pre></div>
 <p>Sie erhalten eine Meldung in der Form:</p>
-<div class="highlight"><pre><span></span><code>+ express@4.17.1
-+ body-parser@1.19.0
-+ mysql@2.18.1
-added <span class="m">59</span> packages from <span class="m">48</span> contributors and audited <span class="m">60</span> packages <span class="k">in</span> <span class="m">2</span>.016s
+<div class="highlight"><pre><span></span><code>% npm install express --save
+
+added <span class="m">50</span> packages, and audited <span class="m">51</span> packages <span class="k">in</span> 844ms
+
 found <span class="m">0</span> vulnerabilities
 </code></pre></div>
-<p>Öffnen Sie nun das <code>backend</code>-Projekt in Ihrer IDEserver und erstellen Sie sich dort eine Datei <code>server.js</code> mit folgendem Inhalt:</p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">server.js</label><div class="tabbed-content">
+<p>In der <code>package.json</code> wurde die entsprechende Abhängigkeit eingetragen: </p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">package.json</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;backend&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Backend REST-API&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;index.js&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;restapi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;backend&quot;</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;J. Freiheit&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;ISC&quot;</span><span class="p">,</span>
+<span class="hll">  <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span class="hll">    <span class="nt">&quot;express&quot;</span><span class="p">:</span> <span class="s2">&quot;^4.17.1&quot;</span>
+</span><span class="hll">  <span class="p">}</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Öffnen Sie nun das <code>backend</code>-Projekt in Ihrer IDE und erstellen Sie sich dort eine Datei <code>server.js</code> mit folgendem Inhalt:</p>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">server.js</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">express</span> <span class="nx">from</span> <span class="s1">&#39;express&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="mf">3000</span><span class="p">;</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Hello FIW!&quot;</span> <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Server started and listening on port </span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb"> ...`</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Das bedeutet, wir importieren <code>express</code> (Zeile <code>1</code>), erzeugen uns davon ein Objekt und speichern dieses in der Variablen <code>app</code> (Zeile <code>3</code>). Wir legen in einer Konstanten <code>PORT</code> die Portnummer <code>3000</code> fest (Zeile <code>4</code> - die Portnummer können Sie wählen). Das <code>backend</code> ist somit unter <code>http://localhost:3000</code> verfügbar. Wenn wir diese URL aufrufen, dann wird ein <code>request</code> ausgelöst, den wir hier mit <code>Hello FIW!</code> als <code>response</code> beantworten (Zeilen <code>6-8</code>). Das eigentliche Starten des Webservers erfolgt in den Zeilen <code>10-16</code>.</p>
+<p>In unserer <code>package.json</code> führen wir nun noch zwei Anpassungen durch. Erstens soll unser <code>main</code>-Skript nun nicht mehr <code>index.js</code>, sondern <code>server.js</code> sein. Zweitens haben wir in Zeile <code>1</code> in der <code>server.js</code> das <code>express</code>-Paket mittels</p>
+<div class="highlight"><pre><span></span><code>import express from &#39;express&#39;;
+</code></pre></div>
+<p>importiert. Dies entspricht der "neuen" Syntax zum Importieren eines ES6-Modules (ES6 - ECMAScript 6). "Früher" hat man stattdessen</p>
+<div class="highlight"><pre><span></span><code>const express = require(&#39;express&#39;);
+</code></pre></div>
+<p>geschrieben. Allerdings erfordert diese "neue" Syntax eine Erweiterung in der <code>package.json</code>:</p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">package.json</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;backend&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Backend REST-API&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;server.js&quot;</span><span class="p">,</span>
+</span><span class="hll">    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;module&quot;</span><span class="p">,</span>
+</span>    <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;restapi&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;backend&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;J. Freiheit&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;ISC&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;express&quot;</span><span class="p">:</span> <span class="s2">&quot;^4.17.1&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h4 id="starten-des-projektes-und-installation-von-nodemon">Starten des Projektes und Installation von nodemon<a class="headerlink" href="#starten-des-projektes-und-installation-von-nodemon" title="Permanent link">&para;</a></h4>
+<p>Das Projekt lässt sich nun starten. Wir geben dazu im Terminal im <code>backend</code>-Ordner</p>
+<div class="highlight"><pre><span></span><code>node server.js
+</code></pre></div>
+<p>ein. Im Terminal erscheint </p>
+<div class="highlight"><pre><span></span><code>Server started and listening on port <span class="m">3000</span> ...
+</code></pre></div>
+<p>und wenn Sie im Browser die URL <code>http://localhost:3000/</code> eingeben, wird dort</p>
+<p><img alt="backend" src="../files/91_backend.png" /></p>
+<p>angezeigt. Sie können auch Postman öffnen und <code>http://localhost:3000</code> eintragen (<code>GET</code>-Methode):</p>
+<p><img alt="backend" src="../files/92_postman.png" /></p>
+<p>Wann immer wir jetzt jedoch etwas an der Implementierung ändern, müssen wir im Terminal zunächst den Webserver mit </p>
+<div class="highlight"><pre><span></span><code>Strg-C      // bzw. Control-C
+</code></pre></div>
+<p>stoppen, um ihn dann wieder mit <code>node server.js</code> zu starten. Um das zu umgehen, gibt es das Paket <a href="https://www.npmjs.com/package/nodemon">nodemon</a>. Da es nur sinnvoll während der Entwicklung eingesetzt werden kann (und sollte), installieren wir es als eine <em>development dependency</em>:</p>
+<div class="highlight"><pre><span></span><code>npm install --save-dev nodemon
+</code></pre></div>
+<p>Die <code>package.json</code> sieht daraufhin so aus:</p>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">package.json</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -613,38 +976,325 @@ found <span class="m">0</span> vulnerabilities
 17
 18
 19
-20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;body-parser&quot;</span><span class="p">);</span>
-
-<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
-
-<span class="c1">// parse requests of content-type: application/json</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
-
-<span class="c1">// parse requests of content-type: application/x-www-form-urlencoded</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">urlencoded</span><span class="p">({</span> <span class="nx">extended</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}));</span>
-
-<span class="c1">// simple route</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Hello FIW!&quot;</span> <span class="p">});</span>
-<span class="p">});</span>
-
-<span class="c1">// set port, listen for requests</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3000</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Server is running on port 3000.&quot;</span><span class="p">);</span>
-<span class="p">});</span>
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;backend&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Backend REST-API&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;server.js&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;module&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;restapi&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;backend&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;J. Freiheit&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;ISC&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;express&quot;</span><span class="p">:</span> <span class="s2">&quot;^4.17.1&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;nodemon&quot;</span><span class="p">:</span> <span class="s2">&quot;^2.0.15&quot;</span>
+    <span class="p">}</span>
+<span class="hll"><span class="p">}</span>
+</span></code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Zur Verwendung von <code>nodemon</code> fügen wir in die <code>package.json</code> unter <code>"scripts"</code> noch die Eigenschaft <code>watch</code> (frei gewählt) und den dazugehörigen Wert <code>nodemon server.js</code> ein:</p>
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">package.json</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;backend&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Backend REST-API&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;server.js&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;module&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">        <span class="nt">&quot;watch&quot;</span><span class="p">:</span> <span class="s2">&quot;nodemon ./server.js&quot;</span><span class="p">,</span>
+</span>        <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;restapi&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;backend&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;J. Freiheit&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;ISC&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;express&quot;</span><span class="p">:</span> <span class="s2">&quot;^4.17.1&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;nodemon&quot;</span><span class="p">:</span> <span class="s2">&quot;^2.0.15&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 </div>
 </div>
-<p>Geben Sie im Terminal in Ihrem <code>backend</code>-Ordner nun </p>
-<div class="highlight"><pre><span></span><code>node server.js
+<p>Nun lässt sich die Anwendung mithilfe von <code>nodemon</code> per </p>
+<div class="highlight"><pre><span></span><code>npm run watch
 </code></pre></div>
-<p>ein. Das müssen Sie nun leider immer wieder zum Compilieren und Ausführen machen. Sie beenden den Prozess mit <code>Ctrl+C</code> und starten ihn dann erneut. Öffnen Sie im Browser <code>http://localhost:3000/</code> und Sie erhalten:</p>
-<p><img alt="backend" src="../files/91_backend.png" /></p>
-<p>Sie können auch Postman öffnen und <code>http://localhost:3000</code> eintragen (<code>GET</code>-Methode):</p>
-<p><img alt="backend" src="../files/92_postman.png" /></p>
+<p>starten und muss auch nicht mehr gestoppt und neu gestartet werden, wenn Änderungen an der Implementierungen durchgeführt wurden. Die Ausgabe im Terminal nach Eingabe von <code>npm run watch</code> ist ungefähr so:</p>
+<div class="highlight"><pre><span></span><code>&gt; backend@1.0.0 watch
+&gt; nodemon ./server.js
+
+<span class="o">[</span>nodemon<span class="o">]</span> <span class="m">2</span>.0.15
+<span class="o">[</span>nodemon<span class="o">]</span> to restart at any time, enter <span class="sb">`</span>rs<span class="sb">`</span>
+<span class="o">[</span>nodemon<span class="o">]</span> watching path<span class="o">(</span>s<span class="o">)</span>: *.*
+<span class="o">[</span>nodemon<span class="o">]</span> watching extensions: js,mjs,json
+<span class="o">[</span>nodemon<span class="o">]</span> starting <span class="sb">`</span>node ./server.js<span class="sb">`</span>
+Server started and listening on port <span class="m">3000</span> ...
+</code></pre></div>
 <h3 id="datenbank-erstellen">Datenbank erstellen<a class="headerlink" href="#datenbank-erstellen" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.mongodb.com/de-de">MongoDB</a> ist die am meisten verwendete <em>NoSQL (not only SQL)</em> Datenbank. Sie basiert nicht auf Relationen, Tabellen und ihren Beziehungen zueinander (ist also keine <em>relationale</em> Datenbank), sondern speichert Dokumente in JSON-ähnlichem Format. Die <a href="https://github.com/mongodb/mongo">Community Edition der MongoDB</a> ist Open Source und kostenlos verfügbar. 
+Sollten Sie mit <em>Visual Studio Code</em> arbeiten, sollten Sie sich am besten die <a href="https://code.visualstudio.com/docs/azure/mongodb">MongoDB for VS Code</a>-Ereiterung installieren. </p>
+<p>Zur Verwendung von <em>MongoDB</em> im Backend verwenden wir das Modul <a href="https://mongoosejs.com/">Mongoose</a>. Wir installieren <em>Mongoose</em> mithilfe von</p>
+<div class="highlight"><pre><span></span><code>npm install mongoose --save
+</code></pre></div>
+<p>In die <code>package.json</code> wird das Paket und die entsprechende Abhängigkeit eingetragen:</p>
+<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">package.json</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;backend&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Backend REST-API&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;server.js&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;module&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;watch&quot;</span><span class="p">:</span> <span class="s2">&quot;nodemon ./server.js&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;restapi&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;backend&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;J. Freiheit&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;ISC&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;express&quot;</span><span class="p">:</span> <span class="s2">&quot;^4.17.1&quot;</span><span class="p">,</span>
+<span class="hll">        <span class="nt">&quot;mongoose&quot;</span><span class="p">:</span> <span class="s2">&quot;^6.0.14&quot;</span>
+</span>    <span class="p">},</span>
+    <span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;nodemon&quot;</span><span class="p">:</span> <span class="s2">&quot;^2.0.15&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p><em>Mongoose</em> stellt eine einfach zu verwendende Schnittstelle zwischen Node.js und MongoDB bereit. Die
+MongoDB benötigen wir aber trotzdem (wir könnten jdoch auch eine Cloud von MongoDB oder z.B. <code>mlab.com</code> verwenden). Bevor wir uns mit der MongoDB verbinden, erstellen wir zunächst noch eine Datenbank. </p>
+<h3 id="mongosh-mongodb-in-der-shell">Mongosh - MongoDB in der Shell<a class="headerlink" href="#mongosh-mongodb-in-der-shell" title="Permanent link">&para;</a></h3>
+<p>Um eine Datenbank mithilfe von MongoDB zu erstellen, verwenden wir <a href="https://docs.mongodb.com/mongodb-shell/">mongosh</a>. Installationsanleitungen zu <em>mongosh</em> finden Sie <a href="https://docs.mongodb.com/mongodb-shell/install/#std-label-mdb-shell-install">hier</a>. Nach der Installation von <em>mongosh</em> geben wir im Terminal </p>
+<div class="highlight"><pre><span></span><code>mongosh 
+</code></pre></div>
+<p>ein. Es erscheint etwas in der Form:</p>
+<div class="highlight"><pre><span></span><code>Current Mongosh Log ID: 61ae3471fef87d1bebfa13a1
+Connecting to:      mongodb://127.0.0.1:27017/?directConnection<span class="o">=</span>true<span class="p">&amp;</span><span class="nv">serverSelectionTimeoutMS</span><span class="o">=</span><span class="m">2000</span>
+Using MongoDB:      <span class="m">5</span>.0.3
+Using Mongosh:      <span class="m">1</span>.1.6
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+To <span class="nb">help</span> improve our products, anonymous usage data is collected and sent to MongoDB periodically <span class="o">(</span>https://www.mongodb.com/legal/privacy-policy<span class="o">)</span>.
+You can opt-out by running the disableTelemetry<span class="o">()</span> command.
+
+------
+   The server generated these startup warnings when booting:
+   <span class="m">2021</span>-12-03T08:35:22.188+01:00: Access control is not enabled <span class="k">for</span> the database. Read and write access to data and configuration is unrestricted
+------
+
+Warning: Found ~/.mongorc.js, but not ~/.mongoshrc.js. ~/.mongorc.js will not be loaded.
+  You may want to copy or rename ~/.mongorc.js to ~/.mongoshrc.js.
+test&gt; 
+</code></pre></div>
+<p>Die Warnung kann <a href="https://www.mongodb.com/community/forums/t/warning-found-mongorc-js-but-not-mongoshrc-js-mongorc-js-will-not-be-loaded/129716/4">ignoriert</a> werden. Die Datei <code>mongorc.js</code> wurde erstellt, als einmal in die Shell <code>mongo</code> eingegeben wurde. Das ist aber <code>deprecated</code> und es soll stattdessen die <code>mongosh</code> verwendet werden, was wir ja auch machen. </p>
+<div class="highlight"><pre><span></span><code>&gt; use rest
+</code></pre></div>
+<p>(ohne das <code>&gt;</code> - das soll nur symbolisieren, dass wir in der MongoDB-Shell sind). Es entsteht die Datenbank <code>rest</code>. Wir befüllen diese Datenbank probehalber mit Daten (löschen wir wieder)</p>
+<div class="highlight"><pre><span></span><code>&gt; db.user.insert({name: &quot;Ada Lovelace&quot;, age: 206})
+</code></pre></div>
+<ul>
+<li>Falls Sie <em>Visual Studio Code</em>  verwenden und darin die <a href="https://code.visualstudio.com/docs/azure/mongodb">MongoDB for VS Code</a>-Ereiterung installiert haben, können Sie auf der linken Seite auf das MongoDB-Blatt klicken und das <code>Advanced Connection Settings</code> mit dem Formular <code>Open form</code> anklicken.</li>
+</ul>
+<p>Sie geben <code>mongodb://127.0.0.1:27017</code> ein und dass Sie keine Authentifizierung verwenden. Öffnen Sie die <code>connection</code> und darin <code>rest</code> und es erscheint</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;$oid&quot;</span><span class="p">:</span> <span class="s2">&quot;60ddc2e80de75bf12565e491&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Ada Lovelace&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;age&quot;</span><span class="p">:</span> <span class="mi">206</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Um sich in Node.js mit der DB zu verbinden, geben Sie </li>
+</ul>
+<div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">app.js</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="hll"><span class="kd">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongoose&#39;</span><span class="p">);</span>
+</span><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+
+<span class="c1">// Routen</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello FIW! (home)&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/test&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello FIW! (home/test)&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// connect to mongoDB</span>
+<span class="hll"><span class="nx">mongoose</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s1">&#39;mongodb://127.0.0.1:27017/rest&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useNewUrlParser</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">useUnifiedTopology</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+</span><span class="hll"><span class="kd">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">connection</span><span class="p">;</span>
+</span><span class="hll"><span class="nx">db</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;connection error:&#39;</span><span class="p">));</span>
+</span><span class="hll"><span class="nx">db</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span><span class="hll">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;connected to DB&#39;</span><span class="p">);</span>
+</span><span class="hll"><span class="p">});</span>
+</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3000</span><span class="p">);</span> <span class="c1">// port 3000</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>ein. Im Terminal sollte dann</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>nodemon<span class="o">]</span> restarting due to changes...
+<span class="o">[</span>nodemon<span class="o">]</span> starting <span class="sb">`</span>node app.js<span class="sb">`</span>
+connected to DB
+</code></pre></div>
+<p>erscheinen. </p>
+<ul>
+<li>für die "geheimen" Zugangsdaten (die jetzt noch gar nicht "geheim" sind) verwenden wir das <a href="https://www.npmjs.com/package/dotenv">dotenv</a>-Paket</li>
+</ul>
+<div class="highlight"><pre><span></span><code>npm install dotenv
+</code></pre></div>
+<ul>
+<li>Im Projektordner erstellen wir und eine Datei <code>.env</code> (mit Punkt!) und schreiben darein:</li>
+</ul>
+<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">.env</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">DB_CONNECTION</span> <span class="o">=</span> <span class="s1">&#39;mongodb://127.0.0.1:27017/rest&#39;</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>und in die <code>app.js</code>:</p>
+<div class="tabbed-set" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">app.js</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongoose&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="hll"><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dotenv/config&#39;</span><span class="p">);</span>
+</span>
+<span class="c1">// Routen</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello FIW! (home)&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/test&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello FIW! (home/test)&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// connect to mongoDB</span>
+<span class="hll"><span class="nx">mongoose</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_CONNECTION</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useNewUrlParser</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">useUnifiedTopology</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+</span><span class="kd">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">connection</span><span class="p">;</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;connection error:&#39;</span><span class="p">));</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;connected to DB&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3000</span><span class="p">);</span> <span class="c1">// port 3000</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
 <p>Bevor wir mit der Implementierung des Backends fortfahren, erstellen wir unsere Datenbank. Am einfachsten ist es, wenn wir <code>phpmyadmin</code> unter <code>localhost</code> öffnen (<code>http://localhost/phpmyadmin</code>) und dort zunächst eine Datenbank anlegen (unter <code>Neu</code>); benennen Sie die Datenbank am besten <code>mockupdb</code> und darin folgende <code>sql</code>-Datei importieren:</p>
 <details><summary>members.sql</summary><div class="highlight"><pre><span></span><code><span class="c1">-- phpMyAdmin SQL Dump</span>
 <span class="c1">-- version 5.0.2</span>
@@ -774,7 +1424,7 @@ found <span class="m">0</span> vulnerabilities
 <p><img alt="phpmyadmin" src="../files/93_phpmyadmin.png" /></p>
 <h3 id="datenbank-im-backend-anbinden">Datenbank im Backend anbinden<a class="headerlink" href="#datenbank-im-backend-anbinden" title="Permanent link">&para;</a></h3>
 <p>Wir binden nun die Datenbank an unser Backend an. Erstellen Sie sich am besten in Ihrem <code>backend</code>-Ordner einen Ordner <code>config</code> und darin eine <code>db.config.js</code>-Datei mit folgendem Inhalt:</p>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">config/db.config.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">config/db.config.js</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">HOST</span><span class="o">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
     <span class="nx">USER</span><span class="o">:</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
@@ -785,7 +1435,7 @@ found <span class="m">0</span> vulnerabilities
 </div>
 </div>
 <p>Falls Sie MySQL des Studi-Servers verwenden, sieht die <code>db.config.js</code> so aus:</p>
-<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">config/db.config.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">config/db.config.js</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">HOST</span><span class="o">:</span> <span class="s2">&quot;db.f4.htw-berlin.de&quot;</span><span class="p">,</span>
     <span class="nx">USER</span><span class="o">:</span> <span class="s2">&quot;s05xxx&quot;</span><span class="p">,</span>
@@ -797,7 +1447,7 @@ found <span class="m">0</span> vulnerabilities
 </div>
 <p>Sie müssen Ihr Passwort eintragen und, falls Sie Ihre Datenbank anders genannt haben, auch den Datenbanknamen anpassen. </p>
 <p>Erstellen Sie sich in Ihrem <code>backend</code>-Ordner einen Ordner <code>app</code> und darin einen Ordner <code>model</code>. In diesem Ordner erstellen Sie sich ein <code>db.js</code>, um die Verbindung zur Datenbank zu implementieren: </p>
-<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">app/model/db.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="12:1"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">app/model/db.js</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;mysql&quot;</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">dbConfig</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../../config/db.config.js&quot;</span><span class="p">);</span>
 
@@ -821,7 +1471,7 @@ found <span class="m">0</span> vulnerabilities
 </div>
 <h3 id="ein-model-erstellen">Ein Model erstellen<a class="headerlink" href="#ein-model-erstellen" title="Permanent link">&para;</a></h3>
 <p>In dem <code>app/model</code>-Ordner erstellen wir eine Datei <code>members.model.js</code> mit folgendem Inhalt:</p>
-<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">app/model/members.model.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">app/model/members.model.js</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">sql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./db.js&quot;</span><span class="p">);</span>
 
 <span class="c1">// constructor</span>
@@ -937,7 +1587,7 @@ found <span class="m">0</span> vulnerabilities
 </div>
 <h3 id="die-routen-definieren">Die Routen definieren<a class="headerlink" href="#die-routen-definieren" title="Permanent link">&para;</a></h3>
 <p>Erstellen Sie sich im <code>app</code>-Ordner einen Ordner <code>routes</code> und erstellen darin eine Datei <code>members.routes.js</code> mit folgendem Inhalt:</p>
-<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">app/routes/members.routes.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">app/routes/members.routes.js</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">app</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">members</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../controller/members.controller.js&quot;</span><span class="p">);</span>
 
@@ -1010,7 +1660,7 @@ found <span class="m">0</span> vulnerabilities
 </td></tr></table>
 <h3 id="einen-controller-erstellen">Einen Controller erstellen<a class="headerlink" href="#einen-controller-erstellen" title="Permanent link">&para;</a></h3>
 <p>Nun erstellen wir uns im Ordner <code>app/controller</code> eine <code>members.controller.js</code> mit den entsprechenden CRUD-Funktionen, die wir dann noch implementieren müssen:</p>
-<div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="15:1"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">Member</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../model/members.model.js&quot;</span><span class="p">);</span>
 
 <span class="c1">// Create and Save a new Member</span>
@@ -1048,7 +1698,7 @@ found <span class="m">0</span> vulnerabilities
 <p>Überprüfen Sie Ihre Implementierung so weit, indem Sie <code>node server.js</code> erneut starten. Es sollte alles ohne Fehler compilieren. </p>
 <h4 id="r-read-all">R - read all<a class="headerlink" href="#r-read-all" title="Permanent link">&para;</a></h4>
 <p>Wir implementieren nun nach und nach die einzelnen Funktionen in <code>members.controller.js</code>. Wir beginnen mit der <code>findAll()</code>-Funktion: </p>
-<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="16:1"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 8
  9
 10
@@ -1078,7 +1728,7 @@ found <span class="m">0</span> vulnerabilities
 <p><img alt="postman" src="../files/94_postman.png" /></p>
 <h4 id="c-create">C - create<a class="headerlink" href="#c-create" title="Permanent link">&para;</a></h4>
 <p>Als nächstes implementieren wir die <code>create()</code>-Funktion, um einen neuen Eintrag in der Datenbank anzulegen. </p>
-<div class="tabbed-set" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="17:1"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 3
  4
  5
@@ -1154,7 +1804,7 @@ found <span class="m">0</span> vulnerabilities
 <p><img alt="phpmyadmin" src="../files/96_phpmyadmin.png" /></p>
 <h4 id="r-read-one">R - read one<a class="headerlink" href="#r-read-one" title="Permanent link">&para;</a></h4>
 <p>Wir erweitern die <code>members.controller.js</code> um die Funktion <code>findOne()</code>, die uns für eine gegebene <code>id</code> den entsprechenden Datensatz zurückliefert:</p>
-<div class="tabbed-set" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="18:1"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><label for="__tabbed_18_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>42
 43
 44
@@ -1195,7 +1845,7 @@ found <span class="m">0</span> vulnerabilities
 <p>Probieren Sie auch einmal <code>GET http://localhost:3000/members/52</code> aus, um die Fehlermeldung als JSON zu sehen. </p>
 <h4 id="u-update">U - update<a class="headerlink" href="#u-update" title="Permanent link">&para;</a></h4>
 <p>Nun noch die <code>update()</code>-Funktion, um einen bereits existierenden Datensatz zu ändern:</p>
-<div class="tabbed-set" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="19:1"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><label for="__tabbed_19_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>68
 69
 70
@@ -1272,7 +1922,7 @@ found <span class="m">0</span> vulnerabilities
 <p>Schauen Sie auch in der Datenbank nach und wählen auch ruhig nochmal <code>GET http://localhost:3000/members</code>.</p>
 <h4 id="d-delete-one">D - delete one<a class="headerlink" href="#d-delete-one" title="Permanent link">&para;</a></h4>
 <p>Jetzt implementieren wir noch die <code>delete()</code>-Funktion, um einen Datensatz zu löschen:</p>
-<div class="tabbed-set" data-tabs="12:1"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="20:1"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><label for="__tabbed_20_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 87
  88
  89
@@ -1320,7 +1970,7 @@ found <span class="m">0</span> vulnerabilities
 </code></pre></div>
 <p>Wir implementieren der Vollständigkeit halber noch die <code>deleteAll()</code>-Methode. Sie können ja entscheiden, ob Sie sie ausprobieren wollen oder nicht ;-)</p>
 <h4 id="d-delete-all">D - delete all<a class="headerlink" href="#d-delete-all" title="Permanent link">&para;</a></h4>
-<div class="tabbed-set" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="21:1"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><label for="__tabbed_21_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>104
 105
 106
@@ -1418,7 +2068,7 @@ found <span class="m">0</span> vulnerabilities
 <div class="highlight"><pre><span></span><code>npm install cors
 </code></pre></div>
 <p>ein. Öffnen Sie dann die <code>server.js</code> und fügen Sie die hervorgehobenen Zeilen ein:</p>
-<div class="tabbed-set" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">server.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="22:1"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><label for="__tabbed_22_1">server.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1495,6 +2145,41 @@ found <span class="m">0</span> vulnerabilities
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../routing/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Routing und Services" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              Routing und Services
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../uebungen/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Übungen" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              Übungen
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

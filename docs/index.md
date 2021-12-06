@@ -17,8 +17,8 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 5. | 08.-12.11.2021 | [RWD (responsive Webdesign)](./rwd/#responsive-web-design) | [Übung 4](./uebungen/#ubung-4) | - | 15.11.2021 | 
 | 6. | 15.-19.11.2021 | [JavaScript (DOM)](./javascript/#javascript) | [Übung 5](./uebungen/#ubung-5) | Datenmodell | 22.11.2021 | 
 | 7. | 22.-26.11.2021 | [Angular (Einführung und Komponenten)](./angular/#angular) | [Übung 6](./uebungen/#ubung-6) | Schnittstelle | 29.11.2021 | 
-| 8. | 29.-03.12.2021 | [Angular (Bindings und Direktiven) + JSON](./angular2/#json-und-direktiven) | Übung 7 | Frontend (c+r)| 06.12.2021 | 
-| 9. | 06.-10.12.2021 | [Angular (Routing und Services)](./routing/#routing-und-services) | Übung 8 | Frontend (u+d)| 13.12.2021 | 
+| 8. | 29.-03.12.2021 | [Angular (Bindings und Direktiven) + JSON](./angular2/#json-und-direktiven) | [Übung 7](./uebungen/#ubung-7) | Frontend (c+r)| 06.12.2021 | 
+| 9. | 06.-10.12.2021 | [Angular (Routing und Services)](./routing/#routing-und-services) | [Übung 8](./uebungen/#ubung-8) | Frontend (u+d)| 13.12.2021 | 
 | 10. | 13.-17.12.2021 | Node.js + Express (REST-Server + MongoDB) | Übung 9 | Frontend fertig | 20.12.2021 | 
 | 11. | 20.-24.12.2021 | Angular (Anbindung ans Backend) | Übung 10 | Backend ( c ) | 10.01.2022 | 
 | | | | | | | |
@@ -50,7 +50,7 @@ Am Ende des Kurses geben Sie eine Webanwendung ab. Diese wird bewertet und bilde
 
 	* das Frontend soll mit Angular entwickelt werden,
 	* das Backend mit Node.js,
-	* als Datenbank soll MySQL verwendet werden,
+	* es soll eine Datenbank (MySQL oder PostgreSQL oder MariaDB oder MongoDB oder SQLite oder ...)  verwendet werden,
 	* es soll CRUD implementiert sein, d.h. Sie benötigen 
 	    * eine Komponente zur Erstellung und Speicherung eines Datenbankeintrages (<b>C</b>reate),
 	    * eine Komponente zur Änderung eines Datenbankeintrages (<b>U</b>pdate),

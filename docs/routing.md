@@ -1,5 +1,10 @@
 # Routing und Services
 
+
+??? "Video aus der Vorlesung am 6.12.2021"
+    <iframe src="https://mediathek.htw-berlin.de/media/embed?key=51a13dc751ca5d85ca07ad6f5f47c951&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
 ## Single- vs. Multi-Page-Applikationen
 
 Wenn wir durch z.B. dieses Skript hangeln oder Wikipedia, dann stellen wir fest, dass sich nach jedem Klick auf einen Link eine neue HTML-Seite öffnet. Das wird insbesondere deutlich wenn die Entwicklungstools geöffnet sind. Jeder Klick auf einen Hyperlink erwirkt eine neue Anfrage an einen Webserver mit dem Request, eine neue HTML-Seite von diesem Webserver zu laden und im Browser zu öffnen. Es handelt sich dabei also um eine Webanwendung mit vielen (Unter-)Seiten, eine sogenannte *Multi-Page-Applikation (MPA)*. 
@@ -377,73 +382,84 @@ Häufig sollen aus einer Liste von Objekten ein einzelnes Objekt ausgewählt und
 ??? "staedte als Array"
     ```json
     [
-	    {
-	      jahr: 1237,
-	      stadt: "Berlin",
-	      link: "http://de.wikipedia.org/wiki/Berlin",
-	      bild: "assets/images/berlin.png"
-	    },
-	    {
-	      jahr: 1624,
-	      stadt: "New York",
-	      link: "http://de.wikipedia.org/wiki/New_York_City",
-	      bild: "assets/images/newyork.png"
-	    },
-	    {
-	      jahr: 1252,
-	      stadt: "Stockholm",
-	      link: "http://de.wikipedia.org/wiki/Stockholm",
-	      bild: "assets/images/stockholm.png"
-	    },
-	    {
-	      jahr: 1827,
-	      stadt: "Bremerhaven",
-	      link: "http://de.wikipedia.org/wiki/Bremerhaven",
-	      bild: "assets/images/bremerhaven.png"
-	    },
-	    {
-	      jahr: 150,
-	      stadt: "Bremen",
-	      link: "http://de.wikipedia.org/wiki/Bremen",
-	      bild: "assets/images/bremen.png"
-	    },
-	    {
-	      jahr: 1202,
-	      stadt: "Bernau",
-	      link: "http://de.wikipedia.org/wiki/Bernau_bei_Berlin",
-	      bild: "assets/images/bernau.png"
-	    },
-	    {
-	      jahr: 929,
-	      stadt: "Brandenburg",
-	      link: "http://de.wikipedia.org/wiki/Brandenburg_an_der_Havel",
-	      bild: "assets/images/brandenburg.png"
-	    },
-	    {
-	      jahr: 805,
-	      stadt: "Magdeburg",
-	      link: "http://de.wikipedia.org/wiki/Magdeburg",
-	      bild: "assets/images/magdeburg.png"
-	    },
-	    {
-	      jahr: 1222,
-	      stadt: "Marburg",
-	      link: "http://de.wikipedia.org/wiki/Marburg",
-	      bild: "assets/images/marburg.png"
-	    },
-	    {
-	      jahr: 766,
-	      stadt: "Mannheim",
-	      link: "http://de.wikipedia.org/wiki/Mannheim",
-	      bild: "assets/images/mannheim.png"
-	    },
-	    {
-	      jahr: 782,
-	      stadt: "Mainz",
-	      link: "http://de.wikipedia.org/wiki/Mainz",
-	      bild: "assets/images/mainz.png"
-	    }
-	]
+    	{
+            id: 1,
+            jahr: 1237,
+            stadt: "Berlin",
+            link: "http://de.wikipedia.org/wiki/Berlin",
+            bild: "assets/images/berlin.png"
+        },
+        {
+            id: 2,
+            jahr: 1624,
+            stadt: "New York",
+            link: "http://de.wikipedia.org/wiki/New_York_City",
+            bild: "assets/images/newyork.png"
+        },
+        {
+            id: 3,
+            jahr: 1252,
+            stadt: "Stockholm",
+            link: "http://de.wikipedia.org/wiki/Stockholm",
+            bild: "assets/images/stockholm.png"
+        },
+        {
+            id: 4,
+            jahr: 1827,
+            stadt: "Bremerhaven",
+            link: "http://de.wikipedia.org/wiki/Bremerhaven",
+            bild: "assets/images/bremerhaven.png"
+        },
+        {
+            id: 5,
+            jahr: 150,
+            stadt: "Bremen",
+            link: "http://de.wikipedia.org/wiki/Bremen",
+            bild: "assets/images/bremen.png"
+        },
+        {
+            id: 6,
+            jahr: 1202,
+            stadt: "Bernau",
+            link: "http://de.wikipedia.org/wiki/Bernau_bei_Berlin",
+            bild: "assets/images/bernau.png"
+        },
+        {
+            id: 7,
+            jahr: 929,
+            stadt: "Brandenburg",
+            link: "http://de.wikipedia.org/wiki/Brandenburg_an_der_Havel",
+            bild: "assets/images/brandenburg.png"
+        },
+        {
+            id: 8,
+            jahr: 805,
+            stadt: "Magdeburg",
+            link: "http://de.wikipedia.org/wiki/Magdeburg",
+            bild: "assets/images/magdeburg.png"
+        },
+        {
+            id: 9,
+            jahr: 1222,
+            stadt: "Marburg",
+            link: "http://de.wikipedia.org/wiki/Marburg",
+            bild: "assets/images/marburg.png"
+        },
+        {
+            id: 10,
+            jahr: 766,
+            stadt: "Mannheim",
+            link: "http://de.wikipedia.org/wiki/Mannheim",
+            bild: "assets/images/mannheim.png"
+        },
+        {
+            id: 11,
+            jahr: 782,
+            stadt: "Mainz",
+            link: "http://de.wikipedia.org/wiki/Mainz",
+            bild: "assets/images/mainz.png"
+        }
+    ]
     ``` 
 
 sowie den Ordner [images](./files/images_staedte.zip) und greifen über die Route auf ein einzelnes Objekt zu. Wenn wir also z.B. `http://localhost:4200/cities/0` eingeben, soll das `Berlin`-Objekt ausgewählt werden, bei `http://localhost:4200/cities/1` das `New York`-Objekt usw. 

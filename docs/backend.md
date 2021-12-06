@@ -1,6 +1,30 @@
 # REST-API
 
-Ehe wir uns weiter mit dem Frontend beschäftigen, erstellen wir einen Server, der uns die Daten liefert. Derzeit haben wir unsere Mockup-Daten noch clientseitig vom `DataService` verwalten lassen und sie auch dort gespeichert. Das wollen wir nun ändern. 
+Die wesentlichsten Konzepte, wie Komponenten, Services und Routing für Angular-Projekte haben wir bereits kennengelernt. Ehe wir uns weiter mit dem Frontend beschäftigen, erstellen wir einen Server, der uns die Daten liefert. Derzeit haben wir unsere Mockup-Daten noch clientseitig vom `DataService` verwalten lassen und sie auch dort gespeichert. Das wollen wir nun ändern. Die Daten speichern wir in einer Datenbank. 
+
+Für diese Datenbank stellen wir die Implementierung einer Schnittstelle bereit, so dass wir die wesentlichen Datenbankanfragen darüber ausführen können. Diese wesentlichen Datenbankfragen werden mit [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) abgekürzt, für <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate und <strong>D</strong>elete. Das bedeutet, wir implementieren Funktionalitäten, mit denen wir einen neuen Datensatz in die Datenbank einfügen (*create*), aus der Datenbank auslesen (*read*), in der Datenbank aktualisieren (*update*) und aus der Datenbank löschen (*delete*) können. 
+
+Die Schnittstelle, die wir implementieren, ist eine sogenannte [REST-API](https://www.redhat.com/de/topics/api/what-is-a-rest-api). *REST* steht für [*Representational State Transfer*](https://de.wikipedia.org/wiki/Representational_State_Transfer) und basiert auf einigen wenigen Prinzipien:
+
+1. Alles wird als eine *Ressource* betrachtet, z.B. `book`.
+2. Jede Ressource ist durch *URIs* (*Uniform Resource Identifiers*) eindeutig identifizierbar, z.B. `http://localhost/books`.
+3. Es werden die [Standard-HTTP-Methoden](https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP-Anfragemethoden) verwendet, also `GET`, `POST`, `PUT`, `UPDATE`.  
+4. Ressourcen können in verschiedenen Formaten vorliegen, z.B. in [HTML](https://html.spec.whatwg.org/multipage/), [XML](https://www.w3.org/TR/xml/), [JSON](https://jsonapi.org/format/), ...
+5. Die Kommunikation ist *zustandslos*. Jede einzelne HTTP-Anfrage wird komplett isoliert bearbeitet. Es gibt keinerlei Anfragehistorie. 
+
+Das bedeutet, wir erstellen ein Backend (einen REST-Server), an den HTTP-Anfragen mit der eindeutig identifizierbaren Ressource gestellt werden. Das Backend erstellt daraus die entsprechende SQL-Query. Das Resultat der Datenbankanfrage wird im `JSON`- oder `HTML`- oder `XML`- oder in einem anderen Format bereitsgestellt.
+
+![restapi](./files/61_restapi.png)
+
+Prinzipiell gibt es also ein *Mapping*  von HTTP-Anfragen auf SQL-Anfragen:
+
+|CRUD |SQL |HTTP |
+|-----|----|-----|
+|create |INSERT |POST |
+|read |SELECT |GET |
+|update |UPDATE |PUT |
+|delete |DELETE |DELETE |
+
 
 Wir wollen uns ein Backend erstellen, über das wir unsere Daten verwalten. Dazu überlegen wir uns zunächst ein paar *Endpunkte* und die Zugriffsmethoden, mit denen wir auf unsere Daten zugreifen wollen.
 
@@ -26,31 +50,40 @@ npm init
 Sie werden ein paar Sachen gefragt. Im Prinzip können Sie immer `Enter` drücken:
 
 ```bash
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
 package name: (backend) 
 version: (1.0.0) 
-description: Backend REST-API MySQL
+description: Backend REST-API
 entry point: (index.js) 
 test command: 
 git repository: 
-keywords: restapi, express, mysql
-author: J.Freiheit
+keywords: restapi, backend
+author: J. Freiheit
 license: (ISC) 
-About to write to /Users/jornfreiheit/Sites/WT20/backend/package.json:
+About to write to /Users/jornfreiheit/Sites/WT21/backend/package.json:
 
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Backend REST-API MySQL",
+  "description": "Backend REST-API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "restapi",
-    "express",
-    "mysql"
+    "backend"
   ],
-  "author": "J.Freiheit",
+  "author": "J. Freiheit",
   "license": "ISC"
 }
 
@@ -58,64 +91,412 @@ About to write to /Users/jornfreiheit/Sites/WT20/backend/package.json:
 Is this OK? (yes) 
 ```
 
-Die `package.json` wurde erstellt. Nun benötigen wir noch ein paar nützliche Module, nämlich `express`, `mysql` und den `body-parser`:
+Die `package.json` wurde erstellt. Nun benötigen wir noch das Modul [Express](https://expressjs.com/de/). Express bietet uns eine unkomplizierte *Middleware* für die Weiterverwaltung von `http`-Anfragen an die Datenbank und zurück. 
 
 ```bash
-npm install express mysql body-parser --save
+npm install express --save
 ```
 
 Sie erhalten eine Meldung in der Form:
 
 ```bash
-+ express@4.17.1
-+ body-parser@1.19.0
-+ mysql@2.18.1
-added 59 packages from 48 contributors and audited 60 packages in 2.016s
+% npm install express --save
+
+added 50 packages, and audited 51 packages in 844ms
+
 found 0 vulnerabilities
 ```
 
-Öffnen Sie nun das `backend`-Projekt in Ihrer IDEserver und erstellen Sie sich dort eine Datei `server.js` mit folgendem Inhalt:
+In der `package.json` wurde die entsprechende Abhängigkeit eingetragen: 
+
+=== "package.json"
+	```json linenums="1" hl_lines="15-17"
+	{
+	  "name": "backend",
+	  "version": "1.0.0",
+	  "description": "Backend REST-API",
+	  "main": "index.js",
+	  "scripts": {
+	    "test": "echo \"Error: no test specified\" && exit 1"
+	  },
+	  "keywords": [
+	    "restapi",
+	    "backend"
+	  ],
+	  "author": "J. Freiheit",
+	  "license": "ISC",
+	  "dependencies": {
+	    "express": "^4.17.1"
+	  }
+	}
+	``` 
+
+
+Öffnen Sie nun das `backend`-Projekt in Ihrer IDE und erstellen Sie sich dort eine Datei `server.js` mit folgendem Inhalt:
 
 === "server.js"
 	```javascript linenums="1"
-	const express = require("express");
-	const bodyParser = require("body-parser");
+	import express from 'express';
 
 	const app = express();
+	const PORT = 3000;
 
-	// parse requests of content-type: application/json
-	app.use(bodyParser.json());
-
-	// parse requests of content-type: application/x-www-form-urlencoded
-	app.use(bodyParser.urlencoded({ extended: true }));
-
-	// simple route
-	app.get("/", (req, res) => {
-	    res.json({ message: "Hello FIW!" });
+	app.get('/', (request, response) => {
+	    response.json({ message: "Hello FIW!" });
 	});
 
-	// set port, listen for requests
-	app.listen(3000, () => {
-	    console.log("Server is running on port 3000.");
+	app.listen(PORT, (error) => {
+	    if (error) {
+	        console.log(error);
+	    } else {
+	        console.log(`Server started and listening on port ${PORT} ...`);
+	    }
 	});
 	``` 
 
-Geben Sie im Terminal in Ihrem `backend`-Ordner nun 
+Das bedeutet, wir importieren `express` (Zeile `1`), erzeugen uns davon ein Objekt und speichern dieses in der Variablen `app` (Zeile `3`). Wir legen in einer Konstanten `PORT` die Portnummer `3000` fest (Zeile `4` - die Portnummer können Sie wählen). Das `backend` ist somit unter `http://localhost:3000` verfügbar. Wenn wir diese URL aufrufen, dann wird ein `request` ausgelöst, den wir hier mit `Hello FIW!` als `response` beantworten (Zeilen `6-8`). Das eigentliche Starten des Webservers erfolgt in den Zeilen `10-16`.
+
+In unserer `package.json` führen wir nun noch zwei Anpassungen durch. Erstens soll unser `main`-Skript nun nicht mehr `index.js`, sondern `server.js` sein. Zweitens haben wir in Zeile `1` in der `server.js` das `express`-Paket mittels
+
+```
+import express from 'express';
+```
+
+importiert. Dies entspricht der "neuen" Syntax zum Importieren eines ES6-Modules (ES6 - ECMAScript 6). "Früher" hat man stattdessen
+
+```
+const express = require('express');
+```
+
+geschrieben. Allerdings erfordert diese "neue" Syntax eine Erweiterung in der `package.json`:
+
+=== "package.json"
+	```json linenums="1" hl_lines="5-6"
+	{
+	    "name": "backend",
+	    "version": "1.0.0",
+	    "description": "Backend REST-API",
+	    "main": "server.js",
+	    "type": "module",
+	    "scripts": {
+	        "test": "echo \"Error: no test specified\" && exit 1"
+	    },
+	    "keywords": [
+	        "restapi",
+	        "backend"
+	    ],
+	    "author": "J. Freiheit",
+	    "license": "ISC",
+	    "dependencies": {
+	        "express": "^4.17.1"
+	    }
+	}
+	``` 
+
+
+#### Starten des Projektes und Installation von nodemon
+
+Das Projekt lässt sich nun starten. Wir geben dazu im Terminal im `backend`-Ordner
 
 ```bash
 node server.js
 ```
 
-ein. Das müssen Sie nun leider immer wieder zum Compilieren und Ausführen machen. Sie beenden den Prozess mit `Ctrl+C` und starten ihn dann erneut. Öffnen Sie im Browser `http://localhost:3000/` und Sie erhalten:
+ein. Im Terminal erscheint 
+
+```bash
+Server started and listening on port 3000 ...
+```
+
+und wenn Sie im Browser die URL `http://localhost:3000/` eingeben, wird dort
 
 ![backend](./files/91_backend.png)
 
-Sie können auch Postman öffnen und `http://localhost:3000` eintragen (`GET`-Methode):
+angezeigt. Sie können auch Postman öffnen und `http://localhost:3000` eintragen (`GET`-Methode):
 
 ![backend](./files/92_postman.png)
 
 
+Wann immer wir jetzt jedoch etwas an der Implementierung ändern, müssen wir im Terminal zunächst den Webserver mit 
+
+```bash
+Strg-C		// bzw. Control-C
+```
+
+stoppen, um ihn dann wieder mit `node server.js` zu starten. Um das zu umgehen, gibt es das Paket [nodemon](https://www.npmjs.com/package/nodemon). Da es nur sinnvoll während der Entwicklung eingesetzt werden kann (und sollte), installieren wir es als eine *development dependency*:
+
+```bash
+npm install --save-dev nodemon
+```
+
+Die `package.json` sieht daraufhin so aus:
+
+=== "package.json"
+	```json linenums="1" hl_lines="22-24"
+	{
+	    "name": "backend",
+	    "version": "1.0.0",
+	    "description": "Backend REST-API",
+	    "main": "server.js",
+	    "type": "module",
+	    "scripts": {
+	        "test": "echo \"Error: no test specified\" && exit 1"
+	    },
+	    "keywords": [
+	        "restapi",
+	        "backend"
+	    ],
+	    "author": "J. Freiheit",
+	    "license": "ISC",
+	    "dependencies": {
+	        "express": "^4.17.1"
+	    },
+	    "devDependencies": {
+	        "nodemon": "^2.0.15"
+	    }
+	}
+	```
+
+Zur Verwendung von `nodemon` fügen wir in die `package.json` unter `"scripts"` noch die Eigenschaft `watch` (frei gewählt) und den dazugehörigen Wert `nodemon server.js` ein:
+
+=== "package.json"
+	```json linenums="1" hl_lines="8"
+	{
+	    "name": "backend",
+	    "version": "1.0.0",
+	    "description": "Backend REST-API",
+	    "main": "server.js",
+	    "type": "module",
+	    "scripts": {
+	        "watch": "nodemon ./server.js",
+	        "test": "echo \"Error: no test specified\" && exit 1"
+	    },
+	    "keywords": [
+	        "restapi",
+	        "backend"
+	    ],
+	    "author": "J. Freiheit",
+	    "license": "ISC",
+	    "dependencies": {
+	        "express": "^4.17.1"
+	    },
+	    "devDependencies": {
+	        "nodemon": "^2.0.15"
+	    }
+	}
+	```
+
+Nun lässt sich die Anwendung mithilfe von `nodemon` per 
+
+```bash
+npm run watch
+```
+
+starten und muss auch nicht mehr gestoppt und neu gestartet werden, wenn Änderungen an der Implementierungen durchgeführt wurden. Die Ausgabe im Terminal nach Eingabe von `npm run watch` ist ungefähr so:
+
+```bash
+
+> backend@1.0.0 watch
+> nodemon ./server.js
+
+[nodemon] 2.0.15
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node ./server.js`
+Server started and listening on port 3000 ...
+
+```
+
+
 ### Datenbank erstellen
+
+[MongoDB](https://www.mongodb.com/de-de) ist die am meisten verwendete *NoSQL (not only SQL)* Datenbank. Sie basiert nicht auf Relationen, Tabellen und ihren Beziehungen zueinander (ist also keine *relationale* Datenbank), sondern speichert Dokumente in JSON-ähnlichem Format. Die [Community Edition der MongoDB](https://github.com/mongodb/mongo) ist Open Source und kostenlos verfügbar. 
+Sollten Sie mit *Visual Studio Code* arbeiten, sollten Sie sich am besten die [MongoDB for VS Code](https://code.visualstudio.com/docs/azure/mongodb)-Ereiterung installieren. 
+
+Zur Verwendung von *MongoDB* im Backend verwenden wir das Modul [Mongoose](https://mongoosejs.com/). Wir installieren *Mongoose* mithilfe von
+
+```bash
+npm install mongoose --save
+```
+
+In die `package.json` wird das Paket und die entsprechende Abhängigkeit eingetragen:
+
+=== "package.json"
+	```json linenums="1" hl_lines="19"
+	{
+	    "name": "backend",
+	    "version": "1.0.0",
+	    "description": "Backend REST-API",
+	    "main": "server.js",
+	    "type": "module",
+	    "scripts": {
+	        "watch": "nodemon ./server.js",
+	        "test": "echo \"Error: no test specified\" && exit 1"
+	    },
+	    "keywords": [
+	        "restapi",
+	        "backend"
+	    ],
+	    "author": "J. Freiheit",
+	    "license": "ISC",
+	    "dependencies": {
+	        "express": "^4.17.1",
+	        "mongoose": "^6.0.14"
+	    },
+	    "devDependencies": {
+	        "nodemon": "^2.0.15"
+	    }
+	}
+	```
+
+*Mongoose* stellt eine einfach zu verwendende Schnittstelle zwischen Node.js und MongoDB bereit. Die
+MongoDB benötigen wir aber trotzdem (wir könnten jdoch auch eine Cloud von MongoDB oder z.B. `mlab.com` verwenden). Bevor wir uns mit der MongoDB verbinden, erstellen wir zunächst noch eine Datenbank. 
+
+
+### Mongosh - MongoDB in der Shell
+
+Um eine Datenbank mithilfe von MongoDB zu erstellen, verwenden wir [mongosh](https://docs.mongodb.com/mongodb-shell/). Installationsanleitungen zu *mongosh* finden Sie [hier](https://docs.mongodb.com/mongodb-shell/install/#std-label-mdb-shell-install). Nach der Installation von *mongosh* geben wir im Terminal 
+
+```bash
+mongosh 
+```
+
+ein. Es erscheint etwas in der Form:
+
+```bash
+Current Mongosh Log ID:	61ae3471fef87d1bebfa13a1
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000
+Using MongoDB:		5.0.3
+Using Mongosh:		1.1.6
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting:
+   2021-12-03T08:35:22.188+01:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+Warning: Found ~/.mongorc.js, but not ~/.mongoshrc.js. ~/.mongorc.js will not be loaded.
+  You may want to copy or rename ~/.mongorc.js to ~/.mongoshrc.js.
+test> 
+```
+
+Die Warnung kann [ignoriert](https://www.mongodb.com/community/forums/t/warning-found-mongorc-js-but-not-mongoshrc-js-mongorc-js-will-not-be-loaded/129716/4) werden. Die Datei `mongorc.js` wurde erstellt, als einmal in die Shell `mongo` eingegeben wurde. Das ist aber `deprecated` und es soll stattdessen die `mongosh` verwendet werden, was wir ja auch machen. 
+
+
+```bash
+> use rest
+```
+
+(ohne das `>` - das soll nur symbolisieren, dass wir in der MongoDB-Shell sind). Es entsteht die Datenbank `rest`. Wir befüllen diese Datenbank probehalber mit Daten (löschen wir wieder)
+
+```
+> db.user.insert({name: "Ada Lovelace", age: 206})
+```
+
+- Falls Sie *Visual Studio Code*  verwenden und darin die [MongoDB for VS Code](https://code.visualstudio.com/docs/azure/mongodb)-Ereiterung installiert haben, können Sie auf der linken Seite auf das MongoDB-Blatt klicken und das `Advanced Connection Settings` mit dem Formular `Open form` anklicken.
+
+Sie geben `mongodb://127.0.0.1:27017` ein und dass Sie keine Authentifizierung verwenden. Öffnen Sie die `connection` und darin `rest` und es erscheint
+
+```json
+{
+  "_id": {
+    "$oid": "60ddc2e80de75bf12565e491"
+  },
+  "name": "Ada Lovelace",
+  "age": 206
+}
+```
+
+- Um sich in Node.js mit der DB zu verbinden, geben Sie 
+
+=== "app.js"
+	```js linenums="1" hl_lines="2 15-20"
+	const express = require('express');
+	const mongoose = require('mongoose');
+	const app = express();
+
+	// Routen
+	app.get('/', (req, res) => {
+	    res.send('Hello FIW! (home)');
+	});
+
+	app.get('/test', (req, res) => {
+	    res.send('Hello FIW! (home/test)');
+	});
+
+	// connect to mongoDB
+	mongoose.connect('mongodb://127.0.0.1:27017/rest', { useNewUrlParser: true, useUnifiedTopology: true });
+	const db = mongoose.connection;
+	db.on('error', console.error.bind(console, 'connection error:'));
+	db.once('open', () => {
+	    console.log('connected to DB');
+	});
+
+	app.listen(3000); // port 3000
+	```
+
+ein. Im Terminal sollte dann
+
+```bash
+[nodemon] restarting due to changes...
+[nodemon] starting `node app.js`
+connected to DB
+```
+
+erscheinen. 
+
+- für die "geheimen" Zugangsdaten (die jetzt noch gar nicht "geheim" sind) verwenden wir das [dotenv](https://www.npmjs.com/package/dotenv)-Paket
+
+```bash
+npm install dotenv
+```
+
+- Im Projektordner erstellen wir und eine Datei `.env` (mit Punkt!) und schreiben darein:
+
+
+=== ".env"
+	```js linenums="1"
+	DB_CONNECTION = 'mongodb://127.0.0.1:27017/rest';
+	```
+
+und in die `app.js`:
+
+
+=== "app.js"
+	```js linenums="1" hl_lines="4 16"
+	const express = require('express');
+	const mongoose = require('mongoose');
+	const app = express();
+	require('dotenv/config');
+
+	// Routen
+	app.get('/', (req, res) => {
+	    res.send('Hello FIW! (home)');
+	});
+
+	app.get('/test', (req, res) => {
+	    res.send('Hello FIW! (home/test)');
+	});
+
+	// connect to mongoDB
+	mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
+	const db = mongoose.connection;
+	db.on('error', console.error.bind(console, 'connection error:'));
+	db.once('open', () => {
+	    console.log('connected to DB');
+	});
+
+	app.listen(3000); // port 3000
+	```
+
+
+
 
 Bevor wir mit der Implementierung des Backends fortfahren, erstellen wir unsere Datenbank. Am einfachsten ist es, wenn wir `phpmyadmin` unter `localhost` öffnen (`http://localhost/phpmyadmin`) und dort zunächst eine Datenbank anlegen (unter `Neu`); benennen Sie die Datenbank am besten `mockupdb` und darin folgende `sql`-Datei importieren:
 

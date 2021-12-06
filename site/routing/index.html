@@ -495,6 +495,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        Backend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../uebungen/" class="md-nav__link">
         Übungen
       </a>
@@ -676,6 +691,8 @@
                 
                 
                 <h1 id="routing-und-services">Routing und Services<a class="headerlink" href="#routing-und-services" title="Permanent link">&para;</a></h1>
+<details><summary>Video aus der Vorlesung am 6.12.2021</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=51a13dc751ca5d85ca07ad6f5f47c951&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
+</details>
 <h2 id="single-vs-multi-page-applikationen">Single- vs. Multi-Page-Applikationen<a class="headerlink" href="#single-vs-multi-page-applikationen" title="Permanent link">&para;</a></h2>
 <p>Wenn wir durch z.B. dieses Skript hangeln oder Wikipedia, dann stellen wir fest, dass sich nach jedem Klick auf einen Link eine neue HTML-Seite öffnet. Das wird insbesondere deutlich wenn die Entwicklungstools geöffnet sind. Jeder Klick auf einen Hyperlink erwirkt eine neue Anfrage an einen Webserver mit dem Request, eine neue HTML-Seite von diesem Webserver zu laden und im Browser zu öffnen. Es handelt sich dabei also um eine Webanwendung mit vielen (Unter-)Seiten, eine sogenannte <em>Multi-Page-Applikation (MPA)</em>. </p>
 <p>Wenn wir stattdessen z.B. die Angular-Seite <code>https://angular.io</code> öffnen und uns die Developertools anschauen, dann stellen wir fest, dass kaum HTML-Code im <code>&lt;body&gt;</code>-Element enthalten ist. Stattdessen wird der gesamte HTML-Code per JavaScript im Browser eingebunden. Damit werden Inhalte in die Seite immer genau dann eingebunden, wenn sie angezeigt werden sollen. Um zwischen einzelnen Ansichten der Webanwendung zu wechseln, wird keine neue Webseite vom Webserver geholt. Stattdessen bleiben wir stets in derselben HTML-Seite (<em>Single-Page-Applikation (SPA)</em>), was sehr gut sichtbar wird, wenn wir die Developertools eingeschaltet lassen und innerhalb der Webanwendung umhernavigieren. Stattdessen werden nur Inhalte (über eine REST-API) vom Server geladen. </p>
@@ -1161,70 +1178,81 @@ http://localhost:4200/login
 <p>Häufig sollen aus einer Liste von Objekten ein einzelnes Objekt ausgewählt und dargestellt werden. Angenommen, wir wollen erneut die <code>staedte.json</code> aus <a href="../angular2/#json-und-direktiven">JSON und Direktiven</a> verwenden. Wir einfachen es diesmal ein wenig und verwenden direkt das Array und beschreiben die JavaScript-Objekte nicht in JSON, sondern direkt als Objekte (der Unterschied besteht darin, dass die Schlüssel nicht in Anführungsstrichen stehen).</p>
 <details><summary>staedte als Array</summary><div class="highlight"><pre><span></span><code><span class="p">[</span>
     <span class="p">{</span>
-      <span class="err">jahr</span><span class="p">:</span> <span class="mi">1237</span><span class="p">,</span>
-      <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span>
-      <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Berlin&quot;</span><span class="p">,</span>
-      <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/berlin.png&quot;</span>
+        <span class="err">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="err">jahr</span><span class="p">:</span> <span class="mi">1237</span><span class="p">,</span>
+        <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span>
+        <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Berlin&quot;</span><span class="p">,</span>
+        <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/berlin.png&quot;</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="err">jahr</span><span class="p">:</span> <span class="mi">1624</span><span class="p">,</span>
-      <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span>
-      <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/New_York_City&quot;</span><span class="p">,</span>
-      <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/newyork.png&quot;</span>
+        <span class="err">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="err">jahr</span><span class="p">:</span> <span class="mi">1624</span><span class="p">,</span>
+        <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span>
+        <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/New_York_City&quot;</span><span class="p">,</span>
+        <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/newyork.png&quot;</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="err">jahr</span><span class="p">:</span> <span class="mi">1252</span><span class="p">,</span>
-      <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Stockholm&quot;</span><span class="p">,</span>
-      <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Stockholm&quot;</span><span class="p">,</span>
-      <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/stockholm.png&quot;</span>
+        <span class="err">id</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="err">jahr</span><span class="p">:</span> <span class="mi">1252</span><span class="p">,</span>
+        <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Stockholm&quot;</span><span class="p">,</span>
+        <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Stockholm&quot;</span><span class="p">,</span>
+        <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/stockholm.png&quot;</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="err">jahr</span><span class="p">:</span> <span class="mi">1827</span><span class="p">,</span>
-      <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Bremerhaven&quot;</span><span class="p">,</span>
-      <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bremerhaven&quot;</span><span class="p">,</span>
-      <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/bremerhaven.png&quot;</span>
+        <span class="err">id</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="err">jahr</span><span class="p">:</span> <span class="mi">1827</span><span class="p">,</span>
+        <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Bremerhaven&quot;</span><span class="p">,</span>
+        <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bremerhaven&quot;</span><span class="p">,</span>
+        <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/bremerhaven.png&quot;</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="err">jahr</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
-      <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Bremen&quot;</span><span class="p">,</span>
-      <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bremen&quot;</span><span class="p">,</span>
-      <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/bremen.png&quot;</span>
+        <span class="err">id</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="err">jahr</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+        <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Bremen&quot;</span><span class="p">,</span>
+        <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bremen&quot;</span><span class="p">,</span>
+        <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/bremen.png&quot;</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="err">jahr</span><span class="p">:</span> <span class="mi">1202</span><span class="p">,</span>
-      <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Bernau&quot;</span><span class="p">,</span>
-      <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bernau_bei_Berlin&quot;</span><span class="p">,</span>
-      <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/bernau.png&quot;</span>
+        <span class="err">id</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="err">jahr</span><span class="p">:</span> <span class="mi">1202</span><span class="p">,</span>
+        <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Bernau&quot;</span><span class="p">,</span>
+        <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bernau_bei_Berlin&quot;</span><span class="p">,</span>
+        <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/bernau.png&quot;</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="err">jahr</span><span class="p">:</span> <span class="mi">929</span><span class="p">,</span>
-      <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Brandenburg&quot;</span><span class="p">,</span>
-      <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Brandenburg_an_der_Havel&quot;</span><span class="p">,</span>
-      <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/brandenburg.png&quot;</span>
+        <span class="err">id</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="err">jahr</span><span class="p">:</span> <span class="mi">929</span><span class="p">,</span>
+        <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Brandenburg&quot;</span><span class="p">,</span>
+        <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Brandenburg_an_der_Havel&quot;</span><span class="p">,</span>
+        <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/brandenburg.png&quot;</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="err">jahr</span><span class="p">:</span> <span class="mi">805</span><span class="p">,</span>
-      <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Magdeburg&quot;</span><span class="p">,</span>
-      <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Magdeburg&quot;</span><span class="p">,</span>
-      <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/magdeburg.png&quot;</span>
+        <span class="err">id</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="err">jahr</span><span class="p">:</span> <span class="mi">805</span><span class="p">,</span>
+        <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Magdeburg&quot;</span><span class="p">,</span>
+        <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Magdeburg&quot;</span><span class="p">,</span>
+        <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/magdeburg.png&quot;</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="err">jahr</span><span class="p">:</span> <span class="mi">1222</span><span class="p">,</span>
-      <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Marburg&quot;</span><span class="p">,</span>
-      <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Marburg&quot;</span><span class="p">,</span>
-      <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/marburg.png&quot;</span>
+        <span class="err">id</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+        <span class="err">jahr</span><span class="p">:</span> <span class="mi">1222</span><span class="p">,</span>
+        <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Marburg&quot;</span><span class="p">,</span>
+        <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Marburg&quot;</span><span class="p">,</span>
+        <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/marburg.png&quot;</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="err">jahr</span><span class="p">:</span> <span class="mi">766</span><span class="p">,</span>
-      <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Mannheim&quot;</span><span class="p">,</span>
-      <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Mannheim&quot;</span><span class="p">,</span>
-      <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/mannheim.png&quot;</span>
+        <span class="err">id</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="err">jahr</span><span class="p">:</span> <span class="mi">766</span><span class="p">,</span>
+        <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Mannheim&quot;</span><span class="p">,</span>
+        <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Mannheim&quot;</span><span class="p">,</span>
+        <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/mannheim.png&quot;</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="err">jahr</span><span class="p">:</span> <span class="mi">782</span><span class="p">,</span>
-      <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Mainz&quot;</span><span class="p">,</span>
-      <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Mainz&quot;</span><span class="p">,</span>
-      <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/mainz.png&quot;</span>
+        <span class="err">id</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+        <span class="err">jahr</span><span class="p">:</span> <span class="mi">782</span><span class="p">,</span>
+        <span class="err">s</span><span class="kc">ta</span><span class="err">d</span><span class="kc">t</span><span class="p">:</span> <span class="s2">&quot;Mainz&quot;</span><span class="p">,</span>
+        <span class="err">li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Mainz&quot;</span><span class="p">,</span>
+        <span class="err">bild</span><span class="p">:</span> <span class="s2">&quot;assets/images/mainz.png&quot;</span>
     <span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
@@ -2490,13 +2518,13 @@ http://localhost:4200/login
       
       
         
-        <a href="../uebungen/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Übungen" rel="next">
+        <a href="../backend/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Backend" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Weiter
               </span>
-              Übungen
+              Backend
             </div>
           </div>
           <div class="md-footer__button md-icon">

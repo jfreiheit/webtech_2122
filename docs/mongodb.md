@@ -1,6 +1,8 @@
 # MongoDB und Node.js
 
-[MongoDB] ist die am meisten verwendete *NoSQL (not only SQL)* Datenbank. Sie basiert nicht auf Relationen, Tabellen und ihren Beziehungen zueinander (ist also keine *relationale* Datenbank), sondern speichert Dokumente in JSON-ähnlichem Format. Die [Community Edition der MongoDB](https://github.com/mongodb/mongo) ist Open Source und kostenlos verfügbar. 
+Wir haben letzte Woche im Angular-Projekt einen Service geschrieben, der allen Angular-Komponenten bei Bedarf Daten zur Verfügung stellen kann. Diese Daten hatten wir jedoch noch direkt im Service abgelegt. Das wollen wir nun ändern. Wir erstellen eine Datenbank, legen dort die Daten ab und entwickeln einen Server, der uns die Daten zur Verfügung stellt. 
+
+[MongoDB](https://www.mongodb.com/de-de) ist die am meisten verwendete *NoSQL (not only SQL)* Datenbank. Sie basiert nicht auf Relationen, Tabellen und ihren Beziehungen zueinander (ist also keine *relationale* Datenbank), sondern speichert Dokumente in JSON-ähnlichem Format. Die [Community Edition der MongoDB](https://github.com/mongodb/mongo) ist Open Source und kostenlos verfügbar. 
 Sollten Sie mit *Visual Studio Code* arbeiten, sollten Sie sich am besten die [MongoDB for VS Code](https://code.visualstudio.com/docs/azure/mongodb)-Ereiterung installieren. 
 
 
@@ -121,7 +123,7 @@ npm install nodemon
 - wir installieren [Mongoose]
 
 ```bash
-npm install mongoose
+npm install mongoose --save
 ```
 
 - Mongoose stellt eine einfach zu verwendende Schnittstelle zwischen Node.js und MongoDB bereit
