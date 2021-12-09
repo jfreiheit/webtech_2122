@@ -2734,3 +2734,11 @@
     - Erstellen Sie einen Ordner `Uebung8`. Erstellen Sie in diesem Ordner ein neues Angular-Projekt `uebung8` (siehe  [hier](../angular/#erstes-projekt-erstellen)). 
     - Das Thema diese Woche ist [Routing und Services](../routing/#routing-und-services). Dieses Thema ist etwas umfangreicher, aber sehr wichtig und nützlich. Deshalb besteht die Übungsaufgabe diese Woche "nur" darin, das in dem Skript verwendete Beispiel nachzubauen. Die Idee dahinter ist die, dass Sie die Themen Routing und Services für Ihre eigene Anwendung (Semesteraufgabe) anwenden können. 
     - Fragen und Probelem klären wir in den Übungen. Viel Spaß und Erfolg! 
+
+
+#### Übung 9
+    
+??? question "Übungsaufgabe 9 (Backend REST-API)"
+    - Erstellen Sie einen Ordner `Uebung9`. Erstellen Sie in diesem Ordner ein neues node.js-Projekt `backend` (siehe  [hier](../backend/#ein-nodejs-projekt-mit-express)). 
+    - Das Thema diese Woche ist [Backend und REST-API](../backend/#rest-api). Wir erstellen eine REST-API und implementieren alle CRUD-Funktionen über eine MongoDB. Dieses Thema ist etwas umfangreicher, aber sehr wichtig und nützlich. Deshalb besteht die Übungsaufgabe diese Woche wieder "nur" darin, das in dem Skript verwendete Beispiel nachzubauen. Die Idee dahinter ist die, dass Sie eine passende REST-API für Ihre eigene Anwendung (Semesteraufgabe) erstellen können. 
+    - Fragen und Probelem klären wir in den Übungen. Viel Spaß und Erfolg! 

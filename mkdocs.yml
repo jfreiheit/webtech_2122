@@ -72,5 +72,6 @@ nav:
     - JSON und Direktiven: angular2.md
     - Routing und Services: routing.md
     - Backend: backend.md 
+    - Callbacks und Promises: promises.md 
     - Übungen: uebungen.md
     - Werkzeuge: tools.md

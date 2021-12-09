@@ -1,0 +1,671 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für WebTech">
+      
+      
+      
+        <meta name="author" content="Jörn Freiheit">
+      
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/webtech/mysql/">
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+    
+    
+      
+        <title>MySQL - WebTech</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.802231af.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#757575">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mysql" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="WebTech" class="md-header__button md-logo" aria-label="WebTech" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WebTech
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MySQL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    webtech
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="WebTech" class="md-nav__button md-logo" aria-label="WebTech" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    WebTech
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    webtech
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../einfuehrung/" class="md-nav__link">
+        Einführung
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/" class="md-nav__link">
+        HTML
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../css/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rwd/" class="md-nav__link">
+        RWD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javascript/" class="md-nav__link">
+        JavaScript
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../angular/" class="md-nav__link">
+        Angular
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../angular2/" class="md-nav__link">
+        JSON und Direktiven
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routing/" class="md-nav__link">
+        Routing und Services
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        Backend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../promises/" class="md-nav__link">
+        Callbacks und Promises
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        Übungen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Werkzeuge
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#datenbank-im-backend-anbinden" class="md-nav__link">
+    Datenbank im Backend anbinden
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jfreiheit/webtech/edit/master/docs/mysql.md" title="Seite editieren" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="mysql">MySQL<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h1>
+<p>Bevor wir mit der Implementierung des Backends fortfahren, erstellen wir unsere Datenbank. Am einfachsten ist es, wenn wir <code>phpmyadmin</code> unter <code>localhost</code> öffnen (<code>http://localhost/phpmyadmin</code>) und dort zunächst eine Datenbank anlegen (unter <code>Neu</code>); benennen Sie die Datenbank am besten <code>mockupdb</code> und darin folgende <code>sql</code>-Datei importieren:</p>
+<details><summary>members.sql</summary><div class="highlight"><pre><span></span><code><span class="c1">-- phpMyAdmin SQL Dump</span>
+<span class="c1">-- version 5.0.2</span>
+<span class="c1">-- https://www.phpmyadmin.net/</span>
+<span class="c1">--</span>
+<span class="c1">-- Host: localhost</span>
+<span class="c1">-- Erstellungszeit: 23. Nov 2020 um 16:23</span>
+<span class="c1">-- Server-Version: 8.0.17</span>
+<span class="c1">-- PHP-Version: 7.3.22-(to be removed in future macOS)</span>
+
+<span class="k">SET</span> <span class="n">SQL_MODE</span> <span class="o">=</span> <span class="ss">&quot;NO_AUTO_VALUE_ON_ZERO&quot;</span><span class="p">;</span>
+<span class="k">START</span> <span class="k">TRANSACTION</span><span class="p">;</span>
+<span class="k">SET</span> <span class="n">time_zone</span> <span class="o">=</span> <span class="ss">&quot;+00:00&quot;</span><span class="p">;</span>
+
+
+<span class="cm">/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */</span><span class="p">;</span>
+<span class="cm">/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */</span><span class="p">;</span>
+<span class="cm">/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */</span><span class="p">;</span>
+<span class="cm">/*!40101 SET NAMES utf8mb4 */</span><span class="p">;</span>
+
+<span class="c1">--</span>
+<span class="c1">-- Datenbank: `mockupdb`</span>
+<span class="c1">--</span>
+
+<span class="c1">-- --------------------------------------------------------</span>
+
+<span class="c1">--</span>
+<span class="c1">-- Tabellenstruktur für Tabelle `members`</span>
+<span class="c1">--</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">members</span><span class="o">`</span> <span class="p">(</span>
+  <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="o">`</span><span class="n">firstname</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="o">`</span><span class="n">lastname</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="o">`</span><span class="n">email</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span> <span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8mb4_0900_ai_ci</span><span class="p">;</span>
+
+<span class="c1">--</span>
+<span class="c1">-- Daten für Tabelle `members`</span>
+<span class="c1">--</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">`</span><span class="n">members</span><span class="o">`</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">firstname</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">lastname</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">email</span><span class="o">`</span><span class="p">)</span> <span class="k">VALUES</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Catherine&#39;</span><span class="p">,</span> <span class="s1">&#39;Williams&#39;</span><span class="p">,</span> <span class="s1">&#39;cwilliamsl@360.cn&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="s1">&#39;Anderson&#39;</span><span class="p">,</span> <span class="s1">&#39;aanderson8@google.fr&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Susan&#39;</span><span class="p">,</span> <span class="s1">&#39;Andrews&#39;</span><span class="p">,</span> <span class="s1">&#39;sandrewsn@google.co.jp&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Catherine&#39;</span><span class="p">,</span> <span class="s1">&#39;Andrews&#39;</span><span class="p">,</span> <span class="s1">&#39;candrewsp@noaa.gov&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Alan&#39;</span><span class="p">,</span> <span class="s1">&#39;Bradley&#39;</span><span class="p">,</span> <span class="s1">&#39;abradley1c@globo.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Anne&#39;</span><span class="p">,</span> <span class="s1">&#39;Brooks&#39;</span><span class="p">,</span> <span class="s1">&#39;abrooks16@bravesites.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Russell&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown&#39;</span><span class="p">,</span> <span class="s1">&#39;rbrownq@nifty.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;Ryan&#39;</span><span class="p">,</span> <span class="s1">&#39;Burton&#39;</span><span class="p">,</span> <span class="s1">&#39;rburton18@foxnews.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Roy&#39;</span><span class="p">,</span> <span class="s1">&#39;Campbell&#39;</span><span class="p">,</span> <span class="s1">&#39;rcampbell1@geocities.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Russell&#39;</span><span class="p">,</span> <span class="s1">&#39;Campbell&#39;</span><span class="p">,</span> <span class="s1">&#39;rcampbell17@eventbrite.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;Bonnie&#39;</span><span class="p">,</span> <span class="s1">&#39;Coleman&#39;</span><span class="p">,</span> <span class="s1">&#39;bcoleman11@fc2.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;Ernest&#39;</span><span class="p">,</span> <span class="s1">&#39;Coleman&#39;</span><span class="p">,</span> <span class="s1">&#39;ecoleman15@businessweek.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;Richard&#39;</span><span class="p">,</span> <span class="s1">&#39;Cruz&#39;</span><span class="p">,</span> <span class="s1">&#39;rcruz7@unc.edu&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;Sean&#39;</span><span class="p">,</span> <span class="s1">&#39;Cruz&#39;</span><span class="p">,</span> <span class="s1">&#39;scruz10@answers.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;Rebecca&#39;</span><span class="p">,</span> <span class="s1">&#39;Cunningham&#39;</span><span class="p">,</span> <span class="s1">&#39;rcunninghamd@mac.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;Margaret&#39;</span><span class="p">,</span> <span class="s1">&#39;Evans&#39;</span><span class="p">,</span> <span class="s1">&#39;mevansh@pcworld.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;Jeffrey&#39;</span><span class="p">,</span> <span class="s1">&#39;Ford&#39;</span><span class="p">,</span> <span class="s1">&#39;jford14@cnet.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;Andrea&#39;</span><span class="p">,</span> <span class="s1">&#39;Gardner&#39;</span><span class="p">,</span> <span class="s1">&#39;agardnerv@woothemes.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">19</span><span class="p">,</span> <span class="s1">&#39;Deborah&#39;</span><span class="p">,</span> <span class="s1">&#39;George&#39;</span><span class="p">,</span> <span class="s1">&#39;dgeorge6@furl.net&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Sean&#39;</span><span class="p">,</span> <span class="s1">&#39;Gibson&#39;</span><span class="p">,</span> <span class="s1">&#39;sgibsony@alexa.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="s1">&#39;Virginia&#39;</span><span class="p">,</span> <span class="s1">&#39;Graham&#39;</span><span class="p">,</span> <span class="s1">&#39;vgrahamk@aol.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;Steven&#39;</span><span class="p">,</span> <span class="s1">&#39;Hamilton&#39;</span><span class="p">,</span> <span class="s1">&#39;shamiltonu@state.tx.us&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;Virginia&#39;</span><span class="p">,</span> <span class="s1">&#39;Hawkins&#39;</span><span class="p">,</span> <span class="s1">&#39;vhawkinsf@ehow.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="s1">&#39;Edward&#39;</span><span class="p">,</span> <span class="s1">&#39;Hicks&#39;</span><span class="p">,</span> <span class="s1">&#39;ehicksc@pcworld.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Mark&#39;</span><span class="p">,</span> <span class="s1">&#39;Johnson&#39;</span><span class="p">,</span> <span class="s1">&#39;mjohnsonj@hostgator.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="s1">&#39;Ruth&#39;</span><span class="p">,</span> <span class="s1">&#39;Jordan&#39;</span><span class="p">,</span> <span class="s1">&#39;rjordan1a@smugmug.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="s1">&#39;Antonio&#39;</span><span class="p">,</span> <span class="s1">&#39;Kim&#39;</span><span class="p">,</span> <span class="s1">&#39;akim4@odnoklassniki.ru&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="s1">&#39;Jennifer&#39;</span><span class="p">,</span> <span class="s1">&#39;Marshall&#39;</span><span class="p">,</span> <span class="s1">&#39;jmarshallt@gnu.org&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;Eric&#39;</span><span class="p">,</span> <span class="s1">&#39;Matthews&#39;</span><span class="p">,</span> <span class="s1">&#39;ematthews5@independent.co.uk&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;Raymond&#39;</span><span class="p">,</span> <span class="s1">&#39;Mcdonald&#39;</span><span class="p">,</span> <span class="s1">&#39;rmcdonald2@ihg.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;Eric&#39;</span><span class="p">,</span> <span class="s1">&#39;Miller&#39;</span><span class="p">,</span> <span class="s1">&#39;emillere@creativecommons.org&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;Jonathan&#39;</span><span class="p">,</span> <span class="s1">&#39;Morales&#39;</span><span class="p">,</span> <span class="s1">&#39;jmoralesa@ovh.net&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;Marie&#39;</span><span class="p">,</span> <span class="s1">&#39;Morgan&#39;</span><span class="p">,</span> <span class="s1">&#39;mmorganb@cloudflare.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">34</span><span class="p">,</span> <span class="s1">&#39;Amanda&#39;</span><span class="p">,</span> <span class="s1">&#39;Nelson&#39;</span><span class="p">,</span> <span class="s1">&#39;anelson13@indiatimes.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;Lisa&#39;</span><span class="p">,</span> <span class="s1">&#39;Olson&#39;</span><span class="p">,</span> <span class="s1">&#39;lolsonr@telegraph.co.uk&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Ortiz&#39;</span><span class="p">,</span> <span class="s1">&#39;aortizw@histats.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">37</span><span class="p">,</span> <span class="s1">&#39;Peter&#39;</span><span class="p">,</span> <span class="s1">&#39;Phillips&#39;</span><span class="p">,</span> <span class="s1">&#39;pphillipss@1688.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">38</span><span class="p">,</span> <span class="s1">&#39;Matthew&#39;</span><span class="p">,</span> <span class="s1">&#39;Porter&#39;</span><span class="p">,</span> <span class="s1">&#39;mporter9@europa.eu&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">39</span><span class="p">,</span> <span class="s1">&#39;Tammy&#39;</span><span class="p">,</span> <span class="s1">&#39;Ray&#39;</span><span class="p">,</span> <span class="s1">&#39;trayx@weather.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="s1">&#39;Mark&#39;</span><span class="p">,</span> <span class="s1">&#39;Richardson&#39;</span><span class="p">,</span> <span class="s1">&#39;mrichardson1d@ihg.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">41</span><span class="p">,</span> <span class="s1">&#39;Joan&#39;</span><span class="p">,</span> <span class="s1">&#39;Roberts&#39;</span><span class="p">,</span> <span class="s1">&#39;jroberts12@alibaba.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="s1">&#39;Kathleen&#39;</span><span class="p">,</span> <span class="s1">&#39;Rose&#39;</span><span class="p">,</span> <span class="s1">&#39;kroseg@pinterest.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">43</span><span class="p">,</span> <span class="s1">&#39;Steve&#39;</span><span class="p">,</span> <span class="s1">&#39;Sanders&#39;</span><span class="p">,</span> <span class="s1">&#39;ssanders1b@wikispaces.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;Shirley&#39;</span><span class="p">,</span> <span class="s1">&#39;Scott&#39;</span><span class="p">,</span> <span class="s1">&#39;sscottm@macromedia.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="s1">&#39;Lillian&#39;</span><span class="p">,</span> <span class="s1">&#39;Stephens&#39;</span><span class="p">,</span> <span class="s1">&#39;lstephens19@hugedomains.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">46</span><span class="p">,</span> <span class="s1">&#39;Nicole&#39;</span><span class="p">,</span> <span class="s1">&#39;Thompson&#39;</span><span class="p">,</span> <span class="s1">&#39;nthompson3@admin.ch&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">47</span><span class="p">,</span> <span class="s1">&#39;Marie&#39;</span><span class="p">,</span> <span class="s1">&#39;Thompson&#39;</span><span class="p">,</span> <span class="s1">&#39;mthompsonz@yelp.com&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">48</span><span class="p">,</span> <span class="s1">&#39;Alan&#39;</span><span class="p">,</span> <span class="s1">&#39;Vasquez&#39;</span><span class="p">,</span> <span class="s1">&#39;avasquezo@miibeian.gov.cn&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">49</span><span class="p">,</span> <span class="s1">&#39;Mildred&#39;</span><span class="p">,</span> <span class="s1">&#39;Watkins&#39;</span><span class="p">,</span> <span class="s1">&#39;mwatkins0@miibeian.gov.cn&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;Eugene&#39;</span><span class="p">,</span> <span class="s1">&#39;Williams&#39;</span><span class="p">,</span> <span class="s1">&#39;ewilliamsi@deliciousdays.com&#39;</span><span class="p">);</span>
+
+<span class="c1">--</span>
+<span class="c1">-- Indizes der exportierten Tabellen</span>
+<span class="c1">--</span>
+
+<span class="c1">--</span>
+<span class="c1">-- Indizes für die Tabelle `members`</span>
+<span class="c1">--</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">members</span><span class="o">`</span>
+  <span class="k">ADD</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">);</span>
+
+<span class="c1">--</span>
+<span class="c1">-- AUTO_INCREMENT für exportierte Tabellen</span>
+<span class="c1">--</span>
+
+<span class="c1">--</span>
+<span class="c1">-- AUTO_INCREMENT für Tabelle `members`</span>
+<span class="c1">--</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">members</span><span class="o">`</span>
+  <span class="k">MODIFY</span> <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span> <span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">51</span><span class="p">;</span>
+<span class="k">COMMIT</span><span class="p">;</span>
+
+<span class="cm">/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */</span><span class="p">;</span>
+<span class="cm">/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */</span><span class="p">;</span>
+<span class="cm">/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */</span><span class="p">;</span>
+</code></pre></div>
+</details>
+<p>Falls Sie MySQL vom Studi-Server verwenden, dann müssen Sie </p>
+<div class="highlight"><pre><span></span><code><span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8mb4_0900_ai_ci</span>
+</code></pre></div>
+<p>durch </p>
+<div class="highlight"><pre><span></span><code><span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8mb4_general_ci</span>
+</code></pre></div>
+<p>ersetzen! Sie können sich diese Datei auch <a href="../files/members.sql">hier</a> herunterladen. Prüfen Sie, ob alle 50 Datensätze korrekt eingelsen wurden. Unter <code>Anzeigen</code> in <code>phpmyadmin</code> sollte folgende Tabelle erscheinen:</p>
+<p><img alt="phpmyadmin" src="../files/93_phpmyadmin.png" /></p>
+<h3 id="datenbank-im-backend-anbinden">Datenbank im Backend anbinden<a class="headerlink" href="#datenbank-im-backend-anbinden" title="Permanent link">&para;</a></h3>
+<p>Wir binden nun die Datenbank an unser Backend an. Erstellen Sie sich am besten in Ihrem <code>backend</code>-Ordner einen Ordner <code>config</code> und darin eine <code>db.config.js</code>-Datei mit folgendem Inhalt:</p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">config/db.config.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">HOST</span><span class="o">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+    <span class="nx">USER</span><span class="o">:</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
+    <span class="nx">PASSWORD</span><span class="o">:</span> <span class="s2">&quot;IhrPasswort&quot;</span><span class="p">,</span>
+    <span class="nx">DB</span><span class="o">:</span> <span class="s2">&quot;mockupdb&quot;</span>
+<span class="p">};</span>
+</code></pre></div>
+</div>
+</div>
+<p>Falls Sie MySQL des Studi-Servers verwenden, sieht die <code>db.config.js</code> so aus:</p>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">config/db.config.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">HOST</span><span class="o">:</span> <span class="s2">&quot;db.f4.htw-berlin.de&quot;</span><span class="p">,</span>
+    <span class="nx">USER</span><span class="o">:</span> <span class="s2">&quot;s05xxx&quot;</span><span class="p">,</span>
+    <span class="nx">PASSWORD</span><span class="o">:</span> <span class="s2">&quot;IhrPassword&quot;</span><span class="p">,</span>
+    <span class="nx">DB</span><span class="o">:</span> <span class="s2">&quot;_s05xxx__mockupdb&quot;</span>
+<span class="p">};</span>
+</code></pre></div>
+</div>
+</div>
+<p>Sie müssen Ihr Passwort eintragen und, falls Sie Ihre Datenbank anders genannt haben, auch den Datenbanknamen anpassen. </p>
+<p>Erstellen Sie sich in Ihrem <code>backend</code>-Ordner einen Ordner <code>app</code> und darin einen Ordner <code>model</code>. In diesem Ordner erstellen Sie sich ein <code>db.js</code>, um die Verbindung zur Datenbank zu implementieren: </p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">app/model/db.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;mysql&quot;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">dbConfig</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;//config/db.config.js&quot;</span><span class="p">);</span>
+
+<span class="c1">// Create a connection to the database</span>
+<span class="kd">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
+    <span class="nx">host</span><span class="o">:</span> <span class="nx">dbConfig</span><span class="p">.</span><span class="nx">HOST</span><span class="p">,</span>
+    <span class="nx">user</span><span class="o">:</span> <span class="nx">dbConfig</span><span class="p">.</span><span class="nx">USER</span><span class="p">,</span>
+    <span class="nx">password</span><span class="o">:</span> <span class="nx">dbConfig</span><span class="p">.</span><span class="nx">PASSWORD</span><span class="p">,</span>
+    <span class="nx">database</span><span class="o">:</span> <span class="nx">dbConfig</span><span class="p">.</span><span class="nx">DB</span>
+<span class="p">});</span>
+
+<span class="c1">// open the MySQL connection</span>
+<span class="nx">connection</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Successfully connected to the database.&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">connection</span><span class="p">;</span>
+</code></pre></div>
+</div>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Jörn Freiheit
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking"], "translations": {"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.term.missing": "Es fehlt", "select.version.title": "Version ausw\u00e4hlen"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.756773cc.min.js"></script>
+      
+    
+  </body>
+</html>
