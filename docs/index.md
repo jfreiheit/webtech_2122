@@ -66,6 +66,40 @@ Am Ende des Kurses geben Sie eine Webanwendung ab. Diese wird bewertet und bilde
 
 	Die Anwendung soll in einem Git-Dienst (GitHub, GitLab, ...) verfügbar sein. Das README (oder eine andere Form der Projektbeschreibung) soll aussagekräftig sein.
 
-	Verwenden Sie ein CSS-Framework, wie z.B. Materialize, Bootstrap o.ä.! Ihre Anwendung soll "modern" aussehen. 
+	Verwenden Sie ein CSS-Framework, wie z.B. Materialize, Bootstrap o.ä.! Ihre Anwendung soll "modern" aussehen und responsive sein. 
+
+	Erstellen Sie eine **informative (ausführliche) README**-Datei (`README.md`). Diese Datei sollte beinhalten:
+
+	 - Eine Beschreibung Ihrer Anwendung. Am besten mit Screenshots, so dass sie Ihren Kommilitoninnen aus den nächsten Jahren hilft, ein Verständnis dafür zu entwickeln, was mögliche Semesteraufgaben sein können.
+	 - Eine Anleitung zur Installation Ihrer Anwendung. 
 
 	Nach Abgabe vereinbaren wir ein Online-Meeting, in dem Sie mir Ihre Anwendung nochmal zeigen können und ich Ihnen Fragen zu Ihrem Code stellen werde. Ist keine Prüfung, sondern eher ein fachliches Gespräch. 
+
+### Einige Beispiele
+
+#### Mieter- und Zahlungsinformationen verwalten
+
+- ![projekte](./files/224_projekte1.png)
+- ![projekte](./files/225_projekte1.png)
+	
+
+#### ToDo-Liste
+
+- ![projekte](./files/226_projekte2.png)
+- ![projekte](./files/227_projekte2.png)
+- ![projekte](./files/228_projekte2.png)	
+
+- ![projekte](./files/229_projekte2.png)
+- ![projekte](./files/230_projekte2.png)
+
+
+#### Dog-O-Mat
+
+- ![projekte](./files/231_projekte3.png)
+
+
+#### Reiseplaner
+
+- ![projekte](./files/232_projekte3.png)
+- ![projekte](./files/233_projekte3.png)
+

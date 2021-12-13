@@ -257,7 +257,7 @@ npm install --save-dev nodemon
 Die `package.json` sieht daraufhin so aus:
 
 === "package.json"
-	```json linenums="1" hl_lines="22-24"
+	```json linenums="1" hl_lines="18-20"
 	{
 	    "name": "backend",
 	    "version": "1.0.0",
@@ -284,7 +284,7 @@ Die `package.json` sieht daraufhin so aus:
 Zur Verwendung von `nodemon` fügen wir in die `package.json` unter `"scripts"` noch die Eigenschaft `watch` (frei gewählt) und den dazugehörigen Wert `nodemon server.js` ein:
 
 === "package.json"
-	```json linenums="1" hl_lines="8"
+	```json linenums="1" hl_lines="7"
 	{
 	    "name": "backend",
 	    "version": "1.0.0",
@@ -359,7 +359,7 @@ npm install mongoose --save
 In die `package.json` wird das Paket und die entsprechende Abhängigkeit eingetragen:
 
 === "package.json"
-	```json linenums="1" hl_lines="19"
+	```json linenums="1" hl_lines="18"
 	{
 	    "name": "backend",
 	    "version": "1.0.0",
