@@ -235,7 +235,7 @@ Für das Beispiel in der Vorlesung wird der Ordner `images` verwendet ([hier zum
         ```
 
 !!! warning
-    Falls `ng add @ng-bootstrap/ng-bootstrap` einen `compatible`-Fehler erzeugt, dann `npm install @ng-bootstrap/ng-bootstrap@bootstrap5` ausprobieren. Stest danach nochmal `npm install` ausführen, damit das Bootstrap-Modul installiert wird. Nach `ng serve` sollten die Änderungen dann wirksam sein.
+    Falls `ng add @ng-bootstrap/ng-bootstrap` einen `compatible`-Fehler erzeugt, dann `npm install @ng-bootstrap/ng-bootstrap@bootstrap5` ausprobieren. Stets danach nochmal `npm install` ausführen, damit das Bootstrap-Modul installiert wird. Nach `ng serve` sollten die Änderungen dann wirksam sein. Sollte auch das nicht klappen, können Sie stattdessen auch auch `ng add ngx-bootstrap` probieren (siehe [hier](https://valor-software.com/ngx-bootstrap/#/documentation#getting-started)).
 
 ??? "Video aus der Vorlesung am 29.11.2021"
     <iframe src="https://mediathek.htw-berlin.de/media/embed?key=9eefbac7716eb7f0f78853946aaab23e&width=720&height=540&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="540" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>

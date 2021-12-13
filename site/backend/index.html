@@ -752,6 +752,8 @@
                 
                 <h1 id="rest-api">REST-API<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h1>
 <p>Die wesentlichsten Konzepte, wie Komponenten, Services und Routing für Angular-Projekte haben wir bereits kennengelernt. Ehe wir uns weiter mit dem Frontend beschäftigen, erstellen wir einen Server, der uns die Daten liefert. Derzeit haben wir unsere Mockup-Daten noch clientseitig vom <code>DataService</code> verwalten lassen und sie auch dort gespeichert. Das wollen wir nun ändern. Die Daten speichern wir in einer Datenbank. </p>
+<details><summary>Video aus der Vorlesung am 13.12.2021</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=0af4a1893db8b57e5064047d4de2e1e2&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
+</details>
 <h2 id="rest">REST<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h2>
 <p>Für diese Datenbank stellen wir die Implementierung einer Schnittstelle bereit, so dass wir die wesentlichen Datenbankanfragen darüber ausführen können. Diese wesentlichen Datenbankfragen werden mit <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> abgekürzt, für <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate und <strong>D</strong>elete. Das bedeutet, wir implementieren Funktionalitäten, mit denen wir einen neuen Datensatz in die Datenbank einfügen (<em>create</em>), aus der Datenbank auslesen (<em>read</em>), in der Datenbank aktualisieren (<em>update</em>) und aus der Datenbank löschen (<em>delete</em>) können. </p>
 <p>Die Schnittstelle, die wir implementieren, ist eine sogenannte <a href="https://www.redhat.com/de/topics/api/what-is-a-rest-api">REST-API</a>. <em>REST</em> steht für <a href="https://de.wikipedia.org/wiki/Representational_State_Transfer"><em>Representational State Transfer</em></a> und basiert auf einigen wenigen Prinzipien:</p>
@@ -2081,7 +2083,7 @@ Wir fügen <code>dotenv</code> n die <code>server.js</code> ein und greifen mith
     <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">newMember</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="c1">// post one member via id</span>
+<span class="c1">// get one member via id</span>
 <span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/members/:id&#39;</span><span class="p">,</span> <span class="k">async</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="k">try</span> <span class="p">{</span>
         <span class="kd">const</span> <span class="nx">member</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Member</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">_id</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span> <span class="p">});</span>

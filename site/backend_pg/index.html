@@ -412,6 +412,26 @@
     PostgreSQL
   </a>
   
+    <nav class="md-nav" aria-label="PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crud-funktionen" class="md-nav__link">
+    CRUD-Funktionen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postman" class="md-nav__link">
+    Postman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -510,6 +530,26 @@
   <a href="#postgresql_1" class="md-nav__link">
     PostgreSQL
   </a>
+  
+    <nav class="md-nav" aria-label="PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crud-funktionen" class="md-nav__link">
+    CRUD-Funktionen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postman" class="md-nav__link">
+    Postman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -673,7 +713,9 @@ npm install cors
 <p><img alt="backend" src="../files/223_backend-pg.png" /></p>
 </li>
 <li>
-<p><code>.env</code> und <code>db.js</code> im Projektordner <code>backend-pg</code> erstellen</p>
+<p>Modul <code>pg</code> installieren (siehe <a href="https://www.npmjs.com/package/pg">hier</a>) sowie <code>.env</code> und <code>db.js</code> im Projektordner <code>backend-pg</code> erstellen:</p>
+<div class="highlight"><pre><span></span><code>npm i pg 
+</code></pre></div>
 <div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">.env</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -688,29 +730,521 @@ npm install cors
 </td></tr></table>
 </div>
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">db.js</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">pg</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;pg&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">pg</span><span class="p">.</span><span class="nx">Client</span><span class="p">({</span>
+    <span class="nx">user</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PGUSER</span><span class="p">,</span>
+    <span class="nx">host</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PGHOST</span><span class="p">,</span>
+    <span class="nx">database</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PGDATABASE</span><span class="p">,</span>
+    <span class="nx">password</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PGPASSWORD</span><span class="p">,</span>
+    <span class="nx">port</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PGPORT</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Connection to DB ...&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">client</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</li>
+<li>
+<p>Wir erstellen uns dieses Mal sogar ein Extra-Skript, um die die Datenbank mit Einträgen per Skript zu befüllen: Dazu erstellen wir eine Datei <code>initdb.js</code>, in der für die Datenbank eine Tabelle <code>members</code> erstellt und diese mit Einträgen befüllt wird. Da es recht aufwendig ist, sehr viele Einträge in die Datenbank mit dem <code>pg</code>-Modul zu schreiben, installieren wir noch ein zusätzliches Paket <code>pg-format</code>, mit dessen Hilfe es möglich ist, die vielen Werte als ein verschachteltes Array anzugeben. Informationen zu <code>pg-format</code> finden Sie <a href="https://www.npmjs.com/package/pg-format">hier</a>.</p>
+<div class="highlight"><pre><span></span><code>npm i pg-format 
+</code></pre></div>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">initdb.js</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./db&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">initdb</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">format</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;pg-format&#39;</span><span class="p">);</span>
+
+
+<span class="nx">initdb</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="k">async</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+
+    <span class="c1">// Anlegen der Tabelle members</span>
+    <span class="kd">let</span> <span class="nx">query</span> <span class="o">=</span> <span class="sb">`</span>
+<span class="sb">            DROP TABLE IF EXISTS members;</span>
+<span class="sb">            CREATE TABLE members(id serial PRIMARY KEY, firstname VARCHAR(50), lastname VARCHAR(50), email VARCHAR(50));</span>
+<span class="sb">            `</span><span class="p">;</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Table created successfully ...&quot;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Befüllen der Tabelle members mit 50 Einträgen</span>
+    <span class="kd">const</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span><span class="s2">&quot;Catherine&quot;</span><span class="p">,</span> <span class="s2">&quot;Williams&quot;</span><span class="p">,</span> <span class="s2">&quot;cwilliamsl@360.cn&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Adam&quot;</span><span class="p">,</span> <span class="s2">&quot;Anderson&quot;</span><span class="p">,</span> <span class="s2">&quot;aanderson8@google.fr&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Susan&quot;</span><span class="p">,</span> <span class="s2">&quot;Andrews&quot;</span><span class="p">,</span> <span class="s2">&quot;sandrewsn@google.co.jp&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Catherine&quot;</span><span class="p">,</span> <span class="s2">&quot;Andrews&quot;</span><span class="p">,</span> <span class="s2">&quot;candrewsp@noaa.gov&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Alan&quot;</span><span class="p">,</span> <span class="s2">&quot;Bradley&quot;</span><span class="p">,</span> <span class="s2">&quot;abradley1c@globo.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Anne&quot;</span><span class="p">,</span> <span class="s2">&quot;Brooks&quot;</span><span class="p">,</span> <span class="s2">&quot;abrooks16@bravesites.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Russell&quot;</span><span class="p">,</span> <span class="s2">&quot;Brown&quot;</span><span class="p">,</span> <span class="s2">&quot;rbrownq@nifty.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Ryan&quot;</span><span class="p">,</span> <span class="s2">&quot;Burton&quot;</span><span class="p">,</span> <span class="s2">&quot;rburton18@foxnews.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Roy&quot;</span><span class="p">,</span> <span class="s2">&quot;Campbell&quot;</span><span class="p">,</span> <span class="s2">&quot;rcampbell1@geocities.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Russell&quot;</span><span class="p">,</span> <span class="s2">&quot;Campbell&quot;</span><span class="p">,</span> <span class="s2">&quot;rcampbell17@eventbrite.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Bonnie&quot;</span><span class="p">,</span> <span class="s2">&quot;Coleman&quot;</span><span class="p">,</span> <span class="s2">&quot;bcoleman11@fc2.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Ernest&quot;</span><span class="p">,</span> <span class="s2">&quot;Coleman&quot;</span><span class="p">,</span> <span class="s2">&quot;ecoleman15@businessweek.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Richard&quot;</span><span class="p">,</span> <span class="s2">&quot;Cruz&quot;</span><span class="p">,</span> <span class="s2">&quot;rcruz7@unc.edu&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Sean&quot;</span><span class="p">,</span> <span class="s2">&quot;Cruz&quot;</span><span class="p">,</span> <span class="s2">&quot;scruz10@answers.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Rebecca&quot;</span><span class="p">,</span> <span class="s2">&quot;Cunningham&quot;</span><span class="p">,</span> <span class="s2">&quot;rcunninghamd@mac.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Margaret&quot;</span><span class="p">,</span> <span class="s2">&quot;Evans&quot;</span><span class="p">,</span> <span class="s2">&quot;mevansh@pcworld.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Jeffrey&quot;</span><span class="p">,</span> <span class="s2">&quot;Ford&quot;</span><span class="p">,</span> <span class="s2">&quot;jford14@cnet.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Andrea&quot;</span><span class="p">,</span> <span class="s2">&quot;Gardner&quot;</span><span class="p">,</span> <span class="s2">&quot;agardnerv@woothemes.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Deborah&quot;</span><span class="p">,</span> <span class="s2">&quot;George&quot;</span><span class="p">,</span> <span class="s2">&quot;dgeorge6@furl.net&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Sean&quot;</span><span class="p">,</span> <span class="s2">&quot;Gibson&quot;</span><span class="p">,</span> <span class="s2">&quot;sgibsony@alexa.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="s2">&quot;Graham&quot;</span><span class="p">,</span> <span class="s2">&quot;vgrahamk@aol.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Steven&quot;</span><span class="p">,</span> <span class="s2">&quot;Hamilton&quot;</span><span class="p">,</span> <span class="s2">&quot;shamiltonu@state.tx.us&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="s2">&quot;Hawkins&quot;</span><span class="p">,</span> <span class="s2">&quot;vhawkinsf@ehow.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Edward&quot;</span><span class="p">,</span> <span class="s2">&quot;Hicks&quot;</span><span class="p">,</span> <span class="s2">&quot;ehicksc@pcworld.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Mark&quot;</span><span class="p">,</span> <span class="s2">&quot;Johnson&quot;</span><span class="p">,</span> <span class="s2">&quot;mjohnsonj@hostgator.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Ruth&quot;</span><span class="p">,</span> <span class="s2">&quot;Jordan&quot;</span><span class="p">,</span> <span class="s2">&quot;rjordan1a@smugmug.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Antonio&quot;</span><span class="p">,</span> <span class="s2">&quot;Kim&quot;</span><span class="p">,</span> <span class="s2">&quot;akim4@odnoklassniki.ru&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Jennifer&quot;</span><span class="p">,</span> <span class="s2">&quot;Marshall&quot;</span><span class="p">,</span> <span class="s2">&quot;jmarshallt@gnu.org&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Eric&quot;</span><span class="p">,</span> <span class="s2">&quot;Matthews&quot;</span><span class="p">,</span> <span class="s2">&quot;ematthews5@independent.co.uk&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Raymond&quot;</span><span class="p">,</span> <span class="s2">&quot;Mcdonald&quot;</span><span class="p">,</span> <span class="s2">&quot;rmcdonald2@ihg.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Eric&quot;</span><span class="p">,</span> <span class="s2">&quot;Miller&quot;</span><span class="p">,</span> <span class="s2">&quot;emillere@creativecommons.org&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Jonathan&quot;</span><span class="p">,</span> <span class="s2">&quot;Morales&quot;</span><span class="p">,</span> <span class="s2">&quot;jmoralesa@ovh.net&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Marie&quot;</span><span class="p">,</span> <span class="s2">&quot;Morgan&quot;</span><span class="p">,</span> <span class="s2">&quot;mmorganb@cloudflare.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Amanda&quot;</span><span class="p">,</span> <span class="s2">&quot;Nelson&quot;</span><span class="p">,</span> <span class="s2">&quot;anelson13@indiatimes.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Lisa&quot;</span><span class="p">,</span> <span class="s2">&quot;Olson&quot;</span><span class="p">,</span> <span class="s2">&quot;lolsonr@telegraph.co.uk&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Ortiz&quot;</span><span class="p">,</span> <span class="s2">&quot;aortizw@histats.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Peter&quot;</span><span class="p">,</span> <span class="s2">&quot;Phillips&quot;</span><span class="p">,</span> <span class="s2">&quot;pphillipss@1688.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Matthew&quot;</span><span class="p">,</span> <span class="s2">&quot;Porter&quot;</span><span class="p">,</span> <span class="s2">&quot;mporter9@europa.eu&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Tammy&quot;</span><span class="p">,</span> <span class="s2">&quot;Ray&quot;</span><span class="p">,</span> <span class="s2">&quot;trayx@weather.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Mark&quot;</span><span class="p">,</span> <span class="s2">&quot;Richardson&quot;</span><span class="p">,</span> <span class="s2">&quot;mrichardson1d@ihg.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Joan&quot;</span><span class="p">,</span> <span class="s2">&quot;Roberts&quot;</span><span class="p">,</span> <span class="s2">&quot;jroberts12@alibaba.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Kathleen&quot;</span><span class="p">,</span> <span class="s2">&quot;Rose&quot;</span><span class="p">,</span> <span class="s2">&quot;kroseg@pinterest.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Steve&quot;</span><span class="p">,</span> <span class="s2">&quot;Sanders&quot;</span><span class="p">,</span> <span class="s2">&quot;ssanders1b@wikispaces.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Shirley&quot;</span><span class="p">,</span> <span class="s2">&quot;Scott&quot;</span><span class="p">,</span> <span class="s2">&quot;sscottm@macromedia.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Lillian&quot;</span><span class="p">,</span> <span class="s2">&quot;Stephens&quot;</span><span class="p">,</span> <span class="s2">&quot;lstephens19@hugedomains.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Nicole&quot;</span><span class="p">,</span> <span class="s2">&quot;Thompson&quot;</span><span class="p">,</span> <span class="s2">&quot;nthompson3@admin.ch&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Marie&quot;</span><span class="p">,</span> <span class="s2">&quot;Thompson&quot;</span><span class="p">,</span> <span class="s2">&quot;mthompsonz@yelp.com&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Alan&quot;</span><span class="p">,</span> <span class="s2">&quot;Vasquez&quot;</span><span class="p">,</span> <span class="s2">&quot;avasquezo@miibeian.gov.cn&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Mildred&quot;</span><span class="p">,</span> <span class="s2">&quot;Watkins&quot;</span><span class="p">,</span> <span class="s2">&quot;mwatkins0@miibeian.gov.cn&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Eugene&quot;</span><span class="p">,</span> <span class="s2">&quot;Williams&quot;</span><span class="p">,</span> <span class="s2">&quot;ewilliamsi@deliciousdays.com&quot;</span><span class="p">]</span>
+    <span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">paramquery</span> <span class="o">=</span> <span class="nx">format</span><span class="p">(</span><span class="s1">&#39;INSERT INTO members(firstname, lastname, email) VALUES %L RETURNING *&#39;</span><span class="p">,</span> <span class="nx">values</span><span class="p">);</span>
+
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">paramquery</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;50 members inserted ...&quot;</span><span class="p">)</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">200</span><span class="p">)</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">rows</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">});</span>
+
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">initdb</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Das Skript enthält zwei Anfragen an die Datenbank. Zunächst wird die Tabelle <code>members</code> gelöscht, falls sie existiert und dann erstellt. Das Ausführen dieser Anfrage erfolgt in Zeile <code>16</code>. Danach werden in einer zweiten Anfrage 50 Einträge in diese Tabelle eingefügt. Die Anfrage wird in Zeile <code>75</code> mithilfe des <code>pg-format</code>-Paketes formatiert (<code>format()</code>-Methode). Dadurch ist in dem Anfragestring der Platzhalter <code>%L</code> möglich, in den dann das verschachtelte Array <code>values</code> eingesetzt werden kann. Dadurch wird das Einfügen vieler Datensätze erleichtert.</p>
+<p>Das Skript <code>initdb.js</code> wird in der <code>server.js</code> verwendet. Unter der Route <code>/init</code> wird es ausgeführt und alle Datensätze in die Datenbank eingetragen. </p>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">server.js</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cors&#39;</span><span class="p">);</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dotenv&#39;</span><span class="p">).</span><span class="nx">config</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes&#39;</span><span class="p">);</span>
+<span class="hll"><span class="kd">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./initdb&#39;</span><span class="p">);</span>
+</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="mf">4000</span><span class="p">;</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">());</span>
+<span class="hll"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/init&#39;</span><span class="p">,</span> <span class="nx">init</span><span class="p">);</span>
+</span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">routes</span><span class="p">);</span>
+
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Server started and listening on port </span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb"> ...`</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wenn wir nun <code>http://localhost:4000/init</code> aufrufen, wird die Datenbank automatisch befüllt. </p>
+</li>
+</ol>
+<h3 id="crud-funktionen">CRUD-Funktionen<a class="headerlink" href="#crud-funktionen" title="Permanent link">&para;</a></h3>
+<p>Nun fügen wir in die <code>routes.js</code> die einzelnen Routen ein, um die CRUD-Funktionen zu implementieren. Wir zeigen zunächst die <code>routes.js</code> vollständig und diskutieren dann einige Aspekte:</p>
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">routes.js</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./db&#39;</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
 
-<span class="c1">// test</span>
-<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/test&#39;</span><span class="p">,</span> <span class="k">async</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;jetzt mit PostgreSQL&quot;</span> <span class="p">});</span>
+<span class="c1">// get all members</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/members&#39;</span><span class="p">,</span> <span class="k">async</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="sb">`SELECT * FROM members `</span><span class="p">;</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">rows</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">)</span>
+    <span class="p">}</span>
 <span class="p">});</span>
+
+<span class="c1">// post one member</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/members&#39;</span><span class="p">,</span> <span class="k">async</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">firstname</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">firstname</span><span class="p">)</span> <span class="o">?</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">firstname</span> <span class="o">:</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">lastname</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">lastname</span><span class="p">)</span> <span class="o">?</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">lastname</span> <span class="o">:</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">email</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">email</span><span class="p">)</span> <span class="o">?</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">email</span> <span class="o">:</span> <span class="kc">null</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="sb">`INSERT INTO members(firstname, lastname, email) VALUES ($1, $2, $3) RETURNING *`</span><span class="p">;</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="p">[</span><span class="nx">firstname</span><span class="p">,</span> <span class="nx">lastname</span><span class="p">,</span> <span class="nx">email</span><span class="p">])</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">rows</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// get one member via id</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/members/:id&#39;</span><span class="p">,</span> <span class="k">async</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="sb">`SELECT * FROM members WHERE id=$1`</span><span class="p">;</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+        <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="p">[</span><span class="nx">id</span><span class="p">])</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">rowCount</span> <span class="o">==</span> <span class="mf">1</span><span class="p">)</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">rows</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+        <span class="k">else</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;No member found with id=&quot;</span> <span class="o">+</span> <span class="nx">id</span> <span class="p">});</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// update one member</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s1">&#39;/members/:id&#39;</span><span class="p">,</span> <span class="k">async</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="sb">`SELECT * FROM members WHERE id=$1`</span><span class="p">;</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+        <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="p">[</span><span class="nx">id</span><span class="p">])</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nx">member</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">rows</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+        <span class="kd">let</span> <span class="nx">firstname</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">firstname</span><span class="p">)</span> <span class="o">?</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">firstname</span> <span class="o">:</span> <span class="nx">member</span><span class="p">.</span><span class="nx">firstname</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nx">lastname</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">lastname</span><span class="p">)</span> <span class="o">?</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">lastname</span> <span class="o">:</span> <span class="nx">member</span><span class="p">.</span><span class="nx">lastname</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nx">email</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">email</span><span class="p">)</span> <span class="o">?</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">email</span> <span class="o">:</span> <span class="nx">member</span><span class="p">.</span><span class="nx">email</span><span class="p">;</span>
+
+        <span class="kd">const</span> <span class="nx">updatequery</span> <span class="o">=</span> <span class="sb">`UPDATE members SET </span>
+<span class="sb">            firstname = $1, </span>
+<span class="sb">            lastname = $2,</span>
+<span class="sb">            email = $3</span>
+<span class="sb">            WHERE id=$4;`</span><span class="p">;</span>
+        <span class="kd">const</span> <span class="nx">updateresult</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">updatequery</span><span class="p">,</span> <span class="p">[</span><span class="nx">firstname</span><span class="p">,</span> <span class="nx">lastname</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">id</span><span class="p">]);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">updateresult</span><span class="p">)</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">firstname</span><span class="p">,</span> <span class="nx">lastname</span><span class="p">,</span> <span class="nx">email</span> <span class="p">});</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">404</span><span class="p">)</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span>
+            <span class="nx">error</span><span class="o">:</span> <span class="s2">&quot;Member with id=&quot;</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s2">&quot; does not exist!&quot;</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+
+<span class="c1">// delete one member via id</span>
+<span class="nx">router</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s1">&#39;/members/:id&#39;</span><span class="p">,</span> <span class="k">async</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="sb">`DELETE FROM members WHERE id=$1`</span><span class="p">;</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+        <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="p">[</span><span class="nx">id</span><span class="p">])</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">rowCount</span> <span class="o">==</span> <span class="mf">1</span><span class="p">)</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Member with id=&quot;</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s2">&quot; deleted&quot;</span> <span class="p">});</span>
+        <span class="k">else</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;No member found with id=&quot;</span> <span class="o">+</span> <span class="nx">id</span> <span class="p">});</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">router</span><span class="p">;</span>
 </code></pre></div>
 </td></tr></table>
 </div>
 </div>
-</li>
-</ol>
+<p>Das generelle Prinzip der Anfragen wird für <code>post /members</code> deutlich (Zeilen <code>18-33</code>). Wir definieren uns eine <em>parametrisierte SQL-Anfrage</em>: </p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="sb">`INSERT INTO members(firstname, lastname, email) VALUES ($1, $2, $3) RETURNING *`</span><span class="p">;</span>
+</code></pre></div>
+<p>In die Parameter <code>$1</code>, <code>$2</code> und <code>$3</code> werden dann die entsprechenden Werte eingetragen:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="p">[</span><span class="nx">firstname</span><span class="p">,</span> <span class="nx">lastname</span><span class="p">,</span> <span class="nx">email</span><span class="p">]);</span>
+</code></pre></div>
+<p>Wichtig ist, dass die Werte als Array übergeben werden. Der Funktion <code>query()</code> wird also die parametrisierte Anfrage übergeben und als zweiter Parameter folgt das Array mit den Werten, die in die Parameter eingesetzt werden. </p>
+<h3 id="postman">Postman<a class="headerlink" href="#postman" title="Permanent link">&para;</a></h3>
+<p>Beachten Sie, dass wir im Unterschied zum Backend mit MongoDB hier die Schlüssel </p>
+<ul>
+<li><code>firstname</code>,</li>
+<li><code>lastname</code> und</li>
+<li><code>email</code> </li>
+</ul>
+<p>verwendet haben. Einer <code>POST</code>-Anfrage müsste deshalb dem <code>body</code> beispielsweise folgendes Objekt übergeben werden: </p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Ada&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Lovelace&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;ada@lovelace.uk&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Beachten Sie auch, dass in <code>server.js</code> der Port auf den Wert <code>4000</code> gesetzt wurde. </p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Wir haben nun auch ein Backend, das auf die PostgreSQL zugreift, die Sie auch in der Datenbankvorlesung verwenden. Sie benötigen also keine eigene Installation der PostgreSQL. Ansonsten ist die Struktur und das Konzept des Backends genau das Gleiche wie beim Backend über die MongoDB. Wir haben hier nur auch noch für die Befüllung der Datenbank per Skript gesorgt. Das Backend für die MongoDB ließe sich ebenso entsprechend erweitern. </p>
+</div>
                 
               
               
