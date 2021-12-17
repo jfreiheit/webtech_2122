@@ -27,7 +27,7 @@ zu erzeugen und auf die Frage:
 ? Would you like to add Angular routing? (y/N)
 ```
 
-durch die Eingabe eines `y` zu antworten. Sie müssen expliziz `y` eingeben, da die Standardantwort `N`, also `no` ist. Wenn Sie die Frage mit `yes` beantwortet haben, dann wird das neue Projekt mit der Datei `app-routing.module.ts` im Ordner `src/app` erzeugt. Sollte Ihnen diese Datei fehlen, dann können Sie nachträglich das Routing zu einem existierenden Projekt hinzufügen. 
+durch die Eingabe eines `y` zu antworten. Sie müssen explizit `y` eingeben, da die Standardantwort `N`, also `no` ist. Wenn Sie die Frage mit `yes` beantwortet haben, dann wird das neue Projekt mit der Datei `app-routing.module.ts` im Ordner `src/app` erzeugt. Sollte Ihnen diese Datei fehlen, dann können Sie nachträglich das Routing zu einem existierenden Projekt hinzufügen. 
 
 Sie können gleich bei Erstellung des Projektes angeben, dass Routing erwünscht ist, indem Sie 
 

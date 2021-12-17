@@ -20,7 +20,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 8. | 29.-03.12.2021 | [Angular (Bindings und Direktiven) + JSON](./angular2/#json-und-direktiven) | [Übung 7](./uebungen/#ubung-7) | Frontend (c+r)| 06.12.2021 | 
 | 9. | 06.-10.12.2021 | [Angular (Routing und Services)](./routing/#routing-und-services) | [Übung 8](./uebungen/#ubung-8) | Frontend (u+d)| 13.12.2021 | 
 | 10. | 13.-17.12.2021 | [Node.js + Express (REST-Server + MongoDB)](./backend/#rest-api) | [Übung 9](./uebungen/#ubung-9) | Frontend fertig | 20.12.2021 | 
-| 11. | 20.-24.12.2021 | Angular (Anbindung ans Backend) | Übung 10 | Backend ( c ) | 10.01.2022 | 
+| 11. | 20.-24.12.2021 | [Angular (Anbindung ans Backend)](./fe-be-anbindung/#frontend-backend-anbindung) | [Übung 10](./uebungen/#ubung-10) | Backend ( c ) | 10.01.2022 | 
 | | | | | | | |
 | 12. | 03.-07.01.2022 | JWT | - | Backend (r + u) | 17.01.2022 |
 | 13. | 10.-14.01.2022 | Drittanbieter-APIs  | - | Backend (d + fertig)| 24.01.2022 |

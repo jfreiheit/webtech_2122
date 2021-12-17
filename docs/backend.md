@@ -1,4 +1,4 @@
-# REST-API
+# REST-API (MongoDB)
 
 Die wesentlichsten Konzepte, wie Komponenten, Services und Routing für Angular-Projekte haben wir bereits kennengelernt. Ehe wir uns weiter mit dem Frontend beschäftigen, erstellen wir einen Server, der uns die Daten liefert. Derzeit haben wir unsere Mockup-Daten noch clientseitig vom `DataService` verwalten lassen und sie auch dort gespeichert. Das wollen wir nun ändern. Die Daten speichern wir in einer Datenbank. 
 

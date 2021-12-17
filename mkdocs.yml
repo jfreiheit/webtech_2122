@@ -73,6 +73,7 @@ nav:
     - Routing und Services: routing.md
     - Backend (MongoDB): backend.md 
     - Backend (PostgreSQL): backend_pg.md 
+    - Frontend-Backend-Anbindung: fe-be-anbindung.md 
     - Callbacks und Promises: promises.md 
     - Übungen: uebungen.md
     - Werkzeuge: tools.md

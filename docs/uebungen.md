@@ -2742,3 +2742,14 @@
     - Erstellen Sie einen Ordner `Uebung9`. Erstellen Sie in diesem Ordner ein neues node.js-Projekt `backend` (siehe  [hier](../backend/#ein-nodejs-projekt-mit-express)). 
     - Das Thema diese Woche ist [Backend und REST-API](../backend/#rest-api). Wir erstellen eine REST-API und implementieren alle CRUD-Funktionen über eine MongoDB. Dieses Thema ist etwas umfangreicher, aber sehr wichtig und nützlich. Deshalb besteht die Übungsaufgabe diese Woche wieder "nur" darin, das in dem Skript verwendete Beispiel nachzubauen. Die Idee dahinter ist die, dass Sie eine passende REST-API für Ihre eigene Anwendung (Semesteraufgabe) erstellen können. 
     - Fragen und Probelem klären wir in den Übungen. Viel Spaß und Erfolg! 
+
+
+#### Übung 10
+    
+??? question "Übungsaufgabe 10 (Frontendanbindung an das Backend)"
+    - Erstellen Sie einen Ordner `Uebung10`. Erstellen Sie in diesem Ordner ein neues Angular-Projekt `frontend`. 
+    - Das Thema diese Woche ist [Frontend-Backend-Anbindung](../fe-be-anbindung/#frontend-backend-anbindung). Wir erstellen eines neues Fronted unter Verwendung von Routing, Bootstrap und einem HTTP-Service, der die Kommunikation mit dem Backend realisiert. Sie können gerne entweder die Anwendung aus dem Skript und dem Video mit- bzw. nachbauen oder Sie setzen bereits das Frontend für Ihre Semesteraufgabe um. 
+    - Eine gute Übung wäre es auch, wenn Sie noch das `Create` eines neuen Datensatzes hinzufügen würden. Das steht nämlich nicht im Skript, sollte aber insbesondere mit der Betrachtung von `Update` keine Probleme bereiten.
+    - Außerdem können Sie auch gerne statt des MongoDB-Backends das PostgreSQL-Backend anbinden. Ebenfalls eine sehr gute Übung!
+    - Wir haben nun alle Konzepte zur Verfügung, um die Semesteraufgabe zu realisieren. Im Januar kommen noch einige kleinere Konzepte hinzu (Verschlüsseln von Passwörtern, Speichern von Bildern bzw. Dateien, Drag&Drop usw.), aber nichts mehr, das Sie zwingend für Ihre Semesteraufgabe benötigen. Sie können sich nun also voll darauf fokussieren!
+    - Fragen und Probelem klären wir in den Übungen. Viel Spaß und Erfolg! 
