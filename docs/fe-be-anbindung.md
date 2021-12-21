@@ -2,6 +2,10 @@
 
 Wir haben jetzt ein Backend, das als REST-Server funngiert. Über die Endpunkte der REST-API können wir auf die einzelnen Funktionen des Backends zugreifen, um die Daten in der [MongoDB](../backend/#rest-api) (oder der [PostgreSQL](../backend_pg/#rest-api-postgresql)) zu manipulieren (erzeugen, lesen, ändern und löschen - CRUD). Unser [Frontend](../routing/#routing-und-services) stellt zur Zeit nur einen [Daten-Service](../routing/#services) zur Verfügung, der die Daten client-seitig verwaltet. Dies wollen wir jetzt ändern. Das Frontend soll mit dem Backend kommunizieren, um die Daten zu nutzen, die das Backend zur Verfügung stellt. 
 
+
+??? "Video aus der Vorlesung am 20.12.2021"
+    <iframe src="https://mediathek.htw-berlin.de/media/embed?key=492b1bd45d825a2278ea364096780f54&width=720&height=420&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="420" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
 Wir werden uns ein **neues** Frontend erstellen und dabei die einzelnen Schritte genauer untersuchen (bzw. wiederholen). Das hat folgende Vorteile:
 
 - wir werden sicherer bei der Erstellung von Frontends mithilfe von Angular,
@@ -725,7 +729,7 @@ Das Formular existiert nun (als TypeScript-Objekt). Nun binden wir es in die `de
                 <div class="form-group row  justify-content-end">
                     <button type="submit" class="col-4 btn btn-secondary">Aktualisieren</button>
                     <div class="col-2"></div>
-                    <button type="cancel" class="col-4 btn btn-secondary" (click)="cancel() ">Abbrechen</button>
+                    <button type="button" class="col-4 btn btn-secondary" (click)="cancel() ">Abbrechen</button>
                 </div>
             </form>
         </fieldset>

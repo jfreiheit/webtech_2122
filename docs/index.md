@@ -22,7 +22,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 10. | 13.-17.12.2021 | [Node.js + Express (REST-Server + MongoDB)](./backend/#rest-api) | [Übung 9](./uebungen/#ubung-9) | Frontend fertig | 20.12.2021 | 
 | 11. | 20.-24.12.2021 | [Angular (Anbindung ans Backend)](./fe-be-anbindung/#frontend-backend-anbindung) | [Übung 10](./uebungen/#ubung-10) | Backend ( c ) | 10.01.2022 | 
 | | | | | | | |
-| 12. | 03.-07.01.2022 | JWT | - | Backend (r + u) | 17.01.2022 |
+| 12. | 03.-07.01.2022 | [Nutzerverwaltung und Material](./material/#nutzerverwaltung-und-material) | - | Backend (r + u) | 17.01.2022 |
 | 13. | 10.-14.01.2022 | Drittanbieter-APIs  | - | Backend (d + fertig)| 24.01.2022 |
 | 14. | 17.-21.01.2022 | Wiederholung | - | fertig stellen | 31.01.2022 |
 | 15. | 24.-28.01.2021 | - | Fragen | - | - |

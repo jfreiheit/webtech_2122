@@ -547,6 +547,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../material/" class="md-nav__link">
+        Nutzerverwaltung und Material
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../promises/" class="md-nav__link">
         Callbacks und Promises
       </a>
@@ -751,6 +766,8 @@
                 
                 <h1 id="frontend-backend-anbindung">Frontend-Backend-Anbindung<a class="headerlink" href="#frontend-backend-anbindung" title="Permanent link">&para;</a></h1>
 <p>Wir haben jetzt ein Backend, das als REST-Server funngiert. Über die Endpunkte der REST-API können wir auf die einzelnen Funktionen des Backends zugreifen, um die Daten in der <a href="../backend/#rest-api">MongoDB</a> (oder der <a href="../backend_pg/#rest-api-postgresql">PostgreSQL</a>) zu manipulieren (erzeugen, lesen, ändern und löschen - CRUD). Unser <a href="../routing/#routing-und-services">Frontend</a> stellt zur Zeit nur einen <a href="../routing/#services">Daten-Service</a> zur Verfügung, der die Daten client-seitig verwaltet. Dies wollen wir jetzt ändern. Das Frontend soll mit dem Backend kommunizieren, um die Daten zu nutzen, die das Backend zur Verfügung stellt. </p>
+<details><summary>Video aus der Vorlesung am 20.12.2021</summary><p><iframe src="https://mediathek.htw-berlin.de/media/embed?key=492b1bd45d825a2278ea364096780f54&width=720&height=420&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="420" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe></p>
+</details>
 <p>Wir werden uns ein <strong>neues</strong> Frontend erstellen und dabei die einzelnen Schritte genauer untersuchen (bzw. wiederholen). Das hat folgende Vorteile:</p>
 <ul>
 <li>wir werden sicherer bei der Erstellung von Frontends mithilfe von Angular,</li>
@@ -1753,7 +1770,7 @@ connected to DB
             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row  justify-content-end&quot;</span><span class="p">&gt;</span>
                 <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 btn btn-secondary&quot;</span><span class="p">&gt;</span>Aktualisieren<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
                 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-2&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;cancel&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 btn btn-secondary&quot;</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">cancel</span><span class="err">()</span> <span class="err">&quot;</span><span class="p">&gt;</span>Abbrechen<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4 btn btn-secondary&quot;</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">cancel</span><span class="err">()</span> <span class="err">&quot;</span><span class="p">&gt;</span>Abbrechen<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
@@ -2519,13 +2536,13 @@ connected to DB
       
       
         
-        <a href="../promises/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Callbacks und Promises" rel="next">
+        <a href="../material/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Nutzerverwaltung und Material" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Weiter
               </span>
-              Callbacks und Promises
+              Nutzerverwaltung und Material
             </div>
           </div>
           <div class="md-footer__button md-icon">
