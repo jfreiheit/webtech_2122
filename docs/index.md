@@ -23,12 +23,12 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 11. | 20.-24.12.2021 | [Angular (Anbindung ans Backend)](./fe-be-anbindung/#frontend-backend-anbindung) | [Übung 10](./uebungen/#ubung-10) | Backend ( c ) | 10.01.2022 | 
 | | | | | | | |
 | 12. | 03.-07.01.2022 | [Nutzerverwaltung und Material](./material/#nutzerverwaltung-und-material) | - | Backend (r + u) | 17.01.2022 |
-| 13. | 10.-14.01.2022 | Drittanbieter-APIs  | - | Backend (d + fertig)| 24.01.2022 |
+| 13. | 10.-14.01.2022 | [Dateiupload + Drag&Drop]  | - | Backend (d + fertig)| 24.01.2022 |
 | 14. | 17.-21.01.2022 | Wiederholung | - | fertig stellen | 31.01.2022 |
 | 15. | 24.-28.01.2021 | - | Fragen | - | - |
 | 16. | 31.-03.02.2022 | - | Fragen  | - |
-| 17. | 07.-11.02.2021 | - | Fragen |  Abgabe 1.PZ 13.02.2021  |
-|  |  |  |  | Abgabe 2.PZ 01.04.2021 | - |
+| 17. | 07.-11.02.2021 | - | Fragen |  Abgabe 1.PZ 8.2.2022 oder 22.2.2022  |
+|  |  |  |  | Abgabe 2.PZ 29.3.2022 | - |
 
 ### Organisatorisches 
 
@@ -76,6 +76,15 @@ Am Ende des Kurses geben Sie eine Webanwendung ab. Diese wird bewertet und bilde
 	Super wäre es, wenn Sie die Datenbank, die Sie verwenden, per Skript vorausfüllen, d.h. es wäre schön, wenn zum testen der Anwendung nur das Frontend und das Backend gestartet werden müssten und alles andere automatisch passieren würde. Super wäre es auch, wenn Sie Ihre Anwendung deployen würden. 
 	
 	Nach Abgabe vereinbaren wir ein Online-Meeting, in dem Sie mir Ihre Anwendung nochmal zeigen können und ich Ihnen Fragen zu Ihrem Code stellen werde. Ist keine Prüfung, sondern eher ein fachliches Gespräch. 
+
+## Abgabe- und Gesprächstermine
+
+Die Lösung für die Semesteraufgabe pushen Sie in Ihr Respository. In einem Gespräch führen Sie die Lösung vor und wir unterhalten uns über Ihre Lösung. Dafür stehen verschiedene Termine zur Verfügung. 
+
+- 1. Prüfungszeitraum: 8.2. Abgabe und 9.2. Gespräch **oder** 22.2. Abgabe und 23.2. Gespräch
+- 2. Püfungszeitraum: 29.3. Abgabe und 30.3. Gespräch
+
+Bitte tragen Sie sich in [Moodle](https://moodle.htw-berlin.de/course/view.php?id=33989) in den von Ihnen gewünschten Gesprächstermin ein! Wenn Sie im 1.PZ abgeben, tragen Sie sich im LSF zum ersten PZ zur Prüfung ein, ansonsten im 2.PZ. 
 
 ### Einige Beispiele
 

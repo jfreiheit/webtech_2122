@@ -4,6 +4,11 @@ Wir haben bis jetzt immer [Bootstrap](https://getbootstrap.com/) als CSS-Framewo
 
 Inhaltlich geht es uns nicht nur um die Verwendung von *Angular Material*, sondern um eine Nutzer- und Rollenverwaltung, um einige weitere Konzepte anzuwenden, wie z.B. rollenbasierter Zugriff auf Komponenten und die Verschlüsselung und das Prüfen von Passwörtern. 
 
+
+??? "Video aus der Vorlesung am 10.1.2022"
+    <iframe src="https://mediathek.htw-berlin.de/media/embed?key=02f2878490647c26f0ef9a0267e4ea0d&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=02f2878490647c26f0ef9a0267e4ea0d&width=720&height=466&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="466" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
 ## Angular-Anwendung mit Registrierung und Login
 
 Wir erstellen uns dafür eine Angular-Anwendung `users` mit Routing mit einer Navigations-, einer Registrierungs- und eine Login-Komponente.
