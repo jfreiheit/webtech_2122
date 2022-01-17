@@ -64,6 +64,11 @@ und in der `angular.json` sollte irgendwo der folgende Eintrag zu finden sein:
 ],
 ```
 
+
+!!! tip
+    Sollte es bei der Installation von Bootstrap Probleme geben, dann bleibt Ihnen immernoch die einfache Variante, Bootstrap über ein CDN direkt in die `index.html` einzubinden, mit z.B. `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">` (siehe [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/))
+
+
 ### Navigation und Routing
 
 Wir passen unsere `nav`-Komponente an und können dabei gleich mal überprüfen, ob Bootstrap funktioniert. Den Code habe ich von [hier](https://getbootstrap.com/docs/5.0/components/navbar/#nav) entnommen. Außerdem erstellen wir noch einen `footer` und die `home`-Seite und legen die Routen fest:

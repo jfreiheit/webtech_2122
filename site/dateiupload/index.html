@@ -443,6 +443,88 @@
     Backend
   </a>
   
+    <nav class="md-nav" aria-label="Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multer-und-gridfs" class="md-nav__link">
+    Multer und GridFS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-von-bildern" class="md-nav__link">
+    Upload von Bildern
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-mithilfe-von-postman" class="md-nav__link">
+    Upload mithilfe von Postman
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-von-bildern" class="md-nav__link">
+    Download von Bildern
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-mithilfe-von-postman" class="md-nav__link">
+    Download mithilfe von Postman
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-von-bildern" class="md-nav__link">
+    Delete von Bildern
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-mithilfe-von-postman" class="md-nav__link">
+    Delete mithilfe von Postman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    Frontend
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anbindung-an-das-backend" class="md-nav__link">
+    Anbindung an das Backend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ausfuhren-der-anwendung" class="md-nav__link">
+    Ausführen der Anwendung
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -528,6 +610,88 @@
     Backend
   </a>
   
+    <nav class="md-nav" aria-label="Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multer-und-gridfs" class="md-nav__link">
+    Multer und GridFS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-von-bildern" class="md-nav__link">
+    Upload von Bildern
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-mithilfe-von-postman" class="md-nav__link">
+    Upload mithilfe von Postman
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-von-bildern" class="md-nav__link">
+    Download von Bildern
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-mithilfe-von-postman" class="md-nav__link">
+    Download mithilfe von Postman
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-von-bildern" class="md-nav__link">
+    Delete von Bildern
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-mithilfe-von-postman" class="md-nav__link">
+    Delete mithilfe von Postman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    Frontend
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anbindung-an-das-backend" class="md-nav__link">
+    Anbindung an das Backend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ausfuhren-der-anwendung" class="md-nav__link">
+    Ausführen der Anwendung
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -553,37 +717,54 @@
 <li>eine Dateiupload per Drag &amp; Drop gestaltet und</li>
 <li>ein Backend so baut, dass es in einer MongoDB Bilder und andere Dateien speichern und abrufen kann.</li>
 </ul>
-<p>Wir erstellen uns dazu eine Angular-Anwendung <code>fileupload</code>:</p>
-<div class="highlight"><pre><span></span><code>ng new fileupload
-</code></pre></div>
-<p>Wir fügen <a href="https://valor-software.com/ngx-bootstrap/#/documentation#getting-started">Bootstrap</a> hinzu und erstellen eine Komponente <code>drag-drop</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> fileupload
-ng add ngx-bootstrap
-ng g c drag-drop
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Sollte es bei der Installation von Bootstrap Probleme geben, dann bleibt Ihnen immernoch die einfache Variante, Bootstrap über ein CDN direkt in die <code>index.html</code> einzubinden, mit z.B. <code>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"&gt;</code> (siehe <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">Bootstrap</a>)</p>
-</div>
+<p>Wir beginnen mit der Erstellung des Backends. Ich zeige das Vorgehen hier an einem separaten Backend. Sie können den Code aber natürlich auch in Ihr bestehendes Backend einbinden. </p>
 <h2 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h2>
 <p>Wir erstellen uns ein Backend für den Dateiupload:</p>
 <div class="highlight"><pre><span></span><code>mkdir backend-fileupload
 <span class="nb">cd</span> backend-fileupload 
 npm init
-npm install cors express mongoose multer dotenv
+npm install cors express mongoose dotenv
 npm install nodemon --save-dev
 </code></pre></div>
-<p>Wir erstellen eine <code>db.js</code> und eine <code>models/file.js</code>:</p>
+<p>Sorgen Sie in der <code>package.json</code> dafür, dass Ihre <code>main</code>-Datei die <code>server.js</code> ist (<code>"main": "server.js"</code>) und dass Sie Ihre Anwendung unter Verwendung von <code>nodemon</code> starten können (<code>"scripts": {"watch": "nodemon ./server.js") }</code>). </p>
+<p>Wir erstellen eine <code>db.js</code> und eine <code>.env</code>:</p>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">db.js</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">db</span><span class="o">:</span> <span class="s1">&#39;mongodb://localhost:27017/fileupload&#39;</span>
-<span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongoose&#39;</span><span class="p">);</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dotenv&#39;</span><span class="p">).</span><span class="nx">config</span><span class="p">();</span>
+
+<span class="c1">// connect to mongoDB</span>
+<span class="nx">mongoose</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_CONNECTION</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useNewUrlParser</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">useUnifiedTopology</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span>
+        <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;connected to DB&#39;</span><span class="p">);</span> <span class="p">},</span>
+        <span class="nx">err</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;connection error:&#39;</span><span class="p">)</span> <span class="p">}</span>
+    <span class="p">);</span>
+<span class="kd">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">connection</span><span class="p">;</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">db</span><span class="p">;</span>
 </code></pre></div>
 </td></tr></table>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">models/file.js</label><div class="tabbed-content">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">.env</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">DB</span> <span class="o">=</span> <span class="nx">mongodb</span><span class="o">:</span><span class="c1">//localhost:27017/fileupload</span>
+<span class="nx">PORT</span> <span class="o">=</span> <span class="mf">4000</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Die <code>server.js</code> implementieren wie folgt:</p>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">server.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -597,23 +778,758 @@ npm install nodemon --save-dev
 11
 12
 13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongoose&#39;</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">Schema</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">;</span>
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cors&#39;</span><span class="p">);</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dotenv&#39;</span><span class="p">).</span><span class="nx">config</span><span class="p">();</span>
 
-<span class="c1">// Define Schema</span>
-<span class="kd">let</span> <span class="nx">userSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Schema</span><span class="p">({</span>
-    <span class="nx">_id</span><span class="o">:</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">ObjectId</span><span class="p">,</span>
-    <span class="nx">file</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nb">Array</span>
-    <span class="p">},</span>
-<span class="p">},</span> <span class="p">{</span>
-    <span class="nx">collection</span><span class="o">:</span> <span class="s1">&#39;files&#39;</span>
+<span class="c1">// Routes to Handle Request</span>
+<span class="kd">const</span> <span class="nx">uploadRoute</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/upload.route&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">downloadRoute</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/download.route&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">deleteRoute</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/delete.route&#39;</span><span class="p">);</span>
+
+<span class="c1">// Setup Express.js and Cors</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">());</span>
+
+<span class="c1">// API Routes</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/upload&#39;</span><span class="p">,</span> <span class="nx">uploadRoute</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/download&#39;</span><span class="p">,</span> <span class="nx">downloadRoute</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/delete&#39;</span><span class="p">,</span> <span class="nx">deleteRoute</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mf">4000</span><span class="p">;</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Connected to port &#39;</span> <span class="o">+</span> <span class="nx">port</span><span class="p">)</span>
 <span class="p">})</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="s1">&#39;File&#39;</span><span class="p">,</span> <span class="nx">userSchema</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 </div>
+</div>
+<p>Das Backend lässt sich jedoch noch nicht ausführen, da die Dateien aus <code>routes</code> noch fehlen. Darum kümmern wir uns jetzt. </p>
+<h3 id="multer-und-gridfs">Multer und GridFS<a class="headerlink" href="#multer-und-gridfs" title="Permanent link">&para;</a></h3>
+<p>Bis jetzt haben wir nur Daten im JSON-Format zwischen Frontend und Backend ausgetauscht und auch nur solche Daten in der MongoDB gespeichert. Bilder (und auch andere Dateien) sind <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects">FormData-Objects</a> im <code>multipart/form-data</code>-Format. Zur Behandlung solcher Daten verwenden wir ein <em>Middleware</em> für unser Backend, namens <a href="https://www.npmjs.com/package/multer">Multer</a>. </p>
+<p>MongoDB speichert Daten bis zu einer Größe von <code>16Mb</code> im Binärformat. Um auch größere Dateien (Bilder, Videos, pdf, ...) speichern zu können, werden die Dateien in <em>chunks</em> zerlegt und können dann aus diesen Stücken wieder zusammengesetzt werden. Dafür gibt es in der MongoDB eine <a href="https://docs.mongodb.com/manual/core/gridfs/">GridFS</a>-Spezifikation (siehe auch <a href="https://medium.com/@kavitanambissan/uploading-and-retrieving-a-file-from-gridfs-using-multer-958dfc9255e8">hier</a> oder <a href="https://www.topcoder.com/thrive/articles/storing-large-files-in-mongodb-using-gridfs">hier</a>). Zur Verwendung von GridFS gibt es die beiden Pakte <a href="https://www.npmjs.com/package/multer-gridfs-storage">multer-gridfs-storage</a> und <a href="https://www.npmjs.com/package/gridfs-stream">gridfs-stream</a>. </p>
+<p>Wir installieren im Backend-Projekt alle drei Pakete und zeigen im Folgenden deren Verwendung:</p>
+<div class="highlight"><pre><span></span><code>npm install multer multer-gridfs-storage gridfs-stream
+</code></pre></div>
+<p>Die <code>package.json</code> sollte nun ungefähr so aussehen:</p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">package.json</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;backend-fileupload&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;main&quot;</span><span class="o">:</span> <span class="s2">&quot;server.js&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;scripts&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;watch&quot;</span><span class="o">:</span> <span class="s2">&quot;nodemon ./server.js&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;test&quot;</span><span class="o">:</span> <span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;author&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;license&quot;</span><span class="o">:</span> <span class="s2">&quot;ISC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;cors&quot;</span><span class="o">:</span> <span class="s2">&quot;^2.8.5&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dotenv&quot;</span><span class="o">:</span> <span class="s2">&quot;^10.0.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;express&quot;</span><span class="o">:</span> <span class="s2">&quot;^4.17.2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gridfs-stream&quot;</span><span class="o">:</span> <span class="s2">&quot;^1.1.1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mongoose&quot;</span><span class="o">:</span> <span class="s2">&quot;^6.1.5&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;multer&quot;</span><span class="o">:</span> <span class="s2">&quot;^1.4.4&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;multer-gridfs-storage&quot;</span><span class="o">:</span> <span class="s2">&quot;^5.0.2&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;devDependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;nodemon&quot;</span><span class="o">:</span> <span class="s2">&quot;^2.0.15&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wir kümmern uns nun zunächst darum, Bilder in die MongoDB <em>hochzuladen</em>.</p>
+<h3 id="upload-von-bildern">Upload von Bildern<a class="headerlink" href="#upload-von-bildern" title="Permanent link">&para;</a></h3>
+<p>Für den Upload der Bilder erstellen wir zunächst einen Ordner <code>middleware</code> und darin eine Datei <code>upload.js</code>. In dieser Datei wird unter Verwendung von <code>Multer</code> ein <code>GridFsStorage</code> eingerichtet. Die zu verwendende <em>Collection</em> benennen wir hier <code>fileupload</code> (siehe <code>bucketName</code>). Sie können diesen Namen frei wählen. Beachten Sie dann aber im Folgenden überall die Verwendung von <code>fileupload</code> (in der MongoDB entstehen die Collections <code>fileupload.files</code> und <code>fileupload.chunks</code> - siehe z.B. <a href="https://medium.com/@kavitanambissan/uploading-and-retrieving-a-file-from-gridfs-using-multer-958dfc9255e8">hier</a> oder <a href="https://www.topcoder.com/thrive/articles/storing-large-files-in-mongodb-using-gridfs">hier</a>).</p>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">middleware/upload.js</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">multer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;multer&quot;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="p">{</span>
+    <span class="nx">GridFsStorage</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;multer-gridfs-storage&quot;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">storage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GridFsStorage</span><span class="p">({</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB</span><span class="p">,</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span> <span class="nx">useNewUrlParser</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">useUnifiedTopology</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
+    <span class="nx">file</span><span class="o">:</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">file</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">match</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span> <span class="s2">&quot;image/jpeg&quot;</span><span class="p">];</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">match</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">mimetype</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mf">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;file.mimetype === -1&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="sb">`</span><span class="si">${</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="si">}</span><span class="sb">-jf-</span><span class="si">${</span><span class="nx">file</span><span class="p">.</span><span class="nx">originalname</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;store&#39;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="nx">bucketName</span><span class="o">:</span> <span class="s1">&#39;fileupload&#39;</span><span class="p">,</span>
+            <span class="nx">filename</span><span class="o">:</span> <span class="sb">`</span><span class="si">${</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="si">}</span><span class="sb">-jf-</span><span class="si">${</span><span class="nx">file</span><span class="p">.</span><span class="nx">originalname</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+        <span class="p">};</span>
+    <span class="p">},</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">multer</span><span class="p">({</span> <span class="nx">storage</span> <span class="p">});</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Beachten Sie, dass wir beim Upload der Bilder für diese Bilder Dateinamen mithilfe von <code>${Date.now()}-jf-${file.originalname}</code> erstellen bzw. festlegen. Damit diese Dateinamen eindeutig sind, wird mithilfe von <code>Date.now()</code> der aktuelle Zeitstempel verwendet. Der String <code>-jf-</code> in der Mitte kann natürlich auch durch Ihre Initialen ersetzt (oder weggelassen) werden. Außerdem wird auch noch der originale Dateiname verwendet. Insgesamt sollte sichergestellt werden, dass die Dateinamen eindeutig sind (deshalb auch <code>Date.now()</code>). </p>
+<p>In Zeile <code>10</code> werden die Dateitypen festgelegt, die akzeptiert werden, hier <code>png</code> und <code>jpeg</code>. Diese Liste kann erweitert oder eingegrenzt werden.</p>
+<p>Diese <em>Middleware</em> nutzen wir nun für den <code>POST</code>-Request des Bildes und erstellen einen Ordner <code>routes</code> und darin eine Datei <code>upload.routes.js</code> mit folgendem Inhalt:</p>
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">routes/upload.route.js</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">upload</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../middleware/upload&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">upload</span><span class="p">.</span><span class="nx">single</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">),</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// req.file is the `file` file</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">file</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span>
+            <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;no file selected&quot;</span>
+        <span class="p">});</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;req.file&#39;</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">file</span><span class="p">);</span>
+        <span class="kd">const</span> <span class="nx">imgUrl</span> <span class="o">=</span> <span class="sb">`http://localhost:4000/download/</span><span class="si">${</span><span class="nx">req</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">filename</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">201</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+            <span class="nx">url</span><span class="o">:</span> <span class="nx">imgUrl</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">router</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>In Zeile <code>5</code> wird die <em>multer-Middleware</em> mit <code>update.single('file')</code> aufgerufen. Neben der Funktion <code>.single(fieldname)</code> stehen auch die Funktionen <code>.array(fieldname[, maxCount])</code> und <code>.fields(field)</code> zur Verfügung, um gleichzeitig mehrere Dateien hochzuladen (siehe <a href="https://www.npmjs.com/package/multer">multer</a>). </p>
+<p>Als <em>Response</em> wird die URL zurückgegeben, unter der das Bild heruntergeladen werden kann (<code>http://localhost:4000/download/${req.file.filename}</code>). </p>
+<h3 id="upload-mithilfe-von-postman">Upload mithilfe von Postman<a class="headerlink" href="#upload-mithilfe-von-postman" title="Permanent link">&para;</a></h3>
+<p>Das Hochladen der Bilder kann nun bereits getestet werden (dazu müssen in <code>server.js</code> noch die fehlerhaften Zeilen, in denen es um <code>download</code> und <code>delete</code> der Bilder geht, auskommentiert werden). Starten Sie das Backend. Öffnen Sie Postman und geben Sie als URL <code>http://localhost:4000/upload</code> ein und wählen als Anfragemethode <code>POST</code>. Klicken Sie auf <code>Body</code> und markieren dann <code>form-data</code>:</p>
+<p><img alt="upload" src="../files/244_file.png" /></p>
+<p>Geben Sie unter <code>KEY</code> den Schlüssel <code>file</code> ein und wählen Sie aus dem Dropdown-Menü <code>File</code>. Unter <code>VALUE</code> erscheint der Button <code>Select Files</code>. Klicken Sie darauf und wählen ein <code>png</code>- oder ein <code>jpeg</code>-Bild aus, das Sie hochladen wollen. Klicken Sie dann auf <code>Send</code>. Es erscheint:</p>
+<p><img alt="upload" src="../files/245_file.png" /></p>
+<p>Ich habe in diesem Beispiel die Datei <code>fiw.jpg</code> hochgeladen. </p>
+<p>Wenn Sie sich die MongoDB anschauen, dann finden Sie darin die beiden Collections <code>fileupload.files</code> und <code>fileupload.chunks</code>. In <code>fileupload.files</code> sind die Metadaten des hochgeladenen Bildes zu finden, z.B. </p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;$oid&quot;</span><span class="p">:</span> <span class="s2">&quot;61e53675d69a075573a1b1b5&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;length&quot;</span><span class="p">:</span> <span class="mi">86584</span><span class="p">,</span>
+  <span class="nt">&quot;chunkSize&quot;</span><span class="p">:</span> <span class="mi">261120</span><span class="p">,</span>
+  <span class="nt">&quot;uploadDate&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;$date&quot;</span><span class="p">:</span> <span class="s2">&quot;2022-01-17T09:27:18.096Z&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;1642411637621-jf-fiw.jpg&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;contentType&quot;</span><span class="p">:</span> <span class="s2">&quot;image/jpeg&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Die dazugehörige <code>_id</code> finden Sie auch in <code>fileupload.chunks</code> (können Sie sich in der <code>mongosh</code> mit <code>db.fileupload.chunks.find({ _id: "61e53675d69a075573a1b1b5" })</code> anschauen). Darin ist das Bild im Binary-Format gespeichert. </p>
+<h3 id="download-von-bildern">Download von Bildern<a class="headerlink" href="#download-von-bildern" title="Permanent link">&para;</a></h3>
+<p>Für den Download der gespeicherten Bilder gehen wir ähnlich vor, wie beim Upload, benötigen dafür aber nicht mehr die <em>multer-Middleware</em>, dafür aber <code>gridfs-stream</code>. Wir erstellen im Ordner <code>routes</code> die Datei <code>download.route.js</code> mit folgendem Inhalt:</p>
+<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">routes/download.route.js</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongoose&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">Grid</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;gridfs-stream&quot;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
+
+<span class="kd">const</span> <span class="nx">connect</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useNewUrlParser</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">useUnifiedTopology</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+
+<span class="kd">let</span> <span class="nx">gfs</span><span class="p">,</span> <span class="nx">gfsb</span><span class="p">;</span>
+<span class="nx">connect</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// initialize stream</span>
+    <span class="nx">gfsb</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">mongo</span><span class="p">.</span><span class="nx">GridFSBucket</span><span class="p">(</span><span class="nx">connect</span><span class="p">.</span><span class="nx">db</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">bucketName</span><span class="o">:</span> <span class="s2">&quot;fileupload&quot;</span>
+    <span class="p">});</span>
+
+    <span class="nx">gfs</span> <span class="o">=</span> <span class="nx">Grid</span><span class="p">(</span><span class="nx">connect</span><span class="p">.</span><span class="nx">db</span><span class="p">,</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">mongo</span><span class="p">);</span>
+    <span class="nx">gfs</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;fileupload&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/:filename&#39;</span><span class="p">,</span> <span class="k">async</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">gfs</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;fileupload&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">({</span> <span class="nx">filename</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">filename</span> <span class="p">});</span>
+        <span class="nx">cursor</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">doc</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;doc&#39;</span><span class="p">,</span> <span class="nx">doc</span><span class="p">);</span>
+            <span class="nx">gfsb</span><span class="p">.</span><span class="nx">openDownloadStream</span><span class="p">(</span><span class="nx">doc</span><span class="p">.</span><span class="nx">_id</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+        <span class="p">})</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;not found&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">router</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p><a href="https://mongodb.github.io/node-mongodb-native/3.2/api/GridFSBucket.html">GridFSBucket</a> ist eine Klasse aus der <a href="https://mongodb.github.io/node-mongodb-native/3.2/api/index.html">Node.js-MongoDB-API</a>. Diese hätten wir auch schon für das Upload verwenden können (siehe z.B. <a href="https://edupeeth.com/all-courses/nodejs/mongodb-gridfs-bucket">hier</a>). </p>
+<p>Da wir über den Dateinamen auf die Datei zugreifen wollen, benötigen wir zunächst die entsprechende <code>_id</code> der Datei in der <code>fileupload.chunks</code>-Collection. Dazu greifen wir mithilfe von <code>find()</code> auf die <code>fileupload.files</code>-Collection zu und ermitteln die <code>_id</code>. Die <code>find()</code>-Funktion gibt einen sogenannten <a href="https://docs.mongodb.com/drivers/node/current/fundamentals/crud/read-operations/cursor/">Cursor</a> auf das Array aller gefundenen Datensätze zurück. Mithilfe von <code>forEach()</code> durchlaufen wir dieses Array (enthält aber nur einen Datensatz) und ermitteln die <code>_id</code>. Mit der <code>openDownloadStream()</code>-Funktion der <code>GridFSBucket()</code>-Klasse öffnen wir den Download-Stream des Bildes und geben ihn als <em>response</em> <code>res</code> zurück. </p>
+<h3 id="download-mithilfe-von-postman">Download mithilfe von Postman<a class="headerlink" href="#download-mithilfe-von-postman" title="Permanent link">&para;</a></h3>
+<p>Der Test des <code>GET http://localhost:4000/download/:filename</code>-Endpunktes ist einfach. Dazu verwenden wir einfach die URL, die durch den Upload als <em>Response</em>  zurückgegeben wurde (im obigen Beispiel also <code>"http://localhost:4000/download/1642411637621-jf-fiw.jpg"</code>):</p>
+<p>Geben Sie in Postman also Ihre URL ein, wählen <code>GET</code> und klicken <code>Send</code>. Es erscheint das Bild:</p>
+<p><img alt="upload" src="../files/246_file.png" /></p>
+<h3 id="delete-von-bildern">Delete von Bildern<a class="headerlink" href="#delete-von-bildern" title="Permanent link">&para;</a></h3>
+<p>Das Löschen der Bilder ist ganz ähnlich zum Download. Erstellen Sie die Datei <code>routes/delete.route.js</code>:</p>
+<div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">routes/delete.route.js</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongoose&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">Grid</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;gridfs-stream&quot;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
+
+<span class="kd">const</span> <span class="nx">connect</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useNewUrlParser</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">useUnifiedTopology</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+
+<span class="kd">let</span> <span class="nx">gfs</span><span class="p">;</span>
+<span class="nx">connect</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">gfs</span> <span class="o">=</span> <span class="nx">Grid</span><span class="p">(</span><span class="nx">connect</span><span class="p">.</span><span class="nx">db</span><span class="p">,</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">mongo</span><span class="p">);</span>
+    <span class="nx">gfs</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;fileupload&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s1">&#39;/:filename&#39;</span><span class="p">,</span> <span class="k">async</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="k">await</span> <span class="nx">gfs</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;fileupload&#39;</span><span class="p">).</span><span class="nx">deleteOne</span><span class="p">({</span> <span class="nx">filename</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">filename</span> <span class="p">});</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span>
+            <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;deleted&quot;</span>
+        <span class="p">});</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;An error occured.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">router</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h3 id="delete-mithilfe-von-postman">Delete mithilfe von Postman<a class="headerlink" href="#delete-mithilfe-von-postman" title="Permanent link">&para;</a></h3>
+<p>Zum Testen verwenden Sie den gleichen Dateinamen wie beim Download und wählen als Anfragemethode <code>DELETE</code>. </p>
+<h2 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h2>
+<p>Nun erstellen wir ein Frontend, in dem wir ein Bild per Drag&amp;Drop hochladen können, verbinden das Frontend mit dem Backend und lassen uns das Bild wieder im Frontend anzeigen. Wir erstellen uns dazu eine Angular-Anwendung <code>fileupload</code>, Sie können aber den Code natürlich auch in ein bestehendes Frontend einbinden. Wir halten hier das Frontend bewusst einfach, verwenden kein <em>Routing</em> und auch nur die <code>AppComponent</code>.</p>
+<div class="highlight"><pre><span></span><code>ng new fileupload
+</code></pre></div>
+<p>Für das Drag&amp;Drop verwenden wir hier das Paket <a href="https://www.npmjs.com/package/ngx-file-drop">ngx-file-drop</a>. Wir installieren dieses Paket mithilfe von <code>npm i ngx-file-drop</code> und fügen noch <a href="https://valor-software.com/ngx-bootstrap/#/documentation#getting-started">Bootstrap</a> hinzu:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> fileupload
+npm i ngx-file-drop
+ng add ngx-bootstrap
+</code></pre></div>
+<p>Die <code>app.component.html</code> implementieren wir wie folgt:</p>
+<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">app.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container my-5 center&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ngx-file-drop</span> <span class="na">dropZoneLabel</span><span class="o">=</span><span class="s">&quot;Drop files here&quot;</span> <span class="err">(</span><span class="na">onFileDrop</span><span class="err">)=&quot;</span><span class="na">dropped</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span> <span class="err">(</span><span class="na">onFileOver</span><span class="err">)=&quot;</span><span class="na">fileOver</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span> <span class="err">(</span><span class="na">onFileLeave</span><span class="err">)=&quot;</span><span class="na">fileLeave</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;/</span><span class="nt">ngx-file-drop</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;my-5 upload-table&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">table</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;table&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Files<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;col&quot;</span><span class="p">&gt;</span>File name<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;col&quot;</span><span class="p">&gt;</span>File size<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;col&quot;</span><span class="p">&gt;</span>File type<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;col&quot;</span><span class="p">&gt;</span>Last modified<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">&quot;col&quot;</span><span class="p">&gt;</span>Show<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">tbody</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;upload-name-style&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">tr</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let file of fileinfos; let i=index&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ file.filename }}
+                    <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ file.filesize }}
+                    <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ file.filetype }}
+                    <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ file.lastModified }}
+                    <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-info btn-sm&quot;</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span> <span class="na">showImage</span><span class="err">(</span><span class="na">file</span><span class="err">.</span><span class="na">url</span><span class="err">)</span> <span class="err">&quot;</span><span class="p">&gt;</span>Show<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot; showImg &quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot; container my-5 center &quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="err">[</span><span class="na">src</span><span class="err">]=&quot;</span><span class="na">sanitizedUrl</span><span class="err">&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;bild&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Die eigentliche Upload-Area ist dabei bereits mit </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ngx-file-drop</span> <span class="na">dropZoneLabel</span><span class="o">=</span><span class="s">&quot;Drop files here&quot;</span> <span class="err">(</span><span class="na">onFileDrop</span><span class="err">)=&quot;</span><span class="na">dropped</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span> <span class="err">(</span><span class="na">onFileOver</span><span class="err">)=&quot;</span><span class="na">fileOver</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span> <span class="err">(</span><span class="na">onFileLeave</span><span class="err">)=&quot;</span><span class="na">fileLeave</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ngx-file-drop</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>definiert. Mit der darunterliegenden Tabelle wollen wir nur die hochgeladenen Dateien auflisten. Ganz unten sehen wir noch ein <code>div</code> vor, in dem später das Bild angezeigt werden soll. </p>
+<p>Im Hintergrund wirkt in der <em>Upload-Area</em> ein <code>Button</code> vom Typ <code>type="file"</code>. Wenn Sie kein Drag&amp;Drop verwenden, sondern die Eingabe der Datei direkt über einen Button realisieren wollen, dann achten Sie darauf, dass das Formular als <code>enctype</code> den Typ <code>multipart/form-data</code> zugewiesen bekommt:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/profile&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">enctype</span><span class="o">=</span><span class="s">&quot;multipart/form-data&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;file&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;avatar&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Die dazugehörige <code>app.component.ts</code> ist etwas umfangreicher und enthält bereits die <em>dependency injection</em> des <code>BackendService</code>, den wir noch erstellen müssen. </p>
+<div class="tabbed-set" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">app.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">BackendService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./backend.service&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">NgxFileDropEntry</span><span class="p">,</span> <span class="nx">FileSystemFileEntry</span><span class="p">,</span> <span class="nx">FileSystemDirectoryEntry</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;ngx-file-drop&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">DomSanitizer</span><span class="p">,</span> <span class="nx">SafeUrl</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+
+<span class="kr">interface</span> <span class="nx">Fileinfo</span> <span class="p">{</span>
+    <span class="nx">filename</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+    <span class="nx">filesize</span><span class="o">:</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="nx">filetype</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+    <span class="nx">lastModified</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="s1">&#39;fileupload&#39;</span><span class="p">;</span>
+
+  <span class="nx">droppedfiles</span><span class="o">:</span> <span class="nx">NgxFileDropEntry</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="nx">files</span><span class="o">:</span> <span class="nx">File</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="nx">fileinfos</span><span class="o">:</span> <span class="nx">Fileinfo</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="nx">objectURL</span><span class="o">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+  <span class="nx">sanitizedUrl</span><span class="o">!:</span> <span class="nx">SafeUrl</span><span class="p">;</span>
+  <span class="nx">showImg</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">bs</span><span class="o">:</span> <span class="nx">BackendService</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">sanitizer</span><span class="o">:</span> <span class="nx">DomSanitizer</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="nx">dropped</span><span class="p">(</span><span class="nx">files</span><span class="o">:</span> <span class="nx">NgxFileDropEntry</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;fileDropped&#39;</span><span class="p">,</span> <span class="nx">files</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">droppedfiles</span> <span class="o">=</span> <span class="nx">files</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">droppedFile</span> <span class="k">of</span> <span class="nx">files</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="c1">// Is it a file?</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">droppedFile</span><span class="p">.</span><span class="nx">fileEntry</span><span class="p">.</span><span class="nx">isFile</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">fileEntry</span> <span class="o">=</span> <span class="nx">droppedFile</span><span class="p">.</span><span class="nx">fileEntry</span> <span class="nx">as</span> <span class="nx">FileSystemFileEntry</span><span class="p">;</span>
+        <span class="nx">fileEntry</span><span class="p">.</span><span class="nx">file</span><span class="p">((</span><span class="nx">file</span><span class="o">:</span> <span class="nx">File</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">files</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
+          <span class="c1">// Here you can access the real file</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">droppedFile</span><span class="p">.</span><span class="nx">relativePath</span><span class="p">,</span> <span class="nx">file</span><span class="p">);</span>
+
+          <span class="c1">// You could upload it like this:</span>
+          <span class="kd">const</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">()</span>
+          <span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">droppedFile</span><span class="p">.</span><span class="nx">relativePath</span><span class="p">)</span>
+
+          <span class="k">this</span><span class="p">.</span><span class="nx">bs</span><span class="p">.</span><span class="nx">upload</span><span class="p">(</span><span class="nx">formData</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">url</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="nx">url</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">fileinfos</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+                <span class="nx">filename</span><span class="o">:</span> <span class="nx">file</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+                <span class="nx">filesize</span><span class="o">:</span> <span class="nx">file</span><span class="p">.</span><span class="nx">size</span><span class="p">,</span>
+                <span class="nx">filetype</span><span class="o">:</span> <span class="nx">file</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span>
+                <span class="nx">lastModified</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">lastModified</span><span class="p">).</span><span class="nx">toLocaleDateString</span><span class="p">(),</span>
+                <span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">.</span><span class="nx">url</span>
+            <span class="p">});</span>
+          <span class="p">})</span>
+
+        <span class="p">});</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// It was a directory (empty directories are added, otherwise only files)</span>
+        <span class="kd">const</span> <span class="nx">fileEntry</span> <span class="o">=</span> <span class="nx">droppedFile</span><span class="p">.</span><span class="nx">fileEntry</span> <span class="nx">as</span> <span class="nx">FileSystemDirectoryEntry</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">droppedFile</span><span class="p">.</span><span class="nx">relativePath</span><span class="p">,</span> <span class="nx">fileEntry</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">fileOver</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span> <span class="nx">DragEvent</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;fileOver&#39;</span><span class="p">,</span> <span class="nx">event</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">fileLeave</span><span class="p">(</span><span class="nx">event</span><span class="o">:</span> <span class="nx">DragEvent</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;fileLeave&#39;</span><span class="p">,</span> <span class="nx">event</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">showImage</span><span class="p">(</span><span class="nx">url</span><span class="o">:</span> <span class="nx">string</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">bs</span><span class="p">.</span><span class="nx">download</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">blob</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;blob&#39;</span><span class="p">,</span> <span class="nx">blob</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">objectURL</span> <span class="o">=</span> <span class="nx">URL</span><span class="p">.</span><span class="nx">createObjectURL</span><span class="p">(</span><span class="nx">blob</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;objectURL&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">objectURL</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">showImg</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sanitizedUrl</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sanitizer</span><span class="p">.</span><span class="nx">bypassSecurityTrustUrl</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">objectURL</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Wenn ein Bild über die <em>Upload-Area</em> gezogen wird, erfolgt ein Aufruf der Funktion <code>fileOver()</code>, die aber nur eine Ausgabe auf der Konsole erzeugt. Ebenso die Funktion <code>fileLeave()</code>, die aufgerufen wird, sobald man das Bild wieder von der <em>Upload-Area</em> bewegt. Der eigentliche Upload erfolgt in der Funktion <code>dropped()</code>. Darin wird die Datei in eine <code>FormData</code> umgewandelt und diese <code>FormData</code> wird der Funktion <code>upload()</code> des <code>BackendService</code> übergeben. Fast alles andere sorgt dafür, die notwendigen Informationen aus der Datei auszulesen, um diese geeignet in die Tabelle auszugeben. </p>
+<h3 id="anbindung-an-das-backend">Anbindung an das Backend<a class="headerlink" href="#anbindung-an-das-backend" title="Permanent link">&para;</a></h3>
+<p>Wir betrachten noch den <code>BackendService</code>, um die Anwendung starten zu können. Wir erstellen den Service mithilfe von </p>
+<div class="highlight"><pre><span></span><code>ng g s backend
+</code></pre></div>
+<p>und implementieren</p>
+<div class="tabbed-set" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">backend.service.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">HttpClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Injectable</span><span class="p">({</span>
+  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">BackendService</span> <span class="p">{</span>
+  <span class="nx">baseUrl</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:4000&#39;</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">http</span><span class="o">:</span> <span class="nx">HttpClient</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">upload</span><span class="p">(</span><span class="nx">file</span><span class="o">:</span> <span class="nx">FormData</span><span class="p">)</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="p">{</span><span class="nx">url</span><span class="o">:</span> <span class="nx">string</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">post</span><span class="o">&lt;</span><span class="p">{</span><span class="nx">url</span><span class="o">:</span> <span class="nx">string</span><span class="p">}</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="s1">&#39;/upload&#39;</span><span class="p">,</span> <span class="nx">file</span><span class="p">,</span> <span class="p">{</span> <span class="nx">responseType</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span> <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">download</span><span class="p">(</span><span class="nx">url</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">Blob</span><span class="o">&gt;</span><span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span><span class="nx">responseType</span><span class="o">:</span> <span class="s1">&#39;blob&#39;</span><span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>   
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<p>Achten Sie darauf, dass in der <code>app.module.ts</code> das <code>HttpClientModule</code> importiert ist:</p>
+<div class="tabbed-set" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">app.module.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AppRoutingModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app-routing.module&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.component&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserAnimationsModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser/animations&#39;</span><span class="p">;</span>
+<span class="hll"><span class="k">import</span> <span class="p">{</span> <span class="nx">HttpClientModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+</span><span class="k">import</span> <span class="p">{</span> <span class="nx">NgxFileDropModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;ngx-file-drop&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">AppComponent</span>
+  <span class="p">],</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">BrowserModule</span><span class="p">,</span>
+    <span class="nx">AppRoutingModule</span><span class="p">,</span>
+    <span class="nx">BrowserAnimationsModule</span><span class="p">,</span>
+<span class="hll">    <span class="nx">HttpClientModule</span><span class="p">,</span>
+</span>    <span class="nx">NgxFileDropModule</span>
+  <span class="p">],</span>
+  <span class="nx">providers</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="nx">bootstrap</span><span class="o">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>  
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h3 id="ausfuhren-der-anwendung">Ausführen der Anwendung<a class="headerlink" href="#ausfuhren-der-anwendung" title="Permanent link">&para;</a></h3>
+<p>Um die Anwendung zu testen ist es wichtig, dass auch das Backend läuft. Wenn die Anwendung gestartet ist, erscheint folgende Ansicht:</p>
+<p><img alt="upload" src="../files/247_file.png" /></p>
+<p>Schieben Sie nun ein Bild über die <em>Upload-Area</em> und lassen Sie es dort los (im Beispiel <code>fiw.jpg</code>). Öffnen Sie auch die Developer Tools und betrachten Sie die Konsole. Im Code sind mehrere Ausgaben hinterlegt. Es erscheint:</p>
+<p><img alt="upload" src="../files/248_file.png" /></p>
+<p>Klicken Sie auf den <code>Show</code>-Button:</p>
+<p><img alt="upload" src="../files/249_file.png" /></p>
+<p>Laden Sie ruhig mehrere Bilder hoch und klicken abwechselnd auf die einzelnen <code>Show</code>-Buttons. Schauen Sie sich insbesondere die <code>dropped()</code>-Funktion aus der <code>app.component.ts</code> nochmal genauer an, um die Details nachzuvollziehen. </p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Wir haben Bilder in der MongoDB gespeichert. Dazu haben wir ein Backend erstellt, mit dessen Hilfe in die MongoDB hochgeladen und von dort auch wieder ausgelesen werden können. Wir haben ein Frontend erstellt, in dem per Drag&amp;Drop Bilder hochgeladen werden können. Dieses Frontend ist mit dem Backend verbunden. Es werden die Bilder vom Frontend über das Backend in die MongoDB gespeichert und von dort wieder ausgelesen und im Frontend angezeigt. </p>
 </div>
                 
               
